@@ -1,0 +1,22 @@
+[0.209s] Invoking command in '/home/Dojo/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/Dojo/Dojo/src/robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/robot_description
+[0.430s] -- The C compiler identification is GNU 11.4.0
+[0.431s] -- The CXX compiler identification is GNU 11.4.0
+[0.432s] -- Detecting C compiler ABI info
+[0.496s] -- Detecting C compiler ABI info - done
+[0.503s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.504s] -- Detecting C compile features
+[0.504s] -- Detecting C compile features - done
+[0.508s] -- Detecting CXX compiler ABI info
+[0.596s] -- Detecting CXX compiler ABI info - done
+[0.604s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.604s] -- Detecting CXX compile features
+[0.604s] -- Detecting CXX compile features - done
+[0.610s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.756s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.834s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.862s] [31mCMake Error at CMakeLists.txt:14 (action):
+[0.862s]   Unknown CMake command "action".
+[0.862s] 
+[0.862s] [0m
+[0.862s] -- Configuring incomplete, errors occurred!
+[0.862s] See also "/home/Dojo/Dojo/build/robot_description/CMakeFiles/CMakeOutput.log".

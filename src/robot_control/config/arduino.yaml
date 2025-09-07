@@ -1,0 +1,36 @@
+# Arduino serial port configuration
+port: /dev/ttyACM0  # Update this with your Arduino's serial port
+baud_rate: 57600
+
+timeout: 1.0  # seconds
+write_timeout: 1.0  # seconds
+
+# Message protocol configuration
+start_delimiter: '<'
+end_delimiter: '>'
+field_separator: ','
+
+# Message format: <MOTOR_LEFT,MOTOR_RIGHT,ENCODER_LEFT,ENCODER_RIGHT> (from Arduino)
+#                 <MOTOR_LEFT,MOTOR_RIGHT> (to Arduino)
+
+# Motor configuration
+motor_max: 255    # Maximum PWM value
+motor_min: 0      # Minimum PWM value
+
+# Encoder configuration
+encoder_ticks_per_rev: 20  # Update this based on your encoder
+wheel_circumference: 0.314  # meters (2 * pi * radius)
+
+# PID parameters (if implemented on Arduino)
+pid:
+  kp: 1.0
+  ki: 0.1
+  kd: 0.05
+  sample_time: 0.1  # seconds
+
+# Safety limits
+max_speed: 0.5  # m/s
+max_angular_speed: 1.0  # rad/s
+
+# Debug settings
+debug: true  # Enable/disable debug output

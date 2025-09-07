@@ -1,0 +1,104 @@
+# Behavior Tree Navigator Parameters
+bt_navigator:
+  ros__parameters:
+    use_sim_time: False
+    
+    # Global frame and robot base frame
+    global_frame: "map"
+    robot_base_frame: "base_link"
+    odom_topic: "/odom"
+    
+    # Behavior tree parameters
+    bt_loop_duration: 10
+    default_bt_xml_filename: "navigate_w_replanning_and_recovery.xml"
+    
+    # Navigator server parameters
+    action_server_result_timeout: 900.0
+    action_server_bt_xml: "navigate_w_replanning_and_recovery.xml"
+    
+    # Recovery behavior plugins
+    recovery_plugins: ["spin", "backup", "wait"]
+    
+    # Spin recovery parameters
+    spin:
+      plugin: "nav2_behaviors/Spin"
+      spin_dist: 1.57  # 90 degrees in radians
+      time_allowance: 10.0
+      
+    # Backup recovery parameters
+    backup:
+      plugin: "nav2_behaviors/BackUp"
+      backup_dist: -0.15
+      backup_speed: 0.025
+      time_allowance: 10.0
+      
+    # Wait recovery parameters
+    wait:
+      plugin: "nav2_behaviors/Wait"
+      wait_period: 5.0
+      
+    # Navigator parameters
+    navigator:
+      plugin: "nav2_bt_navigator/Navigator"
+      use_sim_time: False
+      bt_loop_duration: 10
+      default_bt_xml_filename: "navigate_w_replanning_and_recovery.xml"
+      global_frame: "map"
+      robot_base_frame: "base_link"
+      odom_topic: "/odom"
+      
+      # Navigator server parameters
+      server:
+        use_sim_time: False
+        action_server_result_timeout: 900.0
+        action_server_bt_xml: "navigate_w_replanning_and_recovery.xml"
+        
+        # Behavior tree parameters
+        bt_loop_duration: 10
+        default_bt_xml_filename: "navigate_w_replanning_and_recovery.xml"
+        
+        # Recovery behavior parameters
+        recovery_behavior:
+          - name: "spin"
+            plugin: "nav2_behaviors/Spin"
+          - name: "backup"
+            plugin: "nav2_behaviors/BackUp"
+          - name: "wait"
+            plugin: "nav2_behaviors/Wait"
+    
+    # Behavior tree parameters
+    behavior_tree:
+      bt_loop_duration: 10
+      default_server_timeout: 20.0
+      default_bt_xml_filename: "navigate_w_replanning_and_recovery.xml"
+      global_frame: "map"
+      robot_base_frame: "base_link"
+      odom_topic: "/odom"
+      
+      # Recovery behavior parameters
+      recovery_behavior:
+        - name: "spin"
+          plugin: "nav2_behaviors/Spin"
+        - name: "backup"
+          plugin: "nav2_behaviors/BackUp"
+        - name: "wait"
+          plugin: "nav2_behaviors/Wait"
+    
+    # Navigator server parameters
+    server:
+      use_sim_time: False
+      action_server_result_timeout: 900.0
+      action_server_bt_xml: "navigate_w_replanning_and_recovery.xml"
+      
+      # Behavior tree parameters
+      bt_loop_duration: 10
+      default_bt_xml_filename: "navigate_w_replanning_and_recovery.xml"
+      
+      # Recovery behavior parameters
+      recovery_behavior:
+        - name: "spin"
+          plugin: "nav2_behaviors/Spin"
+        - name: "backup"
+          plugin: "nav2_behaviors/BackUp"
+        - name: "wait"
+          plugin: "nav2_behaviors/Wait"
