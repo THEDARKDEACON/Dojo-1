@@ -1,0 +1,20 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/launch/arduino_bridge.launch.py
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/launch/ros2arduino_bridge.launch.py
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/config/ros2arduino_bridge_params.yaml
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index/package_run_dependencies/ros2arduino_bridge
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index/parent_prefix_path/ros2arduino_bridge
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/environment/path.sh
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/environment/path.dsv
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/local_setup.bash
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/local_setup.sh
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/local_setup.zsh
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/local_setup.dsv
+-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/package.dsv
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index/packages/ros2arduino_bridge
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/cmake/ros2arduino_bridgeConfig.cmake
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/cmake/ros2arduino_bridgeConfig-version.cmake
+-- Up-to-date symlink: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/package.xml

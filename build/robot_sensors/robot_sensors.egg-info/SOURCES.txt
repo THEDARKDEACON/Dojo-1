@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+launch/sensors.launch.py
+resource/robot_sensors
+robot_sensors/camera_publisher.py
+robot_sensors.egg-info/PKG-INFO
+robot_sensors.egg-info/SOURCES.txt
+robot_sensors.egg-info/dependency_links.txt
+robot_sensors.egg-info/entry_points.txt
+robot_sensors.egg-info/requires.txt
+robot_sensors.egg-info/top_level.txt
+robot_sensors.egg-info/zip-safe

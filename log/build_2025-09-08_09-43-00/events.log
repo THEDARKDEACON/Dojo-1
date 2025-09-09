@@ -1,0 +1,48 @@
+[0.000000] (-) TimerEvent: {}
+[0.000432] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.000571] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.000619] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.000659] (-) JobUnselected: {'identifier': 'robot_navigation'}
+[0.000704] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.000720] (-) JobUnselected: {'identifier': 'robot_sensors'}
+[0.000751] (-) JobUnselected: {'identifier': 'ros2arduino_bridge'}
+[0.000803] (arduino_bridge) JobQueued: {'identifier': 'arduino_bridge', 'dependencies': OrderedDict()}
+[0.000872] (arduino_bridge) JobStarted: {'identifier': 'arduino_bridge'}
+[0.099675] (-) TimerEvent: {}
+[0.199918] (-) TimerEvent: {}
+[0.300182] (-) TimerEvent: {}
+[0.400470] (-) TimerEvent: {}
+[0.409467] (arduino_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/Dojo/Dojo/build/arduino_bridge/build', '--no-deps', 'symlink_data'], 'cwd': '/home/Dojo/Dojo/build/arduino_bridge', 'env': {'HOSTNAME': 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx', 'SHLVL': '0', 'HOME': '/root', 'OLDPWD': '/ros2_ws', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TERM': 'xterm', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'XDG_RUNTIME_DIR': '/tmp', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'DEBIAN_FRONTEND': 'noninteractive', 'PWD': '/home/Dojo/Dojo/build/arduino_bridge', 'LC_ALL': 'C.UTF-8', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'PYTHONPATH': '/home/Dojo/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/Dojo/Dojo/install/arduino_bridge/lib/python3.10/site-packages:'}, 'shell': False}
+[0.500556] (-) TimerEvent: {}
+[0.588518] (arduino_bridge) StdoutLine: {'line': b'running develop\n'}
+[0.600663] (-) TimerEvent: {}
+[0.658368] (arduino_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[0.658587] (arduino_bridge) StdoutLine: {'line': b'creating arduino_bridge.egg-info\n'}
+[0.658708] (arduino_bridge) StdoutLine: {'line': b'writing arduino_bridge.egg-info/PKG-INFO\n'}
+[0.658805] (arduino_bridge) StdoutLine: {'line': b'writing dependency_links to arduino_bridge.egg-info/dependency_links.txt\n'}
+[0.658929] (arduino_bridge) StdoutLine: {'line': b'writing entry points to arduino_bridge.egg-info/entry_points.txt\n'}
+[0.659046] (arduino_bridge) StdoutLine: {'line': b'writing requirements to arduino_bridge.egg-info/requires.txt\n'}
+[0.659139] (arduino_bridge) StdoutLine: {'line': b'writing top-level names to arduino_bridge.egg-info/top_level.txt\n'}
+[0.659260] (arduino_bridge) StdoutLine: {'line': b"writing manifest file 'arduino_bridge.egg-info/SOURCES.txt'\n"}
+[0.660448] (arduino_bridge) StdoutLine: {'line': b"reading manifest file 'arduino_bridge.egg-info/SOURCES.txt'\n"}
+[0.660955] (arduino_bridge) StdoutLine: {'line': b"writing manifest file 'arduino_bridge.egg-info/SOURCES.txt'\n"}
+[0.661994] (arduino_bridge) StdoutLine: {'line': b'running build_ext\n'}
+[0.662154] (arduino_bridge) StdoutLine: {'line': b'Creating /home/Dojo/Dojo/install/arduino_bridge/lib/python3.10/site-packages/arduino-bridge.egg-link (link to .)\n'}
+[0.662817] (arduino_bridge) StdoutLine: {'line': b'Installing arduino_bridge_node script to /home/Dojo/Dojo/install/arduino_bridge/lib/arduino_bridge\n'}
+[0.662987] (arduino_bridge) StdoutLine: {'line': b'Installing test_arduino_bridge script to /home/Dojo/Dojo/install/arduino_bridge/lib/arduino_bridge\n'}
+[0.663159] (arduino_bridge) StdoutLine: {'line': b'\n'}
+[0.663329] (arduino_bridge) StdoutLine: {'line': b'Installed /home/Dojo/Dojo/build/arduino_bridge\n'}
+[0.663461] (arduino_bridge) StdoutLine: {'line': b'running symlink_data\n'}
+[0.663577] (arduino_bridge) StdoutLine: {'line': b'creating /home/Dojo/Dojo/install/arduino_bridge/share/ament_index\n'}
+[0.663708] (arduino_bridge) StdoutLine: {'line': b'creating /home/Dojo/Dojo/install/arduino_bridge/share/ament_index/resource_index\n'}
+[0.663873] (arduino_bridge) StdoutLine: {'line': b'creating /home/Dojo/Dojo/install/arduino_bridge/share/ament_index/resource_index/packages\n'}
+[0.664012] (arduino_bridge) StdoutLine: {'line': b'symbolically linking /home/Dojo/Dojo/build/arduino_bridge/resource/arduino_bridge -> /home/Dojo/Dojo/install/arduino_bridge/share/ament_index/resource_index/packages\n'}
+[0.664109] (arduino_bridge) StdoutLine: {'line': b'symbolically linking /home/Dojo/Dojo/build/arduino_bridge/package.xml -> /home/Dojo/Dojo/install/arduino_bridge/share/arduino_bridge\n'}
+[0.664202] (arduino_bridge) StdoutLine: {'line': b'creating /home/Dojo/Dojo/install/arduino_bridge/share/arduino_bridge/launch\n'}
+[0.664303] (arduino_bridge) StdoutLine: {'line': b'symbolically linking /home/Dojo/Dojo/build/arduino_bridge/launch/arduino_bridge.launch.py -> /home/Dojo/Dojo/install/arduino_bridge/share/arduino_bridge/launch\n'}
+[0.664395] (arduino_bridge) StdoutLine: {'line': b'symbolically linking /home/Dojo/Dojo/build/arduino_bridge/launch/test_arduino.launch.py -> /home/Dojo/Dojo/install/arduino_bridge/share/arduino_bridge/launch\n'}
+[0.664484] (arduino_bridge) StdoutLine: {'line': b'creating /home/Dojo/Dojo/install/arduino_bridge/share/arduino_bridge/config\n'}
+[0.664574] (arduino_bridge) StdoutLine: {'line': b'symbolically linking /home/Dojo/Dojo/build/arduino_bridge/config/arduino_bridge_params.yaml -> /home/Dojo/Dojo/install/arduino_bridge/share/arduino_bridge/config\n'}
+[0.684187] (arduino_bridge) CommandEnded: {'returncode': 0}
+[0.694308] (arduino_bridge) JobEnded: {'identifier': 'arduino_bridge', 'rc': 0}
+[0.694952] (-) EventReactorShutdown: {}

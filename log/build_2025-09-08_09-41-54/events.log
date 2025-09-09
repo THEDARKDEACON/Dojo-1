@@ -1,0 +1,169 @@
+[0.000000] (-) TimerEvent: {}
+[0.000683] (arduino_bridge) JobQueued: {'identifier': 'arduino_bridge', 'dependencies': OrderedDict()}
+[0.000709] (robot_control) JobQueued: {'identifier': 'robot_control', 'dependencies': OrderedDict()}
+[0.000724] (robot_description) JobQueued: {'identifier': 'robot_description', 'dependencies': OrderedDict()}
+[0.000738] (robot_navigation) JobQueued: {'identifier': 'robot_navigation', 'dependencies': OrderedDict()}
+[0.000750] (robot_perception) JobQueued: {'identifier': 'robot_perception', 'dependencies': OrderedDict()}
+[0.000765] (robot_sensors) JobQueued: {'identifier': 'robot_sensors', 'dependencies': OrderedDict()}
+[0.000777] (ros2arduino_bridge) JobQueued: {'identifier': 'ros2arduino_bridge', 'dependencies': OrderedDict()}
+[0.000789] (robot_bringup) JobQueued: {'identifier': 'robot_bringup', 'dependencies': OrderedDict([('robot_control', '/home/Dojo/Dojo/install/robot_control'), ('robot_description', '/home/Dojo/Dojo/install/robot_description'), ('robot_navigation', '/home/Dojo/Dojo/install/robot_navigation'), ('robot_perception', '/home/Dojo/Dojo/install/robot_perception'), ('robot_sensors', '/home/Dojo/Dojo/install/robot_sensors')])}
+[0.000812] (robot_control) JobStarted: {'identifier': 'robot_control'}
+[0.006439] (robot_description) JobStarted: {'identifier': 'robot_description'}
+[0.007398] (robot_navigation) JobStarted: {'identifier': 'robot_navigation'}
+[0.008461] (robot_perception) JobStarted: {'identifier': 'robot_perception'}
+[0.009529] (robot_sensors) JobStarted: {'identifier': 'robot_sensors'}
+[0.012140] (arduino_bridge) JobStarted: {'identifier': 'arduino_bridge'}
+[0.015326] (ros2arduino_bridge) JobStarted: {'identifier': 'ros2arduino_bridge'}
+[0.099812] (-) TimerEvent: {}
+[0.184367] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'cmake'}
+[0.184849] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '/home/Dojo/Dojo/src/robot_description', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/robot_description'], 'cwd': '/home/Dojo/Dojo/build/robot_description', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('PATH', '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/home/Dojo/Dojo/build/robot_description'), ('LC_ALL', 'C.UTF-8'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1')]), 'shell': False}
+[0.186638] (robot_navigation) JobProgress: {'identifier': 'robot_navigation', 'progress': 'cmake'}
+[0.187098] (robot_navigation) Command: {'cmd': ['/usr/bin/cmake', '/home/Dojo/Dojo/src/robot_navigation', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/robot_navigation'], 'cwd': '/home/Dojo/Dojo/build/robot_navigation', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('PATH', '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/home/Dojo/Dojo/build/robot_navigation'), ('LC_ALL', 'C.UTF-8'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1')]), 'shell': False}
+[0.188085] (robot_perception) JobProgress: {'identifier': 'robot_perception', 'progress': 'cmake'}
+[0.188363] (robot_perception) Command: {'cmd': ['/usr/bin/cmake', '/home/Dojo/Dojo/src/robot_perception', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/robot_perception'], 'cwd': '/home/Dojo/Dojo/build/robot_perception', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('PATH', '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/home/Dojo/Dojo/build/robot_perception'), ('LC_ALL', 'C.UTF-8'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1')]), 'shell': False}
+[0.199897] (-) TimerEvent: {}
+[0.300146] (-) TimerEvent: {}
+[0.400446] (-) TimerEvent: {}
+[0.500766] (-) TimerEvent: {}
+[0.576329] (robot_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.577229] (robot_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.577540] (robot_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.577602] (robot_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.577654] (robot_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.577706] (robot_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.577756] (robot_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.577804] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.577853] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.577923] (robot_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.577978] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.578026] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.578072] (robot_description) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.578119] (robot_description) StdoutLine: {'line': b'See also "/home/Dojo/Dojo/build/robot_description/CMakeFiles/CMakeOutput.log".\n'}
+[0.578181] (robot_navigation) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.578872] (robot_navigation) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.578973] (robot_navigation) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.579048] (robot_navigation) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.579114] (robot_navigation) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.579433] (robot_navigation) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.579614] (robot_navigation) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.579694] (robot_navigation) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.579771] (robot_navigation) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.579848] (robot_navigation) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.579918] (robot_navigation) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.579994] (robot_navigation) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.580067] (robot_navigation) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.580139] (robot_navigation) StdoutLine: {'line': b'See also "/home/Dojo/Dojo/build/robot_navigation/CMakeFiles/CMakeOutput.log".\n'}
+[0.580288] (robot_description) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:10 (find_package):\n'}
+[0.580473] (robot_description) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[0.580550] (robot_description) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[0.580622] (robot_description) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[0.580690] (robot_description) StderrLine: {'line': b'\n'}
+[0.580757] (robot_description) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[0.580833] (robot_description) StderrLine: {'line': b'  any of the following names:\n'}
+[0.580902] (robot_description) StderrLine: {'line': b'\n'}
+[0.580969] (robot_description) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[0.581035] (robot_description) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[0.581101] (robot_description) StderrLine: {'line': b'\n'}
+[0.581176] (robot_description) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[0.581438] (robot_description) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[0.581511] (robot_description) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[0.581580] (robot_description) StderrLine: {'line': b'  has been installed.\n'}
+[0.581648] (robot_description) StderrLine: {'line': b'\n'}
+[0.581714] (robot_description) StderrLine: {'line': b'\x1b[0m\n'}
+[0.581780] (robot_navigation) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:10 (find_package):\n'}
+[0.581866] (robot_navigation) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[0.581946] (robot_navigation) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[0.582014] (robot_navigation) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[0.582080] (robot_navigation) StderrLine: {'line': b'\n'}
+[0.582145] (robot_navigation) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[0.582225] (robot_navigation) StderrLine: {'line': b'  any of the following names:\n'}
+[0.582298] (robot_navigation) StderrLine: {'line': b'\n'}
+[0.582368] (robot_navigation) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[0.582434] (robot_navigation) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[0.582501] (robot_navigation) StderrLine: {'line': b'\n'}
+[0.582565] (robot_navigation) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[0.582632] (robot_navigation) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[0.582698] (robot_navigation) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[0.582765] (robot_navigation) StderrLine: {'line': b'  has been installed.\n'}
+[0.582832] (robot_navigation) StderrLine: {'line': b'\n'}
+[0.582897] (robot_navigation) StderrLine: {'line': b'\x1b[0m\n'}
+[0.582963] (robot_perception) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:10 (find_package):\n'}
+[0.583056] (robot_perception) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[0.583128] (robot_perception) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[0.583228] (robot_perception) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[0.583303] (robot_perception) StderrLine: {'line': b'\n'}
+[0.583371] (robot_perception) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[0.583440] (robot_perception) StderrLine: {'line': b'  any of the following names:\n'}
+[0.583505] (robot_perception) StderrLine: {'line': b'\n'}
+[0.583568] (robot_perception) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[0.583636] (robot_perception) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[0.583709] (robot_perception) StderrLine: {'line': b'\n'}
+[0.583780] (robot_perception) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[0.583853] (robot_perception) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[0.583927] (robot_perception) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[0.583997] (robot_perception) StderrLine: {'line': b'  has been installed.\n'}
+[0.584105] (robot_perception) StderrLine: {'line': b'\n'}
+[0.584207] (robot_perception) StderrLine: {'line': b'\x1b[0m\n'}
+[0.584888] (robot_perception) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.585089] (robot_perception) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.585176] (robot_perception) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.585259] (robot_perception) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.585333] (robot_perception) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.585408] (robot_perception) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.585479] (robot_perception) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.585548] (robot_perception) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.585618] (robot_perception) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.585687] (robot_perception) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.585761] (robot_perception) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.585835] (robot_perception) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.585907] (robot_perception) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.585983] (robot_perception) StdoutLine: {'line': b'See also "/home/Dojo/Dojo/build/robot_perception/CMakeFiles/CMakeOutput.log".\n'}
+[0.586061] (ros2arduino_bridge) JobProgress: {'identifier': 'ros2arduino_bridge', 'progress': 'cmake'}
+[0.586085] (ros2arduino_bridge) Command: {'cmd': ['/usr/bin/cmake', '/home/Dojo/Dojo/src/ros2arduino_bridge', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/ros2arduino_bridge'], 'cwd': '/home/Dojo/Dojo/build/ros2arduino_bridge', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('PATH', '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/home/Dojo/Dojo/build/ros2arduino_bridge'), ('LC_ALL', 'C.UTF-8'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1')]), 'shell': False}
+[0.587711] (robot_perception) CommandEnded: {'returncode': 1}
+[0.588592] (robot_description) CommandEnded: {'returncode': 1}
+[0.589917] (robot_navigation) CommandEnded: {'returncode': 1}
+[0.600978] (-) TimerEvent: {}
+[0.610833] (robot_perception) JobEnded: {'identifier': 'robot_perception', 'rc': 1}
+[0.612248] (robot_navigation) JobEnded: {'identifier': 'robot_navigation', 'rc': 'SIGINT'}
+[0.612556] (robot_description) JobEnded: {'identifier': 'robot_description', 'rc': 'SIGINT'}
+[0.647858] (ros2arduino_bridge) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.701087] (-) TimerEvent: {}
+[0.714493] (ros2arduino_bridge) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.723683] (ros2arduino_bridge) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.801228] (-) TimerEvent: {}
+[0.825594] (ros2arduino_bridge) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.834095] (ros2arduino_bridge) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.834394] (ros2arduino_bridge) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.834862] (ros2arduino_bridge) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.838324] (ros2arduino_bridge) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.901335] (-) TimerEvent: {}
+[0.919212] (robot_control) JobEnded: {'identifier': 'robot_control', 'rc': 'SIGINT'}
+[0.919922] (robot_sensors) JobEnded: {'identifier': 'robot_sensors', 'rc': 'SIGINT'}
+[0.925550] (ros2arduino_bridge) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.931905] (ros2arduino_bridge) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.932125] (ros2arduino_bridge) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.932553] (ros2arduino_bridge) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.941720] (arduino_bridge) JobEnded: {'identifier': 'arduino_bridge', 'rc': 'SIGINT'}
+[0.952418] (ros2arduino_bridge) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:10 (find_package):\n'}
+[0.952611] (ros2arduino_bridge) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[0.952690] (ros2arduino_bridge) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[0.952755] (ros2arduino_bridge) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[0.952813] (ros2arduino_bridge) StderrLine: {'line': b'\n'}
+[0.952868] (ros2arduino_bridge) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[0.952923] (ros2arduino_bridge) StderrLine: {'line': b'  any of the following names:\n'}
+[0.952978] (ros2arduino_bridge) StderrLine: {'line': b'\n'}
+[0.953031] (ros2arduino_bridge) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[0.953083] (ros2arduino_bridge) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[0.953134] (ros2arduino_bridge) StderrLine: {'line': b'\n'}
+[0.953244] (ros2arduino_bridge) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[0.953311] (ros2arduino_bridge) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[0.953367] (ros2arduino_bridge) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[0.953421] (ros2arduino_bridge) StderrLine: {'line': b'  has been installed.\n'}
+[0.953472] (ros2arduino_bridge) StderrLine: {'line': b'\n'}
+[0.953521] (ros2arduino_bridge) StderrLine: {'line': b'\x1b[0m\n'}
+[0.953568] (ros2arduino_bridge) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.953632] (ros2arduino_bridge) StdoutLine: {'line': b'See also "/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/CMakeOutput.log".\n'}
+[0.956091] (ros2arduino_bridge) JobEnded: {'identifier': 'ros2arduino_bridge', 'rc': 'SIGINT'}
+[0.966639] (robot_bringup) JobSkipped: {'identifier': 'robot_bringup'}
+[0.966724] (-) EventReactorShutdown: {}

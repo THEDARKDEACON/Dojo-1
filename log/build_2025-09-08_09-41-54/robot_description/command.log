@@ -1,0 +1,2 @@
+Invoking command in '/home/Dojo/Dojo/build/robot_description': /usr/bin/cmake /home/Dojo/Dojo/src/robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/robot_description
+Invoked command in '/home/Dojo/Dojo/build/robot_description' returned '1': /usr/bin/cmake /home/Dojo/Dojo/src/robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/robot_description

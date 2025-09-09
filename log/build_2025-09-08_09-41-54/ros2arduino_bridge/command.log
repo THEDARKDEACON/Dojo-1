@@ -1,0 +1,1 @@
+Invoking command in '/home/Dojo/Dojo/build/ros2arduino_bridge': /usr/bin/cmake /home/Dojo/Dojo/src/ros2arduino_bridge -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/ros2arduino_bridge

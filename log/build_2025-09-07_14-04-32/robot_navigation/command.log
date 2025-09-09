@@ -1,2 +1,0 @@
-Invoking command in '/home/Dojo/Dojo/build/robot_navigation': /usr/bin/cmake /home/Dojo/Dojo/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/robot_navigation
-Invoked command in '/home/Dojo/Dojo/build/robot_navigation' returned '1': /usr/bin/cmake /home/Dojo/Dojo/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/robot_navigation

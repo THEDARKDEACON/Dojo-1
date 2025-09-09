@@ -11,7 +11,7 @@ find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 
 # Install Python modules
-action(
+install(
   FILES
     launch/navigation.launch.py
     launch/localization.launch.py
@@ -41,14 +41,14 @@ install(DIRECTORY
 )
 
 # Install Python modules
-action(
+install(
   DIRECTORY
     config
   DESTINATION share/${PROJECT_NAME}
 )
 
 # Install launch files
-action(
+install(
   DIRECTORY
     launch
   DESTINATION share/${PROJECT_NAME}

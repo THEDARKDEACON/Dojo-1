@@ -11,7 +11,7 @@ find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 
 # Install Python modules
-action(
+install(
   FILES
     launch/display.launch.py
     launch/robot_state_publisher.launch.py

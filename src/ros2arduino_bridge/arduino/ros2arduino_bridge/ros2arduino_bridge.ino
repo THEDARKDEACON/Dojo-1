@@ -1,10 +1,18 @@
 #include <ros2arduino.h>
 
-// Define pins
-#define LEFT_MOTOR_PWM 5     // PWM pin for left motor speed control
-#define LEFT_MOTOR_DIR 6     // Direction pin for left motor
-#define RIGHT_MOTOR_PWM 9    // PWM pin for right motor speed control
-#define RIGHT_MOTOR_DIR 10   // Direction pin for right motor
+// ================================
+// Pin Definitions for L298N
+// ================================
+
+// Motor A (Left Motor)
+#define IN1 8     // L298N IN1
+#define IN2 9     // L298N IN2
+#define ENA 5     // L298N ENA (PWM) - Left motor speed control
+
+// Motor B (Right Motor)
+#define IN3 10    // L298N IN3
+#define IN4 11    // L298N IN4
+#define ENB 6     // L298N ENB (PWM) - Right motor speed control
 
 // Motor control parameters
 #define MAX_PWM 255          // Maximum PWM value (0-255)
@@ -49,11 +57,23 @@ void setup() {
   // Initialize Serial for debugging
   Serial.begin(115200);
   
-  // Initialize motor control pins
-  pinMode(LEFT_MOTOR_PWM, OUTPUT);
-  pinMode(LEFT_MOTOR_DIR, OUTPUT);
-  pinMode(RIGHT_MOTOR_PWM, OUTPUT);
-  pinMode(RIGHT_MOTOR_DIR, OUTPUT);
+  // Initialize motor control pins for L298N
+  // Left Motor
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  // Right Motor
+  pinMode(ENB, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+  
+  // Initialize all pins to LOW (motors off)
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+  analogWrite(ENA, 0);
+  analogWrite(ENB, 0);
   
   // Initialize ROS2
   setupROS2();
@@ -245,8 +265,13 @@ void controlMotors(float linear, float angular) {
   if (millis() - last_cmd_time > 500) {  // 500ms timeout
     left_motor_output = 0.0;
     right_motor_output = 0.0;
-    analogWrite(LEFT_MOTOR_PWM, 0);
-    analogWrite(RIGHT_MOTOR_PWM, 0);
+    // Stop both motors
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, LOW);
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, LOW);
+    analogWrite(ENA, 0);
+    analogWrite(ENB, 0);
     return;
   }
   
@@ -284,13 +309,41 @@ void controlMotors(float linear, float angular) {
     right_pwm = constrain(right_pwm, 0, MAX_PWM);
   }
   
-  // Set motor directions (LOW = forward, HIGH = reverse for most motor drivers)
-  digitalWrite(LEFT_MOTOR_DIR, left_motor_output >= 0 ? LOW : HIGH);
-  digitalWrite(RIGHT_MOTOR_DIR, right_motor_output >= 0 ? LOW : HIGH);
+  // Control left motor direction and speed
+  if (left_motor_output > 0) {
+    // Forward
+    digitalWrite(IN1, HIGH);
+    digitalWrite(IN2, LOW);
+    analogWrite(ENA, left_pwm);
+  } else if (left_motor_output < 0) {
+    // Reverse
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
+    analogWrite(ENA, left_pwm);
+  } else {
+    // Stop
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, LOW);
+    analogWrite(ENA, 0);
+  }
   
-  // Apply PWM to motors
-  analogWrite(LEFT_MOTOR_PWM, left_pwm);
-  analogWrite(RIGHT_MOTOR_PWM, right_pwm);
+  // Control right motor direction and speed
+  if (right_motor_output > 0) {
+    // Forward
+    digitalWrite(IN3, HIGH);
+    digitalWrite(IN4, LOW);
+    analogWrite(ENB, right_pwm);
+  } else if (right_motor_output < 0) {
+    // Reverse
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, HIGH);
+    analogWrite(ENB, right_pwm);
+  } else {
+    // Stop
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, LOW);
+    analogWrite(ENB, 0);
+  }
   
   // Debug output (uncomment for troubleshooting)
   /*

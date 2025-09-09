@@ -1,0 +1,98 @@
+[0.000000] (-) TimerEvent: {}
+[0.000416] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.000756] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.000905] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.001052] (-) JobUnselected: {'identifier': 'robot_navigation'}
+[0.001111] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.001159] (-) JobUnselected: {'identifier': 'robot_sensors'}
+[0.001184] (arduino_bridge) JobQueued: {'identifier': 'arduino_bridge', 'dependencies': OrderedDict()}
+[0.001266] (ros2arduino_bridge) JobQueued: {'identifier': 'ros2arduino_bridge', 'dependencies': OrderedDict()}
+[0.001305] (arduino_bridge) JobStarted: {'identifier': 'arduino_bridge'}
+[0.008796] (ros2arduino_bridge) JobStarted: {'identifier': 'ros2arduino_bridge'}
+[0.089996] (-) TimerEvent: {}
+[0.190262] (-) TimerEvent: {}
+[0.235623] (ros2arduino_bridge) JobProgress: {'identifier': 'ros2arduino_bridge', 'progress': 'cmake'}
+[0.236222] (ros2arduino_bridge) Command: {'cmd': ['/usr/bin/cmake', '/home/Dojo/Dojo/src/ros2arduino_bridge', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/ros2arduino_bridge'], 'cwd': '/home/Dojo/Dojo/build/ros2arduino_bridge', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/home/Dojo/Dojo'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/home/Dojo/Dojo/build/ros2arduino_bridge'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.251333] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.290355] (-) TimerEvent: {}
+[0.388626] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.390416] (-) TimerEvent: {}
+[0.447285] (ros2arduino_bridge) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.484510] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.490500] (-) TimerEvent: {}
+[0.529878] (arduino_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/Dojo/Dojo/build/arduino_bridge/build', '--no-deps', 'symlink_data'], 'cwd': '/home/Dojo/Dojo/build/arduino_bridge', 'env': {'HOSTNAME': 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/home/Dojo/Dojo', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'XDG_RUNTIME_DIR': '/tmp', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'PWD': '/home/Dojo/Dojo/build/arduino_bridge', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/Dojo/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/Dojo/Dojo/install/arduino_bridge/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1'}, 'shell': False}
+[0.533098] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.539281] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.548430] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.561217] (ros2arduino_bridge) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.579301] (ros2arduino_bridge) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.590599] (-) TimerEvent: {}
+[0.629550] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.632860] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.690695] (-) TimerEvent: {}
+[0.738519] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.763977] (arduino_bridge) StdoutLine: {'line': b'running develop\n'}
+[0.775170] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.790786] (-) TimerEvent: {}
+[0.835518] (ros2arduino_bridge) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.846339] (ros2arduino_bridge) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.890886] (-) TimerEvent: {}
+[0.903770] (arduino_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[0.903962] (arduino_bridge) StdoutLine: {'line': b'writing arduino_bridge.egg-info/PKG-INFO\n'}
+[0.904179] (arduino_bridge) StdoutLine: {'line': b'writing dependency_links to arduino_bridge.egg-info/dependency_links.txt\n'}
+[0.904367] (arduino_bridge) StdoutLine: {'line': b'writing entry points to arduino_bridge.egg-info/entry_points.txt\n'}
+[0.904505] (arduino_bridge) StdoutLine: {'line': b'writing requirements to arduino_bridge.egg-info/requires.txt\n'}
+[0.904612] (arduino_bridge) StdoutLine: {'line': b'writing top-level names to arduino_bridge.egg-info/top_level.txt\n'}
+[0.906380] (arduino_bridge) StdoutLine: {'line': b"reading manifest file 'arduino_bridge.egg-info/SOURCES.txt'\n"}
+[0.907070] (arduino_bridge) StdoutLine: {'line': b"writing manifest file 'arduino_bridge.egg-info/SOURCES.txt'\n"}
+[0.908303] (arduino_bridge) StdoutLine: {'line': b'running build_ext\n'}
+[0.908490] (arduino_bridge) StdoutLine: {'line': b'Creating /home/Dojo/Dojo/install/arduino_bridge/lib/python3.10/site-packages/arduino-bridge.egg-link (link to .)\n'}
+[0.909246] (arduino_bridge) StdoutLine: {'line': b'Installing arduino_bridge_node script to /home/Dojo/Dojo/install/arduino_bridge/lib/arduino_bridge\n'}
+[0.909439] (arduino_bridge) StdoutLine: {'line': b'Installing test_arduino_bridge script to /home/Dojo/Dojo/install/arduino_bridge/lib/arduino_bridge\n'}
+[0.909682] (arduino_bridge) StdoutLine: {'line': b'\n'}
+[0.909756] (arduino_bridge) StdoutLine: {'line': b'Installed /home/Dojo/Dojo/build/arduino_bridge\n'}
+[0.909841] (arduino_bridge) StdoutLine: {'line': b'running symlink_data\n'}
+[0.919967] (ros2arduino_bridge) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.920215] (ros2arduino_bridge) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[0.939764] (arduino_bridge) CommandEnded: {'returncode': 0}
+[0.950056] (arduino_bridge) JobEnded: {'identifier': 'arduino_bridge', 'rc': 0}
+[0.990996] (-) TimerEvent: {}
+[0.991179] (ros2arduino_bridge) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[0.992095] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.041576] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.053478] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[1.091089] (-) TimerEvent: {}
+[1.125675] (ros2arduino_bridge) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.130774] (ros2arduino_bridge) StdoutLine: {'line': b'-- Generating done\n'}
+[1.132892] (ros2arduino_bridge) StdoutLine: {'line': b'-- Build files have been written to: /home/Dojo/Dojo/build/ros2arduino_bridge\n'}
+[1.140050] (ros2arduino_bridge) CommandEnded: {'returncode': 0}
+[1.140512] (ros2arduino_bridge) JobProgress: {'identifier': 'ros2arduino_bridge', 'progress': 'build'}
+[1.141236] (ros2arduino_bridge) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/Dojo/Dojo/build/ros2arduino_bridge', '--', '-j16', '-l16'], 'cwd': '/home/Dojo/Dojo/build/ros2arduino_bridge', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/home/Dojo/Dojo'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/home/Dojo/Dojo/build/ros2arduino_bridge'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.182776] (ros2arduino_bridge) CommandEnded: {'returncode': 0}
+[1.183448] (ros2arduino_bridge) JobProgress: {'identifier': 'ros2arduino_bridge', 'progress': 'install'}
+[1.191169] (-) TimerEvent: {}
+[1.193096] (ros2arduino_bridge) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/Dojo/Dojo/build/ros2arduino_bridge'], 'cwd': '/home/Dojo/Dojo/build/ros2arduino_bridge', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/home/Dojo/Dojo'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/home/Dojo/Dojo/build/ros2arduino_bridge'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.199669] (ros2arduino_bridge) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.200032] (ros2arduino_bridge) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[1.200389] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/launch/arduino_bridge.launch.py\n'}
+[1.209281] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/launch/ros2arduino_bridge.launch.py\n'}
+[1.218473] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/config/ros2arduino_bridge_params.yaml\n'}
+[1.227862] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index/package_run_dependencies/ros2arduino_bridge\n'}
+[1.237183] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index/parent_prefix_path/ros2arduino_bridge\n'}
+[1.245629] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/environment/ament_prefix_path.sh\n'}
+[1.255658] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/environment/ament_prefix_path.dsv\n'}
+[1.264417] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/environment/path.sh\n'}
+[1.273894] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/environment/path.dsv\n'}
+[1.282362] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/local_setup.bash\n'}
+[1.291266] (-) TimerEvent: {}
+[1.291479] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/local_setup.sh\n'}
+[1.300656] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/local_setup.zsh\n'}
+[1.309391] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/local_setup.dsv\n'}
+[1.319179] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/package.dsv\n'}
+[1.328048] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index/packages/ros2arduino_bridge\n'}
+[1.337521] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/cmake/ros2arduino_bridgeConfig.cmake\n'}
+[1.345441] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/cmake/ros2arduino_bridgeConfig-version.cmake\n'}
+[1.354322] (ros2arduino_bridge) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/package.xml\n'}
+[1.364635] (ros2arduino_bridge) CommandEnded: {'returncode': 0}
+[1.375418] (ros2arduino_bridge) JobEnded: {'identifier': 'ros2arduino_bridge', 'rc': 0}
+[1.376096] (-) EventReactorShutdown: {}

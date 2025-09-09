@@ -1,0 +1,21 @@
+[0.008s] Invoking command in '/home/Dojo/Dojo/build/ros2arduino_bridge': /usr/bin/cmake /home/Dojo/Dojo/src/ros2arduino_bridge -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/ros2arduino_bridge
+[0.035s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[0.035s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[0.035s]   has asked CMake to find a package configuration file provided by
+[0.035s]   "ament_cmake", but CMake did not find one.
+[0.035s] 
+[0.035s]   Could not find a package configuration file provided by "ament_cmake" with
+[0.035s]   any of the following names:
+[0.036s] 
+[0.036s]     ament_cmakeConfig.cmake
+[0.036s]     ament_cmake-config.cmake
+[0.036s] 
+[0.036s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[0.036s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[0.036s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[0.036s]   has been installed.
+[0.036s] 
+[0.036s] [0m
+[0.036s] -- Configuring incomplete, errors occurred!
+[0.036s] See also "/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/CMakeOutput.log".
+[0.037s] Invoked command in '/home/Dojo/Dojo/build/ros2arduino_bridge' returned '1': /usr/bin/cmake /home/Dojo/Dojo/src/ros2arduino_bridge -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/ros2arduino_bridge

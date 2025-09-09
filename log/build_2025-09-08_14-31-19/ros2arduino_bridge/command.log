@@ -1,0 +1,4 @@
+Invoking command in '/home/Dojo/Dojo/build/ros2arduino_bridge': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/ros2arduino_bridge -- -j16 -l16
+Invoked command in '/home/Dojo/Dojo/build/ros2arduino_bridge' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/ros2arduino_bridge -- -j16 -l16
+Invoking command in '/home/Dojo/Dojo/build/ros2arduino_bridge': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/ros2arduino_bridge
+Invoked command in '/home/Dojo/Dojo/build/ros2arduino_bridge' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/ros2arduino_bridge
