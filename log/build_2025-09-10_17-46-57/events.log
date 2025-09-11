@@ -1,0 +1,131 @@
+[0.000000] (-) TimerEvent: {}
+[0.000328] (-) JobUnselected: {'identifier': 'arduino_bridge'}
+[0.000362] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.000382] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.000397] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.000410] (-) JobUnselected: {'identifier': 'robot_navigation'}
+[0.000423] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.000435] (-) JobUnselected: {'identifier': 'robot_sensors'}
+[0.000448] (-) JobUnselected: {'identifier': 'ros2arduino_bridge'}
+[0.000667] (-) JobUnselected: {'identifier': 'vision_system'}
+[0.000784] (robot_gazebo) JobQueued: {'identifier': 'robot_gazebo', 'dependencies': OrderedDict([('robot_description', '/home/Dojo/Dojo/install/robot_description')])}
+[0.000915] (robot_gazebo) JobStarted: {'identifier': 'robot_gazebo'}
+[0.010041] (robot_gazebo) JobProgress: {'identifier': 'robot_gazebo', 'progress': 'cmake'}
+[0.010936] (robot_gazebo) JobProgress: {'identifier': 'robot_gazebo', 'progress': 'build'}
+[0.011583] (robot_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/Dojo/Dojo/build/robot_gazebo', '--', '-j16', '-l16'], 'cwd': '/home/Dojo/Dojo/build/robot_gazebo', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/home/Dojo/Dojo/install/robot_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/home/Dojo/Dojo/build/robot_gazebo'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/Dojo/Dojo/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[0.043715] (robot_gazebo) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099770] (-) TimerEvent: {}
+[0.149593] (robot_gazebo) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.156784] (robot_gazebo) StdoutLine: {'line': b'-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.184683] (robot_gazebo) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.186863] (robot_gazebo) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.192073] (robot_gazebo) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.199837] (-) TimerEvent: {}
+[0.200468] (robot_gazebo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.211996] (robot_gazebo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.241234] (robot_gazebo) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.242403] (robot_gazebo) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.299963] (-) TimerEvent: {}
+[0.382337] (robot_gazebo) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.400087] (-) TimerEvent: {}
+[0.424756] (robot_gazebo) StdoutLine: {'line': b'-- Found gazebo_ros: 3.9.0 (/opt/ros/humble/share/gazebo_ros/cmake)\n'}
+[0.454439] (robot_gazebo) StdoutLine: {'line': b'-- Found DART: /usr/include (Required is at least version "6.6") found components: dart \n'}
+[0.479270] (robot_gazebo) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") \n'}
+[0.480976] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[0.485316] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-math6\n'}
+[0.486559] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE...\n'}
+[0.492383] (robot_gazebo) StdoutLine: {'line': b'-- Found Ogre Ghadamon (1.9.0)\n'}
+[0.492543] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so\n'}
+[0.500172] (-) TimerEvent: {}
+[0.500937] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Paging...\n'}
+[0.501085] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so\n'}
+[0.501167] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Terrain...\n'}
+[0.501235] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so\n'}
+[0.501320] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Property...\n'}
+[0.501396] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so\n'}
+[0.501475] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_RTShaderSystem...\n'}
+[0.501551] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so\n'}
+[0.501607] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Volume...\n'}
+[0.501703] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so\n'}
+[0.501762] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Overlay...\n'}
+[0.501818] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so\n'}
+[0.576564] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[0.576892] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-transport8 -- found version 8.2.1\n'}
+[0.577309] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-transport8\n'}
+[0.600319] (-) TimerEvent: {}
+[0.605461] (robot_gazebo) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") \n'}
+[0.626243] (robot_gazebo) StdoutLine: {'line': b'-- Config-file not installed for ZeroMQ -- checking for pkg-config\n'}
+[0.631325] (robot_gazebo) StdoutLine: {'line': b"-- Checking for module 'libzmq >= 4'\n"}
+[0.645945] (robot_gazebo) StdoutLine: {'line': b'--   Found libzmq , version 4.3.4\n'}
+[0.691890] (robot_gazebo) StdoutLine: {'line': b"-- Checking for module 'uuid'\n"}
+[0.700368] (-) TimerEvent: {}
+[0.706797] (robot_gazebo) StdoutLine: {'line': b'--   Found uuid, version 2.37.2\n'}
+[0.743671] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.8.1\n'}
+[0.744007] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-msgs5\n'}
+[0.772541] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[0.777746] (robot_gazebo) StdoutLine: {'line': b"-- Checking for module 'tinyxml2'\n"}
+[0.798574] (robot_gazebo) StdoutLine: {'line': b'--   Found tinyxml2, version 9.0.0\n'}
+[0.800462] (-) TimerEvent: {}
+[0.847602] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.8.1\n'}
+[0.847894] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-common3 -- found version 3.14.0\n'}
+[0.848312] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common3\n'}
+[0.848441] (robot_gazebo) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[0.848522] (robot_gazebo) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[0.861187] (robot_gazebo) StdoutLine: {'line': b'-- Searching for <ignition-common3> component [graphics]\n'}
+[0.861509] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-common3-graphics -- found version 3.14.0\n'}
+[0.861999] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common3-graphics\n'}
+[0.862334] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[0.863281] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-fuel_tools4 -- found version 4.4.0\n'}
+[0.863709] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-fuel_tools4\n'}
+[0.900557] (-) TimerEvent: {}
+[0.915269] (robot_gazebo) StdoutLine: {'line': b"-- Checking for module 'jsoncpp'\n"}
+[0.929967] (robot_gazebo) StdoutLine: {'line': b'--   Found jsoncpp, version 1.9.5\n'}
+[0.972524] (robot_gazebo) StdoutLine: {'line': b"-- Checking for module 'libzip'\n"}
+[0.986826] (robot_gazebo) StdoutLine: {'line': b'--   Found libzip, version 1.7.3\n'}
+[1.000669] (-) TimerEvent: {}
+[1.024882] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-common3 -- found version 3.14.0\n'}
+[1.025161] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.025505] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.8.1\n'}
+[1.026736] (robot_gazebo) StdoutLine: {'line': b'-- Gazebo version: 11.10\n'}
+[1.027658] (robot_gazebo) StdoutLine: {'line': b'-- Found ros2_control: 2.51.0 (/opt/ros/humble/share/ros2_control/cmake)\n'}
+[1.027838] (robot_gazebo) StdoutLine: {'line': b'-- Found controller_manager: 2.51.0 (/opt/ros/humble/share/controller_manager/cmake)\n'}
+[1.100757] (-) TimerEvent: {}
+[1.188902] (robot_gazebo) StdoutLine: {'line': b'-- Found robot_state_publisher: 3.0.3 (/opt/ros/humble/share/robot_state_publisher/cmake)\n'}
+[1.192737] (robot_gazebo) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[1.194350] (robot_gazebo) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.200834] (-) TimerEvent: {}
+[1.301092] (-) TimerEvent: {}
+[1.307966] (robot_gazebo) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.316398] (robot_gazebo) StdoutLine: {'line': b'-- Generating done\n'}
+[1.319575] (robot_gazebo) StdoutLine: {'line': b'-- Build files have been written to: /home/Dojo/Dojo/build/robot_gazebo\n'}
+[1.349476] (robot_gazebo) CommandEnded: {'returncode': 0}
+[1.350193] (robot_gazebo) JobProgress: {'identifier': 'robot_gazebo', 'progress': 'install'}
+[1.359007] (robot_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/Dojo/Dojo/build/robot_gazebo'], 'cwd': '/home/Dojo/Dojo/build/robot_gazebo', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/home/Dojo/Dojo/install/robot_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/home/Dojo/Dojo/build/robot_gazebo'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/Dojo/Dojo/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[1.366400] (robot_gazebo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.366879] (robot_gazebo) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[1.367238] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/launch/gazebo.launch.py\n'}
+[1.367361] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/launch/robot_simulation.launch.py\n'}
+[1.367490] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/launch/simulation.launch.py\n'}
+[1.367751] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/config/diff_drive_controller.yaml\n'}
+[1.367992] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/robot_simulation.rviz\n'}
+[1.368230] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/empty.world\n'}
+[1.368440] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/ament_index/resource_index/package_run_dependencies/robot_gazebo\n'}
+[1.368592] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/ament_index/resource_index/parent_prefix_path/robot_gazebo\n'}
+[1.368769] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.sh\n'}
+[1.368905] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.dsv\n'}
+[1.369050] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/environment/path.sh\n'}
+[1.369179] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/environment/path.dsv\n'}
+[1.369318] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.bash\n'}
+[1.369635] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.sh\n'}
+[1.369763] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.zsh\n'}
+[1.369892] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.dsv\n'}
+[1.369979] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.dsv\n'}
+[1.379057] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/ament_index/resource_index/packages/robot_gazebo\n'}
+[1.379214] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig.cmake\n'}
+[1.379361] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig-version.cmake\n'}
+[1.379522] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.xml\n'}
+[1.379612] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/Dojo/Dojo/install/robot_gazebo/lib/robot_gazebo\n'}
+[1.379702] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/Dojo/Dojo/install/robot_gazebo/lib/robot_gazebo/spawn_robot.py\n'}
+[1.381591] (robot_gazebo) CommandEnded: {'returncode': 0}
+[1.396529] (robot_gazebo) JobEnded: {'identifier': 'robot_gazebo', 'rc': 0}
+[1.397339] (-) EventReactorShutdown: {}

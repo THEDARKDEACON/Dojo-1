@@ -1,0 +1,55 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+    use_sim_time: true
+
+    # Controller parameters
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+      left_wheel_names: ["left_wheel_joint"]
+      right_wheel_names: ["right_wheel_joint"]
+      wheel_separation: 0.3  # meters
+      wheel_radius: 0.05  # meters
+      wheel_separation_multiplier: 1.0
+      left_wheel_radius_multiplier: 1.0
+      right_wheel_radius_multiplier: 1.0
+      odom_frame_id: odom
+      base_frame_id: base_footprint
+      pose0: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      twist_stamped: false
+      enable_odom_tf: true
+      open_loop: false
+      cmd_vel_timeout: 0.25
+      publish_rate: 50.0
+      velocity_rolling_window_size: 10
+      use_stamped_vel: false
+      
+      # Velocity and acceleration limits
+      linear.x.max_velocity: 0.5  # m/s
+      linear.x.min_velocity: -0.5  # m/s
+      linear.x.max_acceleration: 0.5  # m/s^2
+      angular.z.max_velocity: 1.0  # rad/s
+      angular.z.min_velocity: -1.0  # rad/s
+      angular.z.max_acceleration: 1.0  # rad/s^2
+
+      # PID controller parameters
+      left_wheel_controller:
+        type: control_msgs/msg/PIDState
+        p: 0.5
+        i: 0.1
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        antiwindup: true
+
+      right_wheel_controller:
+        type: control_msgs/msg/PIDState
+        p: 0.5
+        i: 0.1
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        antiwindup: true

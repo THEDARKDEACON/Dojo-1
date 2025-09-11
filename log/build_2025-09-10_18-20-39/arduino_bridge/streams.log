@@ -1,0 +1,18 @@
+[1.720s] Invoking command in '/home/Dojo/Dojo/build/arduino_bridge': PYTHONPATH=/home/Dojo/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/Dojo/Dojo/install/arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/Dojo/Dojo/build/arduino_bridge/build --no-deps symlink_data
+[2.016s] running develop
+[2.200s] running egg_info
+[2.200s] writing arduino_bridge.egg-info/PKG-INFO
+[2.201s] writing dependency_links to arduino_bridge.egg-info/dependency_links.txt
+[2.201s] writing entry points to arduino_bridge.egg-info/entry_points.txt
+[2.201s] writing requirements to arduino_bridge.egg-info/requires.txt
+[2.201s] writing top-level names to arduino_bridge.egg-info/top_level.txt
+[2.203s] reading manifest file 'arduino_bridge.egg-info/SOURCES.txt'
+[2.204s] writing manifest file 'arduino_bridge.egg-info/SOURCES.txt'
+[2.206s] running build_ext
+[2.206s] Creating /home/Dojo/Dojo/install/arduino_bridge/lib/python3.10/site-packages/arduino-bridge.egg-link (link to .)
+[2.207s] Installing arduino_bridge_node script to /home/Dojo/Dojo/install/arduino_bridge/lib/arduino_bridge
+[2.207s] Installing test_arduino_bridge script to /home/Dojo/Dojo/install/arduino_bridge/lib/arduino_bridge
+[2.207s] 
+[2.207s] Installed /home/Dojo/Dojo/build/arduino_bridge
+[2.207s] running symlink_data
+[2.257s] Invoked command in '/home/Dojo/Dojo/build/arduino_bridge' returned '0': PYTHONPATH=/home/Dojo/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/Dojo/Dojo/install/arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/Dojo/Dojo/build/arduino_bridge/build --no-deps symlink_data

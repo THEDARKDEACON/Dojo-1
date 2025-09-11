@@ -1,8 +1,0 @@
-/home/Dojo/Dojo/install/Robot_description/share/Robot_description/launch/display.launch.py
-/home/Dojo/Dojo/install/Robot_description/share/Robot_description/launch/rviz.launch.py
-/home/Dojo/Dojo/install/Robot_description/share/Robot_description/launch/state_publisher.launch.py
-/home/Dojo/Dojo/install/Robot_description/share/Robot_description/urdf/Robot.gazebo
-/home/Dojo/Dojo/install/Robot_description/share/Robot_description/urdf/Robot.trans
-/home/Dojo/Dojo/install/Robot_description/share/Robot_description/urdf/Robot_macro.urdf.xacro
-/home/Dojo/Dojo/install/Robot_description/share/Robot_description/urdf/materials.xacro
-/home/Dojo/Dojo/install/Robot_description/share/Robot_description/config/display.rviz

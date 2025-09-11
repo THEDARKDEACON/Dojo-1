@@ -1,53 +1,155 @@
 # ROS 2 Arduino Bridge
 
-This package provides a bridge between ROS 2 and Arduino using the ros2arduino library. It enables bidirectional communication between a ROS 2 network and an Arduino board, allowing for sensor data collection and motor control.
+This package provides a bridge between ROS 2 and Arduino for motor control and sensor reading. It enables bidirectional communication between a ROS 2 network and an Arduino board, allowing for precise motor control and sensor data collection.
 
 ## Features
 
-- Bidirectional communication between ROS 2 and Arduino
-- Support for multiple sensor types (IMU, encoders, ultrasonic, etc.)
-- Motor control interface
-- Configurable parameters for different hardware setups
-- Launch file for easy startup
+- **Bidirectional Communication**: JSON-based protocol over serial
+- **Motor Control**: PID-based speed control for DC motors
+- **Encoder Feedback**: Tracks wheel position and velocity
+- **Modular Design**: Easy to extend with additional sensors
+- **Testing Framework**: Comprehensive test suite for validation
+- **Simulation Support**: Works with Gazebo simulation
 
 ## Hardware Requirements
 
-- Arduino board (Uno, Mega, or similar)
-- Motor driver board (compatible with Arduino)
-- Sensors (IMU, encoders, ultrasonic, etc.)
-- USB connection to ROS 2 machine
+- **Arduino Board**: Mega 2560 recommended
+- **Motor Driver**: L298N or similar
+- **Encoders**: Quadrature encoders for wheel feedback
+- **USB Connection**: For serial communication
 
 ## Installation
 
-### Arduino Setup
+### 1. Arduino Setup
 
-1. Install the ros2arduino library in your Arduino IDE:
-   - Download the latest release from [ros2arduino GitHub](https://github.com/ROBOTIS-GIT/ros2arduino)
-   - Install the library in your Arduino IDE (Sketch > Include Library > Add .ZIP Library)
+1. Install required libraries:
+   - [ArduinoJson](https://arduinojson.org/)
+   - [PID_v1](https://playground.arduino.cc/Code/PIDLibrary/)
 
 2. Upload the Arduino sketch:
-   - Open `arduino/ros2arduino_bridge/ros2arduino_bridge.ino` in Arduino IDE
-   - Select your board and port
-   - Upload the sketch
-
-### ROS 2 Setup
-
-1. Clone this package to your ROS 2 workspace:
    ```bash
-   cd ~/ros2_ws/src
-   git clone <repository-url> ros2arduino_bridge
+   # Navigate to the Arduino sketch directory
+   cd /path/to/Dojo/src/ros2arduino_bridge/arduino/ros2arduino_bridge/
+   # Upload using arduino-cli or Arduino IDE
+   arduino-cli compile --fqbn arduino:avr:mega ros2arduino_bridge.ino
+   arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:mega ros2arduino_bridge.ino
    ```
 
-2. Install dependencies:
+### 2. ROS 2 Setup
+
+1. Clone and build the package:
    ```bash
+   # Navigate to your ROS 2 workspace
+   cd ~/ros2_ws/src
+   
+   # Clone the repository
+   git clone <repository-url>
+   
+   # Install dependencies
    sudo apt update
    sudo apt install python3-pip
-   pip3 install pyserial
+   pip3 install pyserial numpy
+   
+   # Build the package
+   cd ~/ros2_ws
+   colcon build --packages-select ros2arduino_bridge
+   source install/setup.bash
    ```
 
-3. Build the package:
+## Usage
+
+### Starting the Bridge
+
+```bash
+# Basic usage
+ros2 launch ros2arduino_bridge arduino_bridge.launch.py
+
+# With custom port and baud rate
+ros2 launch ros2arduino_bridge arduino_bridge.launch.py port:=/dev/ttyACM0 baud_rate:=115200
+```
+
+### Testing the Bridge
+
+Run the test suite:
+
+```bash
+# Run all tests
+./test_arduino_bridge.sh
+
+# With custom parameters
+./test_arduino_bridge.sh -p /dev/ttyACM0 -b 115200 -d 20
+```
+
+### Manual Testing
+
+1. Check node status:
    ```bash
-   cd ~/ros2_ws
+   ros2 node list
+   ros2 topic list
+   ```
+
+2. Send test commands:
+   ```bash
+   # Send a command to move forward
+   ros2 topic pub /cmd_vel geometry_msgs/msg/Twist "linear:
+     x: 0.2
+     y: 0.0
+     z: 0.0
+   angular:
+     x: 0.0
+     y: 0.0
+     z: 0.0"
+   ```
+
+3. View encoder data:
+   ```bash
+   ros2 topic echo /wheel/encoders
+   ```
+
+## Testing Framework
+
+The package includes a comprehensive testing framework:
+
+1. **Unit Tests**: Test individual components
+2. **Integration Tests**: Test the full system
+3. **Hardware Tests**: Validate hardware communication
+
+Run tests with:
+```bash
+colcon test --packages-select ros2arduino_bridge
+```
+
+## Simulation
+
+To use with Gazebo simulation:
+
+```bash
+ros2 launch ros2arduino_bridge arduino_bridge.launch.py use_sim_time:=true
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Permission Denied** on serial port:
+   ```bash
+   sudo usermod -a -G dialout $USER
+   # Log out and log back in
+   ```
+
+2. **Node not found**:
+   ```bash
+   source ~/ros2_ws/install/setup.bash
+   ```
+
+3. **Serial Communication Errors**:
+   - Check baud rate matches on both ends
+   - Verify cable connection
+   - Check for other processes using the port
+
+## License
+
+Apache 2.0
    colcon build --packages-select ros2arduino_bridge
    source install/setup.bash
    ```

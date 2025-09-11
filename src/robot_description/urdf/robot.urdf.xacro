@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <robot name="robot_car" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Include Gazebo Xacro macros -->
+  <xacro:include filename="$(find gazebo_ros)/launch/empty_world.launch" />
+  <xacro:include filename="$(find gazebo_ros)/launch/helpers/empty_world.launch.py" />
+  
   <!-- Constants -->
   <xacro:property name="PI" value="3.1415926535897931" />
   
@@ -102,6 +106,12 @@
           <sphere radius="${caster_radius}"/>
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.01"/>
+        <inertia ixx="0.00001" ixy="0" ixz="0"
+                 iyy="0.00001" iyz="0"
+                 izz="0.00001"/>
+      </inertial>
     </link>
     
     <joint name="${prefix}_caster_joint" type="fixed">
@@ -111,64 +121,53 @@
     </joint>
   </xacro:macro>
   
-  <!-- Camera -->
-  <link name="camera_link">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.05 0.05 0.05"/>
-      </geometry>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.05 0.05 0.05"/>
-      </geometry>
-    </collision>
-  </link>
+  <!-- Create wheels and casters -->
+  <xacro:wheel prefix="left" x="0" y="${wheel_separation/2}" z="0"/>
+  <xacro:wheel prefix="right" x="0" y="-${wheel_separation/2}" z="0"/>
+  <xacro:caster prefix="front" x="${base_length/4}" y="0" z="-${base_height/2}"/>
+  <xacro:caster prefix="back" x="-${base_length/4}" y="0" z="-${base_height/2}"/>
   
-  <joint name="camera_joint" type="fixed">
-    <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="camera_link"/>
-    <axis xyz="0 0 0"/>
-  </joint>
-  
-  <!-- Laser (LIDAR) -->
-  <link name="laser">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="0.03" length="0.05"/>
-      </geometry>
-      <material name="red">
-        <color rgba="1.0 0.0 0.0 1.0"/>
-      </material>
-    </visual>
-  </link>
-  
-  <joint name="laser_joint" type="fixed">
-    <origin xyz="0 0 0.1" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="laser"/>
-  </joint>
-  
-  <!-- Call macros to create wheels and casters -->
-  <xacro:wheel prefix="left" x="0" y="${wheel_separation/2}" z="${wheel_radius}"/>
-  <xacro:wheel prefix="right" x="0" y="-${wheel_separation/2}" z="${wheel_radius}"/>
-  <xacro:caster prefix="front" x="${base_length/2 - 0.05}" y="0" z="${caster_radius}"/>
-  <xacro:caster prefix="back" x="-${base_length/2 + 0.05}" y="0" z="${caster_radius}"/>
-  
-  <!-- Base footprint to base link transform -->
+  <!-- Base link joint -->
   <joint name="base_footprint_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
     <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0"/>
   </joint>
   
-  <!-- Transmissions for gazebo -->
-  <xacro:if value="${'gazebo' in globals() and gazebo}">
+  <!-- ROS 2 Control -->
+  <xacro:if value="$(arg use_ros2_control)">
+    <xacro:include filename="$(find ros2_control_demo_robot)/urdf/diffbot_system.ros2_control.xacro" />
+    <xacro:diffbot_system_robot name="diffbot" prefix="" use_sim="true">
+      <xacro:property name="diff_drive_controller_name" value="diffbot_base_controller" />
+      <xacro:property name="diff_drive_controller_type" value="diff_drive_controller/DiffDriveController" />
+      <xacro:property name="left_wheel_name" value="left_wheel_joint" />
+      <xacro:property name="right_wheel_name" value="right_wheel_joint" />
+      <xacro:property name="wheel_separation" value="${wheel_separation}" />
+      <xacro:property name="wheel_radius" value="${wheel_radius}" />
+    </xacro:diffbot_system_robot>
+  </xacro:if>
+  
+  <!-- Gazebo plugins -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+  
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <!-- Transmissions for ROS Control -->
+  <xacro:if value="$(arg use_ros2_control)">
     <transmission name="left_wheel_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="left_wheel_joint">
@@ -191,89 +190,4 @@
       </actuator>
     </transmission>
   </xacro:if>
-  
-  <!-- Gazebo plugins -->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/</robotNamespace>
-    </plugin>
-  </gazebo>
-  
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  
-  <gazebo reference="left_wheel">
-    <material>Gazebo/Black</material>
-  </gazebo>
-  
-  <gazebo reference="right_wheel">
-    <material>Gazebo/Black</material>
-  </gazebo>
-  
-  <!-- Camera plugin -->
-  <gazebo reference="camera_link">
-    <sensor type="camera" name="camera1">
-      <update_rate>30.0</update_rate>
-      <camera name="front">
-        <horizontal_fov>1.047198</horizontal_fov>
-        <image>
-          <width>640</width>
-          <height>480</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.05</near>
-          <far>100</far>
-        </clip>
-      </camera>
-      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-        <alwaysOn>true</alwaysOn>
-        <updateRate>0.0</updateRate>
-        <cameraName>camera</cameraName>
-        <imageTopicName>image_raw</imageTopicName>
-        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>camera_link</frameName>
-        <hackBaseline>0.07</hackBaseline>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
-        <distortionK3>0.0</distortionK3>
-        <distortionT1>0.0</distortionT1>
-        <distortionT2>0.0</distortionT2>
-      </plugin>
-    </sensor>
-  </gazebo>
-  
-  <!-- LIDAR plugin -->
-  <gazebo reference="laser">
-    <sensor type="ray" name="rplidar">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>5.5</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>360</samples>
-            <resolution>1</resolution>
-            <min_angle>0</min_angle>
-            <max_angle>6.28319</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.12</min>
-          <max>6.0</max>
-          <resolution>0.01</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin name="gazebo_ros_rplidar_controller" filename="libgazebo_ros_ray_sensor.so">
-        <topicName>scan</topicName>
-        <frameName>laser</frameName>
-      </plugin>
-    </sensor>
-  </gazebo>
 </robot>

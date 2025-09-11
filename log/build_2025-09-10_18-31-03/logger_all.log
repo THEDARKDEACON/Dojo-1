@@ -1,0 +1,293 @@
+[0.123s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build', '--symlink-install', '--packages-select', 'robot_description', 'robot_gazebo'][0m
+[0.123s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['robot_description', 'robot_gazebo'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7885a537ada0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7885a5320280>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7885a5320280>>, mixin_verb=('build',))[0m
+[0.287s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[0.287s] [34mcolcon.colcon_metadata.package_discovery.colcon_meta[0m [1;30mINFO[0m Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.288s] [34mcolcon.colcon_metadata.package_discovery.colcon_meta[0m [1;30mINFO[0m Using configuration from '/root/.colcon/metadata/default/fastdds.meta'
+[0.288s] [34mcolcon.colcon_metadata.package_discovery.colcon_meta[0m [1;30mINFO[0m Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.288s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[0.288s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[0.288s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[0.288s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[0.288s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[0.289s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/home/Dojo/Dojo'
+[0.289s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.289s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[0.289s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[0.289s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[0.289s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[0.289s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[0.289s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[0.289s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[0.289s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[0.299s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[0.299s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[0.299s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[0.299s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[0.299s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[0.299s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.299s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[0.299s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[0.299s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore'
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore_ament_install'
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_pkg']
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_pkg'
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_meta']
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_meta'
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ros']
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ros'
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['cmake', 'python']
+[0.300s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'cmake'
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python'
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['python_setup_py']
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python_setup_py'
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/arduino_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/arduino_bridge) by extension 'ignore'
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/arduino_bridge) by extension 'ignore_ament_install'
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/arduino_bridge) by extensions ['colcon_pkg']
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/arduino_bridge) by extension 'colcon_pkg'
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/arduino_bridge) by extensions ['colcon_meta']
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/arduino_bridge) by extension 'colcon_meta'
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/arduino_bridge) by extensions ['ros']
+[0.301s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/arduino_bridge) by extension 'ros'
+[0.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/arduino_bridge' with type 'ros.ament_python' and name 'arduino_bridge'[0m
+[0.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_bringup) by extension 'ignore'
+[0.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_bringup) by extension 'ignore_ament_install'
+[0.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_bringup) by extensions ['colcon_pkg']
+[0.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_bringup) by extension 'colcon_pkg'
+[0.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_bringup) by extensions ['colcon_meta']
+[0.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_bringup) by extension 'colcon_meta'
+[0.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_bringup) by extensions ['ros']
+[0.304s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_bringup) by extension 'ros'
+[0.305s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_bringup' with type 'ros.ament_cmake' and name 'robot_bringup'[0m
+[0.305s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_control) by extensions ['ignore', 'ignore_ament_install']
+[0.305s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_control) by extension 'ignore'
+[0.305s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_control) by extension 'ignore_ament_install'
+[0.305s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_control) by extensions ['colcon_pkg']
+[0.305s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_control) by extension 'colcon_pkg'
+[0.305s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_control) by extensions ['colcon_meta']
+[0.305s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_control) by extension 'colcon_meta'
+[0.305s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_control) by extensions ['ros']
+[0.305s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_control) by extension 'ros'
+[0.306s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_control' with type 'ros.ament_python' and name 'robot_control'[0m
+[0.306s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_description) by extensions ['ignore', 'ignore_ament_install']
+[0.306s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_description) by extension 'ignore'
+[0.306s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_description) by extension 'ignore_ament_install'
+[0.306s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_description) by extensions ['colcon_pkg']
+[0.306s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_description) by extension 'colcon_pkg'
+[0.306s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_description) by extensions ['colcon_meta']
+[0.306s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_description) by extension 'colcon_meta'
+[0.306s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_description) by extensions ['ros']
+[0.306s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_description) by extension 'ros'
+[0.307s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_description' with type 'ros.ament_cmake' and name 'robot_description'[0m
+[0.307s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.307s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_gazebo) by extension 'ignore'
+[0.307s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_gazebo) by extension 'ignore_ament_install'
+[0.307s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_gazebo) by extensions ['colcon_pkg']
+[0.307s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_gazebo) by extension 'colcon_pkg'
+[0.307s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_gazebo) by extensions ['colcon_meta']
+[0.307s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_gazebo) by extension 'colcon_meta'
+[0.307s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_gazebo) by extensions ['ros']
+[0.307s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_gazebo) by extension 'ros'
+[0.308s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_gazebo' with type 'ros.ament_cmake' and name 'robot_gazebo'[0m
+[0.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_navigation) by extensions ['ignore', 'ignore_ament_install']
+[0.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_navigation) by extension 'ignore'
+[0.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_navigation) by extension 'ignore_ament_install'
+[0.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_navigation) by extensions ['colcon_pkg']
+[0.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_navigation) by extension 'colcon_pkg'
+[0.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_navigation) by extensions ['colcon_meta']
+[0.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_navigation) by extension 'colcon_meta'
+[0.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_navigation) by extensions ['ros']
+[0.309s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_navigation) by extension 'ros'
+[0.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_navigation' with type 'ros.ament_cmake' and name 'robot_navigation'[0m
+[0.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_perception) by extensions ['ignore', 'ignore_ament_install']
+[0.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_perception) by extension 'ignore'
+[0.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_perception) by extension 'ignore_ament_install'
+[0.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_perception) by extensions ['colcon_pkg']
+[0.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_perception) by extension 'colcon_pkg'
+[0.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_perception) by extensions ['colcon_meta']
+[0.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_perception) by extension 'colcon_meta'
+[0.310s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_perception) by extensions ['ros']
+[0.311s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_perception) by extension 'ros'
+[0.311s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_perception' with type 'ros.ament_cmake' and name 'robot_perception'[0m
+[0.311s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_sensors) by extensions ['ignore', 'ignore_ament_install']
+[0.311s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_sensors) by extension 'ignore'
+[0.312s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_sensors) by extension 'ignore_ament_install'
+[0.312s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_sensors) by extensions ['colcon_pkg']
+[0.312s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_sensors) by extension 'colcon_pkg'
+[0.312s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_sensors) by extensions ['colcon_meta']
+[0.312s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_sensors) by extension 'colcon_meta'
+[0.312s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_sensors) by extensions ['ros']
+[0.312s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robot_sensors) by extension 'ros'
+[0.312s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robot_sensors' with type 'ros.ament_python' and name 'robot_sensors'[0m
+[0.312s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2arduino_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.313s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2arduino_bridge) by extension 'ignore'
+[0.313s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2arduino_bridge) by extension 'ignore_ament_install'
+[0.313s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2arduino_bridge) by extensions ['colcon_pkg']
+[0.313s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2arduino_bridge) by extension 'colcon_pkg'
+[0.313s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2arduino_bridge) by extensions ['colcon_meta']
+[0.313s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2arduino_bridge) by extension 'colcon_meta'
+[0.313s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2arduino_bridge) by extensions ['ros']
+[0.313s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/ros2arduino_bridge) by extension 'ros'
+[0.313s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/ros2arduino_bridge' with type 'ros.ament_python' and name 'ros2arduino_bridge'[0m
+[0.314s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_system) by extensions ['ignore', 'ignore_ament_install']
+[0.314s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_system) by extension 'ignore'
+[0.314s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_system) by extension 'ignore_ament_install'
+[0.314s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_system) by extensions ['colcon_pkg']
+[0.314s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_system) by extension 'colcon_pkg'
+[0.314s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_system) by extensions ['colcon_meta']
+[0.314s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_system) by extension 'colcon_meta'
+[0.314s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_system) by extensions ['ros']
+[0.314s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision_system) by extension 'ros'
+[0.315s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/vision_system' with type 'ros.ament_python' and name 'vision_system'[0m
+[0.315s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[0.315s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[0.315s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[0.315s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[0.315s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[0.340s] [34mcolcon.colcon_core.package_selection[0m [1;30mINFO[0m Skipping not selected package 'arduino_bridge' in 'src/arduino_bridge'
+[0.340s] [34mcolcon.colcon_core.package_selection[0m [1;30mINFO[0m Skipping not selected package 'robot_control' in 'src/robot_control'
+[0.340s] [34mcolcon.colcon_core.package_selection[0m [1;30mINFO[0m Skipping not selected package 'robot_navigation' in 'src/robot_navigation'
+[0.341s] [34mcolcon.colcon_core.package_selection[0m [1;30mINFO[0m Skipping not selected package 'robot_perception' in 'src/robot_perception'
+[0.341s] [34mcolcon.colcon_core.package_selection[0m [1;30mINFO[0m Skipping not selected package 'robot_sensors' in 'src/robot_sensors'
+[0.341s] [34mcolcon.colcon_core.package_selection[0m [1;30mINFO[0m Skipping not selected package 'ros2arduino_bridge' in 'src/ros2arduino_bridge'
+[0.341s] [34mcolcon.colcon_core.package_selection[0m [1;30mINFO[0m Skipping not selected package 'vision_system' in 'src/vision_system'
+[0.341s] [34mcolcon.colcon_core.package_selection[0m [1;30mINFO[0m Skipping not selected package 'robot_bringup' in 'src/robot_bringup'
+[0.341s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_description' build argument 'cmake_args' from command line to 'None'
+[0.341s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_description' build argument 'cmake_target' from command line to 'None'
+[0.341s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.341s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.341s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.341s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.341s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.341s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.341s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.341s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'robot_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/Dojo/Dojo/build/robot_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/Dojo/Dojo/install/robot_description', 'merge_install': False, 'path': '/home/Dojo/Dojo/src/robot_description', 'symlink_install': True, 'test_result_base': None}[0m
+[0.342s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.342s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.342s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.342s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.342s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.342s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.342s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.342s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.342s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'robot_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.342s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'robot_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/Dojo/Dojo/build/robot_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/Dojo/Dojo/install/robot_gazebo', 'merge_install': False, 'path': '/home/Dojo/Dojo/src/robot_gazebo', 'symlink_install': True, 'test_result_base': None}[0m
+[0.342s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[0.343s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[0.343s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/Dojo/Dojo/src/robot_description' with build type 'ament_cmake'
+[0.344s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/Dojo/Dojo/src/robot_description'
+[0.346s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.346s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.346s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.355s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/Dojo/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_description -- -j16 -l16[0m
+[0.685s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/Dojo/Dojo/build/robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_description -- -j16 -l16[0m
+[0.695s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/Dojo/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_description[0m
+[0.756s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_description)
+[0.757s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/Dojo/Dojo/build/robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_description[0m
+[0.759s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description' for CMake module files
+[0.759s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description' for CMake config files
+[0.760s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_description', 'cmake_prefix_path')
+[0.760s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/Dojo/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.ps1'
+[0.761s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/Dojo/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.dsv'
+[0.761s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/Dojo/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.sh'
+[0.762s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description/lib'
+[0.762s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description/bin'
+[0.762s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description/lib/pkgconfig/robot_description.pc'
+[0.763s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description/lib/python3.10/site-packages'
+[0.763s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description/bin'
+[0.763s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_description/share/robot_description/package.ps1'
+[0.764s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/Dojo/Dojo/install/robot_description/share/robot_description/package.dsv'
+[0.764s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_description/share/robot_description/package.sh'
+[0.765s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_description/share/robot_description/package.bash'
+[0.766s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_description/share/robot_description/package.zsh'
+[0.766s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/Dojo/Dojo/install/robot_description/share/colcon-core/packages/robot_description)
+[0.767s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_description)
+[0.767s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description' for CMake module files
+[0.767s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description' for CMake config files
+[0.768s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_description', 'cmake_prefix_path')
+[0.768s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/Dojo/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.ps1'
+[0.768s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/Dojo/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.dsv'
+[0.769s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/Dojo/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.sh'
+[0.769s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description/lib'
+[0.769s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description/bin'
+[0.769s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description/lib/pkgconfig/robot_description.pc'
+[0.769s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description/lib/python3.10/site-packages'
+[0.770s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_description/bin'
+[0.770s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_description/share/robot_description/package.ps1'
+[0.770s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/Dojo/Dojo/install/robot_description/share/robot_description/package.dsv'
+[0.771s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_description/share/robot_description/package.sh'
+[0.771s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_description/share/robot_description/package.bash'
+[0.771s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_description/share/robot_description/package.zsh'
+[0.772s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/Dojo/Dojo/install/robot_description/share/colcon-core/packages/robot_description)
+[0.772s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/Dojo/Dojo/src/robot_gazebo' with build type 'ament_cmake'
+[0.772s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/Dojo/Dojo/src/robot_gazebo'
+[0.772s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.772s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.782s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/Dojo/Dojo/build/robot_gazebo': AMENT_PREFIX_PATH=/home/Dojo/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/Dojo/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_gazebo -- -j16 -l16[0m
+[0.830s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/Dojo/Dojo/build/robot_gazebo' returned '0': AMENT_PREFIX_PATH=/home/Dojo/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/Dojo/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_gazebo -- -j16 -l16[0m
+[0.831s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/Dojo/Dojo/build/robot_gazebo': AMENT_PREFIX_PATH=/home/Dojo/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/Dojo/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_gazebo[0m
+[0.853s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_gazebo)
+[0.854s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo' for CMake module files
+[0.854s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/Dojo/Dojo/build/robot_gazebo' returned '0': AMENT_PREFIX_PATH=/home/Dojo/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/Dojo/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_gazebo[0m
+[0.854s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo' for CMake config files
+[0.855s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_gazebo', 'cmake_prefix_path')
+[0.855s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.ps1'
+[0.855s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.dsv'
+[0.856s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.sh'
+[0.856s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo/lib'
+[0.856s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo/bin'
+[0.856s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo/lib/pkgconfig/robot_gazebo.pc'
+[0.857s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo/lib/python3.10/site-packages'
+[0.857s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo/bin'
+[0.857s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.ps1'
+[0.857s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.dsv'
+[0.858s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.sh'
+[0.858s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.bash'
+[0.858s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.zsh'
+[0.859s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/Dojo/Dojo/install/robot_gazebo/share/colcon-core/packages/robot_gazebo)
+[0.859s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(robot_gazebo)
+[0.859s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo' for CMake module files
+[0.860s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo' for CMake config files
+[0.860s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('robot_gazebo', 'cmake_prefix_path')
+[0.861s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.ps1'
+[0.861s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.dsv'
+[0.862s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.sh'
+[0.862s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo/lib'
+[0.862s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo/bin'
+[0.862s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo/lib/pkgconfig/robot_gazebo.pc'
+[0.863s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo/lib/python3.10/site-packages'
+[0.863s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/Dojo/Dojo/install/robot_gazebo/bin'
+[0.863s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.ps1'
+[0.864s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.dsv'
+[0.864s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.sh'
+[0.865s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.bash'
+[0.865s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/Dojo/Dojo/install/robot_gazebo/share/robot_gazebo/package.zsh'
+[0.865s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/Dojo/Dojo/install/robot_gazebo/share/colcon-core/packages/robot_gazebo)
+[0.866s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[0.866s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[0.866s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '0'[0m
+[0.866s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[0.871s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[0.871s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.871s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.871s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[0.874s] [34mcolcon.colcon_notification.desktop_notification.notify2[0m [1;30mDEBUG[0m [32mFailed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message[0m
+[0.874s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[0.875s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/Dojo/Dojo/install/local_setup.ps1'
+[0.876s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/Dojo/Dojo/install/_local_setup_util_ps1.py'
+[0.877s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/Dojo/Dojo/install/setup.ps1'
+[0.878s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/Dojo/Dojo/install/local_setup.sh'
+[0.879s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/Dojo/Dojo/install/_local_setup_util_sh.py'
+[0.879s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/Dojo/Dojo/install/setup.sh'
+[0.880s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/Dojo/Dojo/install/local_setup.bash'
+[0.880s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/Dojo/Dojo/install/setup.bash'
+[0.881s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/Dojo/Dojo/install/local_setup.zsh'
+[0.882s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/Dojo/Dojo/install/setup.zsh'

@@ -1,0 +1,34 @@
+[4.274s] Invoking command in '/home/Dojo/Dojo/build/ros2arduino_bridge': PYTHONPATH=/home/Dojo/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/Dojo/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/Dojo/Dojo/build/ros2arduino_bridge/build --no-deps symlink_data
+[4.645s] running develop
+[4.865s] running egg_info
+[4.865s] creating ros2arduino_bridge.egg-info
+[4.865s] writing ros2arduino_bridge.egg-info/PKG-INFO
+[4.866s] writing dependency_links to ros2arduino_bridge.egg-info/dependency_links.txt
+[4.866s] writing entry points to ros2arduino_bridge.egg-info/entry_points.txt
+[4.866s] writing requirements to ros2arduino_bridge.egg-info/requires.txt
+[4.866s] writing top-level names to ros2arduino_bridge.egg-info/top_level.txt
+[4.867s] writing manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'
+[4.869s] reading manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'
+[4.870s] writing manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'
+[4.872s] running build_ext
+[4.872s] Creating /home/Dojo/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages/ros2arduino-bridge.egg-link (link to .)
+[4.873s] Installing arduino_bridge script to /home/Dojo/Dojo/install/ros2arduino_bridge/bin
+[4.873s] Installing arduino_bridge_tester script to /home/Dojo/Dojo/install/ros2arduino_bridge/bin
+[4.873s] Installing test_arduino_bridge script to /home/Dojo/Dojo/install/ros2arduino_bridge/bin
+[4.873s] 
+[4.874s] Installed /home/Dojo/Dojo/build/ros2arduino_bridge
+[4.874s] running symlink_data
+[4.874s] creating /home/Dojo/Dojo/install/ros2arduino_bridge/share/ament_index
+[4.874s] creating /home/Dojo/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index
+[4.874s] creating /home/Dojo/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index/packages
+[4.875s] symbolically linking /home/Dojo/Dojo/build/ros2arduino_bridge/resource/ros2arduino_bridge -> /home/Dojo/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index/packages
+[4.875s] symbolically linking /home/Dojo/Dojo/build/ros2arduino_bridge/package.xml -> /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge
+[4.875s] creating /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/launch
+[4.875s] symbolically linking /home/Dojo/Dojo/build/ros2arduino_bridge/launch/arduino_bridge.launch.py -> /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/launch
+[4.875s] symbolically linking /home/Dojo/Dojo/build/ros2arduino_bridge/launch/ros2arduino_bridge.launch.py -> /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/launch
+[4.875s] symbolically linking /home/Dojo/Dojo/build/ros2arduino_bridge/launch/test_arduino_bridge.launch.py -> /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/launch
+[4.876s] creating /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/config
+[4.876s] symbolically linking /home/Dojo/Dojo/build/ros2arduino_bridge/config/ros2arduino_bridge_params.yaml -> /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/config
+[4.876s] creating /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/test
+[4.876s] symbolically linking /home/Dojo/Dojo/build/ros2arduino_bridge/test/test_arduino_bridge.py -> /home/Dojo/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/test
+[4.929s] Invoked command in '/home/Dojo/Dojo/build/ros2arduino_bridge' returned '0': PYTHONPATH=/home/Dojo/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/Dojo/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/Dojo/Dojo/build/ros2arduino_bridge/build --no-deps symlink_data

@@ -2,23 +2,36 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>ros2arduino_bridge</name>
-  <version>0.0.1</version>
-  <description>ROS 2 to Arduino bridge for motor control</description>
-  <maintainer email="you@example.com">You</maintainer>
+  <version>0.1.0</version>
+  <description>ROS 2 to Arduino bridge for motor control and sensor reading</description>
+  <maintainer email="garethjoel77@gmail.com">Gareth Joel</maintainer>
   <license>Apache-2.0</license>
 
+  <!-- Build and buildtool dependencies -->
   <buildtool_depend>ament_cmake</buildtool_depend>
-  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+  <buildtool_depend>python3-setuptools</buildtool_depend>
 
-  <exec_depend>rclcpp</exec_depend>
+  <!-- Runtime dependencies -->
+  <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>tf2_ros_py</exec_depend>
+  <exec_depend>python3-serial</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
 
-  <test_depend>ament_lint_auto</test_depend>
-  <test_depend>ament_lint_common</test_depend>
+  <!-- Test dependencies -->
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+  <test_depend>python3-pytest-cov</test_depend>
 
+  <!-- Export configuration -->
   <export>
-    <build_type>ament_cmake</build_type>
+    <build_type>ament_python</build_type>
   </export>
 </package>

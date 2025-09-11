@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_symlink_robot_description.dir/compiler_dep
 include CMakeFiles/ament_cmake_python_symlink_robot_description.dir/progress.make
 
 CMakeFiles/ament_cmake_python_symlink_robot_description:
-	/usr/bin/cmake -E create_symlink /home/Dojo/Dojo/src/robot_description/src/robot_description/robot_description /home/Dojo/Dojo/build/robot_description/ament_cmake_python/robot_description/robot_description
+	/usr/bin/cmake -E create_symlink /home/Dojo/Dojo/src/robot_description/src/robot_description /home/Dojo/Dojo/build/robot_description/ament_cmake_python/robot_description/robot_description
 
 ament_cmake_python_symlink_robot_description: CMakeFiles/ament_cmake_python_symlink_robot_description
 ament_cmake_python_symlink_robot_description: CMakeFiles/ament_cmake_python_symlink_robot_description.dir/build.make

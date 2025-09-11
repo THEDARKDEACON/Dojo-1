@@ -310,17 +310,14 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(FILES "launch/display.launch.py" "launch/robot_state_publisher.launch.py" "DESTINATION" "share/robot_description/launch")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_description" FILES "launch/display.launch.py" "launch/robot_state_publisher.launch.py" "DESTINATION" "share/robot_description/launch")
+# install(DIRECTORY "launch/" "DESTINATION" "share/robot_description/launch")
+ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_description" DIRECTORY "launch/" "DESTINATION" "share/robot_description/launch")
 
 # install(DIRECTORY "urdf" "meshes" "rviz" "DESTINATION" "share/robot_description")
 ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_description" DIRECTORY "urdf" "meshes" "rviz" "DESTINATION" "share/robot_description")
 
-# install(DIRECTORY "launch/" "DESTINATION" "share/robot_description/launch/")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_description" DIRECTORY "launch/" "DESTINATION" "share/robot_description/launch/")
-
-# install(DIRECTORY "config/" "DESTINATION" "share/robot_description/config/")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_description" DIRECTORY "config/" "DESTINATION" "share/robot_description/config/")
+# install(DIRECTORY "config/" "DESTINATION" "share/robot_description/config/" "PATTERN" "*.yaml" "PATTERN" "*.rviz")
+ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_description" DIRECTORY "config/" "DESTINATION" "share/robot_description/config/" "PATTERN" "*.yaml" "PATTERN" "*.rviz")
 
 # install(FILES "/home/Dojo/Dojo/build/robot_description/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/robot_description/environment")
 ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_description" FILES "/home/Dojo/Dojo/build/robot_description/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/robot_description/environment")
@@ -331,11 +328,11 @@ ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_description" FILES 
 # install(DIRECTORY "/home/Dojo/Dojo/build/robot_description/ament_cmake_python/robot_description/robot_description.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info")
 ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_description" DIRECTORY "/home/Dojo/Dojo/build/robot_description/ament_cmake_python/robot_description/robot_description.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info")
 
-# install(DIRECTORY "/home/Dojo/Dojo/src/robot_description/src/robot_description/robot_description/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_description" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_description" DIRECTORY "/home/Dojo/Dojo/src/robot_description/src/robot_description/robot_description/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_description" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+# install(DIRECTORY "/home/Dojo/Dojo/src/robot_description/src/robot_description/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_description" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_description" DIRECTORY "/home/Dojo/Dojo/src/robot_description/src/robot_description/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_description" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
 
-# install(DIRECTORY "launch" "DESTINATION" "share/robot_description")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_description" DIRECTORY "launch" "DESTINATION" "share/robot_description")
+# install(PROGRAMS "scripts/display_robot.py" "DESTINATION" "lib/robot_description")
+ament_cmake_symlink_install_programs("/home/Dojo/Dojo/src/robot_description" PROGRAMS "scripts/display_robot.py" "DESTINATION" "lib/robot_description")
 
 # install(FILES "/home/Dojo/Dojo/build/robot_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_description" FILES "/home/Dojo/Dojo/build/robot_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

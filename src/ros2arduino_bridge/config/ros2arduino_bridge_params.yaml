@@ -1,3 +1,50 @@
+# ROS 2 Arduino Bridge Configuration
+# This file contains all the parameters for the ros2arduino_bridge node
+
 /**:
   ros__parameters:
+    # General parameters
     use_sim_time: False
+    
+    # Serial communication parameters
+    port: "/dev/ttyACM0"  # Default serial port
+    baud_rate: 115200      # Baud rate for serial communication
+    
+    # Debug and logging
+    debug: False           # Enable debug output
+    log_level: "info"      # Log level: debug, info, warn, error, fatal
+    
+    # Topic names
+    cmd_vel_topic: "/cmd_vel"
+    odom_topic: "/odom"
+    imu_topic: "/imu/data"
+    
+    # Robot parameters
+    wheel_separation: 0.2  # Distance between wheels in meters
+    wheel_radius: 0.05     # Radius of wheels in meters
+    
+    # PID parameters for motor control
+    motor_control:
+      kp: 1.0
+      ki: 0.1
+      kd: 0.05
+      
+    # Update rates (in Hz)
+    publish_rate: 50.0     # Rate for publishing odometry
+    control_rate: 50.0     # Rate for sending motor commands
+    
+    # Safety parameters
+    max_linear_velocity: 1.0    # m/s
+    max_angular_velocity: 3.14  # rad/s
+    
+    # Timeout for serial communication (in seconds)
+    serial_timeout: 0.1
+    
+    # Frame IDs
+    base_frame_id: "base_link"
+    odom_frame_id: "odom"
+    
+    # Enable/disable features
+    publish_odom: True
+    publish_tf: True
+    use_imu: True

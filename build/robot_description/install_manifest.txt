@@ -1,0 +1,3 @@
+/home/Dojo/Dojo/install/robot_description/share/robot_description/robot_description_temp/package.xml
+/home/Dojo/Dojo/install/robot_description/lib/robot_description/robot_description/robot_description/__init__.py
+/home/Dojo/Dojo/install/robot_description/lib/robot_description/robot_description/__init__.py

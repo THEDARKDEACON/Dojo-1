@@ -1,9 +1,0 @@
-/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/uninstall.dir
-/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/ros2arduino_bridge_uninstall.dir
-/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/test.dir
-/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/edit_cache.dir
-/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/rebuild_cache.dir
-/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/list_install_components.dir
-/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/install.dir
-/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/install/local.dir
-/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/install/strip.dir

@@ -1,0 +1,18 @@
+[1.731s] Invoking command in '/home/Dojo/Dojo/build/robot_control': PYTHONPATH=/home/Dojo/Dojo/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/Dojo/Dojo/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/Dojo/Dojo/build/robot_control/build --no-deps symlink_data
+[2.012s] running develop
+[2.193s] running egg_info
+[2.193s] writing robot_control.egg-info/PKG-INFO
+[2.193s] writing dependency_links to robot_control.egg-info/dependency_links.txt
+[2.194s] writing entry points to robot_control.egg-info/entry_points.txt
+[2.194s] writing requirements to robot_control.egg-info/requires.txt
+[2.194s] writing top-level names to robot_control.egg-info/top_level.txt
+[2.196s] reading manifest file 'robot_control.egg-info/SOURCES.txt'
+[2.197s] writing manifest file 'robot_control.egg-info/SOURCES.txt'
+[2.198s] running build_ext
+[2.198s] Creating /home/Dojo/Dojo/install/robot_control/lib/python3.10/site-packages/robot-control.egg-link (link to .)
+[2.199s] Installing arduino_bridge script to /home/Dojo/Dojo/install/robot_control/lib/robot_control
+[2.199s] Installing cmd_vel_to_motors script to /home/Dojo/Dojo/install/robot_control/lib/robot_control
+[2.200s] 
+[2.200s] Installed /home/Dojo/Dojo/build/robot_control
+[2.200s] running symlink_data
+[2.237s] Invoked command in '/home/Dojo/Dojo/build/robot_control' returned '0': PYTHONPATH=/home/Dojo/Dojo/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/Dojo/Dojo/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/Dojo/Dojo/build/robot_control/build --no-deps symlink_data

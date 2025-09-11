@@ -1,360 +1,483 @@
-#include <ros2arduino.h>
+#include <Arduino.h>
+#include <ArduinoJson.h>  // For JSON parsing and generation
 
 // ================================
-// Pin Definitions for L298N
+// ROS 2 Motor Controller for Arduino Mega
 // ================================
+// This code implements a motor controller that communicates with ROS 2
+// over serial using JSON protocol. It handles motor control and encoder feedback.
+// 
+// Communication Protocol:
+// - Commands from ROS: {"type":"cmd_vel","left_speed":0.0,"right_speed":0.0}
+// - Data to ROS: {"type":"encoder_data","left_ticks":0,"right_ticks":0,"left_speed":0.0,"right_speed":0.0}
 
-// Motor A (Left Motor)
-#define IN1 8     // L298N IN1
-#define IN2 9     // L298N IN2
-#define ENA 5     // L298N ENA (PWM) - Left motor speed control
+// ===== Pin Definitions =====
+// Left Motor (A)
+#define LEFT_MOTOR_IN1 8     // L298N D1
+#define LEFT_MOTOR_IN2 9     // L298N D2
+#define LEFT_MOTOR_ENABLE 5  // L298N D9 (PWM)
+#define LEFT_ENCODER_A1 2    // Encoder A channel (INT0)
+#define LEFT_ENCODER_A2 3    // Encoder B channel (INT1)
 
-// Motor B (Right Motor)
-#define IN3 10    // L298N IN3
-#define IN4 11    // L298N IN4
-#define ENB 6     // L298N ENB (PWM) - Right motor speed control
+// Right Motor (B)
+#define RIGHT_MOTOR_IN1 10   // L298N D3
+#define RIGHT_MOTOR_IN2 11   // L298N D4
+#define RIGHT_MOTOR_ENABLE 6 // L298N D10 (PWM)
+#define RIGHT_ENCODER_A1 18  // Encoder A channel (INT5)
+#define RIGHT_ENCODER_A2 19  // Encoder B channel
 
-// Motor control parameters
-#define MAX_PWM 255          // Maximum PWM value (0-255)
-#define MIN_PWM 30           // Minimum PWM value to overcome friction (adjust based on your motors)
-#define DEADBAND 0.05        // Minimum input value to consider (to prevent motor jitter)
-#define MAX_ACCEL 0.5        // Maximum acceleration (0.0 - 1.0) per control cycle
-#define RAMP_RATE 0.5        // Rate of acceleration (0.0 - 1.0)
+// ===== Constants =====
+const int ENCODER_TICKS_PER_REV = 20;  // Update this based on your encoder
+const float WHEEL_RADIUS = 0.1;        // meters
+const float WHEEL_CIRCUMFERENCE = 0.2 * PI; // meters
+const float WHEEL_SEPARATION = 0.5;    // meters between wheels
+const int MAX_MOTOR_RPM = 110;         // Maximum motor speed in RPM
+const int MAX_PWM = 255;               // Maximum PWM value
+const float MAX_RAD_PER_SEC = (MAX_MOTOR_RPM * 2.0 * PI) / 60.0;  // Convert RPM to rad/s
+const int MOTOR_UPDATE_INTERVAL = 10;  // ms (100Hz update rate)
+const unsigned long COMMAND_TIMEOUT = 500; // Stop motors if no command received after 500ms
+const int JSON_BUFFER_SIZE = 256;      // Size of JSON buffer for serial communication
 
-// ROS2 Node
-rcl_node_t node;
-rclc_support_t support;
-rcl_allocator_t allocator;
+// PID constants - adjust these based on your motor/encoder setup
+const float KP_LEFT = 2.0;   // Proportional gain
+const float KI_LEFT = 0.5;   // Integral gain
+const float KD_LEFT = 0.05;  // Derivative gain
+const float KP_RIGHT = 2.0;  // Proportional gain
+const float KI_RIGHT = 0.5;  // Integral gain
+const float KD_RIGHT = 0.05; // Derivative gain
 
-// Publishers
-rcl_publisher_t imu_pub;
-sensor_msgs__msg__Imu imu_msg;
-rcl_publisher_t encoder_pub;
-sensor_msgs__msg__JointState encoder_msg;
+// ===== Global Variables =====
+// Encoder variables
+volatile long leftEncoderTicks = 0;
+volatile long rightEncoderTicks = 0;
+long lastLeftEncoderTicks = 0;
+long lastRightEncoderTicks = 0;
+unsigned long lastEncoderPrint = 0;
 
-// Subscribers
-rcl_subscription_t cmd_vel_sub;
-geometry_msgs__msg__Twist cmd_vel_msg;
+// Command processing
+String inputString = "";         // A string to hold incoming data
+boolean stringComplete = false;   // Whether the string is complete
 
-// Timer for publishing sensor data
-rcl_timer_t timer;
+// Timing
+unsigned long lastMotorUpdate = 0;
+unsigned long lastCommandTime = 0;
+unsigned long lastPidUpdate = 0;  // For PID timing
 
-// Variables for sensors and motor control
-float left_encoder = 0.0;
-float right_encoder = 0.0;
-float left_motor_output = 0.0;   // Current motor output (-1.0 to 1.0)
-float right_motor_output = 0.0;  // Current motor output (-1.0 to 1.0)
-unsigned long last_motor_update = 0;  // For timing motor updates
+// Motor control
+float leftTargetSpeed = 0.0;    // rad/s
+float rightTargetSpeed = 0.0;   // rad/s
+float leftCurrentSpeed = 0.0;   // rad/s
+float rightCurrentSpeed = 0.0;  // rad/s
+float leftLastError = 0.0;
+float rightLastError = 0.0;
+float leftIntegral = 0.0;
+float rightIntegral = 0.0;
+bool motorsStopped = false;     // Track if motors are in a stopped state
 
-// Function prototypes
-void setupROS2();
-void timerCallback(rcl_timer_t *timer, int64_t last_call_time);
-void cmdVelCallback(const void *msg_in);
-void updateSensors();
-void controlMotors(float linear, float angular);
+// ===== Function Declarations =====
+void updateLeftEncoder();
+void updateRightEncoder();
+void updateMotors();
+void updatePid();
+void setMotorSpeeds(int leftSpeed, int rightSpeed);
+void stopMotors();
+void processCommand(String command);
+void printEncoderValues();
+void sendEncoderData();
+void serialEvent();
 
+// ===== Setup =====
 void setup() {
-  // Initialize Serial for debugging
+  // Initialize Serial communication
   Serial.begin(115200);
+  while (!Serial) {
+    ; // Wait for serial port to connect (only needed for boards with native USB)
+  }
   
-  // Initialize motor control pins for L298N
-  // Left Motor
-  pinMode(ENA, OUTPUT);
-  pinMode(IN1, OUTPUT);
-  pinMode(IN2, OUTPUT);
-  // Right Motor
-  pinMode(ENB, OUTPUT);
-  pinMode(IN3, OUTPUT);
-  pinMode(IN4, OUTPUT);
+  // Send startup message
+  Serial.println("DROS 2 Motor Controller Ready");
+  Serial.println("DWaiting for commands...");
   
-  // Initialize all pins to LOW (motors off)
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, LOW);
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, LOW);
-  analogWrite(ENA, 0);
-  analogWrite(ENB, 0);
+  // Set motor control pins as outputs
+  pinMode(LEFT_MOTOR_IN1, OUTPUT);
+  pinMode(LEFT_MOTOR_IN2, OUTPUT);
+  pinMode(LEFT_MOTOR_ENABLE, OUTPUT);
+  pinMode(RIGHT_MOTOR_IN1, OUTPUT);
+  pinMode(RIGHT_MOTOR_IN2, OUTPUT);
+  pinMode(RIGHT_MOTOR_ENABLE, OUTPUT);
   
-  // Initialize ROS2
-  setupROS2();
+  // Set up encoder pins with pullup resistors
+  pinMode(LEFT_ENCODER_A1, INPUT_PULLUP);
+  pinMode(LEFT_ENCODER_A2, INPUT_PULLUP);
+  pinMode(RIGHT_ENCODER_A1, INPUT_PULLUP);
+  pinMode(RIGHT_ENCODER_A2, INPUT_PULLUP);
   
-  // Initialize IMU (if available)
-  // imu.begin();
+  // Attach encoder interrupts on rising/falling edges
+  attachInterrupt(digitalPinToInterrupt(LEFT_ENCODER_A1), updateLeftEncoder, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(RIGHT_ENCODER_A1), updateRightEncoder, CHANGE);
   
-  // Initial motor stop
-  analogWrite(LEFT_MOTOR_PWM, 0);
-  analogWrite(RIGHT_MOTOR_PWM, 0);
+  // Initialize motor control (ensure motors are stopped)
+  stopMotors();
   
-  // Wait for ROS2 to be ready
-  delay(1000);
+  // Initialize timers
+  unsigned long currentTime = millis();
+  lastMotorUpdate = currentTime;
+  lastPidUpdate = currentTime;
+  lastCommandTime = currentTime;
+  
+  // Print welcome and help message
+  Serial.println("DROS 2 Motor Controller Ready");
+  Serial.println("DCommands:");
+  Serial.println("D  M<left>,<right> - Set motor speeds in rad/s");
+  Serial.println("D  S - Stop motors");
+  Serial.println("D  Z - Zero encoders");
+  Serial.println("D  ? - This help message");
+  
+  // Initialize encoder positions
+  lastLeftEncoderTicks = leftEncoderTicks;
+  lastRightEncoderTicks = rightEncoderTicks;
 }
 
+// ===== Main Loop =====
 void loop() {
-  // Spin ROS2
-  rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
-  
-  // Update sensors
-  updateSensors();
-  
-  // Small delay to prevent watchdog issues
-  delay(10);
-}
-
-void setupROS2() {
-  // Initialize allocator
-  allocator = rcl_get_default_allocator();
-  
-  // Initialize support structure
-  rclc_support_init(&support, 0, NULL, &allocator);
-  
-  // Create node
-  rclc_node_init_default(&node, "arduino_node", "", &support);
-  
-  // Create publishers
-  rclc_publisher_init_default(
-    &imu_pub,
-    &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu),
-    "imu/data");
-    
-  rclc_publisher_init_default(
-    &encoder_pub,
-    &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, JointState),
-    "wheel_encoders");
-    
-  // Create subscriber
-  rclc_subscription_init_default(
-    &cmd_vel_sub,
-    &node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
-    "cmd_vel");
-    
-  // Create timer for sensor publishing
-  rclc_timer_init_default(
-    &timer,
-    &support,
-    RCL_MS_TO_NS(100),  // 10 Hz
-    timerCallback);
-    
-  // Create executor
-  rclc_executor_init(&executor, &support.context, 10, &allocator);
-  
-  // Add timer to executor
-  rclc_executor_add_timer(&executor, &timer);
-  
-  // Add subscriber to executor
-  rclc_executor_add_subscription(
-    &executor,
-    &cmd_vel_sub,
-    &cmd_vel_msg,
-    &cmdVelCallback,
-    ON_NEW_DATA);
-    
-  // Initialize messages
-  sensor_msgs__msg__Imu__init(&imu_msg);
-  sensor_msgs__msg__JointState__init(&encoder_msg);
-geometry_msgs__msg__Twist__init(&cmd_vel_msg);
-  
-  // Initialize joint names for encoder message
-  const char* joint_names[] = {"left_wheel_joint", "right_wheel_joint"};
-  encoder_msg.name.size = 2;
-  encoder_msg.name.data = (rosidl_runtime_c__String*)malloc(2 * sizeof(rosidl_runtime_c__String));
-  for (int i = 0; i < 2; i++) {
-    rosidl_runtime_c__String__assign(&encoder_msg.name.data[i], joint_names[i]);
+  // Process any incoming serial commands
+  if (stringComplete) {
+    processCommand(inputString);
+    inputString = "";
+    stringComplete = false;
   }
-  encoder_msg.position.size = 2;
-  encoder_msg.position.data = (double*)malloc(2 * sizeof(double));
-  encoder_msg.velocity.size = 2;
-  encoder_msg.velocity.data = (double*)malloc(2 * sizeof(double));
-  encoder_msg.effort.size = 0;
-  encoder_msg.effort.data = NULL;
   
-}
-
-void timerCallback(rcl_timer_t *timer, int64_t last_call_time) {
-  (void)last_call_time;
+  // Update motor control (PID and safety checks)
+  updateMotors();
   
-  if (timer != NULL) {
-    // Update sensor data
-    updateSensors();
+  // Periodically send encoder data (20Hz update rate)
+  static unsigned long lastSendTime = 0;
+  unsigned long currentTime = millis();
+  if (currentTime - lastSendTime >= 50) { // 50ms = 20Hz
+    sendEncoderData();
+    lastSendTime = currentTime;
     
-    // Publish IMU data (if available)
-    // imu_msg.header.stamp = micros_rolling_over_32();
-    // rcl_publish(&imu_pub, &imu_msg, NULL);
-    
-    // Publish encoder data
-    encoder_msg.header.stamp = micros_rolling_over_32();
-    encoder_msg.position.data[0] = left_encoder;
-    encoder_msg.position.data[1] = right_encoder;
-    rcl_publish(&encoder_pub, &encoder_msg, NULL);
-    
+    // Optional: Print debug info at a lower rate (uncomment if needed)
+    // static unsigned long lastDebugTime = 0;
+    // if (currentTime - lastDebugTime >= 1000) { // 1 second interval
+    //   Serial.print("DDebug - Left: ");
+    //   Serial.print(leftTargetSpeed, 2);
+    //   Serial.print(" rad/s, Right: ");
+    //   Serial.print(rightTargetSpeed, 2);
+    //   Serial.println(" rad/s");
+    //   lastDebugTime = currentTime;
+    // }
+  }
+  
+  // Emergency stop if no commands received
+  if (millis() - lastCommandTime > COMMAND_TIMEOUT) {
+    leftTargetSpeed = 0;
+    rightTargetSpeed = 0;
   }
 }
 
-void cmdVelCallback(const void *msg_in) {
-  const geometry_msgs__msg__Twist *twist = (const geometry_msgs__msg__Twist *)msg_in;
-  
-  // Update the last command timestamp
-  static unsigned long last_cmd_time = 0;
-  last_cmd_time = millis();
-  
-  // Extract linear and angular velocities
-  // Clamp values to [-1.0, 1.0] range
-  float linear = constrain(twist->linear.x, -1.0, 1.0);
-  float angular = constrain(twist->angular.z, -1.0, 1.0);
-  
-  // Scale down the input if the combined command would exceed max PWM
-  float left = linear - angular;
-  float right = linear + angular;
-  float max_command = max(fabs(left), fabs(right));
-  
-  if (max_command > 1.0) {
-    linear /= max_command;
-    angular /= max_command;
+// ===== Encoder Interrupt Handlers =====
+void updateLeftEncoder() {
+  int a = digitalRead(LEFT_ENCODER_A1);
+  int b = digitalRead(LEFT_ENCODER_A2);
+  if (a == b) {
+    leftEncoderTicks++;
+  } else {
+    leftEncoderTicks--;
   }
-  
-  // Control motors based on the received velocities
-  controlMotors(linear, angular);
-  
-  // Optional: Publish motor commands for debugging
-  /*
-  static rcl_publisher_t motor_cmd_pub;
-  static std_msgs__msg__Float32MultiArray motor_cmd_msg;
-  static bool publisher_initialized = false;
-  
-  if (!publisher_initialized) {
-    motor_cmd_msg.data.capacity = 2;
-    motor_cmd_msg.data.size = 2;
-    motor_cmd_msg.data.data = (float*)malloc(2 * sizeof(float));
-    rclc_publisher_init_default(
-      &motor_cmd_pub,
-      &node,
-      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float32MultiArray),
-      "motor_commands");
-    publisher_initialized = true;
-  }
-  
-  motor_cmd_msg.data.data[0] = left_motor_output;
-  motor_cmd_msg.data.data[1] = right_motor_output;
-  rcl_publish(&motor_cmd_pub, &motor_cmd_msg, NULL);
-  */
 }
 
-void updateSensors() {
-  // Read encoders (simulated for now)
-  static unsigned long last_encoder_update = 0;
-  if (millis() - last_encoder_update > 50) {  // 20 Hz update
-    left_encoder += 0.1 * random(-10, 10);
-    right_encoder += 0.1 * random(-10, 10);
-    last_encoder_update = millis();
+void updateRightEncoder() {
+  int a = digitalRead(RIGHT_ENCODER_A1);
+  int b = digitalRead(RIGHT_ENCODER_A2);
+  if (a == b) {
+    rightEncoderTicks++;
+  } else {
+    rightEncoderTicks--;
   }
-  
-  // Update IMU (simulated for now)
-  // if (imu.available()) {
-  //   imu_msg.orientation.x = imu.readFloatAccelX();
-  //   imu_msg.orientation.y = imu.readFloatAccelY();
-  //   imu_msg.orientation.z = imu.readFloatAccelZ();
-  //   // Add gyro and other IMU data as needed
-  // }
 }
 
-void controlMotors(float linear, float angular) {
-  // Safety check - stop motors if no valid command received recently
-  static unsigned long last_cmd_time = 0;
-  if (millis() - last_cmd_time > 500) {  // 500ms timeout
-    left_motor_output = 0.0;
-    right_motor_output = 0.0;
-    // Stop both motors
-    digitalWrite(IN1, LOW);
-    digitalWrite(IN2, LOW);
-    digitalWrite(IN3, LOW);
-    digitalWrite(IN4, LOW);
-    analogWrite(ENA, 0);
-    analogWrite(ENB, 0);
+// ===== PID Control Functions =====
+void updatePid() {
+  unsigned long now = millis();
+  float dt = (now - lastPidUpdate) / 1000.0f;  // Convert to seconds
+  
+  if (dt < 0.01f) return;  // Too soon to update (minimum 10ms between updates)
+  
+  lastPidUpdate = now;
+  
+  // Calculate wheel speeds in rad/s
+  long leftTicks = leftEncoderTicks - lastLeftEncoderTicks;
+  long rightTicks = rightEncoderTicks - lastRightEncoderTicks;
+  
+  // Update encoder tracking
+  lastLeftEncoderTicks = leftEncoderTicks;
+  lastRightEncoderTicks = rightEncoderTicks;
+  
+  // Convert ticks to rad/s
+  const float RAD_PER_TICK = (2.0f * PI) / ENCODER_TICKS_PER_REV;
+  
+  // Calculate current speeds (rad/s)
+  leftCurrentSpeed = (leftTicks * RAD_PER_TICK) / dt;
+  rightCurrentSpeed = (rightTicks * RAD_PER_TICK) / dt;
+  
+  // Update left motor PID
+  float leftError = leftTargetSpeed - leftCurrentSpeed;
+  leftIntegral += leftError * dt;
+  
+  // Anti-windup: Limit integral term
+  leftIntegral = constrain(leftIntegral, -100.0f, 100.0f);
+  
+  float leftDerivative = (leftError - leftLastError) / dt;
+  float leftOutput = KP_LEFT * leftError + 
+                    KI_LEFT * leftIntegral + 
+                    KD_LEFT * leftDerivative;
+  leftLastError = leftError;
+  
+  // Update right motor PID
+  float rightError = rightTargetSpeed - rightCurrentSpeed;
+  rightIntegral += rightError * dt;
+  
+  // Anti-windup: Limit integral term
+  rightIntegral = constrain(rightIntegral, -100.0f, 100.0f);
+  
+  float rightDerivative = (rightError - rightLastError) / dt;
+  float rightOutput = KP_RIGHT * rightError + 
+                     KI_RIGHT * rightIntegral + 
+                     KD_RIGHT * rightDerivative;
+  rightLastError = rightError;
+  
+  // Convert PID output to PWM (constrain to -255 to 255)
+  int leftPwm = constrain((int)leftOutput, -MAX_PWM, MAX_PWM);
+  int rightPwm = constrain((int)rightOutput, -MAX_PWM, MAX_PWM);
+  
+  // Set motor speeds
+  setMotorSpeeds(leftPwm, rightPwm);
+  
+  // Debug output (uncomment for tuning)
+  // Serial.print("DLeft: ");
+  // Serial.print(leftTargetSpeed, 2);
+  // Serial.print(" ");
+  // Serial.print(leftCurrentSpeed, 2);
+  // Serial.print(" ");
+  // Serial.print(leftPwm);
+  // Serial.print("\tRight: ");
+  // Serial.print(rightTargetSpeed, 2);
+  // Serial.print(" ");
+  // Serial.print(rightCurrentSpeed, 2);
+  // Serial.print(" ");
+  // Serial.println(rightPwm);
+}
+
+// ===== Motor Control Functions =====
+void updateMotors() {
+  unsigned long now = millis();
+  
+  // Update PID at fixed intervals
+  if (now - lastPidUpdate >= (unsigned long)MOTOR_UPDATE_INTERVAL) {
+    updatePid();
+  }
+  
+  // Emergency stop if no commands received
+  if (now - lastCommandTime > COMMAND_TIMEOUT) {
+    leftTargetSpeed = 0.0f;
+    rightTargetSpeed = 0.0f;
+    leftIntegral = 0.0f;
+    rightIntegral = 0.0f;
+    leftLastError = 0.0f;
+    rightLastError = 0.0f;
+    
+    // Only send stop command once to avoid flooding the serial
+    if (!motorsStopped) {
+      setMotorSpeeds(0, 0);
+      motorsStopped = true;
+    }
+  } else {
+    motorsStopped = false;
+  }
+}
+
+void setMotorSpeeds(int leftSpeed, int rightSpeed) {
+  // Left motor
+  if (leftSpeed > 0) {
+    digitalWrite(LEFT_MOTOR_IN1, HIGH);
+    digitalWrite(LEFT_MOTOR_IN2, LOW);
+    analogWrite(LEFT_MOTOR_ENABLE, abs(leftSpeed));
+  } else if (leftSpeed < 0) {
+    digitalWrite(LEFT_MOTOR_IN1, LOW);
+    digitalWrite(LEFT_MOTOR_IN2, HIGH);
+    analogWrite(LEFT_MOTOR_ENABLE, abs(leftSpeed));
+  } else {
+    digitalWrite(LEFT_MOTOR_IN1, LOW);
+    digitalWrite(LEFT_MOTOR_IN2, LOW);
+    analogWrite(LEFT_MOTOR_ENABLE, 0);
+  }
+  
+  // Right motor
+  if (rightSpeed > 0) {
+    digitalWrite(RIGHT_MOTOR_IN1, HIGH);
+    digitalWrite(RIGHT_MOTOR_IN2, LOW);
+    analogWrite(RIGHT_MOTOR_ENABLE, abs(rightSpeed));
+  } else if (rightSpeed < 0) {
+    digitalWrite(RIGHT_MOTOR_IN1, LOW);
+    digitalWrite(RIGHT_MOTOR_IN2, HIGH);
+    analogWrite(RIGHT_MOTOR_ENABLE, abs(rightSpeed));
+  } else {
+    digitalWrite(RIGHT_MOTOR_IN1, LOW);
+    digitalWrite(RIGHT_MOTOR_IN2, LOW);
+    analogWrite(RIGHT_MOTOR_ENABLE, 0);
+  }
+}
+
+void stopMotors() {
+  leftTargetSpeed = 0;
+  rightTargetSpeed = 0;
+  leftIntegral = 0;
+  rightIntegral = 0;
+  leftLastError = 0;
+  rightLastError = 0;
+  setMotorSpeeds(0, 0);
+}
+
+// ===== Command Processing =====
+void processCommand(String command) {
+  if (command.length() == 0) return;
+  
+  // Update last command time for safety timeout
+  lastCommandTime = millis();
+  
+  // Parse JSON command
+  DynamicJsonDocument doc(JSON_BUFFER_SIZE);
+  DeserializationError error = deserializeJson(doc, command);
+  
+  if (error) {
+    Serial.print("DJSON parse failed: ");
+    Serial.println(error.c_str());
     return;
   }
   
-  // Calculate target speeds using differential drive kinematics
-  float target_left = linear - angular;
-  float target_right = linear + angular;
+  // Check command type
+  const char* type = doc["type"];
   
-  // Apply deadband to prevent motor jitter
-  if (fabs(target_left) < DEADBAND) target_left = 0.0;
-  if (fabs(target_right) < DEADBAND) target_right = 0.0;
-  
-  // Limit the rate of change (acceleration)
-  float delta_left = target_left - left_motor_output;
-  float delta_right = target_right - right_motor_output;
-  
-  // Apply acceleration limiting
-  delta_left = constrain(delta_left, -MAX_ACCEL, MAX_ACCEL);
-  delta_right = constrain(delta_right, -MAX_ACCEL, MAX_ACCEL);
-  
-  // Update motor outputs with acceleration limiting
-  left_motor_output += delta_left * RAMP_RATE;
-  right_motor_output += delta_right * RAMP_RATE;
-  
-  // Map from [-1.0, 1.0] to [0, 255] with deadband handling
-  int left_pwm = 0;
-  int right_pwm = 0;
-  
-  if (fabs(left_motor_output) > 0) {
-    left_pwm = (int)(fabs(left_motor_output) * (MAX_PWM - MIN_PWM) + MIN_PWM);
-    left_pwm = constrain(left_pwm, 0, MAX_PWM);
+  if (strcmp(type, "cmd_vel") == 0) {
+    // Handle motor command
+    float newLeftSpeed = doc["left_speed"];  
+    float newRightSpeed = doc["right_speed"];
+    
+    // Limit target speeds to max RPM with smooth ramping
+    leftTargetSpeed = constrain(newLeftSpeed, -MAX_RAD_PER_SEC, MAX_RAD_PER_SEC);
+    rightTargetSpeed = constrain(newRightSpeed, -MAX_RAD_PER_SEC, MAX_RAD_PER_SEC);
+    
+    // Debug echo
+    Serial.print("DSet speeds - Left: ");
+    Serial.print(leftTargetSpeed, 2);
+    Serial.print(" rad/s, Right: ");
+    Serial.print(rightTargetSpeed, 2);
+    Serial.println(" rad/s");
   }
-  
-  if (fabs(right_motor_output) > 0) {
-    right_pwm = (int)(fabs(right_motor_output) * (MAX_PWM - MIN_PWM) + MIN_PWM);
-    right_pwm = constrain(right_pwm, 0, MAX_PWM);
+  else if (strcmp(type, "stop") == 0) {
+    // Stop all motors
+    leftTargetSpeed = 0.0f;
+    rightTargetSpeed = 0.0f;
+    leftIntegral = 0.0f;
+    rightIntegral = 0.0f;
+    leftLastError = 0.0f;
+    rightLastError = 0.0f;
+    Serial.println("DStopping all motors");
   }
-  
-  // Control left motor direction and speed
-  if (left_motor_output > 0) {
-    // Forward
-    digitalWrite(IN1, HIGH);
-    digitalWrite(IN2, LOW);
-    analogWrite(ENA, left_pwm);
-  } else if (left_motor_output < 0) {
-    // Reverse
-    digitalWrite(IN1, LOW);
-    digitalWrite(IN2, HIGH);
-    analogWrite(ENA, left_pwm);
-  } else {
-    // Stop
-    digitalWrite(IN1, LOW);
-    digitalWrite(IN2, LOW);
-    analogWrite(ENA, 0);
+  else if (strcmp(type, "zero_encoders") == 0) {
+    // Zero encoders
+    leftEncoderTicks = 0;
+    rightEncoderTicks = 0;
+    lastLeftEncoderTicks = 0;
+    lastRightEncoderTicks = 0;
+    leftCurrentSpeed = 0.0f;
+    rightCurrentSpeed = 0.0f;
+    Serial.println("DEncoders zeroed");
   }
-  
-  // Control right motor direction and speed
-  if (right_motor_output > 0) {
-    // Forward
-    digitalWrite(IN3, HIGH);
-    digitalWrite(IN4, LOW);
-    analogWrite(ENB, right_pwm);
-  } else if (right_motor_output < 0) {
-    // Reverse
-    digitalWrite(IN3, LOW);
-    digitalWrite(IN4, HIGH);
-    analogWrite(ENB, right_pwm);
-  } else {
-    // Stop
-    digitalWrite(IN3, LOW);
-    digitalWrite(IN4, LOW);
-    analogWrite(ENB, 0);
+  else if (strcmp(type, "get_status") == 0) {
+    // Send current status
+    sendEncoderData();
   }
-  
-  // Debug output (uncomment for troubleshooting)
-  /*
-  static unsigned long last_debug = 0;
-  if (millis() - last_debug > 100) {
-    Serial.print("L: ");
-    Serial.print(left_pwm);
-    Serial.print(" R: ");
-    Serial.println(right_pwm);
-    last_debug = millis();
+  else {
+    Serial.print("DUnknown command type: ");
+    Serial.println(type);
   }
-  */
 }
 
+// ===== Utility Functions =====
+void sendEncoderData() {
+  // Calculate wheel positions in meters
+  const float METERS_PER_TICK = (2.0f * PI * WHEEL_RADIUS) / ENCODER_TICKS_PER_REV;
+  float leftPosition = leftEncoderTicks * METERS_PER_TICK;
+  float rightPosition = rightEncoderTicks * METERS_PER_TICK;
+  
+  // Create JSON document
+  StaticJsonDocument<200> doc;
+  doc["type"] = "encoder_data";
+  doc["left_ticks"] = leftEncoderTicks;
+  doc["right_ticks"] = rightEncoderTicks;
+  doc["left_speed"] = leftCurrentSpeed;
+  doc["right_speed"] = rightCurrentSpeed;
+  doc["left_position"] = leftPosition;
+  doc["right_position"] = rightPosition;
+  
+  // Serialize JSON to string and send
+  String output;
+  serializeJson(doc, output);
+  Serial.println(output);
+}
+
+void printEncoderValues() {
+  Serial.print("DEncoders - Left: ");
+  Serial.print(leftEncoderTicks);
+  Serial.print(" (");
+  Serial.print(leftCurrentSpeed, 2);
+  Serial.print(" rad/s), Right: ");
+  Serial.print(rightEncoderTicks);
+  Serial.print(" (");
+  Serial.print(rightCurrentSpeed, 2);
+  Serial.println(" rad/s)");
+}
+
+// ===== Serial Event Handler =====
+void serialEvent() {
+  static bool inJson = false;
+  static int braceCount = 0;
+  static String jsonString = "";
+  
+  while (Serial.available() > 0) {
+    char inChar = (char)Serial.read();
+    
+    // Look for start of JSON object
+    if (inChar == '{') {
+      inJson = true;
+      braceCount = 1;
+      jsonString = "{";
+    }
+    // Process JSON content
+    else if (inJson) {
+      jsonString += inChar;
+      
+      // Count braces to find the end of the JSON object
+      if (inChar == '{') {
+        braceCount++;
+      } else if (inChar == '}') {
+        braceCount--;
+        if (braceCount == 0) {
+          // Complete JSON object received
+          inJson = false;
+          inputString = jsonString;
+          stringComplete = true;
+          return;
+        }
+      }
+      
+      // Prevent buffer overflow
+      if (jsonString.length() >= JSON_BUFFER_SIZE) {
+        inJson = false;
+        Serial.println("DError: JSON too long");
+      }
+    }
+  }
+}
