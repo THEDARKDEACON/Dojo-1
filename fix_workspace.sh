@@ -108,6 +108,78 @@ EOL
 }
 
 # Setup Python packages
+setup_python_packages() {
+    echo -e "${YELLOW}Setting up Python packages...${NC}"
+    
+    local python_packages=(
+        "robot_control"
+        "robot_sensors"
+        "arduino_bridge"
+    )
+    
+    for pkg in "${python_packages[@]}"; do
+        echo "  - Setting up ${pkg}..."
+        
+        # Create setup.py if it doesn't exist
+        if [ ! -f "${SRC_DIR}/${pkg}/setup.py" ]; then
+            cat > "${SRC_DIR}/${pkg}/setup.py" << EOL
+from setuptools import find_packages, setup
+
+package_name = '${pkg}'
+
+setup(
+    name=package_name,
+    version='0.0.1',
+    packages=find_packages(exclude=['test']),
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='You',
+    maintainer_email='you@example.com',
+    description='TODO: Package description',
+    license='Apache-2.0',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+        ],
+    },
+)
+EOL
+        fi
+        
+        # Create package.xml if it doesn't exist
+        if [ ! -f "${SRC_DIR}/${pkg}/package.xml" ]; then
+            cat > "${SRC_DIR}/${pkg}/package.xml" << EOL
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>${pkg}</name>
+  <version>0.0.1</version>
+  <description>TODO: Package description</description>
+  <maintainer email="you@example.com">You</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
+EOL
+        fi
+    done
+}
+
+# Setup ros2arduino_bridge package
 setup_ros2arduino_bridge() {
     echo -e "${YELLOW}Setting up ros2arduino_bridge package...${NC}"
     
@@ -460,74 +532,6 @@ EOL
     fi
     
     echo -e "${GREEN}ros2arduino_bridge package setup complete!${NC}"
-    
-    local python_packages=(
-        "robot_control"
-        "robot_sensors"
-        "arduino_bridge"
-        "ros2arduino_bridge"
-    )
-    
-    for pkg in "${python_packages[@]}"; do
-        echo "  - Setting up ${pkg}..."
-        
-        # Create setup.py if it doesn't exist
-        if [ ! -f "${SRC_DIR}/${pkg}/setup.py" ]; then
-            cat > "${SRC_DIR}/${pkg}/setup.py" << EOL
-from setuptools import find_packages, setup
-
-package_name = '${pkg}'
-
-setup(
-    name=package_name,
-    version='0.0.1',
-    packages=find_packages(exclude=['test']),
-    data_files=[
-        ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
-    ],
-    install_requires=['setuptools'],
-    zip_safe=True,
-    maintainer='You',
-    maintainer_email='you@example.com',
-    description='TODO: Package description',
-    license='Apache-2.0',
-    tests_require=['pytest'],
-    entry_points={
-        'console_scripts': [
-        ],
-    },
-)
-EOL
-        fi
-        
-        # Create package.xml if it doesn't exist
-        if [ ! -f "${SRC_DIR}/${pkg}/package.xml" ]; then
-            cat > "${SRC_DIR}/${pkg}/package.xml" << EOL
-<?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
-<package format="3">
-  <name>${pkg}</name>
-  <version>0.0.1</version>
-  <description>TODO: Package description</description>
-  <maintainer email="you@example.com">You</maintainer>
-  <license>Apache-2.0</license>
-
-  <buildtool_depend>ament_python</buildtool_depend>
-
-  <test_depend>ament_copyright</test_depend>
-  <test_depend>ament_flake8</test_depend>
-  <test_depend>ament_pep257</test_depend>
-  <test_depend>python3-pytest</test_depend>
-
-  <export>
-    <build_type>ament_python</build_type>
-  </export>
-</package>
-EOL
-        fi
-    done
 }
 
 # Main execution
