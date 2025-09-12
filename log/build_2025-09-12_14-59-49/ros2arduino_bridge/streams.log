@@ -1,0 +1,33 @@
+[0.010s] Invoking command in '/home/Dojo/Dojo/build/ros2arduino_bridge': /usr/bin/cmake /home/Dojo/Dojo/src/ros2arduino_bridge -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/ros2arduino_bridge
+[0.104s] -- The C compiler identification is GNU 11.4.0
+[0.184s] -- The CXX compiler identification is GNU 11.4.0
+[0.193s] -- Detecting C compiler ABI info
+[0.263s] -- Detecting C compiler ABI info - done
+[0.270s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.270s] -- Detecting C compile features
+[0.271s] -- Detecting C compile features - done
+[0.274s] -- Detecting CXX compiler ABI info
+[0.357s] -- Detecting CXX compiler ABI info - done
+[0.364s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.365s] -- Detecting CXX compile features
+[0.365s] -- Detecting CXX compile features - done
+[0.385s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[0.385s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[0.385s]   has asked CMake to find a package configuration file provided by
+[0.385s]   "ament_cmake", but CMake did not find one.
+[0.386s] 
+[0.386s]   Could not find a package configuration file provided by "ament_cmake" with
+[0.386s]   any of the following names:
+[0.386s] 
+[0.386s]     ament_cmakeConfig.cmake
+[0.386s]     ament_cmake-config.cmake
+[0.386s] 
+[0.386s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[0.386s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[0.386s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[0.386s]   has been installed.
+[0.386s] 
+[0.386s] [0m
+[0.386s] -- Configuring incomplete, errors occurred!
+[0.386s] See also "/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/CMakeOutput.log".
+[0.389s] Invoked command in '/home/Dojo/Dojo/build/ros2arduino_bridge' returned '1': /usr/bin/cmake /home/Dojo/Dojo/src/ros2arduino_bridge -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/ros2arduino_bridge

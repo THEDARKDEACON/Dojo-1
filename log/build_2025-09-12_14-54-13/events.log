@@ -1,0 +1,72 @@
+[0.000000] (-) TimerEvent: {}
+[0.000551] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.000757] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.000907] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.000953] (-) JobUnselected: {'identifier': 'robot_gazebo'}
+[0.000975] (-) JobUnselected: {'identifier': 'robot_navigation'}
+[0.001027] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.001065] (-) JobUnselected: {'identifier': 'robot_sensors'}
+[0.001122] (-) JobUnselected: {'identifier': 'vision_system'}
+[0.001158] (arduino_bridge) JobQueued: {'identifier': 'arduino_bridge', 'dependencies': OrderedDict()}
+[0.001225] (ros2arduino_bridge) JobQueued: {'identifier': 'ros2arduino_bridge', 'dependencies': OrderedDict()}
+[0.001263] (arduino_bridge) JobStarted: {'identifier': 'arduino_bridge'}
+[0.011794] (ros2arduino_bridge) JobStarted: {'identifier': 'ros2arduino_bridge'}
+[0.099803] (-) TimerEvent: {}
+[0.200108] (-) TimerEvent: {}
+[0.300412] (-) TimerEvent: {}
+[0.400732] (-) TimerEvent: {}
+[0.501061] (-) TimerEvent: {}
+[0.601371] (-) TimerEvent: {}
+[0.701686] (-) TimerEvent: {}
+[0.802044] (-) TimerEvent: {}
+[0.902412] (-) TimerEvent: {}
+[1.002773] (-) TimerEvent: {}
+[1.103136] (-) TimerEvent: {}
+[1.181977] (arduino_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/Dojo/Dojo/build/arduino_bridge/build', '--no-deps', 'symlink_data'], 'cwd': '/home/Dojo/Dojo/build/arduino_bridge', 'env': {'HOSTNAME': 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/home/Dojo/Dojo', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'XDG_RUNTIME_DIR': '/tmp', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'PWD': '/home/Dojo/Dojo/build/arduino_bridge', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/Dojo/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/Dojo/Dojo/install/arduino_bridge/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1'}, 'shell': False}
+[1.186376] (ros2arduino_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/Dojo/Dojo/build/ros2arduino_bridge/build', '--no-deps', 'symlink_data'], 'cwd': '/home/Dojo/Dojo/build/ros2arduino_bridge', 'env': {'HOSTNAME': 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/home/Dojo/Dojo', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'XDG_RUNTIME_DIR': '/tmp', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'PWD': '/home/Dojo/Dojo/build/ros2arduino_bridge', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/Dojo/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/Dojo/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1'}, 'shell': False}
+[1.203251] (-) TimerEvent: {}
+[1.303594] (-) TimerEvent: {}
+[1.403931] (-) TimerEvent: {}
+[1.504231] (-) TimerEvent: {}
+[1.526368] (arduino_bridge) StdoutLine: {'line': b'running develop\n'}
+[1.535076] (ros2arduino_bridge) StdoutLine: {'line': b'running develop\n'}
+[1.604337] (-) TimerEvent: {}
+[1.704794] (-) TimerEvent: {}
+[1.760030] (arduino_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[1.760324] (arduino_bridge) StdoutLine: {'line': b'writing arduino_bridge.egg-info/PKG-INFO\n'}
+[1.760552] (arduino_bridge) StdoutLine: {'line': b'writing dependency_links to arduino_bridge.egg-info/dependency_links.txt\n'}
+[1.760784] (arduino_bridge) StdoutLine: {'line': b'writing entry points to arduino_bridge.egg-info/entry_points.txt\n'}
+[1.760970] (arduino_bridge) StdoutLine: {'line': b'writing requirements to arduino_bridge.egg-info/requires.txt\n'}
+[1.761123] (arduino_bridge) StdoutLine: {'line': b'writing top-level names to arduino_bridge.egg-info/top_level.txt\n'}
+[1.763257] (arduino_bridge) StdoutLine: {'line': b"reading manifest file 'arduino_bridge.egg-info/SOURCES.txt'\n"}
+[1.764206] (arduino_bridge) StdoutLine: {'line': b"writing manifest file 'arduino_bridge.egg-info/SOURCES.txt'\n"}
+[1.764491] (ros2arduino_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[1.764747] (ros2arduino_bridge) StdoutLine: {'line': b'writing ros2arduino_bridge.egg-info/PKG-INFO\n'}
+[1.765033] (ros2arduino_bridge) StdoutLine: {'line': b'writing dependency_links to ros2arduino_bridge.egg-info/dependency_links.txt\n'}
+[1.765267] (ros2arduino_bridge) StdoutLine: {'line': b'writing entry points to ros2arduino_bridge.egg-info/entry_points.txt\n'}
+[1.765444] (ros2arduino_bridge) StdoutLine: {'line': b'writing requirements to ros2arduino_bridge.egg-info/requires.txt\n'}
+[1.765575] (ros2arduino_bridge) StdoutLine: {'line': b'writing top-level names to ros2arduino_bridge.egg-info/top_level.txt\n'}
+[1.765746] (arduino_bridge) StdoutLine: {'line': b'running build_ext\n'}
+[1.765945] (arduino_bridge) StdoutLine: {'line': b'Creating /home/Dojo/Dojo/install/arduino_bridge/lib/python3.10/site-packages/arduino-bridge.egg-link (link to .)\n'}
+[1.766931] (arduino_bridge) StdoutLine: {'line': b'Installing arduino_bridge_node script to /home/Dojo/Dojo/install/arduino_bridge/lib/arduino_bridge\n'}
+[1.767170] (arduino_bridge) StdoutLine: {'line': b'Installing test_arduino_bridge script to /home/Dojo/Dojo/install/arduino_bridge/lib/arduino_bridge\n'}
+[1.767471] (arduino_bridge) StdoutLine: {'line': b'\n'}
+[1.767600] (arduino_bridge) StdoutLine: {'line': b'Installed /home/Dojo/Dojo/build/arduino_bridge\n'}
+[1.767699] (arduino_bridge) StdoutLine: {'line': b'running symlink_data\n'}
+[1.767836] (ros2arduino_bridge) StdoutLine: {'line': b"reading manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'\n"}
+[1.768832] (ros2arduino_bridge) StdoutLine: {'line': b"writing manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'\n"}
+[1.770595] (ros2arduino_bridge) StdoutLine: {'line': b'running build_ext\n'}
+[1.770812] (ros2arduino_bridge) StdoutLine: {'line': b'Creating /home/Dojo/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages/ros2arduino-bridge.egg-link (link to .)\n'}
+[1.772137] (ros2arduino_bridge) StdoutLine: {'line': b'Installing arduino_bridge script to /home/Dojo/Dojo/install/ros2arduino_bridge/bin\n'}
+[1.772393] (ros2arduino_bridge) StdoutLine: {'line': b'Installing arduino_bridge_tester script to /home/Dojo/Dojo/install/ros2arduino_bridge/bin\n'}
+[1.772624] (ros2arduino_bridge) StdoutLine: {'line': b'Installing test_arduino_bridge script to /home/Dojo/Dojo/install/ros2arduino_bridge/bin\n'}
+[1.772938] (ros2arduino_bridge) StdoutLine: {'line': b'\n'}
+[1.773041] (ros2arduino_bridge) StdoutLine: {'line': b'Installed /home/Dojo/Dojo/build/ros2arduino_bridge\n'}
+[1.773168] (ros2arduino_bridge) StdoutLine: {'line': b'running symlink_data\n'}
+[1.773357] (ros2arduino_bridge) StderrLine: {'line': b"error: can't copy '/home/Dojo/Dojo/build/ros2arduino_bridge/launch/arduino_bridge.launch.py': doesn't exist or not a regular file\n"}
+[1.800795] (arduino_bridge) CommandEnded: {'returncode': 0}
+[1.804898] (-) TimerEvent: {}
+[1.817553] (arduino_bridge) JobEnded: {'identifier': 'arduino_bridge', 'rc': 0}
+[1.818902] (ros2arduino_bridge) CommandEnded: {'returncode': 1}
+[1.819273] (ros2arduino_bridge) JobEnded: {'identifier': 'ros2arduino_bridge', 'rc': 1}
+[1.829640] (-) EventReactorShutdown: {}

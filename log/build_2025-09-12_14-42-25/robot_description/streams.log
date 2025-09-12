@@ -1,0 +1,33 @@
+[0.051s] Invoking command in '/home/Dojo/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_description -- -j16 -l16
+[1.115s] Built target ament_cmake_python_symlink_robot_description
+[1.116s] running egg_info
+[1.116s] writing robot_description.egg-info/PKG-INFO
+[1.117s] writing dependency_links to robot_description.egg-info/dependency_links.txt
+[1.117s] writing top-level names to robot_description.egg-info/top_level.txt
+[1.117s] reading manifest file 'robot_description.egg-info/SOURCES.txt'
+[1.118s] writing manifest file 'robot_description.egg-info/SOURCES.txt'
+[1.118s] Built target ament_cmake_python_build_robot_description_egg
+[1.399s] Invoked command in '/home/Dojo/Dojo/build/robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_description -- -j16 -l16
+[1.401s] Invoking command in '/home/Dojo/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_description
+[1.422s] [31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:100 (message):
+[1.423s]   ament_cmake_symlink_install_directory() can't find
+[1.423s]   '/home/Dojo/Dojo/src/robot_description/src/robot_description/'
+[1.423s] Call Stack (most recent call first):
+[1.423s]   ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:332 (ament_cmake_symlink_install_directory)
+[1.423s]   cmake_install.cmake:46 (include)
+[1.424s] 
+[1.424s] [0m
+[1.424s] -- Install configuration: ""
+[1.425s] -- Execute custom install script
+[1.425s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/launch/display.launch.py
+[1.425s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/launch/robot_state_publisher.launch.py
+[1.425s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf
+[1.425s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf.xacro
+[1.425s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/rviz/robot.rviz
+[1.425s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/environment/pythonpath.sh
+[1.425s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/environment/pythonpath.dsv
+[1.425s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/PKG-INFO
+[1.425s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/SOURCES.txt
+[1.425s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/dependency_links.txt
+[1.427s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/top_level.txt
+[1.467s] Invoked command in '/home/Dojo/Dojo/build/robot_description' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_description

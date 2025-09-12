@@ -1,0 +1,8 @@
+[31mCMake Error at /opt/ros/humble/share/ament_cmake_python/cmake/ament_cmake_python-extras.cmake:51 (get_executable_path):
+  Unknown CMake command "get_executable_path".
+Call Stack (most recent call first):
+  /opt/ros/humble/share/ament_cmake_python/cmake/ament_cmake_python-extras.cmake:22 (_ament_cmake_python_get_python_install_dir)
+  /opt/ros/humble/share/ament_cmake_python/cmake/ament_python_install_package.cmake:38 (_ament_cmake_python_register_environment_hook)
+  CMakeLists.txt:8 (ament_python_install_package)
+
+[0m

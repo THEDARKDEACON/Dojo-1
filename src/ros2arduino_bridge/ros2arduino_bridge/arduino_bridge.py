@@ -1,232 +1,154 @@
-#!/usr/bin/env python3
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32, Int32, String
-from sensor_msgs.msg import Imu, Range, JointState
+from std_msgs.msg import String
+from geometry_msgs.msg import Twist
+from nav_msgs.msg import Odometry
+from sensor_msgs.msg import Imu
 import serial
-import serial.tools.list_ports
 import time
-import threading
-import json
 
 class ArduinoBridge(Node):
     def __init__(self):
         super().__init__('arduino_bridge')
         
-        # Parameters
-        self.declare_parameter('port', 'auto')
+        # Declare parameters
+        self.declare_parameter('port', '/dev/ttyACM0')
         self.declare_parameter('baud_rate', 115200)
-        self.declare_parameter('timeout', 1.0)
-        self.declare_parameter('sensor_publish_rate', 10.0)
+        self.declare_parameter('debug', False)
         
+        # Get parameters
         self.port = self.get_parameter('port').value
         self.baud_rate = self.get_parameter('baud_rate').value
-        self.timeout = self.get_parameter('timeout').value
-        self.sensor_publish_rate = self.get_parameter('sensor_publish_rate').value
+        self.debug = self.get_parameter('debug').value
         
-        # Setup serial connection
-        self.serial_connection = None
-        self.connect_to_arduino()
+        # Initialize serial connection
+        self.serial_conn = None
+        self.connect_serial()
         
-        # Publishers
-        self.encoder_pub = self.create_publisher(JointState, 'wheel_encoders', 10)
+        # Setup publishers
+        self.odom_pub = self.create_publisher(Odometry, 'odom', 10)
         self.imu_pub = self.create_publisher(Imu, 'imu/data', 10)
-        self.range_pub = self.create_publisher(Range, 'ultrasonic', 10)
-        self.debug_pub = self.create_publisher(String, 'arduino_debug', 10)
         
-        # Subscribers
+        # Setup subscriber
         self.cmd_vel_sub = self.create_subscription(
-            JointState,
-            'wheel_commands',
+            Twist,
+            'cmd_vel',
             self.cmd_vel_callback,
-            10)
-            
-        # Timer for sensor reading
-        self.sensor_timer = self.create_timer(
-            1.0 / self.sensor_publish_rate,
-            self.read_sensors)
-            
-        # Thread for reading serial data
-        self.serial_thread = threading.Thread(target=self.read_serial_thread)
-        self.serial_thread.daemon = True
-        self.serial_thread.start()
+            10
+        )
         
-        self.get_logger().info('Arduino Bridge Node started')
+        # Setup timer for reading from serial
+        self.timer = self.create_timer(0.01, self.read_serial)  # 100Hz
+        
+        self.get_logger().info('Arduino Bridge Node Started')
     
-    def connect_to_arduino(self):
-        """Connect to Arduino board"""
-        if self.port == 'auto':
-            self.port = self.find_arduino_port()
-            if not self.port:
-                self.get_logger().error('Could not find Arduino port')
-                return False
-        
+    def connect_serial(self):
         try:
-            self.serial_connection = serial.Serial(
+            self.serial_conn = serial.Serial(
                 port=self.port,
                 baudrate=self.baud_rate,
-                timeout=self.timeout)
-            
-            # Wait for Arduino to reset
-            time.sleep(2)
+                timeout=1.0
+            )
+            time.sleep(2)  # Wait for Arduino to reset
             self.get_logger().info(f'Connected to Arduino on {self.port}')
-            return True
-            
         except Exception as e:
             self.get_logger().error(f'Failed to connect to Arduino: {str(e)}')
-            self.serial_connection = None
-            return False
-    
-    def find_arduino_port(self):
-        """Find Arduino port automatically"""
-        ports = list(serial.tools.list_ports.comports())
-        for p in ports:
-            if 'Arduino' in p.description or 'ttyACM' in p.device:
-                self.get_logger().info(f'Found Arduino at {p.device}')
-                return p.device
-        return None
+            raise
     
     def cmd_vel_callback(self, msg):
-        """Handle incoming velocity commands"""
-        if not self.serial_connection or not self.serial_connection.is_open:
-            self.get_logger().warn('Serial port not open, cannot send command')
-            return
-            
-        try:
-            # Format: CMD:LEFT_SPEED,RIGHT_SPEED\n
-            # Create a dictionary with the command
-            cmd = {
-                'type': 'cmd_vel',
-                'left_speed': msg.velocity[0] if len(msg.velocity) > 0 else 0.0,
-                'right_speed': msg.velocity[1] if len(msg.velocity) > 1 else 0.0
-            }
-            
-            # Convert to JSON and send
-            cmd_str = json.dumps(cmd) + '\n'
-            self.serial_connection.write(cmd_str.encode('utf-8'))
-            
-        except Exception as e:
-            self.get_logger().error(f'Error sending command: {str(e)}')
-    
-    def read_serial_thread(self):
-        """Thread for reading serial data"""
-        buffer = ""
-        while rclpy.ok():
-            if not self.serial_connection or not self.serial_connection.is_open:
-                time.sleep(1)
-                continue
-                
+        # Send velocity commands to Arduino
+        # Format: 'v,linear_x,angular_z\n'
+        if self.serial_conn and self.serial_conn.is_open:
             try:
-                # Read all available data
-                while self.serial_connection.in_waiting > 0:
-                    char = self.serial_connection.read().decode('utf-8', errors='ignore')
-                    if char == '\n':
-                        self.process_serial_data(buffer)
-                        buffer = ""
-                    else:
-                        buffer += char
+                cmd_str = f'v,{msg.linear.x},{msg.angular.z}\n'
+                if self.debug:
+                    self.get_logger().info(f'Sending: {cmd_str.strip()}')
                 
+                self.serial_conn.write(cmd_str.encode('utf-8'))
             except Exception as e:
-                self.get_logger().error(f'Serial read error: {str(e)}')
-                time.sleep(1)
-                self.connect_to_arduino() if not self.serial_connection else None
+                self.get_logger().error(f'Error sending command: {str(e)}')
+    
+    def read_serial(self):
+        if self.serial_conn and self.serial_conn.is_open:
+            try:
+                if self.serial_conn.in_waiting > 0:
+                    line = self.serial_conn.readline().decode('utf-8').strip()
+                    if self.debug:
+                        self.get_logger().info(f'Received: {line}')
+                    
+                    # Process the received data
+                    self.process_serial_data(line)
+            except Exception as e:
+                self.get_logger().error(f'Error reading serial: {str(e)}')
     
     def process_serial_data(self, data):
-        """Process incoming serial data"""
+        # Process the data received from Arduino
+        # Example format: 'o,x,y,theta,vx,wz' for odometry
+        # or 'i,ax,ay,az,gx,gy,gz' for IMU
         try:
-            # Parse JSON data
-            msg = json.loads(data)
+            parts = data.split(',')
+            if len(parts) < 2:
+                return
+                
+            data_type = parts[0]
             
-            if msg.get('type') == 'sensor_data':
-                # Publish sensor data
-                self.publish_sensor_data(msg)
-                
-            elif msg.get('type') == 'debug':
-                # Publish debug message
-                debug_msg = String()
-                debug_msg.data = msg.get('message', '')
-                self.debug_pub.publish(debug_msg)
-                
-        except json.JSONDecodeError:
-            self.get_logger().warn(f'Invalid JSON: {data}')
+            if data_type == 'o':  # Odometry data
+                if len(parts) >= 6:
+                    odom_msg = Odometry()
+                    odom_msg.header.stamp = self.get_clock().now().to_msg()
+                    odom_msg.header.frame_id = 'odom'
+                    odom_msg.child_frame_id = 'base_link'
+                    
+                    # Set position
+                    odom_msg.pose.pose.position.x = float(parts[1])
+                    odom_msg.pose.pose.position.y = float(parts[2])
+                    odom_msg.pose.pose.position.z = 0.0
+                    
+                    # Set orientation (convert yaw to quaternion)
+                    yaw = float(parts[3])
+                    odom_msg.pose.pose.orientation.z = yaw
+                    
+                    # Set velocities
+                    odom_msg.twist.twist.linear.x = float(parts[4])
+                    odom_msg.twist.twist.angular.z = float(parts[5])
+                    
+                    self.odom_pub.publish(odom_msg)
+            
+            elif data_type == 'i':  # IMU data
+                if len(parts) >= 7:
+                    imu_msg = Imu()
+                    imu_msg.header.stamp = self.get_clock().now().to_msg()
+                    imu_msg.header.frame_id = 'imu_link'
+                    
+                    # Set linear acceleration (convert from g to m/s^2 if needed)
+                    imu_msg.linear_acceleration.x = float(parts[1]) * 9.81
+                    imu_msg.linear_acceleration.y = float(parts[2]) * 9.81
+                    imu_msg.linear_acceleration.z = float(parts[3]) * 9.81
+                    
+                    # Set angular velocity (convert from deg/s to rad/s)
+                    imu_msg.angular_velocity.x = float(parts[4]) * 3.14159 / 180.0
+                    imu_msg.angular_velocity.y = float(parts[5]) * 3.14159 / 180.0
+                    imu_msg.angular_velocity.z = float(parts[6]) * 3.14159 / 180.0
+                    
+                    self.imu_pub.publish(imu_msg)
+        
         except Exception as e:
             self.get_logger().error(f'Error processing serial data: {str(e)}')
-    
-    def publish_sensor_data(self, data):
-        """Publish sensor data to ROS topics"""
-        # Publish encoder data
-        if 'encoders' in data:
-            encoder_msg = JointState()
-            encoder_msg.header.stamp = self.get_clock().now().to_msg()
-            encoder_msg.name = ['left_wheel_joint', 'right_wheel_joint']
-            encoder_msg.position = [
-                data['encoders'].get('left', 0.0),
-                data['encoders'].get('right', 0.0)
-            ]
-            self.encoder_pub.publish(encoder_msg)
-        
-        # Publish IMU data
-        if 'imu' in data:
-            imu_msg = Imu()
-            imu_msg.header.stamp = self.get_clock().now().to_msg()
-            imu_msg.header.frame_id = 'imu_link'
-            
-            imu = data['imu']
-            if 'orientation' in imu:
-                imu_msg.orientation.x = imu['orientation'].get('x', 0.0)
-                imu_msg.orientation.y = imu['orientation'].get('y', 0.0)
-                imu_msg.orientation.z = imu['orientation'].get('z', 0.0)
-                imu_msg.orientation.w = imu['orientation'].get('w', 1.0)
-                
-            if 'angular_velocity' in imu:
-                imu_msg.angular_velocity.x = imu['angular_velocity'].get('x', 0.0)
-                imu_msg.angular_velocity.y = imu['angular_velocity'].get('y', 0.0)
-                imu_msg.angular_velocity.z = imu['angular_velocity'].get('z', 0.0)
-                
-            if 'linear_acceleration' in imu:
-                imu_msg.linear_acceleration.x = imu['linear_acceleration'].get('x', 0.0)
-                imu_msg.linear_acceleration.y = imu['linear_acceleration'].get('y', 0.0)
-                imu_msg.linear_acceleration.z = imu['linear_acceleration'].get('z', 0.0)
-                
-            self.imu_pub.publish(imu_msg)
-        
-        # Publish ultrasonic sensor data
-        if 'ultrasonic' in data:
-            range_msg = Range()
-            range_msg.header.stamp = self.get_clock().now().to_msg()
-            range_msg.header.frame_id = 'ultrasonic_sensor'
-            range_msg.radiation_type = Range.ULTRASOUND
-            range_msg.field_of_view = 0.1  # 0.1 radians (~5.7 degrees)
-            range_msg.min_range = 0.02  # 2cm
-            range_msg.max_range = 4.0    # 4m
-            range_msg.range = data['ultrasonic'].get('distance', 0.0)
-            self.range_pub.publish(range_msg)
-    
-    def read_sensors(self):
-        """Request sensor data from Arduino"""
-        if not self.serial_connection or not self.serial_connection.is_open:
-            return
-            
-        try:
-            # Send a request for sensor data
-            cmd = {'type': 'sensor_request'}
-            self.serial_connection.write((json.dumps(cmd) + '\n').encode('utf-8'))
-            
-        except Exception as e:
-            self.get_logger().error(f'Error requesting sensor data: {str(e)}')
 
 def main(args=None):
     rclpy.init(args=args)
-    node = ArduinoBridge()
     
     try:
+        node = ArduinoBridge()
         rclpy.spin(node)
     except KeyboardInterrupt:
         pass
+    except Exception as e:
+        print(f'Error in Arduino Bridge: {str(e)}')
     finally:
-        if node.serial_connection and node.serial_connection.is_open:
-            node.serial_connection.close()
+        if node.serial_conn and node.serial_conn.is_open:
+            node.serial_conn.close()
         node.destroy_node()
         rclpy.shutdown()
 

@@ -1,0 +1,29 @@
+Built target ament_cmake_python_symlink_robot_description
+running egg_info
+writing robot_description.egg-info/PKG-INFO
+writing dependency_links to robot_description.egg-info/dependency_links.txt
+writing top-level names to robot_description.egg-info/top_level.txt
+reading manifest file 'robot_description.egg-info/SOURCES.txt'
+writing manifest file 'robot_description.egg-info/SOURCES.txt'
+Built target ament_cmake_python_build_robot_description_egg
+[31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:100 (message):
+  ament_cmake_symlink_install_directory() can't find
+  '/home/Dojo/Dojo/src/robot_description/src/robot_description/'
+Call Stack (most recent call first):
+  ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:332 (ament_cmake_symlink_install_directory)
+  cmake_install.cmake:46 (include)
+
+[0m
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/launch/display.launch.py
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/launch/robot_state_publisher.launch.py
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf.xacro
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/rviz/robot.rviz
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/environment/pythonpath.sh
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/environment/pythonpath.dsv
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/PKG-INFO
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/SOURCES.txt
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/dependency_links.txt
+-- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/top_level.txt

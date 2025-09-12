@@ -1,0 +1,62 @@
+[0.000000] (-) TimerEvent: {}
+[0.000267] (-) JobUnselected: {'identifier': 'arduino_bridge'}
+[0.000328] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.000353] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.000390] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.000407] (-) JobUnselected: {'identifier': 'robot_gazebo'}
+[0.000440] (-) JobUnselected: {'identifier': 'robot_navigation'}
+[0.000455] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.000484] (-) JobUnselected: {'identifier': 'robot_sensors'}
+[0.000499] (-) JobUnselected: {'identifier': 'vision_system'}
+[0.000531] (ros2arduino_bridge) JobQueued: {'identifier': 'ros2arduino_bridge', 'dependencies': OrderedDict()}
+[0.000548] (ros2arduino_bridge) JobStarted: {'identifier': 'ros2arduino_bridge'}
+[0.008928] (ros2arduino_bridge) JobProgress: {'identifier': 'ros2arduino_bridge', 'progress': 'cmake'}
+[0.009481] (ros2arduino_bridge) Command: {'cmd': ['/usr/bin/cmake', '/home/Dojo/Dojo/src/ros2arduino_bridge', '-DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/ros2arduino_bridge'], 'cwd': '/home/Dojo/Dojo/build/ros2arduino_bridge', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/home/Dojo/Dojo/build/ros2arduino_bridge'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1')]), 'shell': False}
+[0.025647] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099479] (-) TimerEvent: {}
+[0.159058] (ros2arduino_bridge) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.199589] (-) TimerEvent: {}
+[0.299841] (-) TimerEvent: {}
+[0.301617] (ros2arduino_bridge) StderrLine: {'line': b"Error parsing '/home/Dojo/Dojo/src/ros2arduino_bridge/package.xml':\n"}
+[0.301761] (ros2arduino_bridge) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[0.301821] (ros2arduino_bridge) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 610, in parse_package_string\n'}
+[0.302025] (ros2arduino_bridge) StderrLine: {'line': b'    root = dom.parseString(data)\n'}
+[0.302166] (ros2arduino_bridge) StderrLine: {'line': b'  File "/usr/lib/python3.10/xml/dom/minidom.py", line 2000, in parseString\n'}
+[0.302546] (ros2arduino_bridge) StderrLine: {'line': b'    return expatbuilder.parseString(string)\n'}
+[0.302626] (ros2arduino_bridge) StderrLine: {'line': b'  File "/usr/lib/python3.10/xml/dom/expatbuilder.py", line 925, in parseString\n'}
+[0.302995] (ros2arduino_bridge) StderrLine: {'line': b'    return builder.parseString(string)\n'}
+[0.303162] (ros2arduino_bridge) StderrLine: {'line': b'  File "/usr/lib/python3.10/xml/dom/expatbuilder.py", line 223, in parseString\n'}
+[0.303342] (ros2arduino_bridge) StderrLine: {'line': b'    parser.Parse(string, True)\n'}
+[0.303458] (ros2arduino_bridge) StderrLine: {'line': b'xml.parsers.expat.ExpatError: XML declaration not well-formed: line 1, column 14\n'}
+[0.303594] (ros2arduino_bridge) StderrLine: {'line': b'\n'}
+[0.303671] (ros2arduino_bridge) StderrLine: {'line': b'During handling of the above exception, another exception occurred:\n'}
+[0.303745] (ros2arduino_bridge) StderrLine: {'line': b'\n'}
+[0.303814] (ros2arduino_bridge) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[0.303904] (ros2arduino_bridge) StderrLine: {'line': b'  File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>\n'}
+[0.303985] (ros2arduino_bridge) StderrLine: {'line': b'    main()\n'}
+[0.304063] (ros2arduino_bridge) StderrLine: {'line': b'  File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main\n'}
+[0.304140] (ros2arduino_bridge) StderrLine: {'line': b'    raise e\n'}
+[0.304226] (ros2arduino_bridge) StderrLine: {'line': b'  File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main\n'}
+[0.304278] (ros2arduino_bridge) StderrLine: {'line': b'    package = parse_package_string(\n'}
+[0.304329] (ros2arduino_bridge) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 612, in parse_package_string\n'}
+[0.304378] (ros2arduino_bridge) StderrLine: {'line': b"    raise InvalidPackage('The manifest contains invalid XML:\\n%s' % ex, filename)\n"}
+[0.304426] (ros2arduino_bridge) StderrLine: {'line': b"catkin_pkg.package.InvalidPackage: Error(s) in package '/home/Dojo/Dojo/src/ros2arduino_bridge/package.xml':\n"}
+[0.304474] (ros2arduino_bridge) StderrLine: {'line': b'The manifest contains invalid XML:\n'}
+[0.304523] (ros2arduino_bridge) StderrLine: {'line': b'XML declaration not well-formed: line 1, column 14\n'}
+[0.310342] (ros2arduino_bridge) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):\n'}
+[0.310444] (ros2arduino_bridge) StderrLine: {'line': b'  execute_process(/usr/bin/python3\n'}
+[0.310510] (ros2arduino_bridge) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py\n'}
+[0.310628] (ros2arduino_bridge) StderrLine: {'line': b'  /home/Dojo/Dojo/src/ros2arduino_bridge/package.xml\n'}
+[0.310696] (ros2arduino_bridge) StderrLine: {'line': b'  /home/Dojo/Dojo/build/ros2arduino_bridge/ament_cmake_core/package.cmake)\n'}
+[0.310758] (ros2arduino_bridge) StderrLine: {'line': b'  returned error code 1\n'}
+[0.310818] (ros2arduino_bridge) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.310891] (ros2arduino_bridge) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)\n'}
+[0.310949] (ros2arduino_bridge) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package.cmake:63 (ament_package_xml)\n'}
+[0.311008] (ros2arduino_bridge) StderrLine: {'line': b'  CMakeLists.txt:37 (ament_package)\n'}
+[0.311064] (ros2arduino_bridge) StderrLine: {'line': b'\n'}
+[0.311123] (ros2arduino_bridge) StderrLine: {'line': b'\x1b[0m\n'}
+[0.311192] (ros2arduino_bridge) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.311262] (ros2arduino_bridge) StdoutLine: {'line': b'See also "/home/Dojo/Dojo/build/ros2arduino_bridge/CMakeFiles/CMakeOutput.log".\n'}
+[0.313848] (ros2arduino_bridge) CommandEnded: {'returncode': 1}
+[0.314478] (ros2arduino_bridge) JobEnded: {'identifier': 'ros2arduino_bridge', 'rc': 1}
+[0.325207] (-) EventReactorShutdown: {}

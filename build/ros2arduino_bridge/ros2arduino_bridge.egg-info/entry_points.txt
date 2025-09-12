@@ -1,5 +1,3 @@
 [console_scripts]
 arduino_bridge = ros2arduino_bridge.arduino_bridge:main
-arduino_bridge_tester = test_arduino_bridge:main
-test_arduino_bridge = ros2arduino_bridge.test_arduino_bridge:main
 
