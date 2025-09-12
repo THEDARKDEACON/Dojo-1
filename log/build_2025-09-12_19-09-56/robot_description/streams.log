@@ -1,0 +1,65 @@
+[0.057s] Invoking command in '/home/Dojo/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_description -- -j16 -l16
+[1.119s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.120s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.120s] -- Configuring done
+[1.120s] -- Generating done
+[1.120s] -- Build files have been written to: /home/Dojo/Dojo/build/robot_description
+[1.121s] Built target ament_cmake_python_symlink_robot_description
+[1.121s] running egg_info
+[1.121s] writing robot_description.egg-info/PKG-INFO
+[1.121s] writing dependency_links to robot_description.egg-info/dependency_links.txt
+[1.121s] writing top-level names to robot_description.egg-info/top_level.txt
+[1.121s] reading manifest file 'robot_description.egg-info/SOURCES.txt'
+[1.121s] writing manifest file 'robot_description.egg-info/SOURCES.txt'
+[1.122s] Built target ament_cmake_python_build_robot_description_egg
+[1.405s] Invoked command in '/home/Dojo/Dojo/build/robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_description -- -j16 -l16
+[1.406s] Invoking command in '/home/Dojo/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_description
+[1.414s] -- Install configuration: ""
+[1.415s] -- Execute custom install script
+[1.416s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/launch/display.launch.py
+[1.416s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/launch/robot_state_publisher.launch.py
+[1.418s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf
+[1.421s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf.xacro
+[1.421s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/rviz/robot.rviz
+[1.423s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/environment/pythonpath.sh
+[1.423s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/environment/pythonpath.dsv
+[1.424s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/PKG-INFO
+[1.428s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/SOURCES.txt
+[1.428s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/dependency_links.txt
+[1.428s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/top_level.txt
+[1.429s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description/__init__.py
+[1.429s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/lib/robot_description/display_robot.py
+[1.430s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description
+[1.431s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description
+[1.432s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/environment/ament_prefix_path.sh
+[1.432s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv
+[1.432s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/environment/path.sh
+[1.432s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/environment/path.dsv
+[1.433s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/local_setup.bash
+[1.433s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/local_setup.sh
+[1.434s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/local_setup.zsh
+[1.434s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/local_setup.dsv
+[1.434s] -- Symlinking: /home/Dojo/Dojo/install/robot_description/share/robot_description/package.dsv
+[1.439s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/ament_index/resource_index/packages/robot_description
+[1.440s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake
+[1.440s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake
+[1.441s] -- Up-to-date symlink: /home/Dojo/Dojo/install/robot_description/share/robot_description/package.xml
+[1.441s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description
+[1.441s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/urdf
+[1.441s] -- Installing: /home/Dojo/Dojo/install/robot_description/share/robot_description/include
+[1.442s] -- Installing: /home/Dojo/Dojo/install/robot_description/share/robot_description/include/robot_description
+[1.442s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/rviz
+[1.442s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/src
+[1.442s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/src/robot_description
+[1.442s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/meshes
+[1.442s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/robot_description
+[1.443s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/robot_description/robot_description
+[1.443s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/scripts
+[1.444s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/resource
+[1.444s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/launch
+[1.445s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/share/robot_description/config
+[1.445s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/lib/robot_description/robot_description
+[1.446s] -- Up-to-date: /home/Dojo/Dojo/install/robot_description/lib/robot_description/robot_description/__init__.py
+[1.499s] Listing '/home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description'...
+[1.499s] Listing '/home/Dojo/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description/robot_description'...
+[1.539s] Invoked command in '/home/Dojo/Dojo/build/robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_description

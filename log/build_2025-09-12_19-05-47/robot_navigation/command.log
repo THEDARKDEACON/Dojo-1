@@ -1,0 +1,4 @@
+Invoking command in '/home/Dojo/Dojo/build/robot_navigation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_navigation -- -j16 -l16
+Invoked command in '/home/Dojo/Dojo/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_navigation -- -j16 -l16
+Invoking command in '/home/Dojo/Dojo/build/robot_navigation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_navigation
+Invoked command in '/home/Dojo/Dojo/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_navigation

@@ -1,24 +1,47 @@
 #!/bin/bash
 
-# Exit on error
-set -e
+# Exit on error and undefined variables
+set -euo pipefail
 
 # Colors for output
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
+RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-echo -e "${YELLOW}Starting workspace fix script...${NC}"
+# Function to print error messages
+function error_exit {
+    echo -e "${RED}Error: $1${NC}" >&2
+    exit 1
+}
+
+# Function to print info messages
+function info {
+    echo -e "${GREEN}$1${NC}"
+}
+
+# Function to print warning messages
+function warning {
+    echo -e "${YELLOW}$1${NC}"
+}
+
+# Initialize
+info "Starting workspace fix script..."
 
 # Define workspace directory
 WORKSPACE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SRC_DIR="${WORKSPACE_DIR}/src"
 
-echo -e "${GREEN}Workspace directory: ${WORKSPACE_DIR}${NC}"
+# Check if running from the correct directory
+if [ ! -d "${WORKSPACE_DIR}" ]; then
+    error_exit "Could not determine workspace directory"
+fi
+
+info "Workspace directory: ${WORKSPACE_DIR}"
 
 # Create required directories for all packages
 create_directories() {
-    echo -e "${YELLOW}Creating required directories...${NC}"
+    info "Creating required directories..."
     
     # List of all packages
     local packages=(
@@ -32,22 +55,30 @@ create_directories() {
         "robot_bringup"
     )
     
+    # Create src directory if it doesn't exist
+    mkdir -p "${SRC_DIR}" || error_exit "Failed to create src directory"
+    
     for pkg in "${packages[@]}"; do
-        echo "  - Setting up ${pkg}..."
+        info "  - Setting up ${pkg}..."
+        
+        # Create package directory
+        PKG_DIR="${SRC_DIR}/${pkg}"
+        mkdir -p "${PKG_DIR}" || error_exit "Failed to create directory for ${pkg}"
         
         # Create standard directories
-        mkdir -p "${SRC_DIR}/${pkg}/launch"
-        mkdir -p "${SRC_DIR}/${pkg}/config"
-        mkdir -p "${SRC_DIR}/${pkg}/resource"
+        for dir in "launch" "config" "resource" "include/${pkg}" "src"; do
+            mkdir -p "${PKG_DIR}/${dir}" || error_exit "Failed to create ${dir} for ${pkg}"
+        done
         
         # For Python packages
-        mkdir -p "${SRC_DIR}/${pkg}/src/${pkg}"
-        touch "${SRC_DIR}/${pkg}/src/${pkg}/__init__.py"
-        touch "${SRC_DIR}/${pkg}/resource/${pkg}"
+        if [[ " ${pkg} " =~ (robot_control|robot_sensors|arduino_bridge|ros2arduino_bridge) ]]; then
+            mkdir -p "${PKG_DIR}/${pkg}" || error_exit "Failed to create Python package directory for ${pkg}"
+            touch "${PKG_DIR}/${pkg}/__init__.py"
+        fi
         
         # For robot_description meshes
         if [ "${pkg}" == "robot_description" ]; then
-            mkdir -p "${SRC_DIR}/${pkg}/meshes"
+            mkdir -p "${PKG_DIR}/meshes" || error_exit "Failed to create meshes directory for ${pkg}"
         fi
     done
 }
@@ -536,25 +567,30 @@ EOL
 
 # Main execution
 main() {
-    echo -e "${GREEN}Starting workspace fix process...${NC}"
+    info "Starting workspace fix process..."
     
     # Check if running in the correct directory
     if [ ! -d "${SRC_DIR}" ]; then
-        echo -e "${YELLOW}Error: 'src' directory not found. Please run this script from your workspace root.${NC}"
-        exit 1
+        warning "'src' directory not found. Creating it..."
+        mkdir -p "${SRC_DIR}" || error_exit "Failed to create src directory"
     fi
     
     # Run all fix functions
-    create_directories
-    fix_cmake_files
-    create_nav_configs
-    setup_python_packages
-    setup_ros2arduino_bridge
+    info "Running workspace setup..."
     
-    echo -e "${GREEN}Workspace fix completed successfully!${NC}"
-    echo -e "${YELLOW}You can now build the workspace with:${NC}"
+    # Create required directories first
+    create_directories
+    
+    # Run other setup functions
+    for func in fix_cmake_files create_nav_configs setup_python_packages setup_ros2arduino_bridge; do
+        info "Running ${func}..."
+        ${func} || error_exit "${func} failed"
+    done
+    
+    info "Workspace fix completed successfully!"
+    info "You can now build the workspace with:"
     echo "  colcon build --symlink-install"
 }
 
 # Run main function
-main
+main "$@"

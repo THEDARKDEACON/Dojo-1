@@ -3,6 +3,7 @@ setup.cfg
 setup.py
 launch/sensors.launch.py
 resource/robot_sensors
+robot_sensors/__init__.py
 robot_sensors/camera_publisher.py
 robot_sensors.egg-info/PKG-INFO
 robot_sensors.egg-info/SOURCES.txt
