@@ -134,22 +134,41 @@ fix_issues() {
     
     echo "✅ Successfully installed Gazebo Fortress and ROS 2 Humble integration"
     
-    # Install Python dependencies
-    echo "🐍 Installing Python dependencies..."
+    # Install Python dependencies globally
+    echo "🐍 Installing Python dependencies globally..."
     
-    # Install empy from system package manager
+    # Install system dependencies first
     echo "📦 Installing system dependencies..."
     sudo apt-get update
-    sudo apt-get install -y python3-empy
+    sudo apt-get install -y \
+        python3-pip \
+        python3-empy \
+        python3-colcon-common-extensions \
+        python3-vcstool \
+        python3-setuptools \
+        python3-wheel
     
-    # Install remaining Python packages
-    pip3 install --force-reinstall --user \
+    # Install specific versions of pip packages
+    echo "📦 Installing Python packages with specific versions..."
+    sudo -H pip3 install --upgrade 'pip<24.0'  # Use a slightly older pip version for better compatibility
+    sudo -H pip3 install --upgrade \
         'setuptools<70.0.0' \
         'wheel<1.0.0' \
-        'vcstool' \
-        'colcon-common-extensions' \
         'setuptools-scm<8.0.0' \
-        'setuptools-scm-git-archive<3.0.0'
+        'setuptools-scm-git-archive<3.0.0' \
+        'empy==3.3.4'  # Specific version known to work with ROS 2 Humble
+    
+    # Verify empy installation
+    if ! python3 -c "import em; print('empy version:', em.VERSION)" &>/dev/null; then
+        echo "❌ Failed to install empy. Trying alternative installation method..."
+        # Try installing empy from source as a fallback
+        cd /tmp
+        git clone https://github.com/ros/empy.git
+        cd empy
+        git checkout 3.3.4
+        sudo python3 setup.py install
+        cd ~
+    fi
 }
 
 # Function to build a single package
