@@ -79,28 +79,43 @@ fix_issues() {
     echo "📦 Installing package dependencies (this may take a while)..."
     rosdep install --from-paths src --ignore-src -r -y || true
     
-    # Install specific ROS 2 Humble packages that might be missing
-    echo "📦 Installing ROS 2 Humble specific packages..."
+    # Install ROS 2 Humble development tools and base packages
+    echo "📦 Installing ROS 2 Humble development tools..."
+    sudo apt-get update
     sudo apt-get install -y \
-        ros-humble-gazebo-ros \
-        ros-humble-gazebo-ros-pkgs \
-        ros-humble-gazebo-ros2-control \
-        ros-humble-gazebo-plugins \
-        ros-humble-ament-cmake \
-        ros-humble-ament-cmake-python \
+        python3-rosdep \
+        python3-rosinstall \
+        python3-rosinstall-generator \
+        python3-vcstool \
+        python3-colcon-common-extensions \
+        python3-rosdep \
+        python3-rosdistro \
         python3-ament-package \
-        python3-colcon-ros || true
+        python3-colcon-ros
+
+    # Install Gazebo packages from source if not available
+    if ! dpkg -l | grep -q 'ros-humble-gazebo-ros'; then
+        echo "🔧 Gazebo packages not found, installing from source..."
+        mkdir -p ~/gazebo_ws/src
+        cd ~/gazebo_ws/src
+        git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b humble
+        cd ~/gazebo_ws
+        rosdep install -y --from-paths src --ignore-src -r --os=ubuntu:jammy
+        colcon build --symlink-install
+        echo "source ~/gazebo_ws/install/setup.bash" >> ~/.bashrc
+        source ~/.bashrc
+        cd "$WORKSPACE"
+    fi
     
     # Install specific versions of Python packages to avoid compatibility issues
     echo "🐍 Installing Python dependencies with specific versions..."
-    pip3 install --force-reinstall \
+    pip3 install --force-reinstall --user \
         'setuptools<70.0.0' \
         'wheel<1.0.0' \
         'vcstool' \
         'colcon-common-extensions' \
         'setuptools-scm<8.0.0' \
-        'setuptools-scm-git-archive<3.0.0' \
-        'pkg-resources==0.0.0'
+        'setuptools-scm-git-archive<3.0.0'
 }
 
 # Function to build a single package
