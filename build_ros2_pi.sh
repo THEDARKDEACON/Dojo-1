@@ -93,34 +93,46 @@ fix_issues() {
         python3-ament-package \
         python3-colcon-ros
 
-    # Install Gazebo packages from source if not available
-    if ! dpkg -l | grep -q 'ros-humble-gazebo-ros'; then
-        echo "🔧 Gazebo packages not found, installing from source..."
+    # Install Gazebo/ROS integration packages
+    echo "📦 Installing ROS 2 Humble Gazebo integration..."
+    
+    # Install ros_gz packages
+    sudo apt-get update
+    sudo apt-get install -y \
+        ros-humble-ros-gz \
+        ros-humble-ros-gz-sim \
+        ros-humble-ros-gz-bridge \
+        ros-humble-ros-gz-interfaces
         
-        # Create workspace
-        mkdir -p ~/gazebo_ws/src
-        cd ~/gazebo_ws
+    # Install Gazebo Fortress (the version compatible with ROS 2 Humble)
+    echo "🔧 Setting up Gazebo Fortress..."
+    sudo apt-get install -y \
+        wget \
+        lsb-release \
+        gnupg
         
-        # Clone the correct branch
-        echo "📥 Cloning gazebo_ros_pkgs..."
-        git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b humble src/gazebo_ros_pkgs
+    # Add Gazebo repository
+    sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo_stable.list > /dev/null
+    
+    # Install Gazebo
+    sudo apt-get update
+    sudo apt-get install -y \
+        gz-fortress \
+        libgz-sim7-dev \
+        libgz-common5-dev
         
-        # Install dependencies
-        echo "📦 Installing dependencies..."
-        sudo apt-get update
-        rosdep update
-        rosdep install -y --from-paths src --ignore-src -r --os=ubuntu:jammy || true
-        
-        # Build the packages
-        echo "🔨 Building Gazebo ROS packages..."
-        colcon build --symlink-install
-        
-        # Update environment
-        echo "source ~/gazebo_ws/install/setup.bash" >> ~/.bashrc
-        source ~/gazebo_ws/install/setup.bash
-        
-        cd "$WORKSPACE"
+    # Update environment
+    echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
+    source ~/.bashrc
+    
+    # Verify installation
+    if ! command -v gz &> /dev/null; then
+        echo "❌ Failed to install Gazebo. Please check the logs and try again."
+        exit 1
     fi
+    
+    echo "✅ Successfully installed Gazebo Fortress and ROS 2 Humble integration"
     
     # Install specific versions of Python packages to avoid compatibility issues
     echo "🐍 Installing Python dependencies with specific versions..."
