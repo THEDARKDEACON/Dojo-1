@@ -1,0 +1,40 @@
+[0.331s] Invoking command in '/root/Dojo/build/robot_perception': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_perception -- -j16 -l16
+[1.226s] Built target ament_cmake_python_symlink_robot_perception
+[1.226s] running egg_info
+[1.226s] writing robot_perception.egg-info/PKG-INFO
+[1.226s] writing dependency_links to robot_perception.egg-info/dependency_links.txt
+[1.226s] writing top-level names to robot_perception.egg-info/top_level.txt
+[1.226s] reading manifest file 'robot_perception.egg-info/SOURCES.txt'
+[1.226s] writing manifest file 'robot_perception.egg-info/SOURCES.txt'
+[1.226s] Built target ament_cmake_python_build_robot_perception_egg
+[1.679s] Invoked command in '/root/Dojo/build/robot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_perception -- -j16 -l16
+[1.681s] Invoking command in '/root/Dojo/build/robot_perception': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_perception
+[1.717s] -- Install configuration: ""
+[1.718s] -- Execute custom install script
+[1.720s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/pythonpath.sh
+[1.720s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/pythonpath.dsv
+[1.723s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info/PKG-INFO
+[1.723s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info/SOURCES.txt
+[1.723s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info/dependency_links.txt
+[1.724s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info/top_level.txt
+[1.724s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception/__init__.py
+[1.725s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/launch/perception.launch.py
+[1.725s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/launch/robot_perception.launch.py
+[1.727s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/config/robot_perception_params.yaml
+[1.730s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/ament_index/resource_index/package_run_dependencies/robot_perception
+[1.730s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/ament_index/resource_index/parent_prefix_path/robot_perception
+[1.730s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/ament_prefix_path.sh
+[1.731s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/ament_prefix_path.dsv
+[1.731s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/path.sh
+[1.731s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/path.dsv
+[1.734s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/local_setup.bash
+[1.735s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/local_setup.sh
+[1.736s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/local_setup.zsh
+[1.736s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/local_setup.dsv
+[1.737s] -- Symlinking: /root/Dojo/install/robot_perception/share/robot_perception/package.dsv
+[1.743s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/ament_index/resource_index/packages/robot_perception
+[1.743s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/cmake/robot_perceptionConfig.cmake
+[1.744s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/cmake/robot_perceptionConfig-version.cmake
+[1.745s] -- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/package.xml
+[1.817s] Listing '/root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception'...
+[1.850s] Invoked command in '/root/Dojo/build/robot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_perception

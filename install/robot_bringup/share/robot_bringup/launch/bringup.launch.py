@@ -1,1 +1,1 @@
-/home/Dojo/Dojo/src/robot_bringup/launch/bringup.launch.py
+/root/Dojo/src/robot_bringup/launch/bringup.launch.py

@@ -1,1 +1,1 @@
-/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/pythonpath.sh
+/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/pythonpath.sh

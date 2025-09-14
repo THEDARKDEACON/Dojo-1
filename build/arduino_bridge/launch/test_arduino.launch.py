@@ -1,1 +1,1 @@
-/home/Dojo/Dojo/src/arduino_bridge/launch/test_arduino.launch.py
+/root/Dojo/src/arduino_bridge/launch/test_arduino.launch.py

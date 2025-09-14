@@ -1,0 +1,240 @@
+[0.000000] (-) TimerEvent: {}
+[0.000588] (arduino_bridge) JobQueued: {'identifier': 'arduino_bridge', 'dependencies': OrderedDict()}
+[0.000708] (robot_control) JobQueued: {'identifier': 'robot_control', 'dependencies': OrderedDict()}
+[0.000836] (robot_description) JobQueued: {'identifier': 'robot_description', 'dependencies': OrderedDict()}
+[0.000883] (robot_navigation) JobQueued: {'identifier': 'robot_navigation', 'dependencies': OrderedDict()}
+[0.000913] (robot_perception) JobQueued: {'identifier': 'robot_perception', 'dependencies': OrderedDict()}
+[0.000930] (robot_sensors) JobQueued: {'identifier': 'robot_sensors', 'dependencies': OrderedDict()}
+[0.000962] (ros2arduino_bridge) JobQueued: {'identifier': 'ros2arduino_bridge', 'dependencies': OrderedDict()}
+[0.000990] (vision_system) JobQueued: {'identifier': 'vision_system', 'dependencies': OrderedDict()}
+[0.001017] (robot_bringup) JobQueued: {'identifier': 'robot_bringup', 'dependencies': OrderedDict([('robot_control', '/root/Dojo/install/robot_control'), ('robot_description', '/root/Dojo/install/robot_description'), ('robot_navigation', '/root/Dojo/install/robot_navigation'), ('robot_perception', '/root/Dojo/install/robot_perception'), ('robot_sensors', '/root/Dojo/install/robot_sensors')])}
+[0.001103] (robot_gazebo) JobQueued: {'identifier': 'robot_gazebo', 'dependencies': OrderedDict([('robot_description', '/root/Dojo/install/robot_description')])}
+[0.001189] (robot_launch) JobQueued: {'identifier': 'robot_launch', 'dependencies': OrderedDict([('robot_control', '/root/Dojo/install/robot_control'), ('robot_description', '/root/Dojo/install/robot_description'), ('robot_sensors', '/root/Dojo/install/robot_sensors'), ('ros2arduino_bridge', '/root/Dojo/install/ros2arduino_bridge')])}
+[0.001220] (robot_description) JobStarted: {'identifier': 'robot_description'}
+[0.009292] (robot_control) JobStarted: {'identifier': 'robot_control'}
+[0.014600] (robot_sensors) JobStarted: {'identifier': 'robot_sensors'}
+[0.019288] (robot_navigation) JobStarted: {'identifier': 'robot_navigation'}
+[0.023057] (robot_perception) JobStarted: {'identifier': 'robot_perception'}
+[0.026649] (ros2arduino_bridge) JobStarted: {'identifier': 'ros2arduino_bridge'}
+[0.032019] (arduino_bridge) JobStarted: {'identifier': 'arduino_bridge'}
+[0.038741] (vision_system) JobStarted: {'identifier': 'vision_system'}
+[0.047011] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'cmake'}
+[0.047533] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '/root/Dojo/src/robot_description', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_description'], 'cwd': '/root/Dojo/build/robot_description', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/usr/lib/python3/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('COLCON_HOME', '/root/Dojo'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.099819] (-) TimerEvent: {}
+[0.200101] (-) TimerEvent: {}
+[0.300432] (-) TimerEvent: {}
+[0.400725] (-) TimerEvent: {}
+[0.452087] (robot_navigation) JobProgress: {'identifier': 'robot_navigation', 'progress': 'cmake'}
+[0.452929] (robot_navigation) Command: {'cmd': ['/usr/bin/cmake', '/root/Dojo/src/robot_navigation', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_navigation'], 'cwd': '/root/Dojo/build/robot_navigation', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_navigation'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/usr/lib/python3/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('COLCON_HOME', '/root/Dojo'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.453984] (robot_perception) JobProgress: {'identifier': 'robot_perception', 'progress': 'cmake'}
+[0.454241] (robot_perception) Command: {'cmd': ['/usr/bin/cmake', '/root/Dojo/src/robot_perception', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_perception'], 'cwd': '/root/Dojo/build/robot_perception', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_perception'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/usr/lib/python3/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('COLCON_HOME', '/root/Dojo'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.500835] (-) TimerEvent: {}
+[0.601183] (-) TimerEvent: {}
+[0.701474] (-) TimerEvent: {}
+[0.801829] (-) TimerEvent: {}
+[0.902169] (-) TimerEvent: {}
+[0.936412] (robot_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.937623] (robot_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.938534] (robot_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.938874] (robot_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.938990] (robot_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.939097] (robot_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.939204] (robot_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.939474] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.939709] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.940593] (robot_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.941467] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.941611] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.941713] (robot_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.941822] (robot_description) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.941940] (robot_navigation) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.942105] (robot_navigation) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.942216] (robot_navigation) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.942341] (robot_navigation) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.942459] (robot_navigation) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.942573] (robot_navigation) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.942688] (robot_navigation) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.942813] (robot_navigation) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.942941] (robot_navigation) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.943049] (robot_navigation) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.943176] (robot_navigation) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.943295] (robot_navigation) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.943415] (robot_navigation) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.943534] (robot_perception) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.943682] (robot_perception) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.943812] (robot_perception) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.943952] (robot_perception) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.944066] (robot_perception) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.944161] (robot_perception) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.944270] (robot_perception) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.944370] (robot_perception) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.944470] (robot_perception) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.944560] (robot_perception) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.944671] (robot_perception) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.944819] (robot_perception) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.944957] (robot_perception) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.978924] (robot_description) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.002295] (-) TimerEvent: {}
+[1.102636] (-) TimerEvent: {}
+[1.197430] (robot_description) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.202761] (-) TimerEvent: {}
+[1.203110] (robot_description) StdoutLine: {'line': b'-- Generating done\n'}
+[1.205500] (robot_description) StdoutLine: {'line': b'-- Build files have been written to: /root/Dojo/build/robot_description\n'}
+[1.211961] (robot_description) CommandEnded: {'returncode': 0}
+[1.212578] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'build'}
+[1.213742] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/Dojo/build/robot_description', '--', '-j16', '-l16'], 'cwd': '/root/Dojo/build/robot_description', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/usr/lib/python3/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('COLCON_HOME', '/root/Dojo'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.231957] (robot_navigation) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.241600] (robot_perception) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.291045] (robot_description) StdoutLine: {'line': b'Built target ament_cmake_python_symlink_robot_description\n'}
+[1.302905] (-) TimerEvent: {}
+[1.305777] (robot_navigation) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.323950] (robot_perception) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.381624] (robot_perception) StdoutLine: {'line': b'-- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[1.384880] (robot_perception) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[1.403020] (-) TimerEvent: {}
+[1.449321] (robot_navigation) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.454591] (robot_navigation) StdoutLine: {'line': b'-- Generating done\n'}
+[1.456954] (robot_navigation) StdoutLine: {'line': b'-- Build files have been written to: /root/Dojo/build/robot_navigation\n'}
+[1.462555] (robot_navigation) CommandEnded: {'returncode': 0}
+[1.463180] (robot_navigation) JobProgress: {'identifier': 'robot_navigation', 'progress': 'build'}
+[1.463657] (robot_navigation) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/Dojo/build/robot_navigation', '--', '-j16', '-l16'], 'cwd': '/root/Dojo/build/robot_navigation', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_navigation'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/usr/lib/python3/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('COLCON_HOME', '/root/Dojo'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.470577] (robot_perception) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.483224] (robot_perception) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.502386] (robot_perception) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.503087] (-) TimerEvent: {}
+[1.515947] (robot_navigation) CommandEnded: {'returncode': 0}
+[1.516575] (robot_navigation) JobProgress: {'identifier': 'robot_navigation', 'progress': 'install'}
+[1.527573] (robot_perception) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.529970] (robot_navigation) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/Dojo/build/robot_navigation'], 'cwd': '/root/Dojo/build/robot_navigation', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_navigation'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/usr/lib/python3/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('COLCON_HOME', '/root/Dojo'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.537464] (robot_navigation) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.538099] (robot_navigation) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[1.538638] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/navigation.launch.py\n'}
+[1.551899] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/localization.launch.py\n'}
+[1.562777] (robot_perception) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.569814] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/map_server.launch.py\n'}
+[1.580064] (robot_description) StdoutLine: {'line': b'running egg_info\n'}
+[1.585914] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/nav2_params.yaml\n'}
+[1.598588] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/localization_params.yaml\n'}
+[1.598949] (robot_description) StdoutLine: {'line': b'creating robot_description.egg-info\n'}
+[1.599157] (robot_description) StdoutLine: {'line': b'writing robot_description.egg-info/PKG-INFO\n'}
+[1.599376] (robot_description) StdoutLine: {'line': b'writing dependency_links to robot_description.egg-info/dependency_links.txt\n'}
+[1.600048] (robot_description) StdoutLine: {'line': b'writing top-level names to robot_description.egg-info/top_level.txt\n'}
+[1.600322] (robot_description) StdoutLine: {'line': b"writing manifest file 'robot_description.egg-info/SOURCES.txt'\n"}
+[1.603199] (-) TimerEvent: {}
+[1.613609] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/map_server_params.yaml\n'}
+[1.629937] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/bt_navigator_params.yaml\n'}
+[1.644496] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/planner_params.yaml\n'}
+[1.657339] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/controller_params.yaml\n'}
+[1.663651] (robot_description) StdoutLine: {'line': b"reading manifest file 'robot_description.egg-info/SOURCES.txt'\n"}
+[1.664021] (robot_description) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[1.664269] (robot_description) StderrLine: {'line': b'  File "/root/Dojo/build/robot_description/ament_cmake_python/robot_description/setup.py", line 4, in <module>\n'}
+[1.664456] (robot_description) StderrLine: {'line': b'    setup(\n'}
+[1.664616] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/__init__.py", line 115, in setup\n'}
+[1.664823] (robot_description) StderrLine: {'line': b'    return distutils.core.setup(**attrs)\n'}
+[1.665011] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 186, in setup\n'}
+[1.665175] (robot_description) StderrLine: {'line': b'    return run_commands(dist)\n'}
+[1.665290] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 202, in run_commands\n'}
+[1.665402] (robot_description) StderrLine: {'line': b'    dist.run_commands()\n'}
+[1.665525] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1002, in run_commands\n'}
+[1.665630] (robot_description) StderrLine: {'line': b'    self.run_command(cmd)\n'}
+[1.665808] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1102, in run_command\n'}
+[1.665911] (robot_description) StderrLine: {'line': b'    super().run_command(command)\n'}
+[1.666015] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1021, in run_command\n'}
+[1.666116] (robot_description) StderrLine: {'line': b'    cmd_obj.run()\n'}
+[1.666286] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/command/egg_info.py", line 312, in run\n'}
+[1.666401] (robot_description) StderrLine: {'line': b'    self.find_sources()\n'}
+[1.666502] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/command/egg_info.py", line 320, in find_sources\n'}
+[1.666597] (robot_description) StderrLine: {'line': b'    mm.run()\n'}
+[1.666689] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/command/egg_info.py", line 548, in run\n'}
+[1.666812] (robot_description) StderrLine: {'line': b'    self.prune_file_list()\n'}
+[1.666916] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/command/sdist.py", line 162, in prune_file_list\n'}
+[1.667021] (robot_description) StderrLine: {'line': b'    super().prune_file_list()\n'}
+[1.667136] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/command/sdist.py", line 386, in prune_file_list\n'}
+[1.667233] (robot_description) StderrLine: {'line': b'    base_dir = self.distribution.get_fullname()\n'}
+[1.667328] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_core_metadata.py", line 275, in get_fullname\n'}
+[1.667448] (robot_description) StderrLine: {'line': b'    return _distribution_fullname(self.get_name(), self.get_version())\n'}
+[1.667546] (robot_description) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_core_metadata.py", line 293, in _distribution_fullname\n'}
+[1.667639] (robot_description) StderrLine: {'line': b'    canonicalize_version(version, strip_trailing_zero=False),\n'}
+[1.667735] (robot_description) StderrLine: {'line': b"TypeError: canonicalize_version() got an unexpected keyword argument 'strip_trailing_zero'\n"}
+[1.671632] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/costmap_common_params.yaml\n'}
+[1.683394] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/global_costmap_params.yaml\n'}
+[1.688218] (robot_perception) StdoutLine: {'line': b'-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)\n'}
+[1.697333] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/local_costmap_params.yaml\n'}
+[1.702931] (robot_description) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_robot_description_egg] Error 1\n'}
+[1.703913] (-) TimerEvent: {}
+[1.705328] (robot_description) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:164: CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/all] Error 2\n'}
+[1.706842] (robot_description) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[1.711201] (robot_description) CommandEnded: {'returncode': 2}
+[1.713862] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/localization.launch.py\n'}
+[1.715059] (robot_perception) StdoutLine: {'line': b'-- Found image_transport: 3.1.12 (/opt/ros/humble/share/image_transport/cmake)\n'}
+[1.727533] (robot_description) JobEnded: {'identifier': 'robot_description', 'rc': 2}
+[1.730482] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/map_server.launch.py\n'}
+[1.746729] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/navigation.launch.py\n'}
+[1.771831] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/bt_navigator_params.yaml\n'}
+[1.792915] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/controller_params.yaml\n'}
+[1.804025] (-) TimerEvent: {}
+[1.811284] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/costmap_common_params.yaml\n'}
+[1.833086] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/global_costmap_params.yaml\n'}
+[1.849117] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/local_costmap_params.yaml\n'}
+[1.865927] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/localization_params.yaml\n'}
+[1.877572] (robot_perception) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.879889] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/map_server_params.yaml\n'}
+[1.886922] (robot_perception) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.897731] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml\n'}
+[1.904152] (-) TimerEvent: {}
+[1.912835] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/planner_params.yaml\n'}
+[1.928892] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/bt_navigator_params.yaml\n'}
+[1.929223] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/controller_params.yaml\n'}
+[1.929493] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/costmap_common_params.yaml\n'}
+[1.929864] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/global_costmap_params.yaml\n'}
+[1.930091] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/local_costmap_params.yaml\n'}
+[1.930232] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/localization_params.yaml\n'}
+[1.930368] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/map_server_params.yaml\n'}
+[1.930560] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml\n'}
+[1.930725] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/planner_params.yaml\n'}
+[1.930847] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/localization.launch.py\n'}
+[1.930968] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/map_server.launch.py\n'}
+[1.931113] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/navigation.launch.py\n'}
+[1.931233] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/ament_index/resource_index/package_run_dependencies/robot_navigation\n'}
+[1.944817] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/ament_index/resource_index/parent_prefix_path/robot_navigation\n'}
+[1.958247] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.sh\n'}
+[1.961920] (robot_sensors) JobEnded: {'identifier': 'robot_sensors', 'rc': 'SIGINT'}
+[1.962303] (vision_system) JobEnded: {'identifier': 'vision_system', 'rc': 'SIGINT'}
+[1.966240] (robot_control) JobEnded: {'identifier': 'robot_control', 'rc': 'SIGINT'}
+[1.969656] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.dsv\n'}
+[1.972660] (arduino_bridge) JobEnded: {'identifier': 'arduino_bridge', 'rc': 'SIGINT'}
+[1.973903] (ros2arduino_bridge) JobEnded: {'identifier': 'ros2arduino_bridge', 'rc': 'SIGINT'}
+[1.979212] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/path.sh\n'}
+[1.989597] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/path.dsv\n'}
+[1.999395] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.bash\n'}
+[2.004244] (-) TimerEvent: {}
+[2.009190] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.sh\n'}
+[2.018701] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.zsh\n'}
+[2.027723] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.dsv\n'}
+[2.033799] (robot_perception) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[2.038627] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/package.dsv\n'}
+[2.047563] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/ament_index/resource_index/packages/robot_navigation\n'}
+[2.057586] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig.cmake\n'}
+[2.066427] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig-version.cmake\n'}
+[2.069630] (robot_perception) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[2.076253] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/package.xml\n'}
+[2.087786] (robot_navigation) JobEnded: {'identifier': 'robot_navigation', 'rc': 'SIGINT'}
+[2.104343] (-) TimerEvent: {}
+[2.123222] (robot_perception) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.137291] (robot_perception) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[2.204445] (-) TimerEvent: {}
+[2.214836] (robot_perception) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[2.215058] (robot_perception) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[2.287565] (robot_perception) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[2.288572] (robot_perception) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[2.304528] (-) TimerEvent: {}
+[2.404783] (-) TimerEvent: {}
+[2.500998] (robot_perception) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.504848] (-) TimerEvent: {}
+[2.507574] (robot_perception) StdoutLine: {'line': b'-- Generating done\n'}
+[2.510108] (robot_perception) StdoutLine: {'line': b'-- Build files have been written to: /root/Dojo/build/robot_perception\n'}
+[2.520530] (robot_perception) JobEnded: {'identifier': 'robot_perception', 'rc': 'SIGINT'}
+[2.531234] (robot_bringup) JobSkipped: {'identifier': 'robot_bringup'}
+[2.531355] (robot_gazebo) JobSkipped: {'identifier': 'robot_gazebo'}
+[2.531395] (robot_launch) JobSkipped: {'identifier': 'robot_launch'}
+[2.531423] (-) EventReactorShutdown: {}

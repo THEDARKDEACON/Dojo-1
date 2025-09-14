@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Dojo/Dojo/src/robot_description
+CMAKE_SOURCE_DIR = /root/Dojo/src/robot_description
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Dojo/Dojo/build/robot_description
+CMAKE_BINARY_DIR = /root/Dojo/build/robot_description
 
 # Utility rule file for ament_cmake_python_build_robot_description_egg.
 
@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/compiler_d
 include CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/progress.make
 
 CMakeFiles/ament_cmake_python_build_robot_description_egg:
-	cd /home/Dojo/Dojo/build/robot_description/ament_cmake_python/robot_description && /usr/bin/python3 setup.py egg_info
+	cd /root/Dojo/build/robot_description/ament_cmake_python/robot_description && /usr/bin/python3 setup.py egg_info
 
 ament_cmake_python_build_robot_description_egg: CMakeFiles/ament_cmake_python_build_robot_description_egg
 ament_cmake_python_build_robot_description_egg: CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/clean:
 .PHONY : CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/clean
 
 CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/depend:
-	cd /home/Dojo/Dojo/build/robot_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/Dojo/Dojo/src/robot_description /home/Dojo/Dojo/src/robot_description /home/Dojo/Dojo/build/robot_description /home/Dojo/Dojo/build/robot_description /home/Dojo/Dojo/build/robot_description/CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/Dojo/build/robot_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Dojo/src/robot_description /root/Dojo/src/robot_description /root/Dojo/build/robot_description /root/Dojo/build/robot_description /root/Dojo/build/robot_description/CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/depend
 

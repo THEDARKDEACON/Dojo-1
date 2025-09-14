@@ -1,0 +1,56 @@
+[0.000000] (-) TimerEvent: {}
+[0.000330] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.000392] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.000428] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.000465] (-) JobUnselected: {'identifier': 'robot_gazebo'}
+[0.000499] (-) JobUnselected: {'identifier': 'robot_launch'}
+[0.000530] (-) JobUnselected: {'identifier': 'robot_navigation'}
+[0.000564] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.000597] (-) JobUnselected: {'identifier': 'robot_sensors'}
+[0.000627] (-) JobUnselected: {'identifier': 'ros2arduino_bridge'}
+[0.000659] (-) JobUnselected: {'identifier': 'vision_system'}
+[0.000691] (arduino_bridge) JobQueued: {'identifier': 'arduino_bridge', 'dependencies': OrderedDict()}
+[0.001075] (arduino_bridge) JobStarted: {'identifier': 'arduino_bridge'}
+[0.099754] (-) TimerEvent: {}
+[0.200053] (-) TimerEvent: {}
+[0.300402] (-) TimerEvent: {}
+[0.400668] (-) TimerEvent: {}
+[0.500920] (-) TimerEvent: {}
+[0.601194] (-) TimerEvent: {}
+[0.690188] (arduino_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/root/Dojo/build/arduino_bridge/build', '--no-deps', 'symlink_data'], 'cwd': '/root/Dojo/build/arduino_bridge', 'env': {'HOSTNAME': 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/root/Dojo/src/arduino_bridge', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'PWD': '/root/Dojo/build/arduino_bridge', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/arduino_bridge/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[0.701208] (-) TimerEvent: {}
+[0.801415] (-) TimerEvent: {}
+[0.842065] (arduino_bridge) StderrLine: {'line': b"/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'\n"}
+[0.842352] (arduino_bridge) StderrLine: {'line': b'  warnings.warn(msg)\n'}
+[0.901504] (-) TimerEvent: {}
+[0.982571] (arduino_bridge) StdoutLine: {'line': b'running develop\n'}
+[0.996090] (arduino_bridge) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[0.996340] (arduino_bridge) StderrLine: {'line': b'  File "/root/Dojo/build/arduino_bridge/setup.py", line 18, in <module>\n'}
+[0.996494] (arduino_bridge) StderrLine: {'line': b'    setup(\n'}
+[0.996628] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/__init__.py", line 117, in setup\n'}
+[0.996759] (arduino_bridge) StderrLine: {'line': b'    return distutils.core.setup(**attrs)\n'}
+[0.996875] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 186, in setup\n'}
+[0.996963] (arduino_bridge) StderrLine: {'line': b'    return run_commands(dist)\n'}
+[0.997038] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 202, in run_commands\n'}
+[0.997101] (arduino_bridge) StderrLine: {'line': b'    dist.run_commands()\n'}
+[0.997164] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1002, in run_commands\n'}
+[0.997236] (arduino_bridge) StderrLine: {'line': b'    self.run_command(cmd)\n'}
+[0.997301] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1104, in run_command\n'}
+[0.997364] (arduino_bridge) StderrLine: {'line': b'    super().run_command(command)\n'}
+[0.997432] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1020, in run_command\n'}
+[0.997495] (arduino_bridge) StderrLine: {'line': b'    cmd_obj.ensure_finalized()\n'}
+[0.997562] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py", line 135, in ensure_finalized\n'}
+[0.997627] (arduino_bridge) StderrLine: {'line': b'    self.finalize_options()\n'}
+[0.997687] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/command/develop.py", line 51, in finalize_options\n'}
+[0.997753] (arduino_bridge) StderrLine: {'line': b'    easy_install.finalize_options(self)\n'}
+[0.997814] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/command/easy_install.py", line 251, in finalize_options\n'}
+[0.997878] (arduino_bridge) StderrLine: {'line': b"    'dist_fullname': self.distribution.get_fullname(),\n"}
+[0.997939] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_core_metadata.py", line 275, in get_fullname\n'}
+[0.998001] (arduino_bridge) StderrLine: {'line': b'    return _distribution_fullname(self.get_name(), self.get_version())\n'}
+[0.998062] (arduino_bridge) StderrLine: {'line': b'  File "/usr/local/lib/python3.10/dist-packages/setuptools/_core_metadata.py", line 293, in _distribution_fullname\n'}
+[0.998127] (arduino_bridge) StderrLine: {'line': b'    canonicalize_version(version, strip_trailing_zero=False),\n'}
+[0.998192] (arduino_bridge) StderrLine: {'line': b"TypeError: canonicalize_version() got an unexpected keyword argument 'strip_trailing_zero'\n"}
+[1.001575] (-) TimerEvent: {}
+[1.019611] (arduino_bridge) CommandEnded: {'returncode': 1}
+[1.019911] (arduino_bridge) JobEnded: {'identifier': 'arduino_bridge', 'rc': 1}
+[1.030203] (-) EventReactorShutdown: {}

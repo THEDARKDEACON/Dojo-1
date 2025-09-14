@@ -1,8 +1,8 @@
-# Install script for directory: /home/Dojo/Dojo/src/robot_gazebo
+# Install script for directory: /root/Dojo/src/robot_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/Dojo/Dojo/install/robot_gazebo")
+  set(CMAKE_INSTALL_PREFIX "/root/Dojo/install/robot_gazebo")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,11 +43,11 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/root/Dojo/build/robot_gazebo/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_gazebo" TYPE DIRECTORY FILES "/home/Dojo/Dojo/src/robot_gazebo/scripts/" USE_SOURCE_PERMISSIONS)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_gazebo" TYPE DIRECTORY FILES "/root/Dojo/src/robot_gazebo/scripts/" USE_SOURCE_PERMISSIONS)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -58,5 +58,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/Dojo/Dojo/build/robot_gazebo/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/root/Dojo/build/robot_gazebo/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

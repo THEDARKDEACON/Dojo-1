@@ -1,1 +1,1 @@
-/home/Dojo/Dojo/src/robot_gazebo/launch/gazebo.launch.py
+/root/Dojo/src/robot_gazebo/launch/gazebo.launch.py

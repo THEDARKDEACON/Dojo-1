@@ -1,0 +1,17 @@
+[1.825s] Invoking command in '/root/Dojo/build/vision_system': PYTHONPATH=/root/Dojo/build/vision_system/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/vision_system/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/vision_system/build --no-deps symlink_data
+[2.150s] running develop
+[2.334s] running egg_info
+[2.335s] writing vision_system.egg-info/PKG-INFO
+[2.335s] writing dependency_links to vision_system.egg-info/dependency_links.txt
+[2.336s] writing entry points to vision_system.egg-info/entry_points.txt
+[2.336s] writing requirements to vision_system.egg-info/requires.txt
+[2.336s] writing top-level names to vision_system.egg-info/top_level.txt
+[2.339s] reading manifest file 'vision_system.egg-info/SOURCES.txt'
+[2.341s] writing manifest file 'vision_system.egg-info/SOURCES.txt'
+[2.343s] running build_ext
+[2.343s] Creating /root/Dojo/install/vision_system/lib/python3.10/site-packages/vision-system.egg-link (link to .)
+[2.344s] Installing object_detector script to /root/Dojo/install/vision_system/lib/vision_system
+[2.345s] 
+[2.345s] Installed /root/Dojo/build/vision_system
+[2.345s] running symlink_data
+[2.411s] Invoked command in '/root/Dojo/build/vision_system' returned '0': PYTHONPATH=/root/Dojo/build/vision_system/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/vision_system/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/vision_system/build --no-deps symlink_data

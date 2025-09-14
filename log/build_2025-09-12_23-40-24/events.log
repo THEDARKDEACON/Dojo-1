@@ -1,0 +1,452 @@
+[0.000000] (-) TimerEvent: {}
+[0.000304] (arduino_bridge) JobQueued: {'identifier': 'arduino_bridge', 'dependencies': OrderedDict()}
+[0.000682] (robot_control) JobQueued: {'identifier': 'robot_control', 'dependencies': OrderedDict()}
+[0.000721] (robot_description) JobQueued: {'identifier': 'robot_description', 'dependencies': OrderedDict()}
+[0.000760] (robot_navigation) JobQueued: {'identifier': 'robot_navigation', 'dependencies': OrderedDict()}
+[0.000783] (robot_perception) JobQueued: {'identifier': 'robot_perception', 'dependencies': OrderedDict()}
+[0.000919] (robot_sensors) JobQueued: {'identifier': 'robot_sensors', 'dependencies': OrderedDict()}
+[0.001096] (ros2arduino_bridge) JobQueued: {'identifier': 'ros2arduino_bridge', 'dependencies': OrderedDict()}
+[0.001178] (vision_system) JobQueued: {'identifier': 'vision_system', 'dependencies': OrderedDict()}
+[0.001210] (robot_bringup) JobQueued: {'identifier': 'robot_bringup', 'dependencies': OrderedDict([('robot_control', '/root/Dojo/install/robot_control'), ('robot_description', '/root/Dojo/install/robot_description'), ('robot_navigation', '/root/Dojo/install/robot_navigation'), ('robot_perception', '/root/Dojo/install/robot_perception'), ('robot_sensors', '/root/Dojo/install/robot_sensors')])}
+[0.001236] (robot_gazebo) JobQueued: {'identifier': 'robot_gazebo', 'dependencies': OrderedDict([('robot_description', '/root/Dojo/install/robot_description')])}
+[0.001256] (robot_description) JobStarted: {'identifier': 'robot_description'}
+[0.009006] (robot_control) JobStarted: {'identifier': 'robot_control'}
+[0.014608] (robot_navigation) JobStarted: {'identifier': 'robot_navigation'}
+[0.029361] (robot_perception) JobStarted: {'identifier': 'robot_perception'}
+[0.033419] (robot_sensors) JobStarted: {'identifier': 'robot_sensors'}
+[0.039450] (arduino_bridge) JobStarted: {'identifier': 'arduino_bridge'}
+[0.044267] (ros2arduino_bridge) JobStarted: {'identifier': 'ros2arduino_bridge'}
+[0.048660] (vision_system) JobStarted: {'identifier': 'vision_system'}
+[0.055106] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'cmake'}
+[0.055579] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'build'}
+[0.056101] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/Dojo/build/robot_description', '--', '-j16', '-l16'], 'cwd': '/root/Dojo/build/robot_description', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.099744] (-) TimerEvent: {}
+[0.200048] (-) TimerEvent: {}
+[0.300421] (-) TimerEvent: {}
+[0.302344] (robot_navigation) JobProgress: {'identifier': 'robot_navigation', 'progress': 'cmake'}
+[0.302993] (robot_navigation) JobProgress: {'identifier': 'robot_navigation', 'progress': 'build'}
+[0.303850] (robot_navigation) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/Dojo/build/robot_navigation', '--', '-j16', '-l16'], 'cwd': '/root/Dojo/build/robot_navigation', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_navigation'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.308377] (robot_perception) JobProgress: {'identifier': 'robot_perception', 'progress': 'cmake'}
+[0.308414] (robot_perception) JobProgress: {'identifier': 'robot_perception', 'progress': 'build'}
+[0.308435] (robot_perception) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/Dojo/build/robot_perception', '--', '-j16', '-l16'], 'cwd': '/root/Dojo/build/robot_perception', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_perception'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.400523] (-) TimerEvent: {}
+[0.500845] (-) TimerEvent: {}
+[0.601275] (-) TimerEvent: {}
+[0.701744] (-) TimerEvent: {}
+[0.802122] (-) TimerEvent: {}
+[0.902465] (-) TimerEvent: {}
+[1.002834] (-) TimerEvent: {}
+[1.035963] (robot_description) StdoutLine: {'line': b'Built target ament_cmake_python_symlink_robot_description\n'}
+[1.036504] (robot_description) StdoutLine: {'line': b'running egg_info\n'}
+[1.037433] (robot_description) StdoutLine: {'line': b'writing robot_description.egg-info/PKG-INFO\n'}
+[1.037819] (robot_description) StdoutLine: {'line': b'writing dependency_links to robot_description.egg-info/dependency_links.txt\n'}
+[1.037982] (robot_description) StdoutLine: {'line': b'writing top-level names to robot_description.egg-info/top_level.txt\n'}
+[1.038066] (robot_description) StdoutLine: {'line': b"reading manifest file 'robot_description.egg-info/SOURCES.txt'\n"}
+[1.038137] (robot_description) StdoutLine: {'line': b"writing manifest file 'robot_description.egg-info/SOURCES.txt'\n"}
+[1.038204] (robot_description) StdoutLine: {'line': b'Built target ament_cmake_python_build_robot_description_egg\n'}
+[1.038270] (robot_perception) StdoutLine: {'line': b'Built target ament_cmake_python_symlink_robot_perception\n'}
+[1.038624] (robot_perception) StdoutLine: {'line': b'running egg_info\n'}
+[1.038907] (robot_perception) StdoutLine: {'line': b'writing robot_perception.egg-info/PKG-INFO\n'}
+[1.039114] (robot_perception) StdoutLine: {'line': b'writing dependency_links to robot_perception.egg-info/dependency_links.txt\n'}
+[1.039189] (robot_perception) StdoutLine: {'line': b'writing top-level names to robot_perception.egg-info/top_level.txt\n'}
+[1.039267] (robot_perception) StdoutLine: {'line': b"reading manifest file 'robot_perception.egg-info/SOURCES.txt'\n"}
+[1.039371] (robot_perception) StdoutLine: {'line': b"writing manifest file 'robot_perception.egg-info/SOURCES.txt'\n"}
+[1.039451] (robot_perception) StdoutLine: {'line': b'Built target ament_cmake_python_build_robot_perception_egg\n'}
+[1.102945] (-) TimerEvent: {}
+[1.203429] (-) TimerEvent: {}
+[1.275777] (robot_description) CommandEnded: {'returncode': 0}
+[1.276637] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'install'}
+[1.292446] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/Dojo/build/robot_description'], 'cwd': '/root/Dojo/build/robot_description', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.293387] (robot_navigation) CommandEnded: {'returncode': 0}
+[1.294170] (robot_navigation) JobProgress: {'identifier': 'robot_navigation', 'progress': 'install'}
+[1.294677] (robot_navigation) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/Dojo/build/robot_navigation'], 'cwd': '/root/Dojo/build/robot_navigation', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_navigation'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.296043] (robot_perception) CommandEnded: {'returncode': 0}
+[1.296688] (robot_perception) JobProgress: {'identifier': 'robot_perception', 'progress': 'install'}
+[1.297020] (robot_perception) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/Dojo/build/robot_perception'], 'cwd': '/root/Dojo/build/robot_perception', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_perception'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.303618] (-) TimerEvent: {}
+[1.304653] (robot_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.306656] (robot_description) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[1.307246] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/launch/display.launch.py\n'}
+[1.309599] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/launch/robot_state_publisher.launch.py\n'}
+[1.310873] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf\n'}
+[1.311632] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf.xacro\n'}
+[1.312538] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/rviz/robot.rviz\n'}
+[1.313118] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/pythonpath.sh\n'}
+[1.314317] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/pythonpath.dsv\n'}
+[1.315130] (robot_navigation) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.315895] (robot_navigation) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[1.316048] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/navigation.launch.py\n'}
+[1.316185] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/PKG-INFO\n'}
+[1.316326] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/SOURCES.txt\n'}
+[1.316464] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/dependency_links.txt\n'}
+[1.316588] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/localization.launch.py\n'}
+[1.316729] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/map_server.launch.py\n'}
+[1.316858] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/nav2_params.yaml\n'}
+[1.317019] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/localization_params.yaml\n'}
+[1.317162] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/map_server_params.yaml\n'}
+[1.317281] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/bt_navigator_params.yaml\n'}
+[1.317415] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/planner_params.yaml\n'}
+[1.317530] (robot_perception) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.317658] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/top_level.txt\n'}
+[1.317786] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description/__init__.py\n'}
+[1.317914] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/controller_params.yaml\n'}
+[1.318066] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/costmap_common_params.yaml\n'}
+[1.318195] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/global_costmap_params.yaml\n'}
+[1.318324] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/local_costmap_params.yaml\n'}
+[1.318458] (robot_perception) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[1.318580] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/lib/robot_description/display_robot.py\n'}
+[1.318693] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description\n'}
+[1.318807] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/pythonpath.sh\n'}
+[1.318931] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/pythonpath.dsv\n'}
+[1.323475] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/localization.launch.py\n'}
+[1.329266] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/map_server.launch.py\n'}
+[1.329415] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description\n'}
+[1.329548] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/ament_prefix_path.sh\n'}
+[1.329654] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/navigation.launch.py\n'}
+[1.329753] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info/PKG-INFO\n'}
+[1.329860] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info/SOURCES.txt\n'}
+[1.329956] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info/dependency_links.txt\n'}
+[1.330187] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv\n'}
+[1.330320] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/path.sh\n'}
+[1.330430] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info/top_level.txt\n'}
+[1.330537] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception/__init__.py\n'}
+[1.330637] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/path.dsv\n'}
+[1.330747] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/bt_navigator_params.yaml\n'}
+[1.330855] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/local_setup.bash\n'}
+[1.330960] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/controller_params.yaml\n'}
+[1.333707] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/costmap_common_params.yaml\n'}
+[1.333850] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/launch/perception.launch.py\n'}
+[1.334024] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/local_setup.sh\n'}
+[1.334195] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/launch/robot_perception.launch.py\n'}
+[1.334347] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/local_setup.zsh\n'}
+[1.351471] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/local_setup.dsv\n'}
+[1.354137] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/global_costmap_params.yaml\n'}
+[1.354301] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/local_costmap_params.yaml\n'}
+[1.354421] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/localization_params.yaml\n'}
+[1.354528] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/map_server_params.yaml\n'}
+[1.354626] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml\n'}
+[1.354725] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/planner_params.yaml\n'}
+[1.354837] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/config/robot_perception_params.yaml\n'}
+[1.354943] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/ament_index/resource_index/package_run_dependencies/robot_perception\n'}
+[1.355068] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/ament_index/resource_index/parent_prefix_path/robot_perception\n'}
+[1.355174] (robot_description) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_description/share/robot_description/package.dsv\n'}
+[1.355305] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/ament_prefix_path.sh\n'}
+[1.355401] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/ament_prefix_path.dsv\n'}
+[1.355493] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/bt_navigator_params.yaml\n'}
+[1.355584] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/controller_params.yaml\n'}
+[1.355668] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/costmap_common_params.yaml\n'}
+[1.355759] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/path.sh\n'}
+[1.355852] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/environment/path.dsv\n'}
+[1.355941] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/global_costmap_params.yaml\n'}
+[1.359268] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/local_costmap_params.yaml\n'}
+[1.359439] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/localization_params.yaml\n'}
+[1.359602] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/map_server_params.yaml\n'}
+[1.359763] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml\n'}
+[1.359899] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/planner_params.yaml\n'}
+[1.360039] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/localization.launch.py\n'}
+[1.360155] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/map_server.launch.py\n'}
+[1.360265] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/navigation.launch.py\n'}
+[1.360388] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/ament_index/resource_index/package_run_dependencies/robot_navigation\n'}
+[1.360523] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/ament_index/resource_index/parent_prefix_path/robot_navigation\n'}
+[1.360638] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.sh\n'}
+[1.360751] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.dsv\n'}
+[1.360863] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/path.sh\n'}
+[1.360967] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/path.dsv\n'}
+[1.361094] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.bash\n'}
+[1.361205] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/local_setup.bash\n'}
+[1.361332] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/local_setup.sh\n'}
+[1.361439] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/local_setup.zsh\n'}
+[1.361553] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/local_setup.dsv\n'}
+[1.361663] (robot_perception) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_perception/share/robot_perception/package.dsv\n'}
+[1.361773] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.sh\n'}
+[1.361887] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.zsh\n'}
+[1.369146] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.dsv\n'}
+[1.369377] (robot_navigation) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/package.dsv\n'}
+[1.369537] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/ament_index/resource_index/packages/robot_perception\n'}
+[1.369674] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/cmake/robot_perceptionConfig.cmake\n'}
+[1.369794] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/ament_index/resource_index/packages/robot_description\n'}
+[1.369912] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake\n'}
+[1.370065] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake\n'}
+[1.370164] (robot_description) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/package.xml\n'}
+[1.370273] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description\n'}
+[1.370367] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/urdf\n'}
+[1.370457] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/include\n'}
+[1.370565] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/include/robot_description\n'}
+[1.370676] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/rviz\n'}
+[1.370814] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/src\n'}
+[1.370937] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/src/robot_description\n'}
+[1.371057] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/meshes\n'}
+[1.371185] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/robot_description\n'}
+[1.371295] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/robot_description/robot_description\n'}
+[1.371418] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/scripts\n'}
+[1.371525] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/resource\n'}
+[1.371630] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/launch\n'}
+[1.371756] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/config\n'}
+[1.371871] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/lib/robot_description/robot_description\n'}
+[1.375220] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_description/lib/robot_description/robot_description/__init__.py\n'}
+[1.375418] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/cmake/robot_perceptionConfig-version.cmake\n'}
+[1.375601] (robot_perception) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_perception/share/robot_perception/package.xml\n'}
+[1.375735] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/ament_index/resource_index/packages/robot_navigation\n'}
+[1.375871] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig.cmake\n'}
+[1.376009] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig-version.cmake\n'}
+[1.376112] (robot_navigation) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/package.xml\n'}
+[1.376215] (robot_navigation) CommandEnded: {'returncode': 0}
+[1.379629] (robot_perception) StdoutLine: {'line': b"Listing '/root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages/robot_perception'...\n"}
+[1.394113] (robot_description) StdoutLine: {'line': b"Listing '/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description'...\n"}
+[1.403791] (-) TimerEvent: {}
+[1.405204] (robot_navigation) JobEnded: {'identifier': 'robot_navigation', 'rc': 0}
+[1.407831] (robot_perception) CommandEnded: {'returncode': 0}
+[1.426191] (robot_perception) JobEnded: {'identifier': 'robot_perception', 'rc': 0}
+[1.427419] (robot_description) CommandEnded: {'returncode': 0}
+[1.443423] (robot_description) JobEnded: {'identifier': 'robot_description', 'rc': 0}
+[1.444778] (robot_gazebo) JobStarted: {'identifier': 'robot_gazebo'}
+[1.452794] (robot_gazebo) JobProgress: {'identifier': 'robot_gazebo', 'progress': 'cmake'}
+[1.456137] (robot_gazebo) Command: {'cmd': ['/usr/bin/cmake', '/root/Dojo/src/robot_gazebo', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_gazebo'], 'cwd': '/root/Dojo/build/robot_gazebo', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/root/Dojo/install/robot_description:/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_gazebo'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/Dojo/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[1.478123] (robot_gazebo) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.503927] (-) TimerEvent: {}
+[1.604318] (-) TimerEvent: {}
+[1.635330] (robot_gazebo) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.647774] (robot_gazebo) StdoutLine: {'line': b'-- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.686221] (robot_gazebo) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.689677] (robot_gazebo) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.697123] (robot_gazebo) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.704408] (-) TimerEvent: {}
+[1.708994] (robot_gazebo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.723983] (robot_gazebo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.766006] (robot_gazebo) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.767616] (robot_gazebo) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.804520] (-) TimerEvent: {}
+[1.854687] (robot_sensors) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/root/Dojo/build/robot_sensors/build', '--no-deps', 'symlink_data'], 'cwd': '/root/Dojo/build/robot_sensors', 'env': {'HOSTNAME': 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'PWD': '/root/Dojo/build/robot_sensors', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/Dojo/build/robot_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[1.859233] (arduino_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/root/Dojo/build/arduino_bridge/build', '--no-deps', 'symlink_data'], 'cwd': '/root/Dojo/build/arduino_bridge', 'env': {'HOSTNAME': 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'PWD': '/root/Dojo/build/arduino_bridge', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/arduino_bridge/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[1.861890] (ros2arduino_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/root/Dojo/build/ros2arduino_bridge/build', '--no-deps', 'symlink_data'], 'cwd': '/root/Dojo/build/ros2arduino_bridge', 'env': {'HOSTNAME': 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'PWD': '/root/Dojo/build/ros2arduino_bridge', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[1.867648] (robot_control) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/root/Dojo/build/robot_control/build', '--no-deps', 'symlink_data'], 'cwd': '/root/Dojo/build/robot_control', 'env': {'HOSTNAME': 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'PWD': '/root/Dojo/build/robot_control', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/Dojo/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[1.872490] (vision_system) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/root/Dojo/build/vision_system/build', '--no-deps', 'symlink_data'], 'cwd': '/root/Dojo/build/vision_system', 'env': {'HOSTNAME': 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'PWD': '/root/Dojo/build/vision_system', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/Dojo/build/vision_system/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/vision_system/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[1.904650] (-) TimerEvent: {}
+[1.944591] (robot_gazebo) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.002475] (robot_gazebo) StdoutLine: {'line': b'-- Found gazebo_ros: 3.9.0 (/opt/ros/humble/share/gazebo_ros/cmake)\n'}
+[2.004733] (-) TimerEvent: {}
+[2.050107] (robot_gazebo) StdoutLine: {'line': b'-- Found DART: /usr/include (Required is at least version "6.6") found components: dart \n'}
+[2.098433] (robot_gazebo) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") \n'}
+[2.100996] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.104839] (-) TimerEvent: {}
+[2.108162] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-math6\n'}
+[2.110617] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE...\n'}
+[2.120983] (robot_gazebo) StdoutLine: {'line': b'-- Found Ogre Ghadamon (1.9.0)\n'}
+[2.121347] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so\n'}
+[2.138249] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Paging...\n'}
+[2.138522] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so\n'}
+[2.138682] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Terrain...\n'}
+[2.138780] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so\n'}
+[2.138881] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Property...\n'}
+[2.138969] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so\n'}
+[2.139074] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_RTShaderSystem...\n'}
+[2.139166] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so\n'}
+[2.139286] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Volume...\n'}
+[2.139379] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so\n'}
+[2.139535] (robot_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Overlay...\n'}
+[2.139641] (robot_gazebo) StdoutLine: {'line': b'-- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so\n'}
+[2.161221] (ros2arduino_bridge) StderrLine: {'line': b"/usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead\n"}
+[2.161519] (ros2arduino_bridge) StderrLine: {'line': b'  warnings.warn(\n'}
+[2.166389] (robot_sensors) StdoutLine: {'line': b'running develop\n'}
+[2.180590] (arduino_bridge) StdoutLine: {'line': b'running develop\n'}
+[2.187029] (robot_control) StdoutLine: {'line': b'running develop\n'}
+[2.198625] (vision_system) StdoutLine: {'line': b'running develop\n'}
+[2.204960] (-) TimerEvent: {}
+[2.207283] (ros2arduino_bridge) StdoutLine: {'line': b'running develop\n'}
+[2.255896] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.256613] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-transport8 -- found version 8.2.1\n'}
+[2.257398] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-transport8\n'}
+[2.296618] (robot_gazebo) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") \n'}
+[2.305032] (-) TimerEvent: {}
+[2.322292] (robot_gazebo) StdoutLine: {'line': b'-- Config-file not installed for ZeroMQ -- checking for pkg-config\n'}
+[2.329948] (robot_gazebo) StdoutLine: {'line': b"-- Checking for module 'libzmq >= 4'\n"}
+[2.355021] (robot_sensors) StdoutLine: {'line': b'running egg_info\n'}
+[2.355410] (robot_sensors) StdoutLine: {'line': b'writing robot_sensors.egg-info/PKG-INFO\n'}
+[2.355667] (robot_sensors) StdoutLine: {'line': b'writing dependency_links to robot_sensors.egg-info/dependency_links.txt\n'}
+[2.355939] (robot_sensors) StdoutLine: {'line': b'writing entry points to robot_sensors.egg-info/entry_points.txt\n'}
+[2.356182] (robot_sensors) StdoutLine: {'line': b'writing requirements to robot_sensors.egg-info/requires.txt\n'}
+[2.356408] (robot_sensors) StdoutLine: {'line': b'writing top-level names to robot_sensors.egg-info/top_level.txt\n'}
+[2.357809] (robot_gazebo) StdoutLine: {'line': b'--   Found libzmq , version 4.3.4\n'}
+[2.358571] (robot_sensors) StdoutLine: {'line': b"reading manifest file 'robot_sensors.egg-info/SOURCES.txt'\n"}
+[2.359505] (robot_sensors) StdoutLine: {'line': b"writing manifest file 'robot_sensors.egg-info/SOURCES.txt'\n"}
+[2.361045] (robot_sensors) StdoutLine: {'line': b'running build_ext\n'}
+[2.361359] (robot_sensors) StdoutLine: {'line': b'Creating /root/Dojo/install/robot_sensors/lib/python3.10/site-packages/robot-sensors.egg-link (link to .)\n'}
+[2.362384] (robot_sensors) StdoutLine: {'line': b'Installing camera_publisher script to /root/Dojo/install/robot_sensors/lib/robot_sensors\n'}
+[2.362739] (robot_sensors) StdoutLine: {'line': b'\n'}
+[2.362904] (robot_sensors) StdoutLine: {'line': b'Installed /root/Dojo/build/robot_sensors\n'}
+[2.363103] (robot_sensors) StdoutLine: {'line': b'running symlink_data\n'}
+[2.369090] (robot_control) StdoutLine: {'line': b'running egg_info\n'}
+[2.369370] (robot_control) StdoutLine: {'line': b'writing robot_control.egg-info/PKG-INFO\n'}
+[2.369574] (robot_control) StdoutLine: {'line': b'writing dependency_links to robot_control.egg-info/dependency_links.txt\n'}
+[2.369755] (robot_control) StdoutLine: {'line': b'writing entry points to robot_control.egg-info/entry_points.txt\n'}
+[2.369920] (robot_control) StdoutLine: {'line': b'writing requirements to robot_control.egg-info/requires.txt\n'}
+[2.370056] (robot_control) StdoutLine: {'line': b'writing top-level names to robot_control.egg-info/top_level.txt\n'}
+[2.371074] (arduino_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[2.371458] (arduino_bridge) StdoutLine: {'line': b'writing arduino_bridge.egg-info/PKG-INFO\n'}
+[2.372653] (robot_control) StdoutLine: {'line': b"reading manifest file 'robot_control.egg-info/SOURCES.txt'\n"}
+[2.372829] (arduino_bridge) StdoutLine: {'line': b'writing dependency_links to arduino_bridge.egg-info/dependency_links.txt\n'}
+[2.372942] (arduino_bridge) StdoutLine: {'line': b'writing entry points to arduino_bridge.egg-info/entry_points.txt\n'}
+[2.373069] (arduino_bridge) StdoutLine: {'line': b'writing requirements to arduino_bridge.egg-info/requires.txt\n'}
+[2.373167] (arduino_bridge) StdoutLine: {'line': b'writing top-level names to arduino_bridge.egg-info/top_level.txt\n'}
+[2.373587] (robot_control) StdoutLine: {'line': b"writing manifest file 'robot_control.egg-info/SOURCES.txt'\n"}
+[2.375159] (arduino_bridge) StdoutLine: {'line': b"reading manifest file 'arduino_bridge.egg-info/SOURCES.txt'\n"}
+[2.375370] (robot_control) StdoutLine: {'line': b'running build_ext\n'}
+[2.375671] (robot_control) StdoutLine: {'line': b'Creating /root/Dojo/install/robot_control/lib/python3.10/site-packages/robot-control.egg-link (link to .)\n'}
+[2.376289] (arduino_bridge) StdoutLine: {'line': b"writing manifest file 'arduino_bridge.egg-info/SOURCES.txt'\n"}
+[2.376871] (robot_control) StdoutLine: {'line': b'Installing arduino_bridge script to /root/Dojo/install/robot_control/lib/robot_control\n'}
+[2.377148] (robot_control) StdoutLine: {'line': b'Installing cmd_vel_to_motors script to /root/Dojo/install/robot_control/lib/robot_control\n'}
+[2.377496] (robot_control) StdoutLine: {'line': b'\n'}
+[2.377634] (robot_control) StdoutLine: {'line': b'Installed /root/Dojo/build/robot_control\n'}
+[2.377798] (robot_control) StdoutLine: {'line': b'running symlink_data\n'}
+[2.378270] (arduino_bridge) StdoutLine: {'line': b'running build_ext\n'}
+[2.378585] (arduino_bridge) StdoutLine: {'line': b'Creating /root/Dojo/install/arduino_bridge/lib/python3.10/site-packages/arduino-bridge.egg-link (link to .)\n'}
+[2.380059] (arduino_bridge) StdoutLine: {'line': b'Installing arduino_bridge_node script to /root/Dojo/install/arduino_bridge/lib/arduino_bridge\n'}
+[2.380246] (arduino_bridge) StdoutLine: {'line': b'Installing test_arduino_bridge script to /root/Dojo/install/arduino_bridge/lib/arduino_bridge\n'}
+[2.380536] (arduino_bridge) StdoutLine: {'line': b'\n'}
+[2.380667] (arduino_bridge) StdoutLine: {'line': b'Installed /root/Dojo/build/arduino_bridge\n'}
+[2.380774] (arduino_bridge) StdoutLine: {'line': b'running symlink_data\n'}
+[2.383253] (vision_system) StdoutLine: {'line': b'running egg_info\n'}
+[2.383460] (vision_system) StdoutLine: {'line': b'writing vision_system.egg-info/PKG-INFO\n'}
+[2.384007] (vision_system) StdoutLine: {'line': b'writing dependency_links to vision_system.egg-info/dependency_links.txt\n'}
+[2.384487] (vision_system) StdoutLine: {'line': b'writing entry points to vision_system.egg-info/entry_points.txt\n'}
+[2.384674] (vision_system) StdoutLine: {'line': b'writing requirements to vision_system.egg-info/requires.txt\n'}
+[2.384880] (vision_system) StdoutLine: {'line': b'writing top-level names to vision_system.egg-info/top_level.txt\n'}
+[2.387145] (ros2arduino_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[2.387571] (ros2arduino_bridge) StdoutLine: {'line': b'writing ros2arduino_bridge.egg-info/PKG-INFO\n'}
+[2.388057] (vision_system) StdoutLine: {'line': b"reading manifest file 'vision_system.egg-info/SOURCES.txt'\n"}
+[2.388387] (ros2arduino_bridge) StdoutLine: {'line': b'writing dependency_links to ros2arduino_bridge.egg-info/dependency_links.txt\n'}
+[2.388644] (ros2arduino_bridge) StdoutLine: {'line': b'writing entry points to ros2arduino_bridge.egg-info/entry_points.txt\n'}
+[2.388897] (ros2arduino_bridge) StdoutLine: {'line': b'writing requirements to ros2arduino_bridge.egg-info/requires.txt\n'}
+[2.389124] (ros2arduino_bridge) StdoutLine: {'line': b'writing top-level names to ros2arduino_bridge.egg-info/top_level.txt\n'}
+[2.390234] (vision_system) StdoutLine: {'line': b"writing manifest file 'vision_system.egg-info/SOURCES.txt'\n"}
+[2.391601] (ros2arduino_bridge) StdoutLine: {'line': b"reading manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'\n"}
+[2.391901] (vision_system) StdoutLine: {'line': b'running build_ext\n'}
+[2.392231] (vision_system) StdoutLine: {'line': b'Creating /root/Dojo/install/vision_system/lib/python3.10/site-packages/vision-system.egg-link (link to .)\n'}
+[2.392804] (ros2arduino_bridge) StdoutLine: {'line': b"writing manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'\n"}
+[2.393183] (vision_system) StdoutLine: {'line': b'Installing object_detector script to /root/Dojo/install/vision_system/lib/vision_system\n'}
+[2.393524] (vision_system) StdoutLine: {'line': b'\n'}
+[2.393742] (vision_system) StdoutLine: {'line': b'Installed /root/Dojo/build/vision_system\n'}
+[2.393859] (vision_system) StdoutLine: {'line': b'running symlink_data\n'}
+[2.394848] (ros2arduino_bridge) StdoutLine: {'line': b'running build_ext\n'}
+[2.395206] (ros2arduino_bridge) StdoutLine: {'line': b'Creating /root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages/ros2arduino-bridge.egg-link (link to .)\n'}
+[2.396429] (ros2arduino_bridge) StdoutLine: {'line': b'Installing arduino_bridge script to /lib/ros2arduino_bridge\n'}
+[2.396881] (ros2arduino_bridge) StdoutLine: {'line': b'\n'}
+[2.397115] (ros2arduino_bridge) StdoutLine: {'line': b'Installed /root/Dojo/build/ros2arduino_bridge\n'}
+[2.397258] (ros2arduino_bridge) StdoutLine: {'line': b'running symlink_data\n'}
+[2.405286] (-) TimerEvent: {}
+[2.418213] (robot_sensors) CommandEnded: {'returncode': 0}
+[2.428239] (robot_sensors) JobEnded: {'identifier': 'robot_sensors', 'rc': 0}
+[2.429585] (robot_control) CommandEnded: {'returncode': 0}
+[2.439383] (robot_control) JobEnded: {'identifier': 'robot_control', 'rc': 0}
+[2.440893] (robot_bringup) JobStarted: {'identifier': 'robot_bringup'}
+[2.446022] (arduino_bridge) CommandEnded: {'returncode': 0}
+[2.447131] (robot_gazebo) StdoutLine: {'line': b"-- Checking for module 'uuid'\n"}
+[2.455725] (arduino_bridge) JobEnded: {'identifier': 'arduino_bridge', 'rc': 0}
+[2.457160] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'cmake'}
+[2.457644] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'build'}
+[2.458014] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/Dojo/build/robot_bringup', '--', '-j16', '-l16'], 'cwd': '/root/Dojo/build/robot_bringup', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/root/Dojo/install/robot_sensors:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/root/Dojo/install/robot_control:/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_bringup'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/Dojo/build/robot_sensors:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:/root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages:/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/root/Dojo/build/robot_control:/root/Dojo/install/robot_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[2.460311] (vision_system) CommandEnded: {'returncode': 0}
+[2.465506] (robot_gazebo) StdoutLine: {'line': b'--   Found uuid, version 2.37.2\n'}
+[2.467768] (vision_system) JobEnded: {'identifier': 'vision_system', 'rc': 0}
+[2.468936] (ros2arduino_bridge) CommandEnded: {'returncode': 0}
+[2.476563] (ros2arduino_bridge) JobEnded: {'identifier': 'ros2arduino_bridge', 'rc': 0}
+[2.504945] (robot_bringup) CommandEnded: {'returncode': 0}
+[2.505942] (-) TimerEvent: {}
+[2.506619] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'install'}
+[2.506878] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/Dojo/build/robot_bringup'], 'cwd': '/root/Dojo/build/robot_bringup', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/root/Dojo/install/robot_sensors:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/root/Dojo/install/robot_control:/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_bringup'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/Dojo/build/robot_sensors:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:/root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages:/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/root/Dojo/build/robot_control:/root/Dojo/install/robot_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[2.512490] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.8.1\n'}
+[2.513056] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-msgs5\n'}
+[2.515504] (robot_bringup) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[2.516223] (robot_bringup) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[2.516595] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/launch/bringup.launch.py\n'}
+[2.516849] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup\n'}
+[2.517149] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup\n'}
+[2.517468] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh\n'}
+[2.517717] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv\n'}
+[2.517982] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/environment/path.sh\n'}
+[2.518240] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/environment/path.dsv\n'}
+[2.518470] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/local_setup.bash\n'}
+[2.518728] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/local_setup.sh\n'}
+[2.518959] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/local_setup.zsh\n'}
+[2.519259] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/local_setup.dsv\n'}
+[2.519420] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_bringup/share/robot_bringup/package.dsv\n'}
+[2.531364] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup\n'}
+[2.531603] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake\n'}
+[2.531755] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake\n'}
+[2.531908] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_bringup/share/robot_bringup/package.xml\n'}
+[2.534143] (robot_bringup) CommandEnded: {'returncode': 0}
+[2.543943] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.547798] (robot_bringup) JobEnded: {'identifier': 'robot_bringup', 'rc': 0}
+[2.550362] (robot_gazebo) StdoutLine: {'line': b"-- Checking for module 'tinyxml2'\n"}
+[2.569059] (robot_gazebo) StdoutLine: {'line': b'--   Found tinyxml2, version 9.0.0\n'}
+[2.606068] (-) TimerEvent: {}
+[2.615619] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.8.1\n'}
+[2.615968] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-common3 -- found version 3.14.0\n'}
+[2.616563] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common3\n'}
+[2.616723] (robot_gazebo) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[2.616821] (robot_gazebo) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[2.629413] (robot_gazebo) StdoutLine: {'line': b'-- Searching for <ignition-common3> component [graphics]\n'}
+[2.629827] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-common3-graphics -- found version 3.14.0\n'}
+[2.630388] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common3-graphics\n'}
+[2.630787] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.631762] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-fuel_tools4 -- found version 4.4.0\n'}
+[2.632251] (robot_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-fuel_tools4\n'}
+[2.680409] (robot_gazebo) StdoutLine: {'line': b"-- Checking for module 'jsoncpp'\n"}
+[2.700808] (robot_gazebo) StdoutLine: {'line': b'--   Found jsoncpp, version 1.9.5\n'}
+[2.706159] (-) TimerEvent: {}
+[2.752213] (robot_gazebo) StdoutLine: {'line': b"-- Checking for module 'libzip'\n"}
+[2.769080] (robot_gazebo) StdoutLine: {'line': b'--   Found libzip, version 1.7.3\n'}
+[2.806279] (-) TimerEvent: {}
+[2.813234] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-common3 -- found version 3.14.0\n'}
+[2.813622] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.814042] (robot_gazebo) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.8.1\n'}
+[2.815411] (robot_gazebo) StdoutLine: {'line': b'-- Gazebo version: 11.10\n'}
+[2.818819] (robot_gazebo) StdoutLine: {'line': b'-- Found ros2_control: 2.51.0 (/opt/ros/humble/share/ros2_control/cmake)\n'}
+[2.821356] (robot_gazebo) StdoutLine: {'line': b'-- Found controller_manager: 2.51.0 (/opt/ros/humble/share/controller_manager/cmake)\n'}
+[2.906376] (-) TimerEvent: {}
+[3.006677] (-) TimerEvent: {}
+[3.059939] (robot_gazebo) StdoutLine: {'line': b'-- Found robot_state_publisher: 3.0.3 (/opt/ros/humble/share/robot_state_publisher/cmake)\n'}
+[3.077509] (robot_gazebo) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[3.079620] (robot_gazebo) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[3.079790] (robot_gazebo) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[3.106780] (-) TimerEvent: {}
+[3.207029] (-) TimerEvent: {}
+[3.239569] (robot_gazebo) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.248197] (robot_gazebo) StdoutLine: {'line': b'-- Generating done\n'}
+[3.251037] (robot_gazebo) StdoutLine: {'line': b'-- Build files have been written to: /root/Dojo/build/robot_gazebo\n'}
+[3.261738] (robot_gazebo) CommandEnded: {'returncode': 0}
+[3.262346] (robot_gazebo) JobProgress: {'identifier': 'robot_gazebo', 'progress': 'build'}
+[3.263335] (robot_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/Dojo/build/robot_gazebo', '--', '-j16', '-l16'], 'cwd': '/root/Dojo/build/robot_gazebo', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/root/Dojo/install/robot_description:/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_gazebo'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/Dojo/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[3.307127] (-) TimerEvent: {}
+[3.314323] (robot_gazebo) CommandEnded: {'returncode': 0}
+[3.314887] (robot_gazebo) JobProgress: {'identifier': 'robot_gazebo', 'progress': 'install'}
+[3.315197] (robot_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/Dojo/build/robot_gazebo'], 'cwd': '/root/Dojo/build/robot_gazebo', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/root/Dojo/install/robot_description:/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_gazebo'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/Dojo/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[3.324062] (robot_gazebo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.324470] (robot_gazebo) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[3.324855] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/gazebo.launch.py\n'}
+[3.334921] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/robot_simulation.launch.py\n'}
+[3.345588] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/config/diff_drive_controller.yaml\n'}
+[3.356042] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/robot_simulation.rviz\n'}
+[3.366309] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/empty.world\n'}
+[3.376439] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/package_run_dependencies/robot_gazebo\n'}
+[3.386778] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/parent_prefix_path/robot_gazebo\n'}
+[3.396822] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.sh\n'}
+[3.406967] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.dsv\n'}
+[3.407215] (-) TimerEvent: {}
+[3.416745] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/path.sh\n'}
+[3.427453] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/path.dsv\n'}
+[3.438227] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.bash\n'}
+[3.448173] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.sh\n'}
+[3.461072] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.zsh\n'}
+[3.473697] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.dsv\n'}
+[3.486455] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/package.dsv\n'}
+[3.499613] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/packages/robot_gazebo\n'}
+[3.507337] (-) TimerEvent: {}
+[3.513072] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig.cmake\n'}
+[3.526904] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig-version.cmake\n'}
+[3.540453] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/package.xml\n'}
+[3.553403] (robot_gazebo) StdoutLine: {'line': b'-- Installing: /root/Dojo/install/robot_gazebo/lib/robot_gazebo\n'}
+[3.553719] (robot_gazebo) StdoutLine: {'line': b'-- Installing: /root/Dojo/install/robot_gazebo/lib/robot_gazebo/spawn_robot.py\n'}
+[3.563493] (robot_gazebo) CommandEnded: {'returncode': 0}
+[3.581295] (robot_gazebo) JobEnded: {'identifier': 'robot_gazebo', 'rc': 0}
+[3.582383] (-) EventReactorShutdown: {}

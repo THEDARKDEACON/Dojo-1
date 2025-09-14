@@ -1,0 +1,21 @@
+[0.165s] Invoking command in '/root/Dojo/build/robot_navigation': /usr/bin/cmake /root/Dojo/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_navigation
+[0.596s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.596s] -- Configuring incomplete, errors occurred!
+[0.596s] See also "/root/Dojo/build/robot_navigation/CMakeFiles/CMakeOutput.log".
+[0.596s] Traceback (most recent call last):
+[0.596s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py", line 21, in <module>
+[0.596s]     from ament_package.templates import get_environment_hook_template_path
+[0.596s] ModuleNotFoundError: No module named 'ament_package'
+[0.596s] [31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_package_templates-extras.cmake:41 (message):
+[0.596s]   execute_process(/usr/bin/python3
+[0.597s]   /opt/ros/humble/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py
+[0.597s]   /root/Dojo/build/robot_navigation/ament_cmake_package_templates/templates.cmake)
+[0.597s]   returned error code 1
+[0.597s] Call Stack (most recent call first):
+[0.597s]   /opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)
+[0.597s]   /opt/ros/humble/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)
+[0.597s]   /opt/ros/humble/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)
+[0.597s]   CMakeLists.txt:10 (find_package)
+[0.597s] 
+[0.597s] [0m
+[0.755s] Invoked command in '/root/Dojo/build/robot_navigation' returned '1': /usr/bin/cmake /root/Dojo/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_navigation

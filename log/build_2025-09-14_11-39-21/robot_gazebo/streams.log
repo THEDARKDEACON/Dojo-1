@@ -1,0 +1,141 @@
+[0.010s] Invoking command in '/root/Dojo/build/robot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/vision_system:/root/Dojo/install/ros2arduino_bridge:/root/Dojo/install/robot_control:/root/Dojo/install/robot_sensors:/root/Dojo/install/arduino_bridge:/opt/ros/humble /usr/bin/cmake /root/Dojo/src/robot_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_gazebo
+[0.061s] -- The C compiler identification is GNU 11.4.0
+[0.111s] -- The CXX compiler identification is GNU 11.4.0
+[0.118s] -- Detecting C compiler ABI info
+[0.182s] -- Detecting C compiler ABI info - done
+[0.188s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.188s] -- Detecting C compile features
+[0.189s] -- Detecting C compile features - done
+[0.191s] -- Detecting CXX compiler ABI info
+[0.266s] -- Detecting CXX compiler ABI info - done
+[0.272s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.272s] -- Detecting CXX compile features
+[0.273s] -- Detecting CXX compile features - done
+[0.277s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.881s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.943s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.992s] -- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)
+[1.048s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.055s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.066s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.080s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.104s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.165s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.169s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.274s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.306s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.358s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.371s] -- Looking for pthread.h
+[1.443s] -- Looking for pthread.h - found
+[1.443s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.517s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.518s] -- Found Threads: TRUE  
+[1.581s] -- Found gazebo_ros: 3.9.0 (/opt/ros/humble/share/gazebo_ros/cmake)
+[1.597s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[1.598s] -- Checking for module 'bullet>=2.82'
+[1.612s] --   Found bullet, version 3.05
+[1.748s] -- Found fcl: /usr/include (found suitable version "0.7.0", minimum required is "0.5.0") 
+[1.808s] -- Found assimp: /usr/include (found version "5.2.0") 
+[1.844s] -- Found DART: /usr/include (Required is at least version "6.6") found components: dart 
+[1.884s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.40.0") found components: thread system filesystem program_options regex iostreams date_time 
+[1.904s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[1.915s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.928s] -- Searching for dependencies of ignition-math6
+[1.931s] -- Looking for OGRE...
+[1.931s] -- OGRE_PREFIX_WATCH changed.
+[1.938s] -- Checking for module 'OGRE'
+[1.953s] --   Found OGRE, version 1.9.0
+[1.996s] -- Found Ogre Ghadamon (1.9.0)
+[2.004s] -- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+[2.015s] -- Looking for OGRE_Paging...
+[2.022s] -- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+[2.022s] -- Looking for OGRE_Terrain...
+[2.028s] -- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+[2.028s] -- Looking for OGRE_Property...
+[2.034s] -- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+[2.034s] -- Looking for OGRE_RTShaderSystem...
+[2.039s] -- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+[2.040s] -- Looking for OGRE_Volume...
+[2.044s] -- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+[2.044s] -- Looking for OGRE_Overlay...
+[2.049s] -- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+[2.146s] -- Looking for ignition-math6 -- found version 6.15.1
+[2.151s] -- Looking for ignition-transport8 -- found version 8.2.1
+[2.152s] -- Searching for dependencies of ignition-transport8
+[2.177s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+[2.196s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[2.202s] -- Checking for module 'libzmq >= 4'
+[2.221s] --   Found libzmq , version 4.3.4
+[2.264s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[2.271s] -- Checking for module 'uuid'
+[2.286s] --   Found uuid, version 2.37.2
+[2.326s] -- Found UUID: TRUE  
+[2.332s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[2.332s] -- Searching for dependencies of ignition-msgs5
+[2.359s] -- Looking for ignition-math6 -- found version 6.15.1
+[2.366s] -- Checking for module 'tinyxml2'
+[2.387s] --   Found tinyxml2, version 9.0.0
+[2.444s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[2.450s] -- Looking for ignition-common3 -- found version 3.14.0
+[2.451s] -- Searching for dependencies of ignition-common3
+[2.451s] -- Looking for dlfcn.h - found
+[2.452s] -- Looking for libdl - found
+[2.454s] -- Found DL: TRUE  
+[2.471s] -- Found tinyobjloader: /usr/lib/x86_64-linux-gnu/cmake/tinyobjloader/tinyobjloader-config.cmake (found version "2.0.0") 
+[2.471s] -- Searching for <ignition-common3> component [graphics]
+[2.476s] -- Looking for ignition-common3-graphics -- found version 3.14.0
+[2.477s] -- Searching for dependencies of ignition-common3-graphics
+[2.477s] -- Looking for ignition-math6 -- found version 6.15.1
+[2.483s] -- Looking for ignition-fuel_tools4 -- found version 4.4.0
+[2.483s] -- Searching for dependencies of ignition-fuel_tools4
+[2.589s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[2.604s] -- Checking for module 'jsoncpp'
+[2.623s] --   Found jsoncpp, version 1.9.5
+[2.667s] -- Found JSONCPP: TRUE  
+[2.673s] -- Checking for module 'libzip'
+[2.692s] --   Found libzip, version 1.7.3
+[2.741s] -- Found ZIP: TRUE  
+[2.741s] -- Looking for ignition-common3 -- found version 3.14.0
+[2.742s] -- Looking for ignition-math6 -- found version 6.15.1
+[2.742s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[2.749s] -- Gazebo version: 11.10
+[2.749s] -- Checking for module 'tbb'
+[2.766s] --   Found tbb, version 2021.5.0
+[2.811s] -- Found ros2_control: 2.51.0 (/opt/ros/humble/share/ros2_control/cmake)
+[2.815s] -- Found controller_manager: 2.51.0 (/opt/ros/humble/share/controller_manager/cmake)
+[3.103s] -- Found robot_state_publisher: 3.0.3 (/opt/ros/humble/share/robot_state_publisher/cmake)
+[3.124s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[3.125s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[3.125s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[3.308s] -- Configuring done
+[3.317s] -- Generating done
+[3.320s] -- Build files have been written to: /root/Dojo/build/robot_gazebo
+[3.333s] Invoked command in '/root/Dojo/build/robot_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/vision_system:/root/Dojo/install/ros2arduino_bridge:/root/Dojo/install/robot_control:/root/Dojo/install/robot_sensors:/root/Dojo/install/arduino_bridge:/opt/ros/humble /usr/bin/cmake /root/Dojo/src/robot_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_gazebo
+[3.335s] Invoking command in '/root/Dojo/build/robot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/vision_system:/root/Dojo/install/ros2arduino_bridge:/root/Dojo/install/robot_control:/root/Dojo/install/robot_sensors:/root/Dojo/install/arduino_bridge:/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_gazebo -- -j16 -l16
+[3.383s] Invoked command in '/root/Dojo/build/robot_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/vision_system:/root/Dojo/install/ros2arduino_bridge:/root/Dojo/install/robot_control:/root/Dojo/install/robot_sensors:/root/Dojo/install/arduino_bridge:/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_gazebo -- -j16 -l16
+[3.393s] Invoking command in '/root/Dojo/build/robot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/vision_system:/root/Dojo/install/ros2arduino_bridge:/root/Dojo/install/robot_control:/root/Dojo/install/robot_sensors:/root/Dojo/install/arduino_bridge:/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_gazebo
+[3.401s] -- Install configuration: ""
+[3.402s] -- Execute custom install script
+[3.402s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/gazebo.launch.py
+[3.414s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/robot_simulation.launch.py
+[3.424s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/config/diff_drive_controller.yaml
+[3.437s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/robot_simulation.rviz
+[3.448s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/empty.world
+[3.460s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/package_run_dependencies/robot_gazebo
+[3.471s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/parent_prefix_path/robot_gazebo
+[3.480s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.sh
+[3.489s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.dsv
+[3.499s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/path.sh
+[3.509s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/path.dsv
+[3.519s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.bash
+[3.529s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.sh
+[3.540s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.zsh
+[3.551s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.dsv
+[3.560s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/package.dsv
+[3.570s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/packages/robot_gazebo
+[3.580s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig.cmake
+[3.590s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig-version.cmake
+[3.600s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/package.xml
+[3.613s] -- Installing: /root/Dojo/install/robot_gazebo/lib/robot_gazebo
+[3.613s] -- Installing: /root/Dojo/install/robot_gazebo/lib/robot_gazebo/spawn_robot.py
+[3.617s] Invoked command in '/root/Dojo/build/robot_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/vision_system:/root/Dojo/install/ros2arduino_bridge:/root/Dojo/install/robot_control:/root/Dojo/install/robot_sensors:/root/Dojo/install/arduino_bridge:/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_gazebo

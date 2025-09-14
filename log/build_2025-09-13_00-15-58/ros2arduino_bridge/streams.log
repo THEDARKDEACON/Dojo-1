@@ -1,0 +1,19 @@
+[1.693s] Invoking command in '/root/Dojo/build/ros2arduino_bridge': PYTHONPATH=/root/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/ros2arduino_bridge/build --no-deps symlink_data
+[1.981s] /usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[1.981s]   warnings.warn(
+[2.019s] running develop
+[2.153s] running egg_info
+[2.154s] writing ros2arduino_bridge.egg-info/PKG-INFO
+[2.154s] writing dependency_links to ros2arduino_bridge.egg-info/dependency_links.txt
+[2.155s] writing entry points to ros2arduino_bridge.egg-info/entry_points.txt
+[2.155s] writing requirements to ros2arduino_bridge.egg-info/requires.txt
+[2.155s] writing top-level names to ros2arduino_bridge.egg-info/top_level.txt
+[2.156s] reading manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'
+[2.157s] writing manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'
+[2.158s] running build_ext
+[2.158s] Creating /root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages/ros2arduino-bridge.egg-link (link to .)
+[2.159s] Installing arduino_bridge script to /lib/ros2arduino_bridge
+[2.160s] 
+[2.160s] Installed /root/Dojo/build/ros2arduino_bridge
+[2.160s] running symlink_data
+[2.204s] Invoked command in '/root/Dojo/build/ros2arduino_bridge' returned '0': PYTHONPATH=/root/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/ros2arduino_bridge/build --no-deps symlink_data

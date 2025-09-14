@@ -1,6 +1,0 @@
-Invoking command in '/home/Dojo/Dojo/build/robot_perception': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/Dojo/Dojo/src/robot_perception -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/robot_perception
-Invoked command in '/home/Dojo/Dojo/build/robot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/Dojo/Dojo/src/robot_perception -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/Dojo/Dojo/install/robot_perception
-Invoking command in '/home/Dojo/Dojo/build/robot_perception': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_perception -- -j16 -l16
-Invoked command in '/home/Dojo/Dojo/build/robot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/Dojo/Dojo/build/robot_perception -- -j16 -l16
-Invoking command in '/home/Dojo/Dojo/build/robot_perception': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_perception
-Invoked command in '/home/Dojo/Dojo/build/robot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/Dojo/Dojo/build/robot_perception

@@ -1,0 +1,28 @@
+/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+Traceback (most recent call last):
+  File "/root/Dojo/build/arduino_bridge/setup.py", line 18, in <module>
+    setup(
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/__init__.py", line 117, in setup
+    return distutils.core.setup(**attrs)
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 186, in setup
+    return run_commands(dist)
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 202, in run_commands
+    dist.run_commands()
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1002, in run_commands
+    self.run_command(cmd)
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1104, in run_command
+    super().run_command(command)
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1020, in run_command
+    cmd_obj.ensure_finalized()
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py", line 135, in ensure_finalized
+    self.finalize_options()
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/command/develop.py", line 51, in finalize_options
+    easy_install.finalize_options(self)
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/command/easy_install.py", line 251, in finalize_options
+    'dist_fullname': self.distribution.get_fullname(),
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/_core_metadata.py", line 275, in get_fullname
+    return _distribution_fullname(self.get_name(), self.get_version())
+  File "/usr/local/lib/python3.10/dist-packages/setuptools/_core_metadata.py", line 293, in _distribution_fullname
+    canonicalize_version(version, strip_trailing_zero=False),
+TypeError: canonicalize_version() got an unexpected keyword argument 'strip_trailing_zero'

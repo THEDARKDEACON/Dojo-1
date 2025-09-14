@@ -1,0 +1,63 @@
+[0.047s] Invoking command in '/root/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /root/Dojo/src/robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_description
+[0.936s] -- The C compiler identification is GNU 11.4.0
+[0.937s] -- The CXX compiler identification is GNU 11.4.0
+[0.938s] -- Detecting C compiler ABI info
+[0.938s] -- Detecting C compiler ABI info - done
+[0.938s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.938s] -- Detecting C compile features
+[0.938s] -- Detecting C compile features - done
+[0.938s] -- Detecting CXX compiler ABI info
+[0.939s] -- Detecting CXX compiler ABI info - done
+[0.940s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.940s] -- Detecting CXX compile features
+[0.940s] -- Detecting CXX compile features - done
+[0.941s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.941s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.978s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.196s] -- Configuring done
+[1.202s] -- Generating done
+[1.204s] -- Build files have been written to: /root/Dojo/build/robot_description
+[1.211s] Invoked command in '/root/Dojo/build/robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /root/Dojo/src/robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_description
+[1.214s] Invoking command in '/root/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_description -- -j16 -l16
+[1.290s] Built target ament_cmake_python_symlink_robot_description
+[1.579s] running egg_info
+[1.598s] creating robot_description.egg-info
+[1.598s] writing robot_description.egg-info/PKG-INFO
+[1.599s] writing dependency_links to robot_description.egg-info/dependency_links.txt
+[1.599s] writing top-level names to robot_description.egg-info/top_level.txt
+[1.599s] writing manifest file 'robot_description.egg-info/SOURCES.txt'
+[1.663s] reading manifest file 'robot_description.egg-info/SOURCES.txt'
+[1.663s] Traceback (most recent call last):
+[1.663s]   File "/root/Dojo/build/robot_description/ament_cmake_python/robot_description/setup.py", line 4, in <module>
+[1.663s]     setup(
+[1.664s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/__init__.py", line 115, in setup
+[1.664s]     return distutils.core.setup(**attrs)
+[1.664s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 186, in setup
+[1.664s]     return run_commands(dist)
+[1.664s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 202, in run_commands
+[1.664s]     dist.run_commands()
+[1.664s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1002, in run_commands
+[1.665s]     self.run_command(cmd)
+[1.665s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1102, in run_command
+[1.665s]     super().run_command(command)
+[1.665s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+[1.665s]     cmd_obj.run()
+[1.665s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/command/egg_info.py", line 312, in run
+[1.665s]     self.find_sources()
+[1.665s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/command/egg_info.py", line 320, in find_sources
+[1.665s]     mm.run()
+[1.666s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/command/egg_info.py", line 548, in run
+[1.666s]     self.prune_file_list()
+[1.666s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/command/sdist.py", line 162, in prune_file_list
+[1.666s]     super().prune_file_list()
+[1.666s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/command/sdist.py", line 386, in prune_file_list
+[1.666s]     base_dir = self.distribution.get_fullname()
+[1.666s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/_core_metadata.py", line 275, in get_fullname
+[1.666s]     return _distribution_fullname(self.get_name(), self.get_version())
+[1.666s]   File "/usr/local/lib/python3.10/dist-packages/setuptools/_core_metadata.py", line 293, in _distribution_fullname
+[1.666s]     canonicalize_version(version, strip_trailing_zero=False),
+[1.667s] TypeError: canonicalize_version() got an unexpected keyword argument 'strip_trailing_zero'
+[1.702s] gmake[2]: *** [CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_robot_description_egg] Error 1
+[1.705s] gmake[1]: *** [CMakeFiles/Makefile2:164: CMakeFiles/ament_cmake_python_build_robot_description_egg.dir/all] Error 2
+[1.706s] gmake: *** [Makefile:146: all] Error 2
+[1.711s] Invoked command in '/root/Dojo/build/robot_description' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_description -- -j16 -l16

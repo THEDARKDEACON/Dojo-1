@@ -1,0 +1,15 @@
+[0.000000] (-) TimerEvent: {}
+[0.000753] (-) JobUnselected: {'identifier': 'arduino_bridge'}
+[0.000799] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.000824] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.000909] (-) JobUnselected: {'identifier': 'robot_gazebo'}
+[0.000952] (-) JobUnselected: {'identifier': 'robot_launch'}
+[0.000984] (-) JobUnselected: {'identifier': 'robot_navigation'}
+[0.001004] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.001024] (-) JobUnselected: {'identifier': 'robot_sensors'}
+[0.001044] (-) JobUnselected: {'identifier': 'ros2arduino_bridge'}
+[0.001090] (-) JobUnselected: {'identifier': 'vision_system'}
+[0.001120] (robot_bringup) JobQueued: {'identifier': 'robot_bringup', 'dependencies': OrderedDict([('robot_control', '/root/Dojo/install/robot_control'), ('robot_description', '/root/Dojo/install/robot_description'), ('robot_navigation', '/root/Dojo/install/robot_navigation'), ('robot_perception', '/root/Dojo/install/robot_perception'), ('robot_sensors', '/root/Dojo/install/robot_sensors')])}
+[0.001199] (robot_bringup) JobStarted: {'identifier': 'robot_bringup'}
+[0.012162] (robot_bringup) JobEnded: {'identifier': 'robot_bringup', 'rc': 1}
+[0.022682] (-) EventReactorShutdown: {}

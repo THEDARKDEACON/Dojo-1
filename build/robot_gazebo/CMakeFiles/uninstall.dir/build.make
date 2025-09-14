@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Dojo/Dojo/src/robot_gazebo
+CMAKE_SOURCE_DIR = /root/Dojo/src/robot_gazebo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Dojo/Dojo/build/robot_gazebo
+CMAKE_BINARY_DIR = /root/Dojo/build/robot_gazebo
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/Dojo/Dojo/build/robot_gazebo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/Dojo/Dojo/src/robot_gazebo /home/Dojo/Dojo/src/robot_gazebo /home/Dojo/Dojo/build/robot_gazebo /home/Dojo/Dojo/build/robot_gazebo /home/Dojo/Dojo/build/robot_gazebo/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/Dojo/build/robot_gazebo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Dojo/src/robot_gazebo /root/Dojo/src/robot_gazebo /root/Dojo/build/robot_gazebo /root/Dojo/build/robot_gazebo /root/Dojo/build/robot_gazebo/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

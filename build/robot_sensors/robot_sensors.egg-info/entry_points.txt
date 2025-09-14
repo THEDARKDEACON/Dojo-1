@@ -1,3 +1,2 @@
 [console_scripts]
 camera_publisher = robot_sensors.camera_publisher:main
-

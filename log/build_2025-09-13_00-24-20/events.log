@@ -1,0 +1,16 @@
+[0.000000] (-) TimerEvent: {}
+[0.000162] (-) JobUnselected: {'identifier': 'arduino_bridge'}
+[0.000291] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.000325] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.000350] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.000381] (-) JobUnselected: {'identifier': 'robot_gazebo'}
+[0.000566] (-) JobUnselected: {'identifier': 'robot_navigation'}
+[0.000604] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.000626] (-) JobUnselected: {'identifier': 'robot_sensors'}
+[0.000646] (-) JobUnselected: {'identifier': 'ros2arduino_bridge'}
+[0.000666] (-) JobUnselected: {'identifier': 'vision_system'}
+[0.000695] (robot_launch) JobQueued: {'identifier': 'robot_launch', 'dependencies': OrderedDict({'robot_control': '/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/install/robot_control', 'robot_description': '/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/install/robot_description', 'robot_sensors': '/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/install/robot_sensors', 'ros2arduino_bridge': '/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/install/ros2arduino_bridge'})}
+[0.001067] (robot_launch) JobStarted: {'identifier': 'robot_launch'}
+[0.013053] (robot_launch) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 40, in build\n    additional_hooks = create_environment_hook(\n                       ^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_core/shell/__init__.py", line 480, in create_environment_hook\n    raise RuntimeError(\nRuntimeError: Could not find a primary shell extension for creating an environment hook\n'}
+[0.013737] (robot_launch) JobEnded: {'identifier': 'robot_launch', 'rc': 1}
+[0.023647] (-) EventReactorShutdown: {}

@@ -1,1 +1,1 @@
-/home/Dojo/Dojo/src/robot_description/launch/display.launch.py
+/root/Dojo/src/robot_description/launch/display.launch.py

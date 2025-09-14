@@ -1,0 +1,661 @@
+[0.125s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.125s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7dad63d17940>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7dad63ec0fd0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7dad63ec0fd0>>, mixin_verb=('build',))
+[0.261s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.261s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.262s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastdds.meta'
+[0.262s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.263s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/root/Dojo'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_bridge) by extension 'ignore'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_bridge) by extension 'ignore_ament_install'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_bridge) by extensions ['colcon_pkg']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_bridge) by extension 'colcon_pkg'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_bridge) by extensions ['colcon_meta']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_bridge) by extension 'colcon_meta'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_bridge) by extensions ['ros']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_bridge) by extension 'ros'
+[0.278s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arduino_bridge' with type 'ros.ament_python' and name 'arduino_bridge'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'ignore'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'ignore_ament_install'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['colcon_pkg']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'colcon_pkg'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['colcon_meta']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'colcon_meta'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['ros']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'ros'
+[0.279s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_bringup' with type 'ros.ament_cmake' and name 'robot_bringup'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extensions ['ignore', 'ignore_ament_install']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extension 'ignore'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extension 'ignore_ament_install'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extensions ['colcon_pkg']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extension 'colcon_pkg'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extensions ['colcon_meta']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extension 'colcon_meta'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extensions ['ros']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extension 'ros'
+[0.280s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_control' with type 'ros.ament_python' and name 'robot_control'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extensions ['ignore', 'ignore_ament_install']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extension 'ignore'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extension 'ignore_ament_install'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extensions ['colcon_pkg']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extension 'colcon_pkg'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extensions ['colcon_meta']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extension 'colcon_meta'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extensions ['ros']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extension 'ros'
+[0.281s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_description' with type 'ros.ament_cmake' and name 'robot_description'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_gazebo) by extension 'ignore'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_gazebo) by extension 'ignore_ament_install'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_gazebo) by extensions ['colcon_pkg']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_gazebo) by extension 'colcon_pkg'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_gazebo) by extensions ['colcon_meta']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_gazebo) by extension 'colcon_meta'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_gazebo) by extensions ['ros']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_gazebo) by extension 'ros'
+[0.283s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_gazebo' with type 'ros.ament_cmake' and name 'robot_gazebo'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_navigation) by extensions ['ignore', 'ignore_ament_install']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_navigation) by extension 'ignore'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_navigation) by extension 'ignore_ament_install'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_navigation) by extensions ['colcon_pkg']
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_navigation) by extension 'colcon_pkg'
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_navigation) by extensions ['colcon_meta']
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_navigation) by extension 'colcon_meta'
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_navigation) by extensions ['ros']
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_navigation) by extension 'ros'
+[0.285s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_navigation' with type 'ros.ament_cmake' and name 'robot_navigation'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extensions ['ignore', 'ignore_ament_install']
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extension 'ignore'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extension 'ignore_ament_install'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extensions ['colcon_pkg']
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extension 'colcon_pkg'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extensions ['colcon_meta']
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extension 'colcon_meta'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extensions ['ros']
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extension 'ros'
+[0.286s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_perception' with type 'ros.ament_cmake' and name 'robot_perception'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_sensors) by extensions ['ignore', 'ignore_ament_install']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_sensors) by extension 'ignore'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_sensors) by extension 'ignore_ament_install'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_sensors) by extensions ['colcon_pkg']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_sensors) by extension 'colcon_pkg'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_sensors) by extensions ['colcon_meta']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_sensors) by extension 'colcon_meta'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_sensors) by extensions ['ros']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_sensors) by extension 'ros'
+[0.287s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_sensors' with type 'ros.ament_python' and name 'robot_sensors'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2arduino_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2arduino_bridge) by extension 'ignore'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2arduino_bridge) by extension 'ignore_ament_install'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2arduino_bridge) by extensions ['colcon_pkg']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2arduino_bridge) by extension 'colcon_pkg'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2arduino_bridge) by extensions ['colcon_meta']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2arduino_bridge) by extension 'colcon_meta'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2arduino_bridge) by extensions ['ros']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2arduino_bridge) by extension 'ros'
+[0.288s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2arduino_bridge' with type 'ros.ament_python' and name 'ros2arduino_bridge'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_system) by extensions ['ignore', 'ignore_ament_install']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_system) by extension 'ignore'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_system) by extension 'ignore_ament_install'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_system) by extensions ['colcon_pkg']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_system) by extension 'colcon_pkg'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_system) by extensions ['colcon_meta']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_system) by extension 'colcon_meta'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_system) by extensions ['ros']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_system) by extension 'ros'
+[0.289s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vision_system' with type 'ros.ament_python' and name 'vision_system'
+[0.289s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.289s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.289s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.289s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.289s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'arduino_bridge' build argument 'cmake_args' from command line to 'None'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'arduino_bridge' build argument 'cmake_target' from command line to 'None'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'arduino_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'arduino_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'arduino_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'arduino_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'arduino_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'arduino_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'arduino_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.310s] DEBUG:colcon.colcon_core.verb:Building package 'arduino_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/Dojo/build/arduino_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/Dojo/install/arduino_bridge', 'merge_install': False, 'path': '/root/Dojo/src/arduino_bridge', 'symlink_install': True, 'test_result_base': None}
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_args' from command line to 'None'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_target' from command line to 'None'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.310s] DEBUG:colcon.colcon_core.verb:Building package 'robot_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/Dojo/build/robot_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/Dojo/install/robot_control', 'merge_install': False, 'path': '/root/Dojo/src/robot_control', 'symlink_install': True, 'test_result_base': None}
+[0.310s] Level 5:colcon.colcon_core.verb:set package 'robot_description' build argument 'cmake_args' from command line to 'None'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_description' build argument 'cmake_target' from command line to 'None'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.311s] DEBUG:colcon.colcon_core.verb:Building package 'robot_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/Dojo/build/robot_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/Dojo/install/robot_description', 'merge_install': False, 'path': '/root/Dojo/src/robot_description', 'symlink_install': True, 'test_result_base': None}
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_args' from command line to 'None'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_target' from command line to 'None'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_clean_first' from command line to 'False'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_force_configure' from command line to 'False'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'ament_cmake_args' from command line to 'None'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.311s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.311s] DEBUG:colcon.colcon_core.verb:Building package 'robot_navigation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/Dojo/build/robot_navigation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/Dojo/install/robot_navigation', 'merge_install': False, 'path': '/root/Dojo/src/robot_navigation', 'symlink_install': True, 'test_result_base': None}
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_args' from command line to 'None'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_target' from command line to 'None'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_clean_cache' from command line to 'False'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_clean_first' from command line to 'False'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_force_configure' from command line to 'False'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'ament_cmake_args' from command line to 'None'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'catkin_cmake_args' from command line to 'None'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.312s] DEBUG:colcon.colcon_core.verb:Building package 'robot_perception' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/Dojo/build/robot_perception', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/Dojo/install/robot_perception', 'merge_install': False, 'path': '/root/Dojo/src/robot_perception', 'symlink_install': True, 'test_result_base': None}
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_sensors' build argument 'cmake_args' from command line to 'None'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_sensors' build argument 'cmake_target' from command line to 'None'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_sensors' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_sensors' build argument 'cmake_clean_cache' from command line to 'False'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_sensors' build argument 'cmake_clean_first' from command line to 'False'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_sensors' build argument 'cmake_force_configure' from command line to 'False'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_sensors' build argument 'ament_cmake_args' from command line to 'None'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_sensors' build argument 'catkin_cmake_args' from command line to 'None'
+[0.312s] Level 5:colcon.colcon_core.verb:set package 'robot_sensors' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.312s] DEBUG:colcon.colcon_core.verb:Building package 'robot_sensors' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/Dojo/build/robot_sensors', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/Dojo/install/robot_sensors', 'merge_install': False, 'path': '/root/Dojo/src/robot_sensors', 'symlink_install': True, 'test_result_base': None}
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'ros2arduino_bridge' build argument 'cmake_args' from command line to 'None'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'ros2arduino_bridge' build argument 'cmake_target' from command line to 'None'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'ros2arduino_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'ros2arduino_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'ros2arduino_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'ros2arduino_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'ros2arduino_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'ros2arduino_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'ros2arduino_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.313s] DEBUG:colcon.colcon_core.verb:Building package 'ros2arduino_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/Dojo/build/ros2arduino_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/Dojo/install/ros2arduino_bridge', 'merge_install': False, 'path': '/root/Dojo/src/ros2arduino_bridge', 'symlink_install': True, 'test_result_base': None}
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'vision_system' build argument 'cmake_args' from command line to 'None'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'vision_system' build argument 'cmake_target' from command line to 'None'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'vision_system' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'vision_system' build argument 'cmake_clean_cache' from command line to 'False'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'vision_system' build argument 'cmake_clean_first' from command line to 'False'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'vision_system' build argument 'cmake_force_configure' from command line to 'False'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'vision_system' build argument 'ament_cmake_args' from command line to 'None'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'vision_system' build argument 'catkin_cmake_args' from command line to 'None'
+[0.313s] Level 5:colcon.colcon_core.verb:set package 'vision_system' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.313s] DEBUG:colcon.colcon_core.verb:Building package 'vision_system' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/Dojo/build/vision_system', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/Dojo/install/vision_system', 'merge_install': False, 'path': '/root/Dojo/src/vision_system', 'symlink_install': True, 'test_result_base': None}
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_args' from command line to 'None'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_target' from command line to 'None'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.314s] DEBUG:colcon.colcon_core.verb:Building package 'robot_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/Dojo/build/robot_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/Dojo/install/robot_bringup', 'merge_install': False, 'path': '/root/Dojo/src/robot_bringup', 'symlink_install': True, 'test_result_base': None}
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.314s] Level 5:colcon.colcon_core.verb:set package 'robot_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.315s] Level 5:colcon.colcon_core.verb:set package 'robot_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.315s] Level 5:colcon.colcon_core.verb:set package 'robot_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.315s] DEBUG:colcon.colcon_core.verb:Building package 'robot_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/Dojo/build/robot_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/Dojo/install/robot_gazebo', 'merge_install': False, 'path': '/root/Dojo/src/robot_gazebo', 'symlink_install': True, 'test_result_base': None}
+[0.315s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.316s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.316s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/Dojo/src/robot_description' with build type 'ament_cmake'
+[0.316s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/Dojo/src/robot_description'
+[0.319s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.320s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.320s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.324s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/root/Dojo/src/robot_control' with build type 'ament_python'
+[0.324s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_control', 'ament_prefix_path')
+[0.324s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_control/share/robot_control/hook/ament_prefix_path.ps1'
+[0.325s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_control/share/robot_control/hook/ament_prefix_path.dsv'
+[0.325s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_control/share/robot_control/hook/ament_prefix_path.sh'
+[0.326s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.326s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.329s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/Dojo/src/robot_navigation' with build type 'ament_cmake'
+[0.329s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/Dojo/src/robot_navigation'
+[0.329s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.329s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.333s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/Dojo/src/robot_perception' with build type 'ament_cmake'
+[0.333s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/Dojo/src/robot_perception'
+[0.333s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.333s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.348s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/root/Dojo/src/robot_sensors' with build type 'ament_python'
+[0.348s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_sensors', 'ament_prefix_path')
+[0.349s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_sensors/share/robot_sensors/hook/ament_prefix_path.ps1'
+[0.349s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_sensors/share/robot_sensors/hook/ament_prefix_path.dsv'
+[0.350s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_sensors/share/robot_sensors/hook/ament_prefix_path.sh'
+[0.350s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.351s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.354s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/root/Dojo/src/arduino_bridge' with build type 'ament_python'
+[0.354s] Level 1:colcon.colcon_core.shell:create_environment_hook('arduino_bridge', 'ament_prefix_path')
+[0.355s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/arduino_bridge/share/arduino_bridge/hook/ament_prefix_path.ps1'
+[0.355s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/arduino_bridge/share/arduino_bridge/hook/ament_prefix_path.dsv'
+[0.355s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/arduino_bridge/share/arduino_bridge/hook/ament_prefix_path.sh'
+[0.356s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.356s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.359s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/root/Dojo/src/ros2arduino_bridge' with build type 'ament_python'
+[0.359s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2arduino_bridge', 'ament_prefix_path')
+[0.360s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/hook/ament_prefix_path.ps1'
+[0.360s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/hook/ament_prefix_path.dsv'
+[0.361s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/hook/ament_prefix_path.sh'
+[0.361s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.362s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.365s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/root/Dojo/src/vision_system' with build type 'ament_python'
+[0.365s] Level 1:colcon.colcon_core.shell:create_environment_hook('vision_system', 'ament_prefix_path')
+[0.366s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/vision_system/share/vision_system/hook/ament_prefix_path.ps1'
+[0.366s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/vision_system/share/vision_system/hook/ament_prefix_path.dsv'
+[0.367s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/vision_system/share/vision_system/hook/ament_prefix_path.sh'
+[0.367s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.367s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.376s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_description -- -j16 -l16
+[0.629s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/root/Dojo/src/robot_control'
+[0.629s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.629s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.636s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_navigation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_navigation -- -j16 -l16
+[0.639s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_perception': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_perception -- -j16 -l16
+[0.896s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/root/Dojo/src/robot_sensors'
+[0.896s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.896s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.136s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/root/Dojo/src/arduino_bridge'
+[1.137s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.137s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.370s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/root/Dojo/src/ros2arduino_bridge'
+[1.370s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.370s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.379s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_navigation -- -j16 -l16
+[1.390s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_navigation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_navigation
+[1.624s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/root/Dojo/src/vision_system'
+[1.625s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.625s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.629s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_perception -- -j16 -l16
+[1.631s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_perception': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_perception
+[1.631s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_description -- -j16 -l16
+[1.633s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_description
+[1.656s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_navigation)
+[1.664s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation' for CMake module files
+[1.666s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation' for CMake config files
+[1.668s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_navigation', 'cmake_prefix_path')
+[1.668s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.ps1'
+[1.669s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_navigation
+[1.670s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.dsv'
+[1.670s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.sh'
+[1.672s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation/bin'
+[1.673s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation/lib/pkgconfig/robot_navigation.pc'
+[1.673s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation/lib/python3.10/site-packages'
+[1.673s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation/bin'
+[1.674s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_navigation/share/robot_navigation/package.ps1'
+[1.676s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_navigation/share/robot_navigation/package.dsv'
+[1.677s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_navigation/share/robot_navigation/package.sh'
+[1.679s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_navigation/share/robot_navigation/package.bash'
+[1.680s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_navigation/share/robot_navigation/package.zsh'
+[1.682s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_navigation/share/colcon-core/packages/robot_navigation)
+[1.683s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_navigation)
+[1.683s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation' for CMake module files
+[1.684s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation' for CMake config files
+[1.685s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_navigation', 'cmake_prefix_path')
+[1.685s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.ps1'
+[1.686s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.dsv'
+[1.687s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.sh'
+[1.688s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation/bin'
+[1.688s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation/lib/pkgconfig/robot_navigation.pc'
+[1.688s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation/lib/python3.10/site-packages'
+[1.689s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_navigation/bin'
+[1.689s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_navigation/share/robot_navigation/package.ps1'
+[1.690s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_navigation/share/robot_navigation/package.dsv'
+[1.691s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_navigation/share/robot_navigation/package.sh'
+[1.692s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_navigation/share/robot_navigation/package.bash'
+[1.692s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_navigation/share/robot_navigation/package.zsh'
+[1.693s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_navigation/share/colcon-core/packages/robot_navigation)
+[1.709s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_perception)
+[1.709s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_perception
+[1.710s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception' for CMake module files
+[1.711s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception' for CMake config files
+[1.711s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_perception', 'cmake_prefix_path')
+[1.712s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.ps1'
+[1.712s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.dsv'
+[1.713s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.sh'
+[1.715s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception/bin'
+[1.715s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception/lib/pkgconfig/robot_perception.pc'
+[1.715s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception/lib/python3.10/site-packages'
+[1.716s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception/bin'
+[1.716s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_perception/share/robot_perception/package.ps1'
+[1.717s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_perception/share/robot_perception/package.dsv'
+[1.718s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_perception/share/robot_perception/package.sh'
+[1.719s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_perception/share/robot_perception/package.bash'
+[1.719s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_perception/share/robot_perception/package.zsh'
+[1.720s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_perception/share/colcon-core/packages/robot_perception)
+[1.721s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_perception)
+[1.722s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception' for CMake module files
+[1.723s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception' for CMake config files
+[1.723s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_perception', 'cmake_prefix_path')
+[1.723s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.ps1'
+[1.724s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.dsv'
+[1.725s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.sh'
+[1.726s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception/bin'
+[1.726s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception/lib/pkgconfig/robot_perception.pc'
+[1.726s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception/lib/python3.10/site-packages'
+[1.727s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_perception/bin'
+[1.727s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_perception/share/robot_perception/package.ps1'
+[1.728s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_perception/share/robot_perception/package.dsv'
+[1.729s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_perception/share/robot_perception/package.sh'
+[1.729s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_perception/share/robot_perception/package.bash'
+[1.730s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_perception/share/robot_perception/package.zsh'
+[1.731s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_perception/share/colcon-core/packages/robot_perception)
+[1.732s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_description)
+[1.733s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description' for CMake module files
+[1.734s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_description
+[1.734s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description' for CMake config files
+[1.735s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_description', 'cmake_prefix_path')
+[1.736s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.ps1'
+[1.736s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.dsv'
+[1.737s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.sh'
+[1.738s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description/lib'
+[1.738s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description/bin'
+[1.738s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description/lib/pkgconfig/robot_description.pc'
+[1.739s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description/lib/python3.10/site-packages'
+[1.739s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description/bin'
+[1.739s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_description/share/robot_description/package.ps1'
+[1.740s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_description/share/robot_description/package.dsv'
+[1.740s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_description/share/robot_description/package.sh'
+[1.741s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_description/share/robot_description/package.bash'
+[1.741s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_description/share/robot_description/package.zsh'
+[1.741s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_description/share/colcon-core/packages/robot_description)
+[1.742s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_description)
+[1.742s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description' for CMake module files
+[1.743s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description' for CMake config files
+[1.744s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_description', 'cmake_prefix_path')
+[1.744s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.ps1'
+[1.744s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.dsv'
+[1.745s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_description/share/robot_description/hook/cmake_prefix_path.sh'
+[1.745s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description/lib'
+[1.745s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description/bin'
+[1.745s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description/lib/pkgconfig/robot_description.pc'
+[1.746s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description/lib/python3.10/site-packages'
+[1.746s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_description/bin'
+[1.746s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_description/share/robot_description/package.ps1'
+[1.747s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_description/share/robot_description/package.dsv'
+[1.747s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_description/share/robot_description/package.sh'
+[1.748s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_description/share/robot_description/package.bash'
+[1.748s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_description/share/robot_description/package.zsh'
+[1.749s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_description/share/colcon-core/packages/robot_description)
+[1.750s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/Dojo/src/robot_gazebo' with build type 'ament_cmake'
+[1.750s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/Dojo/src/robot_gazebo'
+[1.750s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.750s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.764s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_gazebo': AMENT_PREFIX_PATH=/root/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /root/Dojo/build/robot_gazebo -- -j16 -l16
+[1.824s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_gazebo' returned '0': AMENT_PREFIX_PATH=/root/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /root/Dojo/build/robot_gazebo -- -j16 -l16
+[1.826s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_gazebo': AMENT_PREFIX_PATH=/root/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /root/Dojo/build/robot_gazebo
+[1.857s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_gazebo)
+[1.858s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo' for CMake module files
+[1.858s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_gazebo' returned '0': AMENT_PREFIX_PATH=/root/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /root/Dojo/build/robot_gazebo
+[1.858s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo' for CMake config files
+[1.859s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_gazebo', 'cmake_prefix_path')
+[1.859s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.ps1'
+[1.860s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.dsv'
+[1.860s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.sh'
+[1.861s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo/lib'
+[1.861s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo/bin'
+[1.861s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo/lib/pkgconfig/robot_gazebo.pc'
+[1.861s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo/lib/python3.10/site-packages'
+[1.861s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo/bin'
+[1.862s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_gazebo/share/robot_gazebo/package.ps1'
+[1.862s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_gazebo/share/robot_gazebo/package.dsv'
+[1.863s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_gazebo/share/robot_gazebo/package.sh'
+[1.863s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_gazebo/share/robot_gazebo/package.bash'
+[1.864s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_gazebo/share/robot_gazebo/package.zsh'
+[1.864s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_gazebo/share/colcon-core/packages/robot_gazebo)
+[1.865s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_gazebo)
+[1.865s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo' for CMake module files
+[1.866s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo' for CMake config files
+[1.866s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_gazebo', 'cmake_prefix_path')
+[1.866s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.ps1'
+[1.867s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.dsv'
+[1.867s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_gazebo/share/robot_gazebo/hook/cmake_prefix_path.sh'
+[1.868s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo/lib'
+[1.868s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo/bin'
+[1.868s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo/lib/pkgconfig/robot_gazebo.pc'
+[1.868s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo/lib/python3.10/site-packages'
+[1.868s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_gazebo/bin'
+[1.869s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_gazebo/share/robot_gazebo/package.ps1'
+[1.869s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_gazebo/share/robot_gazebo/package.dsv'
+[1.870s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_gazebo/share/robot_gazebo/package.sh'
+[1.870s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_gazebo/share/robot_gazebo/package.bash'
+[1.871s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_gazebo/share/robot_gazebo/package.zsh'
+[1.871s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_gazebo/share/colcon-core/packages/robot_gazebo)
+[2.062s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_sensors': PYTHONPATH=/root/Dojo/build/robot_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_sensors/build --no-deps symlink_data
+[2.069s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_control': PYTHONPATH=/root/Dojo/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_control/build --no-deps symlink_data
+[2.077s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/vision_system': PYTHONPATH=/root/Dojo/build/vision_system/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/vision_system/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/vision_system/build --no-deps symlink_data
+[2.082s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/arduino_bridge': PYTHONPATH=/root/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/arduino_bridge/build --no-deps symlink_data
+[2.087s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/ros2arduino_bridge': PYTHONPATH=/root/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/ros2arduino_bridge/build --no-deps symlink_data
+[2.625s] Level 1:colcon.colcon_core.shell:create_environment_hook('vision_system', 'pythonpath_develop')
+[2.626s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/build/vision_system/share/vision_system/hook/pythonpath_develop.ps1'
+[2.626s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/vision_system' returned '0': PYTHONPATH=/root/Dojo/build/vision_system/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/vision_system/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/vision_system/build --no-deps symlink_data
+[2.628s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/build/vision_system/share/vision_system/hook/pythonpath_develop.dsv'
+[2.628s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/build/vision_system/share/vision_system/hook/pythonpath_develop.sh'
+[2.629s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/vision_system' for CMake module files
+[2.630s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/vision_system' for CMake config files
+[2.631s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/vision_system/lib'
+[2.631s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/vision_system/bin'
+[2.631s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/vision_system/lib/pkgconfig/vision_system.pc'
+[2.632s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/vision_system/lib/python3.10/site-packages'
+[2.632s] Level 1:colcon.colcon_core.shell:create_environment_hook('vision_system', 'pythonpath')
+[2.632s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/vision_system/share/vision_system/hook/pythonpath.ps1'
+[2.633s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/vision_system/share/vision_system/hook/pythonpath.dsv'
+[2.634s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/vision_system/share/vision_system/hook/pythonpath.sh'
+[2.635s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/vision_system/bin'
+[2.635s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(vision_system)
+[2.635s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/vision_system/share/vision_system/package.ps1'
+[2.636s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/vision_system/share/vision_system/package.dsv'
+[2.637s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/vision_system/share/vision_system/package.sh'
+[2.637s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/vision_system/share/vision_system/package.bash'
+[2.638s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/vision_system/share/vision_system/package.zsh'
+[2.638s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/vision_system/share/colcon-core/packages/vision_system)
+[2.640s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_sensors', 'pythonpath_develop')
+[2.640s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/build/robot_sensors/share/robot_sensors/hook/pythonpath_develop.ps1'
+[2.641s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_sensors' returned '0': PYTHONPATH=/root/Dojo/build/robot_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_sensors/build --no-deps symlink_data
+[2.641s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/build/robot_sensors/share/robot_sensors/hook/pythonpath_develop.dsv'
+[2.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/build/robot_sensors/share/robot_sensors/hook/pythonpath_develop.sh'
+[2.642s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_sensors' for CMake module files
+[2.642s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_sensors' for CMake config files
+[2.643s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_sensors/lib'
+[2.643s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_sensors/bin'
+[2.643s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_sensors/lib/pkgconfig/robot_sensors.pc'
+[2.643s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_sensors/lib/python3.10/site-packages'
+[2.643s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_sensors', 'pythonpath')
+[2.644s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_sensors/share/robot_sensors/hook/pythonpath.ps1'
+[2.644s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_sensors/share/robot_sensors/hook/pythonpath.dsv'
+[2.645s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_sensors/share/robot_sensors/hook/pythonpath.sh'
+[2.646s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_sensors/bin'
+[2.647s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_sensors)
+[2.647s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_sensors/share/robot_sensors/package.ps1'
+[2.648s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_sensors/share/robot_sensors/package.dsv'
+[2.649s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_sensors/share/robot_sensors/package.sh'
+[2.649s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_sensors/share/robot_sensors/package.bash'
+[2.650s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_sensors/share/robot_sensors/package.zsh'
+[2.650s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_sensors/share/colcon-core/packages/robot_sensors)
+[2.657s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_control', 'pythonpath_develop')
+[2.658s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/build/robot_control/share/robot_control/hook/pythonpath_develop.ps1'
+[2.658s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_control' returned '0': PYTHONPATH=/root/Dojo/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_control/build --no-deps symlink_data
+[2.659s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/build/robot_control/share/robot_control/hook/pythonpath_develop.dsv'
+[2.659s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/build/robot_control/share/robot_control/hook/pythonpath_develop.sh'
+[2.660s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_control' for CMake module files
+[2.661s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_control' for CMake config files
+[2.661s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_control/lib'
+[2.661s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_control/bin'
+[2.661s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_control/lib/pkgconfig/robot_control.pc'
+[2.662s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_control/lib/python3.10/site-packages'
+[2.662s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_control', 'pythonpath')
+[2.662s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_control/share/robot_control/hook/pythonpath.ps1'
+[2.663s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_control/share/robot_control/hook/pythonpath.dsv'
+[2.663s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_control/share/robot_control/hook/pythonpath.sh'
+[2.664s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_control/bin'
+[2.664s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_control)
+[2.664s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_control/share/robot_control/package.ps1'
+[2.665s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_control/share/robot_control/package.dsv'
+[2.665s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_control/share/robot_control/package.sh'
+[2.665s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_control/share/robot_control/package.bash'
+[2.666s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_control/share/robot_control/package.zsh'
+[2.666s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_control/share/colcon-core/packages/robot_control)
+[2.667s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/Dojo/src/robot_bringup' with build type 'ament_cmake'
+[2.667s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/Dojo/src/robot_bringup'
+[2.667s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.667s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.672s] Level 1:colcon.colcon_core.shell:create_environment_hook('arduino_bridge', 'pythonpath_develop')
+[2.672s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/build/arduino_bridge/share/arduino_bridge/hook/pythonpath_develop.ps1'
+[2.672s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/arduino_bridge' returned '0': PYTHONPATH=/root/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/arduino_bridge/build --no-deps symlink_data
+[2.673s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/build/arduino_bridge/share/arduino_bridge/hook/pythonpath_develop.dsv'
+[2.673s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/build/arduino_bridge/share/arduino_bridge/hook/pythonpath_develop.sh'
+[2.674s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/arduino_bridge' for CMake module files
+[2.674s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/arduino_bridge' for CMake config files
+[2.674s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/arduino_bridge/lib'
+[2.675s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/arduino_bridge/bin'
+[2.675s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/arduino_bridge/lib/pkgconfig/arduino_bridge.pc'
+[2.675s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/arduino_bridge/lib/python3.10/site-packages'
+[2.675s] Level 1:colcon.colcon_core.shell:create_environment_hook('arduino_bridge', 'pythonpath')
+[2.675s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/arduino_bridge/share/arduino_bridge/hook/pythonpath.ps1'
+[2.676s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/arduino_bridge/share/arduino_bridge/hook/pythonpath.dsv'
+[2.676s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/arduino_bridge/share/arduino_bridge/hook/pythonpath.sh'
+[2.676s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/arduino_bridge/bin'
+[2.676s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arduino_bridge)
+[2.677s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/arduino_bridge/share/arduino_bridge/package.ps1'
+[2.677s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/arduino_bridge/share/arduino_bridge/package.dsv'
+[2.678s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/arduino_bridge/share/arduino_bridge/package.sh'
+[2.678s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/arduino_bridge/share/arduino_bridge/package.bash'
+[2.678s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/arduino_bridge/share/arduino_bridge/package.zsh'
+[2.679s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/arduino_bridge/share/colcon-core/packages/arduino_bridge)
+[2.683s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_bringup': AMENT_PREFIX_PATH=/root/Dojo/install/robot_sensors:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/root/Dojo/install/robot_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/build/robot_sensors:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:/root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages:/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/root/Dojo/build/robot_control:/root/Dojo/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /root/Dojo/build/robot_bringup -- -j16 -l16
+[2.683s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2arduino_bridge', 'pythonpath_develop')
+[2.684s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/build/ros2arduino_bridge/share/ros2arduino_bridge/hook/pythonpath_develop.ps1'
+[2.684s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/ros2arduino_bridge' returned '0': PYTHONPATH=/root/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/ros2arduino_bridge/build --no-deps symlink_data
+[2.684s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/build/ros2arduino_bridge/share/ros2arduino_bridge/hook/pythonpath_develop.dsv'
+[2.685s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/build/ros2arduino_bridge/share/ros2arduino_bridge/hook/pythonpath_develop.sh'
+[2.685s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/ros2arduino_bridge' for CMake module files
+[2.686s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/ros2arduino_bridge' for CMake config files
+[2.686s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/ros2arduino_bridge/lib'
+[2.686s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/ros2arduino_bridge/bin'
+[2.686s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/ros2arduino_bridge/lib/pkgconfig/ros2arduino_bridge.pc'
+[2.686s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages'
+[2.686s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2arduino_bridge', 'pythonpath')
+[2.687s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/hook/pythonpath.ps1'
+[2.687s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/hook/pythonpath.dsv'
+[2.687s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/hook/pythonpath.sh'
+[2.688s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/ros2arduino_bridge/bin'
+[2.688s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ros2arduino_bridge)
+[2.688s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/package.ps1'
+[2.689s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/package.dsv'
+[2.689s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/package.sh'
+[2.690s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/package.bash'
+[2.690s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/package.zsh'
+[2.691s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/ros2arduino_bridge/share/colcon-core/packages/ros2arduino_bridge)
+[2.726s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_bringup' returned '0': AMENT_PREFIX_PATH=/root/Dojo/install/robot_sensors:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/root/Dojo/install/robot_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/build/robot_sensors:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:/root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages:/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/root/Dojo/build/robot_control:/root/Dojo/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /root/Dojo/build/robot_bringup -- -j16 -l16
+[2.727s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/Dojo/build/robot_bringup': AMENT_PREFIX_PATH=/root/Dojo/install/robot_sensors:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/root/Dojo/install/robot_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/build/robot_sensors:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:/root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages:/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/root/Dojo/build/robot_control:/root/Dojo/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /root/Dojo/build/robot_bringup
+[2.760s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_bringup)
+[2.761s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup' for CMake module files
+[2.761s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/Dojo/build/robot_bringup' returned '0': AMENT_PREFIX_PATH=/root/Dojo/install/robot_sensors:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/root/Dojo/install/robot_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_perception:/root/Dojo/install/robot_navigation:/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/build/robot_sensors:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:/root/Dojo/install/robot_perception/local/lib/python3.10/dist-packages:/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/root/Dojo/build/robot_control:/root/Dojo/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /root/Dojo/build/robot_bringup
+[2.762s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup' for CMake config files
+[2.762s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_bringup', 'cmake_prefix_path')
+[2.762s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.ps1'
+[2.763s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.dsv'
+[2.763s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.sh'
+[2.764s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup/bin'
+[2.764s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup/lib/pkgconfig/robot_bringup.pc'
+[2.764s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup/lib/python3.10/site-packages'
+[2.764s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup/bin'
+[2.764s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_bringup/share/robot_bringup/package.ps1'
+[2.765s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_bringup/share/robot_bringup/package.dsv'
+[2.765s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_bringup/share/robot_bringup/package.sh'
+[2.766s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_bringup/share/robot_bringup/package.bash'
+[2.766s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_bringup/share/robot_bringup/package.zsh'
+[2.766s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_bringup/share/colcon-core/packages/robot_bringup)
+[2.767s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_bringup)
+[2.767s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup' for CMake module files
+[2.767s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup' for CMake config files
+[2.768s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_bringup', 'cmake_prefix_path')
+[2.768s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.ps1'
+[2.768s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/Dojo/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.dsv'
+[2.769s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/Dojo/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.sh'
+[2.769s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup/bin'
+[2.769s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup/lib/pkgconfig/robot_bringup.pc'
+[2.769s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup/lib/python3.10/site-packages'
+[2.769s] Level 1:colcon.colcon_core.environment:checking '/root/Dojo/install/robot_bringup/bin'
+[2.770s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_bringup/share/robot_bringup/package.ps1'
+[2.770s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/Dojo/install/robot_bringup/share/robot_bringup/package.dsv'
+[2.771s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_bringup/share/robot_bringup/package.sh'
+[2.771s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_bringup/share/robot_bringup/package.bash'
+[2.771s] INFO:colcon.colcon_core.shell:Creating package script '/root/Dojo/install/robot_bringup/share/robot_bringup/package.zsh'
+[2.772s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/Dojo/install/robot_bringup/share/colcon-core/packages/robot_bringup)
+[2.772s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.772s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.772s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.772s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.778s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[2.778s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.778s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.778s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.782s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[2.782s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.783s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/Dojo/install/local_setup.ps1'
+[2.784s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/Dojo/install/_local_setup_util_ps1.py'
+[2.785s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/Dojo/install/setup.ps1'
+[2.786s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/Dojo/install/local_setup.sh'
+[2.786s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/Dojo/install/_local_setup_util_sh.py'
+[2.787s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/Dojo/install/setup.sh'
+[2.788s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/Dojo/install/local_setup.bash'
+[2.789s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/Dojo/install/setup.bash'
+[2.789s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/Dojo/install/local_setup.zsh'
+[2.790s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/Dojo/install/setup.zsh'

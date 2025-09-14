@@ -1,1 +1,1 @@
-/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.zsh
+/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.zsh

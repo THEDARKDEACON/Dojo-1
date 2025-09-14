@@ -1,1 +1,1 @@
-/home/Dojo/Dojo/build/robot_control/launch/control.launch.py
+/root/Dojo/build/robot_control/launch/control.launch.py

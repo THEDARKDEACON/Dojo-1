@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/Dojo/Dojo/install/robot_perception/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/root/Dojo/install/robot_perception/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/Dojo/Dojo/install/robot_perception/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/root/Dojo/install/robot_perception/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/Dojo/Dojo/install/robot_perception/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/root/Dojo/install/robot_perception/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/Dojo/Dojo/install/robot_perception/${destination}")
+      set(destination "/root/Dojo/install/robot_perception/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -310,62 +310,62 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/robot_perception/environment")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/robot_perception/environment")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/robot_perception/environment")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/robot_perception/environment")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/robot_perception/environment")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/robot_perception/environment")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/robot_perception/environment")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/robot_perception/environment")
 
-# install(DIRECTORY "/home/Dojo/Dojo/build/robot_perception/ament_cmake_python/robot_perception/robot_perception.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_perception" DIRECTORY "/home/Dojo/Dojo/build/robot_perception/ament_cmake_python/robot_perception/robot_perception.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info")
+# install(DIRECTORY "/root/Dojo/build/robot_perception/ament_cmake_python/robot_perception/robot_perception.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_perception" DIRECTORY "/root/Dojo/build/robot_perception/ament_cmake_python/robot_perception/robot_perception.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info")
 
-# install(DIRECTORY "/home/Dojo/Dojo/src/robot_perception/src/robot_perception/robot_perception/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_perception" DIRECTORY "/home/Dojo/Dojo/src/robot_perception/src/robot_perception/robot_perception/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+# install(DIRECTORY "/root/Dojo/src/robot_perception/src/robot_perception/robot_perception/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_perception" DIRECTORY "/root/Dojo/src/robot_perception/src/robot_perception/robot_perception/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
 
 # install(DIRECTORY "launch" "DESTINATION" "share/robot_perception")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_perception" DIRECTORY "launch" "DESTINATION" "share/robot_perception")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_perception" DIRECTORY "launch" "DESTINATION" "share/robot_perception")
 
 # install(DIRECTORY "config" "DESTINATION" "share/robot_perception")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_perception" DIRECTORY "config" "DESTINATION" "share/robot_perception")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_perception" DIRECTORY "config" "DESTINATION" "share/robot_perception")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_perception" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_perception" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_perception" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_perception" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_perception" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_perception" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_perception" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_perception" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/robot_perception/environment")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/robot_perception/environment")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/robot_perception/environment")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/robot_perception/environment")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/robot_perception/environment")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/robot_perception/environment")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/robot_perception/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/robot_perception/environment")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/robot_perception/environment")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/robot_perception/environment")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/robot_perception/environment")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/robot_perception/environment")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/robot_perception/environment")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/robot_perception/environment")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/robot_perception")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/robot_perception")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/robot_perception")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/robot_perception")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/robot_perception")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/robot_perception")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/robot_perception")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/robot_perception")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/robot_perception")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/robot_perception")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/robot_perception")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/robot_perception")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/robot_perception")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/robot_perception")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/robot_perception")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/robot_perception")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/robot_perception")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/robot_perception")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/robot_perception")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/robot_perception")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/packages/robot_perception" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/packages/robot_perception" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/packages/robot_perception" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/packages/robot_perception" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_core/robot_perceptionConfig.cmake" "/home/Dojo/Dojo/build/robot_perception/ament_cmake_core/robot_perceptionConfig-version.cmake" "DESTINATION" "share/robot_perception/cmake")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/build/robot_perception/ament_cmake_core/robot_perceptionConfig.cmake" "/home/Dojo/Dojo/build/robot_perception/ament_cmake_core/robot_perceptionConfig-version.cmake" "DESTINATION" "share/robot_perception/cmake")
+# install(FILES "/root/Dojo/build/robot_perception/ament_cmake_core/robot_perceptionConfig.cmake" "/root/Dojo/build/robot_perception/ament_cmake_core/robot_perceptionConfig-version.cmake" "DESTINATION" "share/robot_perception/cmake")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_core/robot_perceptionConfig.cmake" "/root/Dojo/build/robot_perception/ament_cmake_core/robot_perceptionConfig-version.cmake" "DESTINATION" "share/robot_perception/cmake")
 
-# install(FILES "/home/Dojo/Dojo/src/robot_perception/package.xml" "DESTINATION" "share/robot_perception")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_perception" FILES "/home/Dojo/Dojo/src/robot_perception/package.xml" "DESTINATION" "share/robot_perception")
+# install(FILES "/root/Dojo/src/robot_perception/package.xml" "DESTINATION" "share/robot_perception")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/src/robot_perception/package.xml" "DESTINATION" "share/robot_perception")

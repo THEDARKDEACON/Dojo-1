@@ -1,0 +1,28 @@
+[0.011s] Invoking command in '/root/Dojo/build/robot_gazebo': AMENT_PREFIX_PATH=/root/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /root/Dojo/build/robot_gazebo -- -j16 -l16
+[0.070s] Invoked command in '/root/Dojo/build/robot_gazebo' returned '0': AMENT_PREFIX_PATH=/root/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /root/Dojo/build/robot_gazebo -- -j16 -l16
+[0.071s] Invoking command in '/root/Dojo/build/robot_gazebo': AMENT_PREFIX_PATH=/root/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /root/Dojo/build/robot_gazebo
+[0.080s] -- Install configuration: ""
+[0.080s] -- Execute custom install script
+[0.081s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/gazebo.launch.py
+[0.081s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/robot_simulation.launch.py
+[0.081s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/config/diff_drive_controller.yaml
+[0.081s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/robot_simulation.rviz
+[0.082s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/empty.world
+[0.082s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/package_run_dependencies/robot_gazebo
+[0.082s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/parent_prefix_path/robot_gazebo
+[0.082s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.sh
+[0.082s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.dsv
+[0.082s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/path.sh
+[0.083s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/path.dsv
+[0.083s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.bash
+[0.083s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.sh
+[0.083s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.zsh
+[0.083s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.dsv
+[0.084s] -- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/package.dsv
+[0.095s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/packages/robot_gazebo
+[0.095s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig.cmake
+[0.095s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig-version.cmake
+[0.095s] -- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/package.xml
+[0.095s] -- Up-to-date: /root/Dojo/install/robot_gazebo/lib/robot_gazebo
+[0.095s] -- Up-to-date: /root/Dojo/install/robot_gazebo/lib/robot_gazebo/spawn_robot.py
+[0.099s] Invoked command in '/root/Dojo/build/robot_gazebo' returned '0': AMENT_PREFIX_PATH=/root/Dojo/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/Dojo/install/robot_description:/opt/ros/humble PYTHONPATH=/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /root/Dojo/build/robot_gazebo

@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/Dojo/Dojo/install/robot_gazebo/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/root/Dojo/install/robot_gazebo/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/Dojo/Dojo/install/robot_gazebo/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/root/Dojo/install/robot_gazebo/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/Dojo/Dojo/install/robot_gazebo/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/root/Dojo/install/robot_gazebo/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/Dojo/Dojo/install/robot_gazebo/${destination}")
+      set(destination "/root/Dojo/install/robot_gazebo/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -311,55 +311,55 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install(DIRECTORY "launch" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.py")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_gazebo" DIRECTORY "launch" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.py")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_gazebo" DIRECTORY "launch" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.py")
 
 # install(DIRECTORY "config" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.yaml")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_gazebo" DIRECTORY "config" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.yaml")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_gazebo" DIRECTORY "config" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.yaml")
 
 # install(DIRECTORY "rviz" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.rviz")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_gazebo" DIRECTORY "rviz" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.rviz")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_gazebo" DIRECTORY "rviz" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.rviz")
 
 # install(DIRECTORY "worlds" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.world")
-ament_cmake_symlink_install_directory("/home/Dojo/Dojo/src/robot_gazebo" DIRECTORY "worlds" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.world")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_gazebo" DIRECTORY "worlds" "DESTINATION" "share/robot_gazebo" "PATTERN" "*.world")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/robot_gazebo/environment")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/robot_gazebo/environment")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/robot_gazebo/environment")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/robot_gazebo/environment")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/robot_gazebo/environment")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/robot_gazebo/environment")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/robot_gazebo/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/robot_gazebo/environment")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/robot_gazebo/environment")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/robot_gazebo/environment")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/robot_gazebo/environment")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/robot_gazebo/environment")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/robot_gazebo/environment")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/robot_gazebo/environment")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/robot_gazebo")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/robot_gazebo")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/robot_gazebo")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/robot_gazebo")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/robot_gazebo")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/robot_gazebo")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/robot_gazebo")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/robot_gazebo")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/robot_gazebo")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/robot_gazebo")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/robot_gazebo")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/robot_gazebo")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/robot_gazebo")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/robot_gazebo")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/robot_gazebo")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/robot_gazebo")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/robot_gazebo")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/robot_gazebo")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/robot_gazebo")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/robot_gazebo")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/robot_gazebo" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig.cmake" "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig-version.cmake" "DESTINATION" "share/robot_gazebo/cmake")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig.cmake" "/home/Dojo/Dojo/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig-version.cmake" "DESTINATION" "share/robot_gazebo/cmake")
+# install(FILES "/root/Dojo/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig.cmake" "/root/Dojo/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig-version.cmake" "DESTINATION" "share/robot_gazebo/cmake")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig.cmake" "/root/Dojo/build/robot_gazebo/ament_cmake_core/robot_gazeboConfig-version.cmake" "DESTINATION" "share/robot_gazebo/cmake")
 
-# install(FILES "/home/Dojo/Dojo/src/robot_gazebo/package.xml" "DESTINATION" "share/robot_gazebo")
-ament_cmake_symlink_install_files("/home/Dojo/Dojo/src/robot_gazebo" FILES "/home/Dojo/Dojo/src/robot_gazebo/package.xml" "DESTINATION" "share/robot_gazebo")
+# install(FILES "/root/Dojo/src/robot_gazebo/package.xml" "DESTINATION" "share/robot_gazebo")
+ament_cmake_symlink_install_files("/root/Dojo/src/robot_gazebo" FILES "/root/Dojo/src/robot_gazebo/package.xml" "DESTINATION" "share/robot_gazebo")

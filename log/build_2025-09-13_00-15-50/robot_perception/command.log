@@ -1,0 +1,2 @@
+Invoking command in '/root/Dojo/build/robot_perception': /usr/bin/cmake /root/Dojo/src/robot_perception -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_perception
+Invoked command in '/root/Dojo/build/robot_perception' returned '1': /usr/bin/cmake /root/Dojo/src/robot_perception -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_perception

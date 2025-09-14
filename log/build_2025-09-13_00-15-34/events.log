@@ -1,0 +1,105 @@
+[0.000000] (-) TimerEvent: {}
+[0.000511] (arduino_bridge) JobQueued: {'identifier': 'arduino_bridge', 'dependencies': OrderedDict()}
+[0.000644] (robot_control) JobQueued: {'identifier': 'robot_control', 'dependencies': OrderedDict()}
+[0.000811] (robot_description) JobQueued: {'identifier': 'robot_description', 'dependencies': OrderedDict()}
+[0.000866] (robot_navigation) JobQueued: {'identifier': 'robot_navigation', 'dependencies': OrderedDict()}
+[0.000913] (robot_perception) JobQueued: {'identifier': 'robot_perception', 'dependencies': OrderedDict()}
+[0.000996] (robot_sensors) JobQueued: {'identifier': 'robot_sensors', 'dependencies': OrderedDict()}
+[0.001022] (ros2arduino_bridge) JobQueued: {'identifier': 'ros2arduino_bridge', 'dependencies': OrderedDict()}
+[0.001068] (vision_system) JobQueued: {'identifier': 'vision_system', 'dependencies': OrderedDict()}
+[0.001110] (robot_bringup) JobQueued: {'identifier': 'robot_bringup', 'dependencies': OrderedDict([('robot_control', '/root/Dojo/install/robot_control'), ('robot_description', '/root/Dojo/install/robot_description'), ('robot_navigation', '/root/Dojo/install/robot_navigation'), ('robot_perception', '/root/Dojo/install/robot_perception'), ('robot_sensors', '/root/Dojo/install/robot_sensors')])}
+[0.001150] (robot_gazebo) JobQueued: {'identifier': 'robot_gazebo', 'dependencies': OrderedDict([('robot_description', '/root/Dojo/install/robot_description')])}
+[0.001181] (robot_description) JobStarted: {'identifier': 'robot_description'}
+[0.006121] (robot_control) JobStarted: {'identifier': 'robot_control'}
+[0.009384] (robot_navigation) JobStarted: {'identifier': 'robot_navigation'}
+[0.010671] (robot_perception) JobStarted: {'identifier': 'robot_perception'}
+[0.012043] (robot_sensors) JobStarted: {'identifier': 'robot_sensors'}
+[0.014898] (arduino_bridge) JobStarted: {'identifier': 'arduino_bridge'}
+[0.017364] (ros2arduino_bridge) JobStarted: {'identifier': 'ros2arduino_bridge'}
+[0.019744] (vision_system) JobStarted: {'identifier': 'vision_system'}
+[0.024270] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'cmake'}
+[0.025074] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '/root/Dojo/src/robot_description', '-DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_description'], 'cwd': '/root/Dojo/build/robot_description', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '1'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('TERM', 'xterm'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('PWD', '/root/Dojo/build/robot_description'), ('LC_ALL', 'C.UTF-8'), ('COLCON', '1')]), 'shell': False}
+[0.099798] (-) TimerEvent: {}
+[0.198467] (robot_navigation) JobProgress: {'identifier': 'robot_navigation', 'progress': 'cmake'}
+[0.199069] (robot_navigation) Command: {'cmd': ['/usr/bin/cmake', '/root/Dojo/src/robot_navigation', '-DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_navigation'], 'cwd': '/root/Dojo/build/robot_navigation', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '1'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('TERM', 'xterm'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('PWD', '/root/Dojo/build/robot_navigation'), ('LC_ALL', 'C.UTF-8'), ('COLCON', '1')]), 'shell': False}
+[0.200621] (-) TimerEvent: {}
+[0.200772] (robot_perception) JobProgress: {'identifier': 'robot_perception', 'progress': 'cmake'}
+[0.201045] (robot_perception) Command: {'cmd': ['/usr/bin/cmake', '/root/Dojo/src/robot_perception', '-DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_perception'], 'cwd': '/root/Dojo/build/robot_perception', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '1'), ('HOME', '/root'), ('OLDPWD', '/root'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('TERM', 'xterm'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('PWD', '/root/Dojo/build/robot_perception'), ('LC_ALL', 'C.UTF-8'), ('COLCON', '1')]), 'shell': False}
+[0.300737] (-) TimerEvent: {}
+[0.401123] (-) TimerEvent: {}
+[0.501418] (-) TimerEvent: {}
+[0.601745] (-) TimerEvent: {}
+[0.702157] (-) TimerEvent: {}
+[0.751544] (robot_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.752551] (robot_description) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.753263] (robot_description) StdoutLine: {'line': b'See also "/root/Dojo/build/robot_description/CMakeFiles/CMakeOutput.log".\n'}
+[0.753459] (robot_description) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[0.754523] (robot_description) StderrLine: {'line': b'  File "/opt/ros/humble/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py", line 21, in <module>\n'}
+[0.755388] (robot_description) StderrLine: {'line': b'    from ament_package.templates import get_environment_hook_template_path\n'}
+[0.755611] (robot_description) StderrLine: {'line': b"ModuleNotFoundError: No module named 'ament_package'\n"}
+[0.755719] (robot_description) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_package_templates-extras.cmake:41 (message):\n'}
+[0.756337] (robot_description) StderrLine: {'line': b'  execute_process(/usr/bin/python3\n'}
+[0.756432] (robot_description) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py\n'}
+[0.756515] (robot_description) StderrLine: {'line': b'  /root/Dojo/build/robot_description/ament_cmake_package_templates/templates.cmake)\n'}
+[0.756603] (robot_description) StderrLine: {'line': b'  returned error code 1\n'}
+[0.756684] (robot_description) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.756765] (robot_description) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)\n'}
+[0.756843] (robot_description) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)\n'}
+[0.756937] (robot_description) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)\n'}
+[0.757022] (robot_description) StderrLine: {'line': b'  CMakeLists.txt:10 (find_package)\n'}
+[0.757098] (robot_description) StderrLine: {'line': b'\n'}
+[0.757175] (robot_description) StderrLine: {'line': b'\x1b[0m\n'}
+[0.757251] (robot_navigation) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.757367] (robot_navigation) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.757446] (robot_navigation) StdoutLine: {'line': b'See also "/root/Dojo/build/robot_navigation/CMakeFiles/CMakeOutput.log".\n'}
+[0.757530] (robot_navigation) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[0.757618] (robot_navigation) StderrLine: {'line': b'  File "/opt/ros/humble/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py", line 21, in <module>\n'}
+[0.757695] (robot_navigation) StderrLine: {'line': b'    from ament_package.templates import get_environment_hook_template_path\n'}
+[0.757776] (robot_navigation) StderrLine: {'line': b"ModuleNotFoundError: No module named 'ament_package'\n"}
+[0.757848] (robot_navigation) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_package_templates-extras.cmake:41 (message):\n'}
+[0.757939] (robot_navigation) StderrLine: {'line': b'  execute_process(/usr/bin/python3\n'}
+[0.758013] (robot_navigation) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py\n'}
+[0.758094] (robot_navigation) StderrLine: {'line': b'  /root/Dojo/build/robot_navigation/ament_cmake_package_templates/templates.cmake)\n'}
+[0.758164] (robot_navigation) StderrLine: {'line': b'  returned error code 1\n'}
+[0.758243] (robot_navigation) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.758313] (robot_navigation) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)\n'}
+[0.758392] (robot_navigation) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)\n'}
+[0.758463] (robot_navigation) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)\n'}
+[0.758541] (robot_navigation) StderrLine: {'line': b'  CMakeLists.txt:10 (find_package)\n'}
+[0.758616] (robot_navigation) StderrLine: {'line': b'\n'}
+[0.758697] (robot_navigation) StderrLine: {'line': b'\x1b[0m\n'}
+[0.758769] (robot_perception) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.758874] (robot_perception) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.758966] (robot_perception) StdoutLine: {'line': b'See also "/root/Dojo/build/robot_perception/CMakeFiles/CMakeOutput.log".\n'}
+[0.759048] (robot_perception) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[0.759135] (robot_perception) StderrLine: {'line': b'  File "/opt/ros/humble/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py", line 21, in <module>\n'}
+[0.759210] (robot_perception) StderrLine: {'line': b'    from ament_package.templates import get_environment_hook_template_path\n'}
+[0.759289] (robot_perception) StderrLine: {'line': b"ModuleNotFoundError: No module named 'ament_package'\n"}
+[0.759360] (robot_perception) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_package_templates-extras.cmake:41 (message):\n'}
+[0.759444] (robot_perception) StderrLine: {'line': b'  execute_process(/usr/bin/python3\n'}
+[0.759526] (robot_perception) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py\n'}
+[0.759599] (robot_perception) StderrLine: {'line': b'  /root/Dojo/build/robot_perception/ament_cmake_package_templates/templates.cmake)\n'}
+[0.759678] (robot_perception) StderrLine: {'line': b'  returned error code 1\n'}
+[0.759749] (robot_perception) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.759827] (robot_perception) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)\n'}
+[0.759898] (robot_perception) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)\n'}
+[0.759980] (robot_perception) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)\n'}
+[0.760061] (robot_perception) StderrLine: {'line': b'  CMakeLists.txt:10 (find_package)\n'}
+[0.760131] (robot_perception) StderrLine: {'line': b'\n'}
+[0.760210] (robot_perception) StderrLine: {'line': b'\x1b[0m\n'}
+[0.802261] (-) TimerEvent: {}
+[0.902657] (-) TimerEvent: {}
+[0.927151] (robot_description) CommandEnded: {'returncode': 1}
+[0.939421] (robot_description) JobEnded: {'identifier': 'robot_description', 'rc': 1}
+[0.940362] (robot_navigation) CommandEnded: {'returncode': 1}
+[0.946614] (robot_navigation) JobEnded: {'identifier': 'robot_navigation', 'rc': 1}
+[0.947425] (robot_perception) CommandEnded: {'returncode': 1}
+[0.953589] (robot_perception) JobEnded: {'identifier': 'robot_perception', 'rc': 1}
+[0.954229] (vision_system) JobEnded: {'identifier': 'vision_system', 'rc': 'SIGINT'}
+[0.954496] (robot_control) JobEnded: {'identifier': 'robot_control', 'rc': 'SIGINT'}
+[0.954745] (robot_sensors) JobEnded: {'identifier': 'robot_sensors', 'rc': 'SIGINT'}
+[0.955000] (arduino_bridge) JobEnded: {'identifier': 'arduino_bridge', 'rc': 'SIGINT'}
+[0.955241] (ros2arduino_bridge) JobEnded: {'identifier': 'ros2arduino_bridge', 'rc': 'SIGINT'}
+[0.964525] (robot_bringup) JobSkipped: {'identifier': 'robot_bringup'}
+[0.964636] (robot_gazebo) JobSkipped: {'identifier': 'robot_gazebo'}
+[0.964695] (-) EventReactorShutdown: {}

@@ -1,0 +1,30 @@
+[0.881s] Invoking command in '/root/Dojo/build/ros2arduino_bridge': PYTHONPATH=/root/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/ros2arduino_bridge/build --no-deps symlink_data
+[1.122s] /usr/local/lib/python3.10/dist-packages/setuptools/dist.py:770: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[1.122s]   warnings.warn(
+[1.205s] running develop
+[1.423s] running egg_info
+[1.423s] creating ros2arduino_bridge.egg-info
+[1.435s] writing ros2arduino_bridge.egg-info/PKG-INFO
+[1.436s] writing dependency_links to ros2arduino_bridge.egg-info/dependency_links.txt
+[1.436s] writing entry points to ros2arduino_bridge.egg-info/entry_points.txt
+[1.436s] writing requirements to ros2arduino_bridge.egg-info/requires.txt
+[1.436s] writing top-level names to ros2arduino_bridge.egg-info/top_level.txt
+[1.436s] writing manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'
+[1.462s] reading manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'
+[1.463s] writing manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'
+[1.477s] running build_ext
+[1.477s] Creating /root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages/ros2arduino-bridge.egg-link (link to .)
+[1.477s] Installing arduino_bridge script to /lib/ros2arduino_bridge
+[1.478s] 
+[1.478s] Installed /root/Dojo/build/ros2arduino_bridge
+[1.478s] running symlink_data
+[1.478s] creating /root/Dojo/install/ros2arduino_bridge/share/ament_index
+[1.478s] creating /root/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index
+[1.478s] creating /root/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index/packages
+[1.478s] symbolically linking /root/Dojo/build/ros2arduino_bridge/resource/ros2arduino_bridge -> /root/Dojo/install/ros2arduino_bridge/share/ament_index/resource_index/packages
+[1.479s] symbolically linking /root/Dojo/build/ros2arduino_bridge/package.xml -> /root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge
+[1.479s] creating /root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/launch
+[1.479s] symbolically linking /root/Dojo/build/ros2arduino_bridge/launch/ros2arduino_bridge.launch.py -> /root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/launch
+[1.479s] creating /root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/config
+[1.479s] symbolically linking /root/Dojo/build/ros2arduino_bridge/config/ros2arduino_bridge_params.yaml -> /root/Dojo/install/ros2arduino_bridge/share/ros2arduino_bridge/config
+[1.517s] Invoked command in '/root/Dojo/build/ros2arduino_bridge' returned '0': PYTHONPATH=/root/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/ros2arduino_bridge/build --no-deps symlink_data
