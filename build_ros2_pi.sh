@@ -134,16 +134,22 @@ fix_issues() {
     
     echo "✅ Successfully installed Gazebo Fortress and ROS 2 Humble integration"
     
-    # Install specific versions of Python packages to avoid compatibility issues
-    echo "🐍 Installing Python dependencies with specific versions..."
+    # Install Python dependencies
+    echo "🐍 Installing Python dependencies..."
+    
+    # Install empy from system package manager
+    echo "📦 Installing system dependencies..."
+    sudo apt-get update
+    sudo apt-get install -y python3-empy
+    
+    # Install remaining Python packages
     pip3 install --force-reinstall --user \
         'setuptools<70.0.0' \
         'wheel<1.0.0' \
         'vcstool' \
         'colcon-common-extensions' \
         'setuptools-scm<8.0.0' \
-        'setuptools-scm-git-archive<3.0.0' \
-        'empy==3.3.4'  # Specific version known to work with setuptools<70.0.0
+        'setuptools-scm-git-archive<3.0.0'
 }
 
 # Function to build a single package
