@@ -255,11 +255,15 @@ build_workspace() {
         
         # Final verification
         if [ $? -eq 0 ]; then
-        echo "✨ Build completed successfully!"
-        echo "Source the workspace with:"
-        echo "  source $WORKSPACE/install/setup.bash"
+            echo "✨ Build completed successfully!"
+            echo "Source the workspace with:"
+            echo "  source $WORKSPACE/install/setup.bash"
+        else
+            echo "❌ Final build failed"
+            exit 1
+        fi
     else
-        echo "❌ Final build failed"
+        echo "❌ Failed to build ament_cmake packages"
         exit 1
     fi
 }
