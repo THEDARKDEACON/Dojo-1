@@ -86,7 +86,16 @@ build_package() {
     local pkg=$1
     echo "📦 Building package: $pkg"
     
-    # Try to build the package with proper installation paths
+    # Special handling for ros2arduino_bridge
+    if [ "$pkg" = "ros2arduino_bridge" ]; then
+        echo "🔧 Building ros2arduino_bridge with user installation..."
+        cd "$WORKSPACE/src/ros2arduino_bridge"
+        pip3 install --user -e .
+        cd "$WORKSPACE"
+        return $?
+    fi
+    
+    # Build other packages with standard settings
     if colcon build \
         --packages-select "$pkg" \
         --symlink-install \
@@ -136,9 +145,11 @@ build_workspace() {
         "robot_sensors"
         "arduino_bridge"
         
+        # ros2arduino_bridge needs to be built with special handling
+        "ros2arduino_bridge"
+        
         # Packages that depend on the above
         "robot_control"
-        "ros2arduino_bridge"
         
         # Vision system (depends on core packages)
         "vision_system"
@@ -192,12 +203,30 @@ build_workspace() {
                 fi
             done
             
-            if [ "$deps_met" = true ]; then
-                echo "🚀 Building $pkg (dependencies met)"
-                if build_package "$pkg"; then
-                    built_something=true
+            # Try to build the package with special handling for ros2arduino_bridge
+            if $deps_met; then
+                echo "🚀 Building $pkg (attempt $((4 - remaining_attempts))/3)"
+                if [ "$pkg" = "ros2arduino_bridge" ]; then
+                    echo "🔧 Using special handling for ros2arduino_bridge..."
+                    cd "$WORKSPACE/src/ros2arduino_bridge"
+                    pip3 install --user -e .
+                    if [ $? -eq 0 ]; then
+                        built_something=true
+                        cd "$WORKSPACE"
+                        # Create a dummy package.sh to satisfy dependency checks
+                        mkdir -p "$WORKSPACE/install/ros2arduino_bridge/share/ros2arduino_bridge"
+                        touch "$WORKSPACE/install/ros2arduino_bridge/share/ros2arduino_bridge/package.sh"
+                        chmod +x "$WORKSPACE/install/ros2arduino_bridge/share/ros2arduino_bridge/package.sh"
+                    else
+                        success=false
+                    fi
+                    cd "$WORKSPACE"
                 else
-                    success=false
+                    if ! build_package "$pkg"; then
+                        success=false
+                    else
+                        built_something=true
+                    fi
                 fi
             fi
         done
