@@ -96,14 +96,29 @@ fix_issues() {
     # Install Gazebo packages from source if not available
     if ! dpkg -l | grep -q 'ros-humble-gazebo-ros'; then
         echo "🔧 Gazebo packages not found, installing from source..."
+        
+        # Create workspace
         mkdir -p ~/gazebo_ws/src
-        cd ~/gazebo_ws/src
-        git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b humble-devel
         cd ~/gazebo_ws
-        rosdep install -y --from-paths src --ignore-src -r --os=ubuntu:jammy
+        
+        # Clone the correct branch
+        echo "📥 Cloning gazebo_ros_pkgs..."
+        git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b humble src/gazebo_ros_pkgs
+        
+        # Install dependencies
+        echo "📦 Installing dependencies..."
+        sudo apt-get update
+        rosdep update
+        rosdep install -y --from-paths src --ignore-src -r --os=ubuntu:jammy || true
+        
+        # Build the packages
+        echo "🔨 Building Gazebo ROS packages..."
         colcon build --symlink-install
+        
+        # Update environment
         echo "source ~/gazebo_ws/install/setup.bash" >> ~/.bashrc
-        source ~/.bashrc
+        source ~/gazebo_ws/install/setup.bash
+        
         cd "$WORKSPACE"
     fi
     
