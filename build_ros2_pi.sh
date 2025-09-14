@@ -160,15 +160,11 @@ fix_issues() {
     
     # Verify empy installation
     if ! python3 -c "import em; print('empy version:', em.VERSION)" &>/dev/null; then
-        echo "❌ Failed to install empy. Trying alternative installation method..."
-        # Try installing empy from source as a fallback
-        cd /tmp
-        git clone https://github.com/ros/empy.git
-        cd empy
-        git checkout 3.3.4
-        sudo python3 setup.py install
-        cd ~
+        echo "❌ Error: empy is not properly installed."
+        echo "Please install it manually with: sudo apt-get install python3-empy"
+        exit 1
     fi
+    echo "✅ empy is properly installed"
 }
 
 # Function to build a single package
