@@ -140,6 +140,7 @@ build_workspace() {
     touch src/robot_description/config/.keep
     
     # Get list of all packages
+    echo "🔍 Discovering all packages in the workspace..."
     local all_packages=($(colcon list -n))
     
     # Define packages to exclude (URDF, Gazebo, and simulation-related)
@@ -161,15 +162,16 @@ build_workspace() {
         "rviz_visual_tools"
     )
     
-    # Get all packages and filter out excluded ones
-    local all_packages=($(colcon list -n))
+    # Filter out excluded packages
     local packages=()
+    local excluded_count=0
     
     for pkg in "${all_packages[@]}"; do
         local exclude=0
         for excluded in "${excluded_packages[@]}"; do
             if [[ "$pkg" == "$excluded" ]]; then
                 exclude=1
+                excluded_count=$((excluded_count + 1))
                 echo "ℹ️  Excluding package: $pkg (simulation/URDF related)"
                 break
             fi
@@ -178,6 +180,9 @@ build_workspace() {
             packages+=("$pkg")
         fi
     done
+    
+    echo "📦 Found ${#all_packages[@]} total packages, excluded $excluded_count packages"
+    echo "📦 Will build ${#packages[@]} packages: ${packages[*]}"
     
     echo "📦 Packages to build (${#packages[@]}): ${packages[*]}"
     
@@ -189,13 +194,11 @@ build_workspace() {
         fi
     done
     
-    # Add any remaining packages not in the predefined order
-    for pkg in "${all_packages[@]}"; do
-        if [[ ! " ${packages[*]} " =~ " $pkg " ]]; then
-            packages+=("$pkg")
-            echo "⚠️  Package $pkg not in predefined build order, adding to end"
-        fi
-    done
+    # Update packages with filtered list
+    packages=("${filtered_packages[@]}")
+    
+    # Don't add back excluded packages - they were excluded for a reason
+    echo "✅ Final package list (${#packages[@]} packages): ${packages[*]}"
     
     # Build packages one by one with dependency handling
     local success=true
