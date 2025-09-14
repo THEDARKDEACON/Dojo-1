@@ -86,8 +86,15 @@ build_package() {
     local pkg=$1
     echo "📦 Building package: $pkg"
     
-    # Try to build the package
-    if colcon build --packages-select "$pkg" --symlink-install; then
+    # Try to build the package with proper installation paths
+    if colcon build \
+        --packages-select "$pkg" \
+        --symlink-install \
+        --cmake-args \
+            -DCMAKE_INSTALL_PREFIX=install \
+            -DCMAKE_INSTALL_LIBDIR=lib \
+            -DCMAKE_INSTALL_BINDIR=lib/$pkg \
+            -DCMAKE_INSTALL_INCLUDEDIR=include; then
         echo "✅ Successfully built $pkg"
         # Source the workspace to make the package available
         if [ -f "$WORKSPACE/install/setup.bash" ]; then
@@ -225,12 +232,20 @@ build_workspace() {
     # Run the build with clean environment and proper path handling
     echo "🚀 Starting the build process..."
     
-    # First, build all ament_cmake packages
+    # First, build all ament_cmake packages with proper installation paths
     if colcon build \
         --symlink-install \
         --packages-skip-build-finished \
         --event-handlers console_cohesion+ \
         --cmake-args \
+            -DCMAKE_INSTALL_PREFIX=install \
+            -DCMAKE_INSTALL_LIBDIR=lib \
+            -DCMAKE_INSTALL_BINDIR=lib/$pkg \
+            -DCMAKE_INSTALL_INCLUDEDIR=include \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=1" \
+            --no-warn-unused-cli \
+            -Wno-dev \
             -DCMAKE_BUILD_TYPE=Release \
             -DCMAKE_INSTALL_PREFIX="$WORKSPACE/install" \
             -DCMAKE_PREFIX_PATH="$WORKSPACE/install" \
