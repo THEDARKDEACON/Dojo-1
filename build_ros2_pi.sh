@@ -14,13 +14,25 @@ source /opt/ros/humble/setup.bash
 fix_issues() {
     echo "🔧 Fixing common issues..."
     
-    # Fix permissions
-    sudo chmod -R a+rw "$WORKSPACE"
+    # Fix permissions and ownership
+    echo "🔧 Setting up workspace permissions..."
+    sudo chown -R $USER:$USER "$WORKSPACE"
+    chmod -R u+rwX "$WORKSPACE"
     
     # Create necessary directories if they don't exist
+    echo "📁 Creating workspace directories..."
     mkdir -p "$WORKSPACE/install"
     mkdir -p "$WORKSPACE/build"
     mkdir -p "$WORKSPACE/log"
+    
+    # Clean up any existing build artifacts that might cause conflicts
+    echo "🧹 Cleaning up previous build artifacts..."
+    rm -rf "$WORKSPACE/install"/* "$WORKSPACE/build"/* "$WORKSPACE/log"/*
+    
+    # Ensure no root-owned files remain
+    if [ -d "$WORKSPACE/build" ] || [ -d "$WORKSPACE/install" ] || [ -d "$WORKSPACE/log" ]; then
+        sudo chown -R $USER:$USER "$WORKSPACE/build" "$WORKSPACE/install" "$WORKSPACE/log" || true
+    fi
     
     # Remove problematic PPA if it exists
     echo "🔄 Removing problematic PPA if it exists..."
@@ -199,7 +211,20 @@ build_workspace() {
     
     # Final build to catch any remaining packages
     echo "🏗️  Performing final build..."
-    if colcon build --symlink-install; then
+    
+    # Clean the build directories to avoid path conflicts
+    if [ -d "$WORKSPACE/build" ] || [ -d "$WORKSPACE/install" ]; then
+        echo "🧹 Cleaning up build directories..."
+        rm -rf "$WORKSPACE/build" "$WORKSPACE/install" "$WORKSPACE/log"
+        mkdir -p "$WORKSPACE/build" "$WORKSPACE/install" "$WORKSPACE/log"
+    fi
+    
+    # Run the build with clean environment and proper path handling
+    if colcon build --symlink-install --cmake-args \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX="$WORKSPACE/install" \
+        -DCMAKE_PREFIX_PATH="$WORKSPACE/install" \
+        -DCMAKE_INSTALL_LIBDIR=lib; then
         echo "✨ Build completed successfully!"
         echo "Source the workspace with:"
         echo "  source $WORKSPACE/install/setup.bash"
