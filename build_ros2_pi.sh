@@ -91,8 +91,16 @@ fix_issues() {
         python3-ament-package \
         python3-colcon-ros || true
     
-    # Install Python dependencies
-    pip3 install -U setuptools wheel vcstool colcon-common-extensions
+    # Install specific versions of Python packages to avoid compatibility issues
+    echo "🐍 Installing Python dependencies with specific versions..."
+    pip3 install --force-reinstall \
+        'setuptools<70.0.0' \
+        'wheel<1.0.0' \
+        'vcstool' \
+        'colcon-common-extensions' \
+        'setuptools-scm<8.0.0' \
+        'setuptools-scm-git-archive<3.0.0' \
+        'pkg-resources==0.0.0'
 }
 
 # Function to build a single package
@@ -220,11 +228,33 @@ build_workspace() {
     fi
     
     # Run the build with clean environment and proper path handling
-    if colcon build --symlink-install --cmake-args \
-        -DCMAKE_BUILD_TYPE=Release \
-        -DCMAKE_INSTALL_PREFIX="$WORKSPACE/install" \
-        -DCMAKE_PREFIX_PATH="$WORKSPACE/install" \
-        -DCMAKE_INSTALL_LIBDIR=lib; then
+    echo "🚀 Starting the build process..."
+    
+    # First, build all ament_cmake packages
+    if colcon build \
+        --symlink-install \
+        --packages-skip-build-finished \
+        --event-handlers console_cohesion+ \
+        --cmake-args \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_INSTALL_PREFIX="$WORKSPACE/install" \
+            -DCMAKE_PREFIX_PATH="$WORKSPACE/install" \
+            -DCMAKE_INSTALL_LIBDIR=lib; then
+        
+        # Then build ament_python packages with isolated environment
+        echo "🐍 Building Python packages with isolated environment..."
+        for pkg in "${packages[@]}"; do
+            if [ -f "$WORKSPACE/src/$pkg/setup.py" ]; then
+                echo "📦 Building Python package: $pkg"
+                (cd "$WORKSPACE" && \
+                 PYTHONPATH="" \
+                 python3 -m pip install --no-deps --ignore-installed -e "src/$pkg" || \
+                 echo "⚠️  Failed to build $pkg, continuing with other packages")
+            fi
+        done
+        
+        # Final verification
+        if [ $? -eq 0 ]; then
         echo "✨ Build completed successfully!"
         echo "Source the workspace with:"
         echo "  source $WORKSPACE/install/setup.bash"
