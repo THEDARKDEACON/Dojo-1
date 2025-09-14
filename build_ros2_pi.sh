@@ -150,6 +150,10 @@ fix_issues() {
     
     # Install specific versions of pip packages
     echo "📦 Installing Python packages with specific versions..."
+    # First, uninstall potentially problematic packages
+    sudo -H pip3 uninstall -y packaging setuptools setuptools-scm
+    
+    # Then install known good versions
     sudo -H pip3 install --upgrade 'pip==22.3.1'  # Known good version for ROS 2 Humble
     sudo -H pip3 install --upgrade \
         'setuptools==59.6.0' \
@@ -158,9 +162,37 @@ fix_issues() {
         'setuptools-scm-git-archive==1.3' \
         'packaging==21.3' \
         'empy==3.3.4'  # Specific version known to work with ROS 2 Humble
+        
+    # Verify package versions
+    echo "✅ Installed package versions:"
+    pip3 list | grep -E 'pip|setuptools|wheel|packaging|empy'
     
     # Skip empy check as it's already installed
     echo "ℹ️  Skipping empy check as it's already installed"
+}
+
+# Function to verify Python environment
+verify_python_environment() {
+    echo "🔍 Verifying Python environment..."
+    
+    # Check for Python version
+    local python_version=$(python3 --version 2>&1 | cut -d' ' -f2)
+    if [[ "$python_version" < "3.8" ]]; then
+        echo "❌ Python 3.8 or higher is required. Found Python $python_version"
+        return 1
+    fi
+    
+    # Check for required packages
+    local required_pkgs=("setuptools" "wheel" "packaging" "empy")
+    for pkg in "${required_pkgs[@]}"; do
+        if ! python3 -c "import $pkg" &>/dev/null; then
+            echo "❌ Missing required Python package: $pkg"
+            return 1
+        fi
+    done
+    
+    echo "✅ Python environment looks good!"
+    return 0
 }
 
 # Function to build a single package
@@ -188,6 +220,18 @@ build_workspace() {
     
     # Fix common issues first
     fix_issues
+    
+    # Verify Python environment
+    if ! verify_python_environment; then
+        echo "❌ Python environment verification failed. Please fix the issues above and try again."
+        exit 1
+    fi
+    
+    # Clean previous builds if they exist
+    if [ -d "build" ] || [ -d "install" ] || [ -d "log" ]; then
+        echo "🧹 Cleaning previous build artifacts..."
+        rm -rf build/ install/ log/
+    fi
     
     # Get list of all packages
     local all_packages=($(colcon list -n))
