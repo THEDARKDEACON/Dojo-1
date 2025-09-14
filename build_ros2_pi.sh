@@ -22,10 +22,22 @@ fix_issues() {
     mkdir -p "$WORKSPACE/build"
     mkdir -p "$WORKSPACE/log"
     
+    # Remove problematic PPA if it exists
+    echo "🔄 Removing problematic PPA if it exists..."
+    if [ -f "/etc/apt/sources.list.d/unison-team-ubuntu-unison-stable-jammy.list" ]; then
+        sudo rm /etc/apt/sources.list.d/unison-team-ubuntu-unison-stable-jammy.list
+    fi
+    
     # Install build dependencies
     echo "📦 Installing build dependencies..."
-    sudo apt-get update
-    sudo apt-get install -y python3-pip python3-colcon-common-extensions python3-rosdep
+    # Update package lists ignoring any errors from problematic repositories
+    sudo apt-get update -o Acquire::AllowInsecureRepositories=true || true
+    
+    # Install required packages
+    sudo apt-get install -y --allow-unauthenticated \
+        python3-pip \
+        python3-colcon-common-extensions \
+        python3-rosdep
     
     # Initialize rosdep if needed
     if [ ! -f "/etc/ros/rosdep/sources.list.d/20-default.list" ]; then
