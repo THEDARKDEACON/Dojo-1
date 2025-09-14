@@ -135,12 +135,16 @@ build_workspace() {
         rm -rf build/ install/ log/
     fi
     
+    # Create required directories that might be missing
+    mkdir -p src/robot_description/config
+    touch src/robot_description/config/.keep
+    
     # Get list of all packages
     local all_packages=($(colcon list -n))
     
     # Define packages to exclude (URDF, Gazebo, and simulation-related)
     local excluded_packages=(
-        "robot_description"  # Contains URDFs
+        "robot_gazebo"
         "gazebo_ros2_control"
         "gazebo_ros"
         "gazebo_plugins"
