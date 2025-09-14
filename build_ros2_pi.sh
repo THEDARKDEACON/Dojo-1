@@ -150,12 +150,13 @@ fix_issues() {
     
     # Install specific versions of pip packages
     echo "📦 Installing Python packages with specific versions..."
-    sudo -H pip3 install --upgrade 'pip<24.0'  # Use a slightly older pip version for better compatibility
+    sudo -H pip3 install --upgrade 'pip==22.3.1'  # Known good version for ROS 2 Humble
     sudo -H pip3 install --upgrade \
-        'setuptools<70.0.0' \
-        'wheel<1.0.0' \
-        'setuptools-scm<8.0.0' \
-        'setuptools-scm-git-archive<3.0.0' \
+        'setuptools==59.6.0' \
+        'wheel==0.37.1' \
+        'setuptools-scm==6.4.2' \
+        'setuptools-scm-git-archive==1.3' \
+        'packaging==21.3' \
         'empy==3.3.4'  # Specific version known to work with ROS 2 Humble
     
     # Skip empy check as it's already installed
@@ -191,24 +192,29 @@ build_workspace() {
     # Get list of all packages
     local all_packages=($(colcon list -n))
     
-    # Define build order (most independent packages first)
-    local build_order=(
+    # Define build order with proper dependencies
+    local packages=(
+        # Core packages with no dependencies
         "robot_description"
         "robot_sensors"
-        "robot_perception"
-        "robot_control"
-        "robot_navigation"
-        "robot_bringup"
         "arduino_bridge"
+        
+        # Packages that depend on the above
+        "robot_control"
         "ros2arduino_bridge"
+        
+        # Vision system (depends on core packages)
         "vision_system"
+        
+        # Launch package (depends on all others)
+        "robot_launch"
     )
     
     # Filter out packages that don't exist in the workspace
-    local packages=()
-    for pkg in "${build_order[@]}"; do
+    local filtered_packages=()
+    for pkg in "${packages[@]}"; do
         if [[ " ${all_packages[*]} " =~ " $pkg " ]]; then
-            packages+=("$pkg")
+            filtered_packages+=("$pkg")
         fi
     done
     

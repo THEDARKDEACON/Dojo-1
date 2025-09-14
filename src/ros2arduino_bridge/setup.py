@@ -32,7 +32,9 @@ setup(
     maintainer_email='garethjoel77@gmail.com',
     description='ROS 2 Arduino Bridge for Dojo Robot',
     license='Apache-2.0',
-    tests_require=['pytest'],
+    extras_require={
+        'test': ['pytest'],
+    },
     entry_points={
         'console_scripts': [
             'arduino_bridge = ros2arduino_bridge.arduino_bridge:main',
