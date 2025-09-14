@@ -138,25 +138,44 @@ build_workspace() {
     # Get list of all packages
     local all_packages=($(colcon list -n))
     
-    # Define build order with proper dependencies
-    local packages=(
-        # Core packages with no dependencies
-        "robot_description"
-        "robot_sensors"
-        "arduino_bridge"
-        
-        # ros2arduino_bridge needs to be built with special handling
-        "ros2arduino_bridge"
-        
-        # Packages that depend on the above
-        "robot_control"
-        
-        # Vision system (depends on core packages)
-        "vision_system"
-        
-        # Launch package (depends on all others)
-        "robot_launch"
+    # Define packages to exclude (URDF, Gazebo, and simulation-related)
+    local excluded_packages=(
+        "robot_description"  # Contains URDFs
+        "gazebo_ros2_control"
+        "gazebo_ros"
+        "gazebo_plugins"
+        "gazebo_ros_control"
+        "gazebo_dev"
+        "gazebo_msgs"
+        "gazebo_ros_pkgs"
+        "gazebo_simulator"
+        "rviz"
+        "rviz2"
+        "rviz_common"
+        "rviz_default_plugins"
+        "rviz_rendering"
+        "rviz_visual_tools"
     )
+    
+    # Get all packages and filter out excluded ones
+    local all_packages=($(colcon list -n))
+    local packages=()
+    
+    for pkg in "${all_packages[@]}"; do
+        local exclude=0
+        for excluded in "${excluded_packages[@]}"; do
+            if [[ "$pkg" == "$excluded" ]]; then
+                exclude=1
+                echo "ℹ️  Excluding package: $pkg (simulation/URDF related)"
+                break
+            fi
+        done
+        if [[ $exclude -eq 0 ]]; then
+            packages+=("$pkg")
+        fi
+    done
+    
+    echo "📦 Packages to build (${#packages[@]}): ${packages[*]}"
     
     # Filter out packages that don't exist in the workspace
     local filtered_packages=()
@@ -177,6 +196,7 @@ build_workspace() {
     # Build packages one by one with dependency handling
     local success=true
     local remaining_attempts=3
+    local built_packages=()
     
     while [ $remaining_attempts -gt 0 ]; do
         success=true
@@ -184,7 +204,7 @@ build_workspace() {
         
         for pkg in "${packages[@]}"; do
             # Skip if already built successfully
-            if [ -f "$WORKSPACE/install/$pkg/share/$pkg/package.sh" ]; then
+            if [[ " ${built_packages[@]} " =~ " ${pkg} " ]]; then
                 continue
             fi
             
@@ -212,6 +232,7 @@ build_workspace() {
                     pip3 install --user -e .
                     if [ $? -eq 0 ]; then
                         built_something=true
+                        built_packages+=("$pkg")
                         cd "$WORKSPACE"
                         # Create a dummy package.sh to satisfy dependency checks
                         mkdir -p "$WORKSPACE/install/ros2arduino_bridge/share/ros2arduino_bridge"
@@ -226,6 +247,7 @@ build_workspace() {
                         success=false
                     else
                         built_something=true
+                        built_packages+=("$pkg")
                     fi
                 fi
             fi
@@ -237,72 +259,25 @@ build_workspace() {
                 echo "✅ All buildable packages have been built successfully"
                 break
             else
-                echo "⚠️  No progress made this round, but there are still build failures"
-                ((remaining_attempts--))
-                echo "   Remaining attempts: $remaining_attempts"
-                if [ $remaining_attempts -le 0 ]; then
+                remaining_attempts=$((remaining_attempts - 1))
+                if [ $remaining_attempts -gt 0 ]; then
+                    echo "⚠️  No progress made this round, but there are still build failures"
+                    echo "   Remaining attempts: $remaining_attempts"
+                else
                     echo "❌ Giving up after maximum retry attempts"
-                    exit 1
+                    success=false
+                    break
                 fi
             fi
         fi
     done
     
-    # Final build to catch any remaining packages
-    echo "🏗️  Performing final build..."
-    
-    # Clean the build directories to avoid path conflicts
-    if [ -d "$WORKSPACE/build" ] || [ -d "$WORKSPACE/install" ]; then
-        echo "🧹 Cleaning up build directories..."
-        rm -rf "$WORKSPACE/build" "$WORKSPACE/install" "$WORKSPACE/log"
-        mkdir -p "$WORKSPACE/build" "$WORKSPACE/install" "$WORKSPACE/log"
-    fi
-    
-    # Run the build with clean environment and proper path handling
-    echo "🚀 Starting the build process..."
-    
-    # First, build all ament_cmake packages with proper installation paths
-    if colcon build \
-        --symlink-install \
-        --packages-skip-build-finished \
-        --event-handlers console_cohesion+ \
-        --cmake-args \
-            -DCMAKE_INSTALL_PREFIX=install \
-            -DCMAKE_INSTALL_LIBDIR=lib \
-            -DCMAKE_INSTALL_BINDIR=lib/$pkg \
-            -DCMAKE_INSTALL_INCLUDEDIR=include \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=1" \
-            --no-warn-unused-cli \
-            -Wno-dev \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DCMAKE_INSTALL_PREFIX="$WORKSPACE/install" \
-            -DCMAKE_PREFIX_PATH="$WORKSPACE/install" \
-            -DCMAKE_INSTALL_LIBDIR=lib; then
-        
-        # Then build ament_python packages with isolated environment
-        echo "🐍 Building Python packages with isolated environment..."
-        for pkg in "${packages[@]}"; do
-            if [ -f "$WORKSPACE/src/$pkg/setup.py" ]; then
-                echo "📦 Building Python package: $pkg"
-                (cd "$WORKSPACE" && \
-                 PYTHONPATH="" \
-                 python3 -m pip install --no-deps --ignore-installed -e "src/$pkg" || \
-                 echo "⚠️  Failed to build $pkg, continuing with other packages")
-            fi
-        done
-        
-        # Final verification
-        if [ $? -eq 0 ]; then
-            echo "✨ Build completed successfully!"
-            echo "Source the workspace with:"
-            echo "  source $WORKSPACE/install/setup.bash"
-        else
-            echo "❌ Final build failed"
-            exit 1
-        fi
+    if [ "$success" = true ]; then
+        echo "✨ Build completed successfully!"
+        echo "Source the workspace with:"
+        echo "  source $WORKSPACE/install/setup.bash"
     else
-        echo "❌ Failed to build ament_cmake packages"
+        echo "❌ Build failed for some packages"
         exit 1
     fi
 }
