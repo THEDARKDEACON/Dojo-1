@@ -98,7 +98,7 @@ fix_issues() {
         echo "🔧 Gazebo packages not found, installing from source..."
         mkdir -p ~/gazebo_ws/src
         cd ~/gazebo_ws/src
-        git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b humble
+        git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b humble-devel
         cd ~/gazebo_ws
         rosdep install -y --from-paths src --ignore-src -r --os=ubuntu:jammy
         colcon build --symlink-install
