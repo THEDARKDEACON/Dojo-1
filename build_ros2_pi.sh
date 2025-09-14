@@ -47,7 +47,37 @@ fix_issues() {
     
     # Install package dependencies
     echo "📦 Installing package dependencies..."
-    rosdep install --from-paths src --ignore-src -r -y
+    
+    # First, install common ROS 2 development tools
+    echo "🔄 Installing ROS 2 development tools..."
+    sudo apt-get install -y \
+        python3-rosdep \
+        python3-rosinstall \
+        python3-rosinstall-generator \
+        python3-wstool \
+        build-essential \
+        python3-colcon-common-extensions
+    
+    # Update rosdep with custom rules for missing packages
+    echo "🔄 Updating rosdep with custom rules..."
+    sudo rosdep fix-permissions
+    rosdep update --include-eol-distros
+    
+    # Install dependencies, ignoring any missing packages
+    echo "📦 Installing package dependencies (this may take a while)..."
+    rosdep install --from-paths src --ignore-src -r -y || true
+    
+    # Install specific ROS 2 Humble packages that might be missing
+    echo "📦 Installing ROS 2 Humble specific packages..."
+    sudo apt-get install -y \
+        ros-humble-gazebo-ros \
+        ros-humble-gazebo-ros-pkgs \
+        ros-humble-gazebo-ros2-control \
+        ros-humble-gazebo-plugins \
+        ros-humble-ament-cmake \
+        ros-humble-ament-cmake-python \
+        python3-ament-package \
+        python3-colcon-ros || true
     
     # Install Python dependencies
     pip3 install -U setuptools wheel vcstool colcon-common-extensions
