@@ -17,10 +17,23 @@ install(
 )
 
 # Install URDF, meshes, and RViz config
-install(
-  DIRECTORY urdf meshes rviz
-  DESTINATION share/${PROJECT_NAME}
-)
+set(DIRS_TO_INSTALL urdf)
+
+# Only include directories that exist
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/meshes" AND IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/meshes")
+    list(APPEND DIRS_TO_INSTALL meshes)
+endif()
+
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/rviz" AND IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/rviz")
+    list(APPEND DIRS_TO_INSTALL rviz)
+endif()
+
+foreach(dir ${DIRS_TO_INSTALL})
+    install(
+        DIRECTORY ${dir}/
+        DESTINATION share/${PROJECT_NAME}/${dir}
+    )
+endforeach()
 
 # Install config files
 install(
