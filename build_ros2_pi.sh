@@ -142,7 +142,8 @@ fix_issues() {
         'vcstool' \
         'colcon-common-extensions' \
         'setuptools-scm<8.0.0' \
-        'setuptools-scm-git-archive<3.0.0'
+        'setuptools-scm-git-archive<3.0.0' \
+        'empy==3.3.4'  # Specific version known to work with setuptools<70.0.0
 }
 
 # Function to build a single package
