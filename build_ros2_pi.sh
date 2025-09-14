@@ -35,11 +35,23 @@ fix_issues() {
         
     # Install specific Python packages
     echo "📦 Installing Python packages..."
+    # Install system package for empy
+    sudo apt-get install -y python3-empy
+    
+    # Install other Python packages
     pip3 install --user --upgrade \
         'setuptools==59.6.0' \
         'wheel==0.37.1' \
         'packaging==21.3' \
-        'setuptools-scm==6.4.2'
+        'setuptools-scm==6.4.2' \
+        'empy==3.3.4'
+        
+    # Verify empy installation
+    if ! python3 -c "import em; print('empy version:', em.VERSION)" &>/dev/null; then
+        echo "❌ Error: empy is not properly installed."
+        echo "Trying alternative installation method..."
+        sudo -H pip3 install empy==3.3.4
+    fi
 }
 
 # Function to verify Python environment
@@ -57,7 +69,7 @@ verify_python_environment() {
     fi
     
     # Check for required packages
-    local required_pkgs=("setuptools" "wheel" "packaging" "empy")
+    local required_pkgs=("setuptools" "wheel" "packaging" "em")
     for pkg in "${required_pkgs[@]}"; do
         if ! python3 -c "import $pkg" &>/dev/null; then
             echo "❌ Missing required Python package: $pkg"
