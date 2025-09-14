@@ -11,133 +11,18 @@ cd "$WORKSPACE"
 source /opt/ros/humble/setup.bash
 
 # Function to fix common issues
+# In build_ros2_pi.sh, update the fix_issues function to include:
 fix_issues() {
     echo "🔧 Fixing common issues..."
     
-    # Fix permissions and ownership
-    echo "🔧 Setting up workspace permissions..."
-    sudo chown -R $USER:$USER "$WORKSPACE"
-    chmod -R u+rwX "$WORKSPACE"
-    
-    # Create necessary directories if they don't exist
-    echo "📁 Creating workspace directories..."
-    mkdir -p "$WORKSPACE/install"
-    mkdir -p "$WORKSPACE/build"
-    mkdir -p "$WORKSPACE/log"
-    
-    # Clean up any existing build artifacts that might cause conflicts
-    echo "🧹 Cleaning up previous build artifacts..."
-    rm -rf "$WORKSPACE/install"/* "$WORKSPACE/build"/* "$WORKSPACE/log"/*
-    
-    # Ensure no root-owned files remain
-    if [ -d "$WORKSPACE/build" ] || [ -d "$WORKSPACE/install" ] || [ -d "$WORKSPACE/log" ]; then
-        sudo chown -R $USER:$USER "$WORKSPACE/build" "$WORKSPACE/install" "$WORKSPACE/log" || true
-    fi
-    
-    # Remove problematic PPA if it exists
-    echo "🔄 Removing problematic PPA if it exists..."
-    if [ -f "/etc/apt/sources.list.d/unison-team-ubuntu-unison-stable-jammy.list" ]; then
-        sudo rm /etc/apt/sources.list.d/unison-team-ubuntu-unison-stable-jammy.list
-    fi
-    
-    # Install build dependencies
-    echo "📦 Installing build dependencies..."
-    # Update package lists ignoring any errors from problematic repositories
-    sudo apt-get update -o Acquire::AllowInsecureRepositories=true || true
-    
-    # Install required packages
-    sudo apt-get install -y --allow-unauthenticated \
-        python3-pip \
-        python3-colcon-common-extensions \
-        python3-rosdep
-    
-    # Initialize rosdep if needed
+    # Ensure rosdep is properly initialized
     if [ ! -f "/etc/ros/rosdep/sources.list.d/20-default.list" ]; then
-        sudo rosdep init
-    fi
-    rosdep update
-    
-    # Install package dependencies
-    echo "📦 Installing package dependencies..."
-    
-    # First, install common ROS 2 development tools
-    echo "🔄 Installing ROS 2 development tools..."
-    sudo apt-get install -y \
-        python3-rosdep \
-        python3-rosinstall \
-        python3-rosinstall-generator \
-        python3-wstool \
-        build-essential \
-        python3-colcon-common-extensions
-    
-    # Update rosdep with custom rules for missing packages
-    echo "🔄 Updating rosdep with custom rules..."
-    sudo rosdep fix-permissions
-    rosdep update --include-eol-distros
-    
-    # Install dependencies, ignoring any missing packages
-    echo "📦 Installing package dependencies (this may take a while)..."
-    rosdep install --from-paths src --ignore-src -r -y || true
-    
-    # Install ROS 2 Humble development tools and base packages
-    echo "📦 Installing ROS 2 Humble development tools..."
-    sudo apt-get update
-    sudo apt-get install -y \
-        python3-rosdep \
-        python3-rosinstall \
-        python3-rosinstall-generator \
-        python3-vcstool \
-        python3-colcon-common-extensions \
-        python3-rosdep \
-        python3-rosdistro \
-        python3-ament-package \
-        python3-colcon-ros
-
-    # Install Gazebo/ROS integration packages
-    echo "📦 Installing ROS 2 Humble Gazebo integration..."
-    
-    # Install ros_gz packages
-    sudo apt-get update
-    sudo apt-get install -y \
-        ros-humble-ros-gz \
-        ros-humble-ros-gz-sim \
-        ros-humble-ros-gz-bridge \
-        ros-humble-ros-gz-interfaces
-        
-    # Install Gazebo Fortress (the version compatible with ROS 2 Humble)
-    echo "🔧 Setting up Gazebo Fortress..."
-    sudo apt-get install -y \
-        wget \
-        lsb-release \
-        gnupg
-        
-    # Add Gazebo repository
-    sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo_stable.list > /dev/null
-    
-    # Install Gazebo
-    sudo apt-get update
-    sudo apt-get install -y \
-        gz-fortress \
-        libgz-sim7-dev \
-        libgz-common5-dev
-        
-    # Update environment
-    echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
-    source ~/.bashrc
-    
-    # Verify installation
-    if ! command -v gz &> /dev/null; then
-        echo "❌ Failed to install Gazebo. Please check the logs and try again."
-        exit 1
+        echo "🔄 Initializing rosdep..."
+        sudo rosdep init || true
+        rosdep update || true
     fi
     
-    echo "✅ Successfully installed Gazebo Fortress and ROS 2 Humble integration"
-    
-    # Install Python dependencies globally
-    echo "🐍 Installing Python dependencies globally..."
-    
-    # Install system dependencies first
+    # Install system dependencies
     echo "📦 Installing system dependencies..."
     sudo apt-get update
     sudo apt-get install -y \
@@ -147,28 +32,14 @@ fix_issues() {
         python3-vcstool \
         python3-setuptools \
         python3-wheel
-    
-    # Install specific versions of pip packages
-    echo "📦 Installing Python packages with specific versions..."
-    # First, uninstall potentially problematic packages
-    sudo -H pip3 uninstall -y packaging setuptools setuptools-scm
-    
-    # Then install known good versions
-    sudo -H pip3 install --upgrade 'pip==22.3.1'  # Known good version for ROS 2 Humble
-    sudo -H pip3 install --upgrade \
+        
+    # Install specific Python packages
+    echo "📦 Installing Python packages..."
+    pip3 install --user --upgrade \
         'setuptools==59.6.0' \
         'wheel==0.37.1' \
-        'setuptools-scm==6.4.2' \
-        'setuptools-scm-git-archive==1.3' \
         'packaging==21.3' \
-        'empy==3.3.4'  # Specific version known to work with ROS 2 Humble
-        
-    # Verify package versions
-    echo "✅ Installed package versions:"
-    pip3 list | grep -E 'pip|setuptools|wheel|packaging|empy'
-    
-    # Skip empy check as it's already installed
-    echo "ℹ️  Skipping empy check as it's already installed"
+        'setuptools-scm==6.4.2'
 }
 
 # Function to verify Python environment
@@ -177,7 +48,10 @@ verify_python_environment() {
     
     # Check for Python version
     local python_version=$(python3 --version 2>&1 | cut -d' ' -f2)
-    if [[ "$python_version" < "3.8" ]]; then
+    local major=$(echo $python_version | cut -d. -f1)
+    local minor=$(echo $python_version | cut -d. -f2)
+    
+    if [[ $major -lt 3 ]] || { [[ $major -eq 3 ]] && [[ $minor -lt 8 ]]; }; then
         echo "❌ Python 3.8 or higher is required. Found Python $python_version"
         return 1
     fi
