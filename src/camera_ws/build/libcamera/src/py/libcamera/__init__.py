@@ -1,0 +1,1 @@
+../../../../../src/libcamera/src/py/libcamera/__init__.py

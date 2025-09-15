@@ -1,0 +1,3 @@
+[console_scripts]
+nv21_converter = nv21_converter_pkg.nv21_converter:main
+

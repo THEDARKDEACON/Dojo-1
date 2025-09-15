@@ -1,0 +1,11 @@
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/uninstall.dir
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/robot_perception_uninstall.dir
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/ament_cmake_python_copy_robot_perception.dir
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/ament_cmake_python_build_robot_perception_egg.dir
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/test.dir
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/edit_cache.dir
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/rebuild_cache.dir
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/list_install_components.dir
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/install.dir
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/install/local.dir
+/home/gareth-joel/Documents/gifted_hodgkin_x11/Dojo/build/CMakeFiles/install/strip.dir

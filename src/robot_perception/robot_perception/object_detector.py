@@ -16,13 +16,13 @@ class ObjectDetector(Node):
         self.bridge = CvBridge()
         
         # Parameters
-        self.declare_parameter('model_path', '')
+        self.declare_parameter('model_path', './yolov8n.pt')
         self.declare_parameter('confidence_threshold', 0.5)
         
         # Subscribers
         self.image_sub = self.create_subscription(
             Image,
-            '/camera/image_raw',
+            '/camera_ros/image_raw',
             self.image_callback,
             10
         )
