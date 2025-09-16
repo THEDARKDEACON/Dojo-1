@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 import os
 from glob import glob
 from setuptools import find_namespace_packages
+import subprocess
 
 package_name = 'robot_sensors'
 
@@ -20,18 +21,20 @@ launch_files = [os.path.join('launch', os.path.basename(f)) for f in launch_file
 setup(
     name=package_name,
     version='0.0.1',
-    packages=find_packages(where='.') + 
-        find_namespace_packages(include=['camera_ros.*', 'nv21_converter_pkg.*', 'sllidar_ros2.*']),
+    # Find all packages in the current directory and subdirectories
+    packages=find_packages(where='.') + \
+        find_namespace_packages(include=['robot_sensors.camera_ros.*', 'robot_sensors.nv21_converter_pkg.*', 'robot_sensors.sllidar_ros2.*']),
+    # Map package directories
     package_dir={
         '': '.',
-        'camera_ros': 'camera_ros',
-        'nv21_converter_pkg': 'nv21_converter_pkg',
-        'sllidar_ros2': 'sllidar_ros2'
+        'robot_sensors.camera_ros': 'camera_ros',
+        'robot_sensors.nv21_converter_pkg': 'nv21_converter_pkg',
+        'robot_sensors.sllidar_ros2': 'sllidar_ros2'
     },
     package_data={
-        'camera_ros': ['resource/*', 'launch/*.launch.py', '**/*.py'],
-        'nv21_converter_pkg': ['resource/*', 'launch/*.launch.py', '**/*.py'],
-        'sllidar_ros2': ['launch/*.launch.py', 'rviz/*.rviz', 'config/*.yaml', '**/*.py']
+        'robot_sensors.camera_ros': ['resource/*', 'launch/*.launch.py', '**/*.py'],
+        'robot_sensors.nv21_converter_pkg': ['resource/*', 'launch/*.launch.py', '**/*.py'],
+        'robot_sensors.sllidar_ros2': ['launch/*.launch.py', 'rviz/*.rviz', 'config/*.yaml', '**/*.py']
     },
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
@@ -43,7 +46,6 @@ setup(
         'opencv-python>=4.5.0',
         'numpy>=1.19.5',
         'pyserial>=3.5',
-        'picamera2>=0.3.0',
         'rclpy>=3.0.0',
         'sensor_msgs>=3.0.0',
         'cv_bridge_py>=3.0.0',

@@ -1,37 +1,26 @@
-from setuptools import setup, find_packages
-import os
-from glob import glob
+from setuptools import find_packages, setup
 
 package_name = 'nv21_converter_pkg'
 
-def package_files(directory):
-    paths = []
-    for (path, directories, filenames) in os.walk(directory):
-        for filename in filenames:
-            if filename.endswith('.launch.py') or filename.endswith('.yaml') or filename.endswith('.rviz'):
-                paths.append(os.path.join('..', path, filename))
-    return paths
-
 setup(
     name=package_name,
-    version='0.0.1',
-    packages=find_packages(where='.'),
-    package_dir={'': '.'},
+    version='0.0.0',
+    packages=find_packages(exclude=['test']),
     data_files=[
-        ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
     ],
-    install_requires=['setuptools', 'rclpy', 'sensor_msgs', 'cv_bridge'],
+    install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='You',
-    maintainer_email='you@example.com',
-    description='NV21 to RGB/BGR converter for ROS 2',
-    license='Apache-2.0',
+    maintainer='robosync',
+    maintainer_email='robosync@todo.todo',
+    description='TODO: Package description',
+    license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'nv21_to_rgb = nv21_converter_pkg.nv21_to_rgb:main',
+                    'nv21_converter = nv21_converter_pkg.nv21_converter:main',
         ],
     },
 )
