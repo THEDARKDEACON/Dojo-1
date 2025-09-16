@@ -1,0 +1,41 @@
+[0.012s] Invoking command in '/root/Dojo/build/rplidar_ros': /usr/bin/cmake /root/Dojo/src/rplidar_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/rplidar_ros
+[0.019s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.019s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.019s]   CMake.
+[0.019s] 
+[0.019s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.019s]   CMake that the project does not need compatibility with older versions.
+[0.019s] 
+[0.019s] [0m
+[0.065s] -- The C compiler identification is GNU 11.4.0
+[0.119s] -- The CXX compiler identification is GNU 11.4.0
+[0.127s] -- Detecting C compiler ABI info
+[0.194s] -- Detecting C compiler ABI info - done
+[0.200s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.200s] -- Detecting C compile features
+[0.200s] -- Detecting C compile features - done
+[0.203s] -- Detecting CXX compiler ABI info
+[0.278s] -- Detecting CXX compiler ABI info - done
+[0.285s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.285s] -- Detecting CXX compile features
+[0.286s] -- Detecting CXX compile features - done
+[0.303s] [31mCMake Error at CMakeLists.txt:16 (find_package):
+[0.303s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[0.303s]   asked CMake to find a package configuration file provided by "catkin", but
+[0.303s]   CMake did not find one.
+[0.303s] 
+[0.303s]   Could not find a package configuration file provided by "catkin" with any
+[0.304s]   of the following names:
+[0.304s] 
+[0.304s]     catkinConfig.cmake
+[0.304s]     catkin-config.cmake
+[0.304s] 
+[0.304s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[0.304s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[0.304s]   provides a separate development package or SDK, be sure it has been
+[0.304s]   installed.
+[0.304s] 
+[0.305s] [0m
+[0.305s] -- Configuring incomplete, errors occurred!
+[0.305s] See also "/root/Dojo/build/rplidar_ros/CMakeFiles/CMakeOutput.log".
+[0.308s] Invoked command in '/root/Dojo/build/rplidar_ros' returned '1': /usr/bin/cmake /root/Dojo/src/rplidar_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/rplidar_ros
