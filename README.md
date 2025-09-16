@@ -1,227 +1,179 @@
-# Robot Car (ROS 2 Humble) Workspace
+# Dojo - ROS 2 Robot Platform
 
-A comprehensive ROS 2 Humble workspace for a Raspberry Pi 4 robot car with Arduino integration, real-time vision processing, and autonomous navigation capabilities.
+A modular ROS 2 Humble workspace for an autonomous robot with sensor integration, computer vision, and navigation capabilities.
 
-## Key Features
+## 🚀 Key Features
 
-- **Arduino Integration**: Bidirectional communication between ROS 2 and Arduino for motor control and sensor reading
-- **Real-time Vision**: YOLOv8-based object detection with hardware acceleration
-- **Sensor Suite**: Support for RPi Camera, LiDAR, and various analog/digital sensors
-- **Navigation**: Integration with Nav2 for autonomous navigation
-- **Modular Design**: Clean separation of concerns with dedicated packages for each component
-- **Optimized Performance**: Model quantization and layer freezing for edge deployment
+- **Modular Architecture**: Organized into separate packages for sensors, control, and perception
+- **Sensor Integration**:
+  - RPLIDAR A1M8 for 360° laser scanning
+  - Camera with libcamera support for vision tasks
+- **Robust Control**:
+  - Differential drive control system
+  - Arduino-based motor control
+  - Configurable PID parameters
+- **Perception Stack**:
+  - Object detection pipeline
+  - Sensor fusion capabilities
+- **Navigation**:
+  - Integration with Nav2
+  - TF2 for coordinate transforms
+  - Configurable launch files
 
-## Hardware Requirements
+## 🛠️ Hardware Requirements
 
-- Raspberry Pi 4 (4GB+ recommended)
-- Arduino board (Uno, Mega, or similar)
-- Motor controller (compatible with Arduino)
-- RPi Camera Module
-- LiDAR sensor (e.g., RPLIDAR)
-- Power supply (battery pack)
-- USB connections between Pi and Arduino
+- **Compute**: Raspberry Pi 4 (4GB+ recommended) or x86_64 PC
+- **Motors**:
+  - 2x DC motors with encoders
+  - Motor driver (e.g., L298N, TB6612FNG)
+- **Sensors**:
+  - RPLIDAR A1M8
+  - Raspberry Pi Camera or USB webcam
+- **Controller**: Arduino (Uno/Mega) for low-level motor control
+- **Power**: 12V battery pack with appropriate voltage regulation
 
-## Software Dependencies
-
-### Core Dependencies
-```bash
-sudo apt update
-sudo apt install -y \
-  python3-pip python3-opencv python3-serial \
-  ros-humble-cv-bridge ros-humble-image-transport \
-  ros-humble-camera-info-manager ros-humble-rclpy \
-  ros-humble-sensor-msgs ros-humble-std-msgs \
-  ros-humble-nav2-bringup ros-humble-nav2-msgs
-```
-
-## Workspace Structure
+## 📦 Package Structure
 
 ```
 Dojo/
 ├── src/
-│   ├── arduino_bridge/       # ROS 2 - Arduino communication
-│   │   ├── arduino_bridge/   # Python package
-│   │   ├── launch/          # Launch files
-│   │   ├── config/          # Configuration files
-│   │   └── resource/        # Package resources
+│   ├── robot_bringup/         # Launch files and configurations
+│   ├── robot_control/         # Motor control and Arduino bridge
+│   │   ├── nodes/
+│   │   │   ├── arduino_bridge.py
+│   │   │   └── cmd_vel_to_motors.py
+│   │   └── launch/
+│   │       └── control.launch.py
 │   │
-│   ├── vision_system/        # Real-time vision processing
-│   │   ├── vision_system/    # Python package
-│   │   │   └── object_detector.py  # Main detection node
-│   │   ├── launch/          # Launch configurations
-│   │   ├── config/          # YAML parameter files
-│   │   └── models/          # ML models (YOLO, etc.)
+│   ├── robot_sensors/         # Sensor interfaces
+│   │   ├── nodes/
+│   │   │   └── camera_node.py
+│   │   └── launch/
+│   │       ├── sensors.launch.py
+│   │       ├── camera.launch.py
+│   │       └── rplidar.launch.py
 │   │
-│   ├── robot_bringup/       # System launch files
-│   ├── robot_control/       # Motor and actuator control
-│   ├── robot_sensors/       # Sensor drivers
-│   ├── robot_perception/    # High-level perception
-│   ├── robot_description/   # URDF/Xacro models
-│   ├── robot_navigation/    # Navigation stack
-│   └── ros2arduino_bridge/  # Alternative Arduino bridge
-│
-├── build/                   # Build files
-├── install/                 # Installed packages
-└── log/                    # Log files
+│   ├── robot_description/     # Robot URDF and meshes
+│   │   └── urdf/
+│   │       ├── robot.urdf.xacro
+│   │       └── sensors/
+│   │           └── rplidar.urdf.xacro
+│   │
+│   └── robot_perception/      # Vision and perception
+│       └── nodes/
+│           └── object_detector.py
 ```
 
-### Key Packages
+## 🛠️ Installation
 
-#### `arduino_bridge`
-- Bidirectional ROS 2 - Arduino communication
-- Handles motor control and sensor data
-- Configurable serial interface
+### 1. System Dependencies
 
-#### `vision_system` (New!)
-- Real-time object detection with YOLOv8
-- Optimized for edge devices (RPi 4)
-- Features:
-  - Model quantization (FP16/INT8)
-  - Layer freezing for efficient training
-  - Mosaic augmentation
-  - TensorRT acceleration
-
-#### `robot_control`
-- Motor control interfaces
-- Low-level actuator commands
-- Safety features
-
-#### `robot_sensors`
-- Camera drivers
-- LiDAR integration
-- IMU and other sensor interfaces
-
-#### `robot_perception`
-- High-level perception tasks
-- Sensor fusion
-- Object tracking
-
-#### `robot_navigation`
-- Navigation stack integration
-- SLAM configuration
-- Path planning
-
-## Getting Started
-
-### 1. Install Dependencies
 ```bash
-# Core ROS 2 and Python dependencies
-sudo apt update
+# Install ROS 2 Humble (if not already installed)
+sudo apt update && sudo apt install -y \
+    python3-colcon-common-extensions \
+    python3-rosdep \
+    python3-vcstool
+
+# Install ROS 2 packages
 sudo apt install -y \
-  python3-pip python3-opencv python3-serial \
-  ros-humble-cv-bridge ros-humble-image-transport \
-  ros-humble-camera-info-manager ros-humble-rclpy \
-  ros-humble-sensor-msgs ros-humble-std-msgs \
-  ros-humble-nav2-bringup ros-humble-nav2-msgs
-
-# Python packages
-pip3 install ultralytics onnxruntime opencv-python torch torchvision
+    ros-humble-rplidar-ros \
+    ros-humble-cv-bridge \
+    ros-humble-image-transport \
+    ros-humble-camera-info-manager \
+    ros-humble-tf2-ros \
+    ros-humble-nav2-bringup \
+    ros-humble-slam-toolbox
 ```
 
-### 2. Build the Workspace
-```bash
-# Source ROS 2 environment
-source /opt/ros/humble/setup.bash
+### 2. Workspace Setup
 
-# Build all packages
+```bash
+# Create workspace
+mkdir -p ~/Dojo/src
 cd ~/Dojo
+
+# Clone the repository (or copy your code)
+git clone <repository-url> src
+
+# Install dependencies
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+
+# Build the workspace
 colcon build --symlink-install
-source install/setup.bash
+
+# Source the workspace
+echo "source ~/Dojo/install/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 ```
 
-### 3. Run the Vision System
-```bash
-# Start the vision system
-ros2 launch vision_system vision_system.launch.py
+## 🚀 Getting Started
 
-# In a new terminal, view detection results
-ros2 topic echo /detections
-```
+### Launching the Robot
 
-### 4. Run with Arduino Bridge
-```bash
-# Terminal 1: Start the vision system
-ros2 launch vision_system vision_system.launch.py
-
-# Terminal 2: Start the Arduino bridge
-ros2 run arduino_bridge arduino_bridge_node
-```
-
-## Arduino Communication Protocol
-
-The Arduino bridge uses a simple text-based protocol over serial:
-
-### From Arduino to ROS 2
-- Sensor data: `S<value>\n`
-  - Example: `S512\n` sends sensor value 512
-
-### From ROS 2 to Arduino
-- LED control: `L<value>\n`
-  - Example: `L1\n` turns LED on, `L0\n` turns it off
-
-## Customization
-
-### Adding New Sensors
-1. Modify the Arduino sketch to read the sensor
-2. Update the protocol in both Arduino and ROS 2 code
-3. Add new message types if needed
-
-### Changing Serial Port
-```bash
-ros2 run arduino_bridge arduino_bridge_node --ros-args -p port:=/dev/ttyUSB0
-```
-
-## Troubleshooting
-
-### Common Issues
-
-#### 1. Camera Not Detected
-```bash
-# Check video devices
-ls /dev/video*
-
-# Check video group membership
-groups | grep video
-
-# Add user to video group if needed
-sudo usermod -a -G video $USER
-```
-
-#### 2. Serial Port Permissions
-```bash
-# Add user to dialout group
-sudo usermod -a -G dialout $USER
-
-# Check connected devices
-ls -l /dev/ttyACM* /dev/ttyUSB*
-```
-
-#### 3. Model Loading Issues
-- Ensure model files are in the correct location (`vision_system/models/`)
-- Check file permissions
-- Verify model compatibility with your hardware
-
-#### 4. Performance Optimization
-- Reduce input resolution in `object_detector_params.yaml`
-- Enable FP16/INT8 quantization
-- Close unnecessary applications to free up memory
-
-#### 5. ROS 2 Node Issues
+#### Full System Startup
 ```bash
 # Source the workspace
 source install/setup.bash
 
-# List all running nodes
-ros2 node list
-
-# View node output
-ros2 topic echo /detections
+# Launch the complete system
+ros2 launch robot_bringup bringup.launch.py
 ```
 
-## License
+#### Individual Components
 
-This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
+**Start Sensors Only**
+```bash
+ros2 launch robot_sensors sensors.launch.py
+```
 
-## Contributing
+**Start Control System**
+```bash
+ros2 launch robot_control control.launch.py
+```
 
-Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before submitting pull requests.
+**Visualize in RViz**
+```bash
+rviz2 -d src/robot_bringup/rviz/robot.rviz
+```
+
+## 🎯 Key Topics
+
+- **Command Velocity**: `/cmd_vel` (Twist)
+- **Camera Feed**: `/camera/image_raw` (Image)
+- **LiDAR Data**: `/scan` (LaserScan)
+- **Motor Commands**: `/left_motor/speed`, `/right_motor/speed` (Float32)
+
+## ⚙️ Configuration
+
+### RPLIDAR Parameters
+Edit `robot_sensors/launch/rplidar.launch.py` to adjust:
+- Serial port (`/dev/ttyUSB0` by default)
+- Frame ID (`laser` by default)
+- Scan frequency (10Hz by default)
+
+### Camera Parameters
+Edit `robot_sensors/launch/camera.launch.py` to configure:
+- Resolution (default: 640x480)
+- Frame rate (default: 30fps)
+- Frame ID (`camera_link` by default)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- ROS 2 Community
+- RPLIDAR Team
+- OpenCV Community
+- All contributors and maintainers
