@@ -4,6 +4,9 @@
   <xacro:include filename="$(find gazebo_ros)/launch/empty_world.launch" />
   <xacro:include filename="$(find gazebo_ros)/launch/helpers/empty_world.launch.py" />
   
+  <!-- Include Sensors -->
+  <xacro:include filename="$(find robot_description)/urdf/sensors/rplidar.urdf.xacro" />
+  
   <!-- Constants -->
   <xacro:property name="PI" value="3.1415926535897931" />
   
