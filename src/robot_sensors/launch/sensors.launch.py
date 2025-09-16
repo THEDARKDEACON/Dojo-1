@@ -23,13 +23,16 @@ def generate_launch_description():
         condition=IfCondition(use_camera)
     )
 
-    # LiDAR Node
+    # LiDAR Node using sllidar_ros2
     lidar_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(get_package_share_directory('robot_sensors'), 'launch', 'rplidar.launch.py')
+            os.path.join(get_package_share_directory('sllidar_ros2'), 'launch', 'sllidar_a1_launch.py')
         ),
         launch_arguments={
-            'use_sim_time': use_sim_time
+            'serial_port': '/dev/ttyUSB0',
+            'frame_id': 'laser',
+            'angle_compensate': 'true',
+            'scan_mode': 'Sensitivity'
         }.items(),
         condition=IfCondition(use_lidar)
     )
