@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 import os
 from glob import glob
 
@@ -19,8 +19,8 @@ launch_files = [os.path.join('launch', os.path.basename(f)) for f in launch_file
 setup(
     name=package_name,
     version='0.0.1',
-    packages=[package_name, f'{package_name}.nodes'],
-    package_dir={'': 'src'},
+    packages=find_packages(where='.'),
+    package_dir={'': '.'},
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
