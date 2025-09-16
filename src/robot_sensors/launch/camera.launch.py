@@ -11,19 +11,25 @@ def generate_launch_description():
     height = LaunchConfiguration('height', default='480')
     fps = LaunchConfiguration('fps', default='30.0')
     
-    # Camera node
+    # Camera node using camera_ros package
     camera_node = Node(
-        package='robot_sensors',
-        executable='camera_node',
+        package='camera_ros',
+        executable='camera_ros_node',
         name='camera_node',
         output='screen',
         parameters=[{
             'camera_name': camera_name,
             'frame_id': frame_id,
-            'width': width,
-            'height': height,
-            'fps': fps,
-        }]
+            'width': int(width),
+            'height': int(height),
+            'fps': float(fps),
+            'pixel_format': 'RGB888',
+            'camera_info_url': ''
+        }],
+        remappings=[
+            ('image_raw', 'camera/image_raw'),
+            ('camera_info', 'camera/camera_info')
+        ]
     )
     
     return LaunchDescription([

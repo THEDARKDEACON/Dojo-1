@@ -26,7 +26,7 @@ def generate_launch_description():
     # LiDAR Node using sllidar_ros2
     lidar_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(get_package_share_directory('sllidar_ros2'), 'launch', 'sllidar_a1_launch.py')
+            os.path.join(get_package_share_directory('robot_sensors'), 'sllidar_ros2', 'launch', 'sllidar_a1_launch.py')
         ),
         launch_arguments={
             'serial_port': '/dev/ttyUSB0',
