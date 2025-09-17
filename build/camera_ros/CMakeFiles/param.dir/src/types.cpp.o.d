@@ -1,8 +1,8 @@
 CMakeFiles/param.dir/src/types.cpp.o: \
- /root/Dojo/src/camera_ws/src/camera_ros/src/types.cpp \
+ /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/types.cpp \
  /usr/include/stdc-predef.h \
- /root/Dojo/src/camera_ws/src/camera_ros/src/types.hpp \
- /root/Dojo/src/camera_ws/src/camera_ros/src/libcamera_version_utils.hpp \
+ /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/types.hpp \
+ /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/libcamera_version_utils.hpp \
  /opt/ros/humble/include/libcamera/libcamera/version.h \
  /usr/include/c++/11/cstdint \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \

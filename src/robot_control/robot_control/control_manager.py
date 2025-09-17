@@ -33,7 +33,7 @@ class ControlManager(Node):
         super().__init__('control_manager')
         
         # Control state
-        self.control_mode = ControlMode.IDLE
+        self.control_mode = ControlMode.MANUAL
         self.emergency_stop_active = False
         self.last_cmd_vel_time = time.time()
         
@@ -55,7 +55,7 @@ class ControlManager(Node):
     
     def _setup_publishers(self):
         """Setup ROS publishers"""
-        self.cmd_vel_pub = self.create_publisher(Twist, 'cmd_vel_filtered', 10)
+        self.cmd_vel_pub = self.create_publisher(Twist, 'cmd_vel', 10)
         self.control_status_pub = self.create_publisher(String, 'control_status', 10)
         self.emergency_stop_pub = self.create_publisher(Bool, 'emergency_stop', 10)
         

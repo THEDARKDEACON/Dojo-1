@@ -1,4 +1,0 @@
-camera_ros
-nv21_converter_pkg
-robot_sensors
-sllidar_ros2

@@ -53,7 +53,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/Dojo/src/camera_ws/src/camera_ros
+CMAKE_SOURCE_DIR = /root/Dojo/backup_packages/camera_ws/src/camera_ros
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /root/Dojo/build/camera_ros
@@ -70,18 +70,18 @@ include CMakeFiles/camera_component.dir/progress.make
 include CMakeFiles/camera_component.dir/flags.make
 
 CMakeFiles/camera_component.dir/src/CameraNode.cpp.o: CMakeFiles/camera_component.dir/flags.make
-CMakeFiles/camera_component.dir/src/CameraNode.cpp.o: /root/Dojo/src/camera_ws/src/camera_ros/src/CameraNode.cpp
+CMakeFiles/camera_component.dir/src/CameraNode.cpp.o: /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/CameraNode.cpp
 CMakeFiles/camera_component.dir/src/CameraNode.cpp.o: CMakeFiles/camera_component.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Dojo/build/camera_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/camera_component.dir/src/CameraNode.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/camera_component.dir/src/CameraNode.cpp.o -MF CMakeFiles/camera_component.dir/src/CameraNode.cpp.o.d -o CMakeFiles/camera_component.dir/src/CameraNode.cpp.o -c /root/Dojo/src/camera_ws/src/camera_ros/src/CameraNode.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/camera_component.dir/src/CameraNode.cpp.o -MF CMakeFiles/camera_component.dir/src/CameraNode.cpp.o.d -o CMakeFiles/camera_component.dir/src/CameraNode.cpp.o -c /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/CameraNode.cpp
 
 CMakeFiles/camera_component.dir/src/CameraNode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/camera_component.dir/src/CameraNode.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Dojo/src/camera_ws/src/camera_ros/src/CameraNode.cpp > CMakeFiles/camera_component.dir/src/CameraNode.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/CameraNode.cpp > CMakeFiles/camera_component.dir/src/CameraNode.cpp.i
 
 CMakeFiles/camera_component.dir/src/CameraNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/camera_component.dir/src/CameraNode.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Dojo/src/camera_ws/src/camera_ros/src/CameraNode.cpp -o CMakeFiles/camera_component.dir/src/CameraNode.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/CameraNode.cpp -o CMakeFiles/camera_component.dir/src/CameraNode.cpp.s
 
 # Object files for target camera_component
 camera_component_OBJECTS = \
@@ -212,6 +212,6 @@ CMakeFiles/camera_component.dir/clean:
 .PHONY : CMakeFiles/camera_component.dir/clean
 
 CMakeFiles/camera_component.dir/depend:
-	cd /root/Dojo/build/camera_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Dojo/src/camera_ws/src/camera_ros /root/Dojo/src/camera_ws/src/camera_ros /root/Dojo/build/camera_ros /root/Dojo/build/camera_ros /root/Dojo/build/camera_ros/CMakeFiles/camera_component.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/Dojo/build/camera_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Dojo/backup_packages/camera_ws/src/camera_ros /root/Dojo/backup_packages/camera_ws/src/camera_ros /root/Dojo/build/camera_ros /root/Dojo/build/camera_ros /root/Dojo/build/camera_ros/CMakeFiles/camera_component.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/camera_component.dir/depend
 

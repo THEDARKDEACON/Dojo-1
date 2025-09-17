@@ -319,14 +319,17 @@ ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root
 # install(DIRECTORY "/root/Dojo/build/robot_perception/ament_cmake_python/robot_perception/robot_perception.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info")
 ament_cmake_symlink_install_directory("/root/Dojo/src/robot_perception" DIRECTORY "/root/Dojo/build/robot_perception/ament_cmake_python/robot_perception/robot_perception.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception-0.0.1-py3.10.egg-info")
 
-# install(DIRECTORY "/root/Dojo/src/robot_perception/src/robot_perception/robot_perception/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
-ament_cmake_symlink_install_directory("/root/Dojo/src/robot_perception" DIRECTORY "/root/Dojo/src/robot_perception/src/robot_perception/robot_perception/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+# install(DIRECTORY "/root/Dojo/src/robot_perception/robot_perception/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_perception" DIRECTORY "/root/Dojo/src/robot_perception/robot_perception/" "DESTINATION" "local/lib/python3.10/dist-packages/robot_perception" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
 
 # install(DIRECTORY "launch" "DESTINATION" "share/robot_perception")
 ament_cmake_symlink_install_directory("/root/Dojo/src/robot_perception" DIRECTORY "launch" "DESTINATION" "share/robot_perception")
 
 # install(DIRECTORY "config" "DESTINATION" "share/robot_perception")
 ament_cmake_symlink_install_directory("/root/Dojo/src/robot_perception" DIRECTORY "config" "DESTINATION" "share/robot_perception")
+
+# install(PROGRAMS "/root/Dojo/src/robot_perception/robot_perception/camera_processor.py" "/root/Dojo/src/robot_perception/robot_perception/object_detector.py" "DESTINATION" "lib/robot_perception")
+ament_cmake_symlink_install_programs("/root/Dojo/src/robot_perception" PROGRAMS "/root/Dojo/src/robot_perception/robot_perception/camera_processor.py" "/root/Dojo/src/robot_perception/robot_perception/object_detector.py" "DESTINATION" "lib/robot_perception")
 
 # install(FILES "/root/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_perception" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/root/Dojo/src/robot_perception" FILES "/root/Dojo/build/robot_perception/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_perception" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

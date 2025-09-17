@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_symlink_robot_perception.dir/compiler_depe
 include CMakeFiles/ament_cmake_python_symlink_robot_perception.dir/progress.make
 
 CMakeFiles/ament_cmake_python_symlink_robot_perception:
-	/usr/bin/cmake -E create_symlink /root/Dojo/src/robot_perception/src/robot_perception/robot_perception /root/Dojo/build/robot_perception/ament_cmake_python/robot_perception/robot_perception
+	/usr/bin/cmake -E create_symlink /root/Dojo/src/robot_perception/robot_perception /root/Dojo/build/robot_perception/ament_cmake_python/robot_perception/robot_perception
 
 ament_cmake_python_symlink_robot_perception: CMakeFiles/ament_cmake_python_symlink_robot_perception
 ament_cmake_python_symlink_robot_perception: CMakeFiles/ament_cmake_python_symlink_robot_perception.dir/build.make

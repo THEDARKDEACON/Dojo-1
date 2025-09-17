@@ -1,1 +1,1 @@
-/root/Dojo/src/camera_ws/src/camera_ros/launch/camera.launch.py
+/root/Dojo/backup_packages/camera_ws/src/camera_ros/launch/camera.launch.py

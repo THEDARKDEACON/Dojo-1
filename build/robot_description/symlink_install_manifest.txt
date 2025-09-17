@@ -1,7 +1,12 @@
 /root/Dojo/install/robot_description/share/robot_description/launch/display.launch.py
 /root/Dojo/install/robot_description/share/robot_description/launch/robot_state_publisher.launch.py
+/root/Dojo/install/robot_description/share/robot_description/urdf/common_properties.xacro
+/root/Dojo/install/robot_description/share/robot_description/urdf/dojo_robot.gazebo
+/root/Dojo/install/robot_description/share/robot_description/urdf/dojo_robot.urdf.xacro
 /root/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf
 /root/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf.xacro
+/root/Dojo/install/robot_description/share/robot_description/urdf/sensors/rplidar.urdf.xacro
+/root/Dojo/install/robot_description/share/robot_description/rviz/display.rviz
 /root/Dojo/install/robot_description/share/robot_description/rviz/robot.rviz
 /root/Dojo/install/robot_description/share/robot_description/environment/pythonpath.sh
 /root/Dojo/install/robot_description/share/robot_description/environment/pythonpath.dsv

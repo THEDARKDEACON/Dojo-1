@@ -53,7 +53,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/Dojo/src/camera_ws/src/camera_ros
+CMAKE_SOURCE_DIR = /root/Dojo/backup_packages/camera_ws/src/camera_ros
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /root/Dojo/build/camera_ros
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /root/Dojo/build/camera_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Dojo/src/camera_ws/src/camera_ros /root/Dojo/src/camera_ws/src/camera_ros /root/Dojo/build/camera_ros /root/Dojo/build/camera_ros /root/Dojo/build/camera_ros/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/Dojo/build/camera_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Dojo/backup_packages/camera_ws/src/camera_ros /root/Dojo/backup_packages/camera_ws/src/camera_ros /root/Dojo/build/camera_ros /root/Dojo/build/camera_ros /root/Dojo/build/camera_ros/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

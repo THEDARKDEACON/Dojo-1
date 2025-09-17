@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/Dojo/src/camera_ws/src/camera_ros/src/CameraNode.cpp" "CMakeFiles/camera_component.dir/src/CameraNode.cpp.o" "gcc" "CMakeFiles/camera_component.dir/src/CameraNode.cpp.o.d"
+  "/root/Dojo/backup_packages/camera_ws/src/camera_ros/src/CameraNode.cpp" "CMakeFiles/camera_component.dir/src/CameraNode.cpp.o" "gcc" "CMakeFiles/camera_component.dir/src/CameraNode.cpp.o.d"
   )
 
 # Targets to which this target links.

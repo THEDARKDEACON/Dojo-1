@@ -1,2 +1,0 @@
-Invoking command in '/root/Dojo/build/robot_navigation': /usr/bin/cmake /root/Dojo/src/robot_navigation -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_navigation
-Invoked command in '/root/Dojo/build/robot_navigation' returned '1': /usr/bin/cmake /root/Dojo/src/robot_navigation -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_navigation

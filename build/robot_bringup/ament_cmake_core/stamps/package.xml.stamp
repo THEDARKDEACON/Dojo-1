@@ -9,7 +9,7 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <exec_depend>rclpy</exec_depend>
-  <exec_depend>robot_sensors</exec_depend>
+  <exec_depend>robot_hardware</exec_depend>
   <exec_depend>robot_control</exec_depend>
   <exec_depend>robot_perception</exec_depend>
   <exec_depend>robot_description</exec_depend>

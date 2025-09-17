@@ -1,7 +1,7 @@
 CMakeFiles/param.dir/src/clamp.cpp.o: \
- /root/Dojo/src/camera_ws/src/camera_ros/src/clamp.cpp \
+ /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/clamp.cpp \
  /usr/include/stdc-predef.h \
- /root/Dojo/src/camera_ws/src/camera_ros/src/exceptions.hpp \
+ /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/exceptions.hpp \
  /opt/ros/humble/include/libcamera/libcamera/controls.h \
  /usr/include/assert.h /usr/include/features.h \
  /usr/include/features-time64.h \
@@ -224,7 +224,7 @@ CMakeFiles/param.dir/src/clamp.cpp.o: \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
  /opt/ros/humble/include/libcamera/libcamera/base/compiler.h \
- /root/Dojo/src/camera_ws/src/camera_ros/src/libcamera_version_utils.hpp \
+ /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/libcamera_version_utils.hpp \
  /opt/ros/humble/include/libcamera/libcamera/version.h \
- /root/Dojo/src/camera_ws/src/camera_ros/src/types.hpp \
+ /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/types.hpp \
  /usr/include/c++/11/cassert /usr/include/c++/11/cstddef

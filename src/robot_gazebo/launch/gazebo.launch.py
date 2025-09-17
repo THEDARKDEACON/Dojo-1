@@ -1,136 +1,172 @@
-import os
-from ament_index_python.packages import get_package_share_directory
+#!/usr/bin/env python3
+"""
+Gazebo Simulation Launch for Dojo Robot
+Integrates with the new robot_description package
+"""
+
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, ExecuteProcess, RegisterEventHandler
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import Command, LaunchConfiguration, PythonExpression
-from launch_ros.actions import Node
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, ExecuteProcess, RegisterEventHandler
 from launch.conditions import IfCondition
 from launch.event_handlers import OnProcessExit
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, Command
+from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
+import os
 
 def generate_launch_description():
-    # Get the package directory
-    pkg_robot_gazebo = get_package_share_directory('robot_gazebo')
-    pkg_robot_description = get_package_share_directory('robot_description')
-    
-    # Launch configuration variables
+    # Launch arguments
+    world_name = LaunchConfiguration('world', default='empty.world')
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
+    gui = LaunchConfiguration('gui', default='true')
     headless = LaunchConfiguration('headless', default='false')
-    world = LaunchConfiguration('world', default='empty.world')
+    debug = LaunchConfiguration('debug', default='false')
+    verbose = LaunchConfiguration('verbose', default='false')
+    spawn_x = LaunchConfiguration('spawn_x', default='0.0')
+    spawn_y = LaunchConfiguration('spawn_y', default='0.0')
+    spawn_z = LaunchConfiguration('spawn_z', default='0.1')
+    spawn_yaw = LaunchConfiguration('spawn_yaw', default='0.0')
     
-    # Path to the world file
-    world_path = os.path.join(pkg_robot_gazebo, 'worlds', world)
+    # Get robot description
+    robot_description_content = Command([
+        'xacro ', 
+        PathJoinSubstitution([
+            FindPackageShare('robot_description'),
+            'urdf',
+            'dojo_robot.urdf.xacro'
+        ])
+    ])
     
-    # Path to the RViz configuration file
-    rviz_config_path = os.path.join(pkg_robot_gazebo, 'rviz', 'robot_simulation.rviz')
+    robot_description = {'robot_description': robot_description_content}
     
-    # Robot description
-    robot_description = Command(['xacro ', os.path.join(pkg_robot_description, 'urdf', 'robot.urdf.xacro')])
+    # Gazebo world file
+    world_file = PathJoinSubstitution([
+        FindPackageShare('robot_gazebo'),
+        'worlds',
+        world_name
+    ])
     
     # Gazebo launch
-    gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')
-        ),
+    gazebo_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([
+                FindPackageShare('gazebo_ros'),
+                'launch',
+                'gazebo.launch.py'
+            ])
+        ]),
         launch_arguments={
-            'verbose': 'false',
-            'pause': 'false',
-            'world': world_path,
-            'gui': 'true',
-            'headless': headless,
-            'use_sim_time': use_sim_time
+            'world': world_file,
+            'gui': gui,
+            'server': 'true',
+            'debug': debug,
+            'verbose': verbose
         }.items()
     )
     
     # Robot state publisher
-    robot_state_publisher = Node(
+    robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
-        name='robot_state_publisher',
-        output='screen',
-        parameters=[{
-            'use_sim_time': use_sim_time,
-            'robot_description': robot_description,
-            'publish_frequency': 50.0
-        }]
-    )
-    
-    # Spawn robot
-    spawn_entity = Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=['-topic', 'robot_description', '-entity', 'robot'],
+        parameters=[robot_description, {'use_sim_time': use_sim_time}],
         output='screen'
     )
     
-    # RViz
-    rviz = Node(
-        package='rviz2',
-        executable='rviz2',
-        name='rviz2',
-        output='screen',
-        arguments=['-d', rviz_config_path],
-        parameters=[{'use_sim_time': use_sim_time}],
-        condition=IfCondition(LaunchConfiguration('rviz', default='true'))
+    # Spawn robot in Gazebo
+    spawn_robot_node = Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        arguments=[
+            '-entity', 'dojo_robot',
+            '-topic', 'robot_description',
+            '-x', spawn_x,
+            '-y', spawn_y,
+            '-z', spawn_z,
+            '-Y', spawn_yaw
+        ],
+        output='screen'
     )
     
     # Joint state broadcaster
-    joint_state_broadcaster = Node(
+    joint_state_broadcaster_spawner = Node(
         package='controller_manager',
         executable='spawner',
-        arguments=['joint_state_broadcaster', '--controller-manager', '/controller_manager']
+        arguments=['joint_state_broadcaster'],
+        parameters=[{'use_sim_time': use_sim_time}],
+        output='screen'
     )
     
-    # Robot controller
-    robot_controller = Node(
+    # Differential drive controller
+    diff_drive_spawner = Node(
         package='controller_manager',
         executable='spawner',
-        arguments=['diff_drive_controller', '--controller-manager', '/controller_manager']
+        arguments=['diff_drive_controller'],
+        parameters=[{'use_sim_time': use_sim_time}],
+        output='screen'
     )
     
-    # Delay start of robot controller after joint state broadcaster
-    delay_robot_controller = RegisterEventHandler(
+    # Delay controller spawning after robot spawn
+    delay_joint_state_broadcaster_after_spawn = RegisterEventHandler(
         event_handler=OnProcessExit(
-            target_action=joint_state_broadcaster,
-            on_exit=[robot_controller],
+            target_action=spawn_robot_node,
+            on_exit=[joint_state_broadcaster_spawner],
         )
     )
     
-    # Delay start of RViz after robot is spawned
-    delay_rviz = RegisterEventHandler(
+    delay_diff_drive_after_joint_state = RegisterEventHandler(
         event_handler=OnProcessExit(
-            target_action=spawn_entity,
-            on_exit=[rviz],
+            target_action=joint_state_broadcaster_spawner,
+            on_exit=[diff_drive_spawner],
         )
+    )
+    
+    # RViz (optional)
+    rviz_config_file = PathJoinSubstitution([
+        FindPackageShare('robot_gazebo'),
+        'rviz',
+        'gazebo.rviz'
+    ])
+    
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        arguments=['-d', rviz_config_file],
+        parameters=[{'use_sim_time': use_sim_time}],
+        output='screen',
+        condition=IfCondition(LaunchConfiguration('rviz', default='false'))
     )
     
     return LaunchDescription([
         # Launch arguments
-        DeclareLaunchArgument(
-            'use_sim_time',
-            default_value='true',
-            description='Use simulation (Gazebo) clock if true'),
-            
-        DeclareLaunchArgument(
-            'headless',
-            default_value='false',
-            description='Run Gazebo in headless mode if true'),
-            
-        DeclareLaunchArgument(
-            'world',
-            default_value='empty.world',
-            description='World file to load'),
-            
-        DeclareLaunchArgument(
-            'rviz',
-            default_value='true',
-            description='Launch RViz if true'),
+        DeclareLaunchArgument('world', default_value='empty.world',
+                            description='Gazebo world file'),
+        DeclareLaunchArgument('gui', default_value='true',
+                            description='Start Gazebo GUI'),
+        DeclareLaunchArgument('headless', default_value='false',
+                            description='Run Gazebo headless'),
+        DeclareLaunchArgument('debug', default_value='false',
+                            description='Start Gazebo in debug mode'),
+        DeclareLaunchArgument('verbose', default_value='false',
+                            description='Start Gazebo in verbose mode'),
+        DeclareLaunchArgument('use_sim_time', default_value='true',
+                            description='Use simulation clock'),
+        DeclareLaunchArgument('rviz', default_value='false',
+                            description='Start RViz'),
+        DeclareLaunchArgument('spawn_x', default_value='0.0',
+                            description='Robot spawn X position'),
+        DeclareLaunchArgument('spawn_y', default_value='0.0',
+                            description='Robot spawn Y position'),
+        DeclareLaunchArgument('spawn_z', default_value='0.1',
+                            description='Robot spawn Z position'),
+        DeclareLaunchArgument('spawn_yaw', default_value='0.0',
+                            description='Robot spawn yaw angle'),
         
-        # Nodes
-        gazebo,
-        robot_state_publisher,
-        spawn_entity,
-        joint_state_broadcaster,
-        delay_robot_controller,
-        delay_rviz,
+        # Launch nodes
+        gazebo_launch,
+        robot_state_publisher_node,
+        spawn_robot_node,
+        delay_joint_state_broadcaster_after_spawn,
+        delay_diff_drive_after_joint_state,
+        rviz_node
     ])

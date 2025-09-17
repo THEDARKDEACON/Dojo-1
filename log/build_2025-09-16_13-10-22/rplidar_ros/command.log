@@ -1,2 +1,0 @@
-Invoking command in '/root/Dojo/build/rplidar_ros': /usr/bin/cmake /root/Dojo/src/rplidar_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/rplidar_ros
-Invoked command in '/root/Dojo/build/rplidar_ros' returned '1': /usr/bin/cmake /root/Dojo/src/rplidar_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/rplidar_ros

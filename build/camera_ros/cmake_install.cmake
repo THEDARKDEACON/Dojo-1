@@ -1,4 +1,4 @@
-# Install script for directory: /root/Dojo/src/camera_ws/src/camera_ros
+# Install script for directory: /root/Dojo/backup_packages/camera_ws/src/camera_ros
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

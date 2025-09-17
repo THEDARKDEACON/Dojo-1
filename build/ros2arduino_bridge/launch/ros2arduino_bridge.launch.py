@@ -1,1 +1,0 @@
-/root/Dojo/src/ros2arduino_bridge/launch/ros2arduino_bridge.launch.py

@@ -313,8 +313,14 @@ message(STATUS "Execute custom install script")
 # install(DIRECTORY "launch/" "DESTINATION" "share/robot_description/launch")
 ament_cmake_symlink_install_directory("/root/Dojo/src/robot_description" DIRECTORY "launch/" "DESTINATION" "share/robot_description/launch")
 
-# install(DIRECTORY "urdf" "meshes" "rviz" "DESTINATION" "share/robot_description")
-ament_cmake_symlink_install_directory("/root/Dojo/src/robot_description" DIRECTORY "urdf" "meshes" "rviz" "DESTINATION" "share/robot_description")
+# install(DIRECTORY "urdf/" "DESTINATION" "share/robot_description/urdf")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_description" DIRECTORY "urdf/" "DESTINATION" "share/robot_description/urdf")
+
+# install(DIRECTORY "meshes/" "DESTINATION" "share/robot_description/meshes")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_description" DIRECTORY "meshes/" "DESTINATION" "share/robot_description/meshes")
+
+# install(DIRECTORY "rviz/" "DESTINATION" "share/robot_description/rviz")
+ament_cmake_symlink_install_directory("/root/Dojo/src/robot_description" DIRECTORY "rviz/" "DESTINATION" "share/robot_description/rviz")
 
 # install(DIRECTORY "config/" "DESTINATION" "share/robot_description/config/" "PATTERN" "*.yaml" "PATTERN" "*.rviz")
 ament_cmake_symlink_install_directory("/root/Dojo/src/robot_description" DIRECTORY "config/" "DESTINATION" "share/robot_description/config/" "PATTERN" "*.yaml" "PATTERN" "*.rviz")

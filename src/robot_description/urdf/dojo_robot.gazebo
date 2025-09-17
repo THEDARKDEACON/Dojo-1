@@ -50,35 +50,10 @@
     <kd>100.0</kd>
   </gazebo>
 
-  <!-- Differential Drive Plugin -->
+  <!-- ROS2 Control Plugin -->
   <gazebo>
-    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-      <!-- ROS Topics -->
-      <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      
-      <!-- Robot Frames -->
-      <robotBaseFrame>base_footprint</robotBaseFrame>
-      
-      <!-- Wheel Configuration (4-wheel drive) -->
-      <leftJoint>rear_left_wheel_joint</leftJoint>
-      <leftJoint>front_left_wheel_joint</leftJoint>
-      <rightJoint>rear_right_wheel_joint</rightJoint>
-      <rightJoint>front_right_wheel_joint</rightJoint>
-      
-      <!-- Kinematic Parameters -->
-      <wheelSeparation>0.26</wheelSeparation>
-      <wheelDiameter>0.065</wheelDiameter>
-      
-      <!-- Physics Parameters -->
-      <torque>1.0</torque>
-      <publishOdom>true</publishOdom>
-      <publishWheelTF>true</publishWheelTF>
-      <publishOdomTF>true</publishOdomTF>
-      
-      <!-- Update rate -->
-      <updateRate>50</updateRate>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <parameters>$(find robot_gazebo)/config/ros2_control.yaml</parameters>
     </plugin>
   </gazebo>
 

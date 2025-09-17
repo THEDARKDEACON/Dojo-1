@@ -314,61 +314,61 @@ message(STATUS "Execute custom install script")
 include("/root/Dojo/build/camera_ros/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/camera_ros/environment")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/camera_ros/environment")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/camera_ros/environment")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/camera_ros/environment")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/camera_ros/environment")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/camera_ros/environment")
 
 # install(DIRECTORY "launch" "DESTINATION" "share/camera_ros/")
-ament_cmake_symlink_install_directory("/root/Dojo/src/camera_ws/src/camera_ros" DIRECTORY "launch" "DESTINATION" "share/camera_ros/")
+ament_cmake_symlink_install_directory("/root/Dojo/backup_packages/camera_ws/src/camera_ros" DIRECTORY "launch" "DESTINATION" "share/camera_ros/")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/camera_ros" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/camera_ros" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/camera_ros" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/camera_ros" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/camera_ros" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/camera_ros" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/camera_ros/environment")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/camera_ros/environment")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/camera_ros/environment")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/camera_ros/environment")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/camera_ros/environment")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/camera_ros/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/camera_ros/environment")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/camera_ros/environment")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/camera_ros/environment")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/camera_ros/environment")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/camera_ros/environment")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/camera_ros/environment")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/camera_ros")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/camera_ros")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/camera_ros")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/camera_ros")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/camera_ros")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/camera_ros")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/camera_ros")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/camera_ros")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/camera_ros")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/camera_ros")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/camera_ros")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/camera_ros")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/camera_ros")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/camera_ros")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/camera_ros")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/packages/camera_ros" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/packages/camera_ros" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/packages/camera_ros" "DESTINATION" "share/ament_index/resource_index/packages")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/rclcpp_components/camera_ros" "DESTINATION" "share/ament_index/resource_index/rclcpp_components")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/rclcpp_components/camera_ros" "DESTINATION" "share/ament_index/resource_index/rclcpp_components")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_index/share/ament_index/resource_index/rclcpp_components/camera_ros" "DESTINATION" "share/ament_index/resource_index/rclcpp_components")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/camera_ros/cmake")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/camera_ros/cmake")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/camera_ros/cmake")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/camera_ros/cmake")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/camera_ros/cmake")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/camera_ros/cmake")
 
 # install(FILES "/root/Dojo/build/camera_ros/ament_cmake_core/camera_rosConfig.cmake" "/root/Dojo/build/camera_ros/ament_cmake_core/camera_rosConfig-version.cmake" "DESTINATION" "share/camera_ros/cmake")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_core/camera_rosConfig.cmake" "/root/Dojo/build/camera_ros/ament_cmake_core/camera_rosConfig-version.cmake" "DESTINATION" "share/camera_ros/cmake")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/build/camera_ros/ament_cmake_core/camera_rosConfig.cmake" "/root/Dojo/build/camera_ros/ament_cmake_core/camera_rosConfig-version.cmake" "DESTINATION" "share/camera_ros/cmake")
 
-# install(FILES "/root/Dojo/src/camera_ws/src/camera_ros/package.xml" "DESTINATION" "share/camera_ros")
-ament_cmake_symlink_install_files("/root/Dojo/src/camera_ws/src/camera_ros" FILES "/root/Dojo/src/camera_ws/src/camera_ros/package.xml" "DESTINATION" "share/camera_ros")
+# install(FILES "/root/Dojo/backup_packages/camera_ws/src/camera_ros/package.xml" "DESTINATION" "share/camera_ros")
+ament_cmake_symlink_install_files("/root/Dojo/backup_packages/camera_ws/src/camera_ros" FILES "/root/Dojo/backup_packages/camera_ws/src/camera_ros/package.xml" "DESTINATION" "share/camera_ros")

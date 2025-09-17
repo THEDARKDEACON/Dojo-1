@@ -1,1 +1,1 @@
-rclpy;robot_sensors;robot_control;robot_perception;robot_description;robot_navigation
+rclpy;robot_hardware;robot_control;robot_perception;robot_description;robot_navigation

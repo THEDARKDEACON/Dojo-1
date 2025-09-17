@@ -1,7 +1,7 @@
 CMakeFiles/utils.dir/src/format_mapping.cpp.o: \
- /root/Dojo/src/camera_ws/src/camera_ros/src/format_mapping.cpp \
+ /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/format_mapping.cpp \
  /usr/include/stdc-predef.h \
- /root/Dojo/src/camera_ws/src/camera_ros/src/format_mapping.hpp \
+ /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/format_mapping.hpp \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -140,7 +140,7 @@ CMakeFiles/utils.dir/src/format_mapping.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /root/Dojo/src/camera_ws/src/camera_ros/src/libcamera_version_utils.hpp \
+ /root/Dojo/backup_packages/camera_ws/src/camera_ros/src/libcamera_version_utils.hpp \
  /opt/ros/humble/include/libcamera/libcamera/version.h \
  /opt/ros/humble/include/libcamera/libcamera/formats.h \
  /opt/ros/humble/include/libcamera/libcamera/pixel_format.h \

@@ -1,7 +1,17 @@
+/root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/docker_simulation.launch.py
+/root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/full_simulation.launch.py
 /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/gazebo.launch.py
 /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/robot_simulation.launch.py
+/root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/simple_simulation.launch.py
+/root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/simulation.launch.py
 /root/Dojo/install/robot_gazebo/share/robot_gazebo/config/diff_drive_controller.yaml
+/root/Dojo/install/robot_gazebo/share/robot_gazebo/config/ekf_config.yaml
+/root/Dojo/install/robot_gazebo/share/robot_gazebo/config/ros2_control.yaml
+/root/Dojo/install/robot_gazebo/share/robot_gazebo/config/slam_config.yaml
+/root/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/full_simulation.rviz
 /root/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/robot_simulation.rviz
+/root/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/simulation.rviz
+/root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/dojo_world.world
 /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/empty.world
 /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/package_run_dependencies/robot_gazebo
 /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/parent_prefix_path/robot_gazebo

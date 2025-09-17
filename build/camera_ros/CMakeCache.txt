@@ -395,7 +395,7 @@ camera_ros_BINARY_DIR:STATIC=/root/Dojo/build/camera_ros
 camera_ros_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-camera_ros_SOURCE_DIR:STATIC=/root/Dojo/src/camera_ws/src/camera_ros
+camera_ros_SOURCE_DIR:STATIC=/root/Dojo/backup_packages/camera_ws/src/camera_ros
 
 //The directory containing a CMake configuration file for clang-format.
 clang-format_DIR:PATH=clang-format_DIR-NOTFOUND
@@ -657,7 +657,7 @@ CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/root/Dojo/src/camera_ws/src/camera_ros
+CMAKE_HOME_DIRECTORY:INTERNAL=/root/Dojo/backup_packages/camera_ws/src/camera_ros
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
