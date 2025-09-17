@@ -86,14 +86,7 @@ build_package() {
     local pkg=$1
     echo "📦 Building package: $pkg"
     
-    # Special handling for ros2arduino_bridge
-    if [ "$pkg" = "ros2arduino_bridge" ]; then
-        echo "🔧 Building ros2arduino_bridge with user installation..."
-        cd "$WORKSPACE/src/ros2arduino_bridge"
-        pip3 install --user -e .
-        cd "$WORKSPACE"
-        return $?
-    fi
+    # All packages use standard colcon build now
     
     # Build other packages with standard settings
     if colcon build \
@@ -143,9 +136,24 @@ build_workspace() {
     echo "🔍 Discovering all packages in the workspace..."
     local all_packages=($(colcon list -n))
     
-    # Define packages to exclude (URDF, Gazebo, and simulation-related)
+    # Validate that core new architecture packages exist
+    local required_packages=("robot_hardware" "robot_interfaces" "robot_control" "robot_bringup")
+    for req_pkg in "${required_packages[@]}"; do
+        if [[ ! " ${all_packages[@]} " =~ " ${req_pkg} " ]]; then
+            echo "⚠️  Warning: Required package '$req_pkg' not found. Make sure you have the latest repository."
+        fi
+    done
+    
+    # Define packages to exclude (URDF, Gazebo, simulation-related, and legacy packages)
     local excluded_packages=(
         "robot_gazebo"
+        "arduino_bridge"
+        "ros2arduino_bridge"
+        "robot_sensors"
+        "vision_system"
+        "camera_ws"
+        "nv21_converter_pkg"
+        "robot_launch"
         "gazebo_ros2_control"
         "gazebo_ros"
         "gazebo_plugins"
@@ -233,29 +241,11 @@ build_workspace() {
             # Try to build the package with special handling for ros2arduino_bridge
             if $deps_met; then
                 echo "🚀 Building $pkg (attempt $((4 - remaining_attempts))/3)"
-                if [ "$pkg" = "ros2arduino_bridge" ]; then
-                    echo "🔧 Using special handling for ros2arduino_bridge..."
-                    cd "$WORKSPACE/src/ros2arduino_bridge"
-                    pip3 install --user -e .
-                    if [ $? -eq 0 ]; then
-                        built_something=true
-                        built_packages+=("$pkg")
-                        cd "$WORKSPACE"
-                        # Create a dummy package.sh to satisfy dependency checks
-                        mkdir -p "$WORKSPACE/install/ros2arduino_bridge/share/ros2arduino_bridge"
-                        touch "$WORKSPACE/install/ros2arduino_bridge/share/ros2arduino_bridge/package.sh"
-                        chmod +x "$WORKSPACE/install/ros2arduino_bridge/share/ros2arduino_bridge/package.sh"
-                    else
-                        success=false
-                    fi
-                    cd "$WORKSPACE"
+                if ! build_package "$pkg"; then
+                    success=false
                 else
-                    if ! build_package "$pkg"; then
-                        success=false
-                    else
-                        built_something=true
-                        built_packages+=("$pkg")
-                    fi
+                    built_something=true
+                    built_packages+=("$pkg")
                 fi
             fi
         done
