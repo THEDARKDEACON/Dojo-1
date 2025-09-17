@@ -7,8 +7,10 @@ Uses new modular hardware architecture
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, GroupAction
 from launch.conditions import IfCondition
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, Command
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
 from ament_index_python.packages import get_package_share_directory
 import os
 
@@ -19,6 +21,28 @@ def generate_launch_description():
     use_perception = LaunchConfiguration('use_perception', default='false')
     use_navigation = LaunchConfiguration('use_navigation', default='false')
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
+    use_robot_description = LaunchConfiguration('use_robot_description', default='true')
+    
+    # Robot description
+    robot_description_content = Command([
+        'xacro ', 
+        PathJoinSubstitution([
+            FindPackageShare('robot_description'),
+            'urdf',
+            'dojo_robot.urdf.xacro'
+        ])
+    ])
+    
+    robot_description = {'robot_description': robot_description_content}
+    
+    # Robot state publisher
+    robot_state_publisher_node = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        parameters=[robot_description, {'use_sim_time': use_sim_time}],
+        output='screen',
+        condition=IfCondition(use_robot_description)
+    )
     
     # Hardware layer - new unified hardware interface
     hardware_launch = IncludeLaunchDescription(
@@ -66,6 +90,7 @@ def generate_launch_description():
     
     # Group all launches for better organization
     robot_group = GroupAction([
+        robot_state_publisher_node,
         hardware_launch,
         control_launch,
         perception_launch,
@@ -84,6 +109,8 @@ def generate_launch_description():
                             description='Launch navigation system'),
         DeclareLaunchArgument('use_sim_time', default_value='false',
                             description='Use simulation clock'),
+        DeclareLaunchArgument('use_robot_description', default_value='true',
+                            description='Launch robot state publisher'),
     ]
 
     return LaunchDescription([
