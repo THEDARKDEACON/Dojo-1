@@ -14,6 +14,7 @@ arduino_driver:
     end_delimiter: ">"
     field_separator: ","
     debug: true
+    use_speed_commands: true
     
     # Motor parameters
     motor_max: 255
@@ -23,7 +24,7 @@ arduino_driver:
     
     # Encoder parameters
     encoder_ticks_per_rev: 20
-    wheel_circumference: 0.314
+    wheel_circumference: 0.207
     
     # Safety limits
     max_speed: 0.5

@@ -57,6 +57,8 @@ class ArduinoDriver(Node):
         self.declare_parameter('field_separator', ',')
         self.declare_parameter('debug', True)
         self.declare_parameter('reconnect_interval', 5.0)
+        # Protocol mode: False = legacy PWM with bracketed lines, True = speed commands with 'M' and 'E' telemetry
+        self.declare_parameter('use_speed_commands', False)
         
         # Motor parameters
         self.declare_parameter('motor_max', 255)
@@ -151,16 +153,36 @@ class ArduinoDriver(Node):
         """Read and parse data from Arduino"""
         if not self.serial_conn or not self.serial_conn.in_waiting:
             return
-            
+
         try:
-            line = self.serial_conn.readline().decode('utf-8').strip()
+            raw = self.serial_conn.readline()
+            line = raw.decode('utf-8', errors='ignore').strip()
+            if not line:
+                return
+
+            # Handle debug lines from firmware (prefixed with 'D')
+            if line.startswith('D'):
+                if self.get_parameter('debug').value:
+                    self.get_logger().debug(f'Arduino: {line[1:]}')
+                return
+
+            # New telemetry protocol: lines starting with 'E'
+            if line.startswith('E'):
+                payload = line[1:]
+                self._parse_e_telemetry(payload)
+                return
+
+            # Legacy bracketed protocol: <...>
             if line.startswith(self.get_parameter('start_delimiter').value) and \
                line.endswith(self.get_parameter('end_delimiter').value):
-                
-                # Remove delimiters and parse
-                data_str = line[1:-1]  # Remove < and >
+                data_str = line[1:-1]
                 self._parse_sensor_data(data_str)
-                
+                return
+
+            # Unknown line format: ignore quietly
+            if self.get_parameter('debug').value:
+                self.get_logger().debug(f'Unknown line format: {line}')
+
         except Exception as e:
             self.get_logger().debug(f'Parse error: {e}')
     
@@ -188,6 +210,34 @@ class ArduinoDriver(Node):
                     
         except (ValueError, IndexError) as e:
             self.get_logger().debug(f'Data parsing error: {e}')
+
+    def _parse_e_telemetry(self, payload):
+      """Parse 'E' telemetry lines: left_ticks,right_ticks,left_rad,right_rad,left_pos,right_pos"""
+      try:
+          parts = payload.split(',')
+          if len(parts) < 6:
+              return
+
+          left_ticks = int(parts[0])
+          right_ticks = int(parts[1])
+          left_rad = float(parts[2])
+          right_rad = float(parts[3])
+          # left_pos = float(parts[4])  # meters (optional use)
+          # right_pos = float(parts[5])
+
+          # Update internal encoder tick counters
+          self.encoder_data['left'] = left_ticks
+          self.encoder_data['right'] = right_ticks
+
+          # Compute odometry from wheel angular velocities
+          wheel_radius = self.get_parameter('wheel_radius').value
+          wheel_base = self.get_parameter('wheel_base').value
+          v_left = left_rad * wheel_radius
+          v_right = right_rad * wheel_radius
+          # _publish_odometry expects left/right wheel linear velocities
+          self._publish_odometry(v_left, v_right, time.time())
+      except Exception as e:
+          self.get_logger().debug(f'E-telemetry parse error: {e}')
     
     def _update_encoders(self, left_ticks, right_ticks):
         """Update encoder data and publish odometry"""
@@ -267,21 +317,28 @@ class ArduinoDriver(Node):
         angular = msg.angular.z
         wheel_base = self.get_parameter('wheel_base').value
         wheel_radius = self.get_parameter('wheel_radius').value
-        
-        # Calculate wheel velocities
-        left_vel = linear - (angular * wheel_base / 2.0)
-        right_vel = linear + (angular * wheel_base / 2.0)
-        
-        # Convert to motor PWM values
-        motor_max = self.get_parameter('motor_max').value
-        left_pwm = int(max(-motor_max, min(motor_max, left_vel * 100)))
-        right_pwm = int(max(-motor_max, min(motor_max, right_vel * 100)))
-        
-        # Send to Arduino
-        self._send_motor_commands(left_pwm, right_pwm)    
 
-    def _send_motor_commands(self, left_pwm, right_pwm):
-        """Send motor commands to Arduino"""
+        # Calculate per-wheel linear velocities (m/s)
+        left_lin = linear - (angular * wheel_base / 2.0)
+        right_lin = linear + (angular * wheel_base / 2.0)
+
+        if self.get_parameter('use_speed_commands').value:
+            # Send target wheel speeds in rad/s using 'M<left>,<right>'
+            left_rad = left_lin / wheel_radius
+            right_rad = right_lin / wheel_radius
+            self._send_motor_commands(left_rad, right_rad)
+        else:
+            # Legacy: scale to PWM range
+            motor_max = self.get_parameter('motor_max').value
+            left_pwm = int(max(-motor_max, min(motor_max, left_lin * 100)))
+            right_pwm = int(max(-motor_max, min(motor_max, right_lin * 100)))
+            self._send_motor_commands(left_pwm, right_pwm)
+
+    def _send_motor_commands(self, left_value, right_value):
+        """Send motor commands to Arduino.
+        When use_speed_commands=true, values are wheel speeds (rad/s) and the command is 'M<left>,<right>\n'.
+        Otherwise, values are PWM and the command is '<left,right>\n' using configured delimiters.
+        """
         if not self.connected or not self.serial_conn:
             return
             
@@ -290,7 +347,11 @@ class ArduinoDriver(Node):
             end_delim = self.get_parameter('end_delimiter').value
             separator = self.get_parameter('field_separator').value
             
-            command = f"{start_delim}{left_pwm}{separator}{right_pwm}{end_delim}\n"
+            if self.get_parameter('use_speed_commands').value:
+                # Send rad/s with limited precision to reduce bandwidth
+                command = f"M{left_value:.3f}{separator}{right_value:.3f}\n"
+            else:
+                command = f"{start_delim}{left_value}{separator}{right_value}{end_delim}\n"
             
             with self.connection_lock:
                 self.serial_conn.write(command.encode('utf-8'))

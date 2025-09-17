@@ -10,6 +10,7 @@ from rclpy.qos import qos_profile_sensor_data
 import threading
 import time
 from enum import Enum
+import math
 
 from geometry_msgs.msg import Twist, PoseStamped
 from nav_msgs.msg import Odometry
@@ -142,8 +143,12 @@ class ControlManager(Node):
     
     def _scan_callback(self, msg):
         """Handle laser scan for obstacle detection"""
-        # Simple obstacle detection
-        min_distance = min([r for r in msg.ranges if r > msg.range_min and r < msg.range_max])
+        # Simple obstacle detection with robust filtering
+        valid = [r for r in msg.ranges if math.isfinite(r) and (r > msg.range_min) and (r < msg.range_max)]
+        if not valid:
+            # No valid measurements; skip processing this cycle
+            return
+        min_distance = min(valid)
         safety_distance = self.get_parameter('safety_stop_distance').value
         
         if min_distance < safety_distance:
