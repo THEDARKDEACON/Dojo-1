@@ -7,7 +7,6 @@ from launch.conditions import IfCondition
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    enable_camera = LaunchConfiguration('enable_camera', default='true')
     enable_vision = LaunchConfiguration('enable_vision', default='true')
     
     # Camera processing node
@@ -18,7 +17,8 @@ def generate_launch_description():
         output='screen',
         parameters=[
             {'use_sim_time': use_sim_time},
-            {'camera_topic': 'camera/image_raw'},
+            {'camera_topic': 'image_raw'},
+            {'camera_info_topic': 'camera_info'},
             {'debug': True}
         ],
         condition=IfCondition(enable_vision)
@@ -43,11 +43,6 @@ def generate_launch_description():
             'use_sim_time',
             default_value='false',
             description='Use simulation (Gazebo) clock if true'),
-            
-        DeclareLaunchArgument(
-            'enable_camera',
-            default_value='true',
-            description='Enable camera processing'),
             
         DeclareLaunchArgument(
             'enable_vision',

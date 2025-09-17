@@ -22,7 +22,7 @@ class ObjectDetector(Node):
         # Subscribers
         self.image_sub = self.create_subscription(
             Image,
-            '/camera_ros/image_raw',
+            'image_raw',
             self.image_callback,
             10
         )
