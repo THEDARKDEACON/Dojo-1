@@ -23,6 +23,7 @@ setup(
         'console_scripts': [
             'arduino_bridge = robot_control.arduino_bridge:main',
             'cmd_vel_to_motors = robot_control.cmd_vel_to_motors:main',
+            'control_manager = robot_control.control_manager:main',
         ],
     },
 )

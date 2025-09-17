@@ -1,17 +1,33 @@
 #!/usr/bin/env python3
+"""
+Updated Robot Control Launch File
+Uses new control manager architecture with backward compatibility
+"""
+
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
-from launch.conditions import IfCondition
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    use_arduino = LaunchConfiguration('use_arduino', default='true')
+    use_legacy_nodes = LaunchConfiguration('use_legacy_nodes', default='false')
+    use_control_manager = LaunchConfiguration('use_control_manager', default='true')
     
-    # Arduino bridge node
-    arduino_bridge = Node(
+    # New Control Manager Node (recommended)
+    control_manager_node = Node(
+        package='robot_control',
+        executable='control_manager',
+        name='control_manager',
+        parameters=[{'use_sim_time': use_sim_time}],
+        output='screen',
+        condition=IfCondition(use_control_manager)
+    )
+    
+    # Legacy Arduino Bridge Node (for backward compatibility)
+    arduino_bridge_node = Node(
         package='robot_control',
         executable='arduino_bridge',
         name='arduino_bridge',
@@ -24,44 +40,44 @@ def generate_launch_description():
                 'arduino.yaml'
             ])
         ],
-        condition=IfCondition(use_arduino)
+        condition=IfCondition(use_legacy_nodes)
     )
     
-    # Cmd_vel to motor commands converter
-    cmd_vel_to_motors = Node(
+    # Legacy Command Velocity to Motors Node (for backward compatibility)
+    cmd_vel_to_motors_node = Node(
         package='robot_control',
         executable='cmd_vel_to_motors',
         name='cmd_vel_to_motors',
         output='screen',
         parameters=[
             {'use_sim_time': use_sim_time},
-            {'wheel_separation': 0.3},  # Distance between wheels in meters
-            {'wheel_radius': 0.05},     # Wheel radius in meters
-            {'max_motor_speed': 255},   # Max PWM value for motors
-            {'min_motor_speed': 50}     # Min PWM value to overcome friction
-        ]
+            {'wheel_separation': 0.3},
+            {'wheel_radius': 0.05},
+            {'max_motor_speed': 255},
+            {'min_motor_speed': 50}
+        ],
+        condition=IfCondition(use_legacy_nodes)
     )
     
-    # Static transform publisher for base_link to base_footprint
-    static_tf = Node(
+    # Static Transform Publisher (base_footprint to base_link)
+    static_tf_node = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
         name='base_link_to_base_footprint',
-        arguments=['0', '0', '0.1', '0', '0', '0', 'base_footprint', 'base_link']
+        arguments=['0', '0', '0.1', '0', '0', '0', 'base_footprint', 'base_link'],
+        output='screen'
     )
     
     return LaunchDescription([
-        DeclareLaunchArgument(
-            'use_sim_time',
-            default_value='false',
-            description='Use simulation (Gazebo) clock if true'),
-            
-        DeclareLaunchArgument(
-            'use_arduino',
-            default_value='true',
-            description='Enable Arduino bridge node'),
-            
-        arduino_bridge,
-        cmd_vel_to_motors,
-        static_tf,
+        DeclareLaunchArgument('use_sim_time', default_value='false', 
+                            description='Use simulation clock'),
+        DeclareLaunchArgument('use_legacy_nodes', default_value='false',
+                            description='Use legacy arduino_bridge and cmd_vel_to_motors nodes'),
+        DeclareLaunchArgument('use_control_manager', default_value='true',
+                            description='Use new control manager'),
+        
+        control_manager_node,
+        arduino_bridge_node,
+        cmd_vel_to_motors_node,
+        static_tf_node
     ])
