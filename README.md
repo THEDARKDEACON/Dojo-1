@@ -5,14 +5,25 @@ A modular, safety-focused ROS2 robotics platform for autonomous navigation and m
 ## 🚀 Quick Start
 
 ```bash
-# Build the workspace
-./build_ros2_pi.sh
+# Build the workspace (recommended)
+colcon build --packages-up-to robot_bringup
+source install/setup.bash
 
-# Launch the complete robot system
-ros2 launch robot_bringup bringup.launch.py
+# Alternative (Docker-oriented consolidated script)
+# ./build_and_fix.sh
+
+# Real hardware (no Gazebo): Arduino only
+ros2 launch robot_bringup bringup.launch.py \
+  use_gazebo:=false use_arduino:=true use_camera:=false use_lidar:=false
+
+# Real hardware: full stack (adjust sensors as needed)
+ros2 launch robot_bringup bringup.launch.py use_gazebo:=false
+
+# Simulation (Gazebo): requires building robot_gazebo
+ros2 launch robot_bringup bringup.launch.py use_gazebo:=true use_sim_time:=true
 
 # Or launch individual components
-ros2 launch robot_hardware hardware.launch.py    # Hardware only
+ros2 launch robot_hardware hardware.launch.py    # Hardware only (supports use_arduino/use_camera/use_lidar)
 ros2 launch robot_control control.launch.py      # Control only
 ```
 
@@ -141,6 +152,15 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ros2 topic echo /system_status
 ros2 topic echo /diagnostics
 ```
+
+### Simulation vs Real Hardware
+
+- Real hardware (no Gazebo): set `use_gazebo:=false` so the URDF doesn’t require simulation-only dependencies. Example:
+  - `ros2 launch robot_bringup bringup.launch.py use_gazebo:=false`
+- Simulation (Gazebo): set `use_gazebo:=true use_sim_time:=true` and ensure the `robot_gazebo/` package is built and sourced.
+  - `colcon build --packages-select robot_gazebo && source install/setup.bash`
+  - `ros2 launch robot_bringup bringup.launch.py use_gazebo:=true use_sim_time:=true`
+- Sensor toggles: `use_arduino`, `use_camera`, `use_lidar` are available in both `bringup.launch.py` and `hardware.launch.py` to selectively enable drivers.
 
 ### Hardware Testing
 
@@ -320,6 +340,16 @@ colcon build --packages-select robot_hardware
 rm -rf build/ install/ log/
 ./build_ros2_pi.sh
 ```
+
+#### Notes
+
+- To avoid legacy package issues (e.g., `ros2arduino_bridge` installing to `/lib`), skip legacy packages during build:
+  - `colcon build --packages-skip ros2arduino_bridge arduino_bridge robot_sensors nv21_converter_pkg`
+  - Or move `backup_packages/` outside the workspace so `colcon` doesn’t discover them.
+- For simulation, ensure `robot_gazebo` is built when launching with `use_gazebo:=true`:
+  - `colcon build --packages-select robot_gazebo`
+  - `source install/setup.bash`
+
 
 ## 📊 System Monitoring
 

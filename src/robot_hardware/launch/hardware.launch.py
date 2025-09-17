@@ -19,6 +19,7 @@ def generate_launch_description():
     use_lidar = LaunchConfiguration('use_lidar', default='true')
     use_hardware_manager = LaunchConfiguration('use_hardware_manager', default='true')
     config_file = LaunchConfiguration('config_file', default='hardware.yaml')
+    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
     
     # Get config file path
     config_path = PathJoinSubstitution([
@@ -32,7 +33,7 @@ def generate_launch_description():
         package='robot_hardware',
         executable='arduino_driver',
         name='arduino_driver',
-        parameters=[config_path],
+        parameters=[config_path, {'use_sim_time': use_sim_time}],
         output='screen',
         condition=IfCondition(use_arduino)
     )
@@ -42,7 +43,7 @@ def generate_launch_description():
         package='robot_hardware',
         executable='camera_driver',
         name='camera_driver',
-        parameters=[config_path],
+        parameters=[config_path, {'use_sim_time': use_sim_time}],
         output='screen',
         condition=IfCondition(use_camera)
     )
@@ -52,7 +53,7 @@ def generate_launch_description():
         package='robot_hardware',
         executable='lidar_driver',
         name='lidar_driver',
-        parameters=[config_path],
+        parameters=[config_path, {'use_sim_time': use_sim_time}],
         output='screen',
         condition=IfCondition(use_lidar)
     )
@@ -62,7 +63,7 @@ def generate_launch_description():
         package='robot_hardware',
         executable='hardware_manager',
         name='hardware_manager',
-        parameters=[config_path],
+        parameters=[config_path, {'use_sim_time': use_sim_time}],
         output='screen',
         condition=IfCondition(use_hardware_manager)
     )
@@ -100,6 +101,11 @@ def generate_launch_description():
         'config_file',
         default_value='hardware.yaml',
         description='Hardware configuration file')
+    
+    declare_use_sim_time = DeclareLaunchArgument(
+        'use_sim_time',
+        default_value='false',
+        description='Use simulation (Gazebo) clock if true')
 
     return LaunchDescription([
         declare_use_arduino,
@@ -107,5 +113,6 @@ def generate_launch_description():
         declare_use_lidar,
         declare_use_hardware_manager,
         declare_config_file,
+        declare_use_sim_time,
         hardware_group
     ])

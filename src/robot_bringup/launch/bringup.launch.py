@@ -22,6 +22,11 @@ def generate_launch_description():
     use_navigation = LaunchConfiguration('use_navigation', default='false')
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
     use_robot_description = LaunchConfiguration('use_robot_description', default='true')
+    # New flags
+    use_gazebo = LaunchConfiguration('use_gazebo', default='false')
+    use_arduino = LaunchConfiguration('use_arduino', default='true')
+    use_camera = LaunchConfiguration('use_camera', default='true')
+    use_lidar = LaunchConfiguration('use_lidar', default='true')
     
     # Robot description
     robot_description_content = Command([
@@ -30,7 +35,9 @@ def generate_launch_description():
             FindPackageShare('robot_description'),
             'urdf',
             'dojo_robot.urdf.xacro'
-        ])
+        ]),
+        ' ',
+        'use_gazebo:=', use_gazebo
     ])
     
     robot_description = {'robot_description': robot_description_content}
@@ -50,7 +57,10 @@ def generate_launch_description():
             os.path.join(get_package_share_directory('robot_hardware'), 'launch', 'hardware.launch.py')
         ),
         launch_arguments={
-            'use_sim_time': use_sim_time
+            'use_sim_time': use_sim_time,
+            'use_arduino': use_arduino,
+            'use_camera': use_camera,
+            'use_lidar': use_lidar,
         }.items(),
         condition=IfCondition(use_hardware)
     )
@@ -111,6 +121,15 @@ def generate_launch_description():
                             description='Use simulation clock'),
         DeclareLaunchArgument('use_robot_description', default_value='true',
                             description='Launch robot state publisher'),
+        # New flags
+        DeclareLaunchArgument('use_gazebo', default_value='false',
+                            description='Include Gazebo-specific elements in robot description'),
+        DeclareLaunchArgument('use_arduino', default_value='true',
+                            description='Enable Arduino driver'),
+        DeclareLaunchArgument('use_camera', default_value='true',
+                            description='Enable camera driver'),
+        DeclareLaunchArgument('use_lidar', default_value='true',
+                            description='Enable LiDAR driver'),
     ]
 
     return LaunchDescription([
