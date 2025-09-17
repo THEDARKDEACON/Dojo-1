@@ -1,2 +1,2 @@
 [console_scripts]
-camera_publisher = robot_sensors.camera_publisher:main
+camera_node = robot_sensors.nodes.camera_node:main

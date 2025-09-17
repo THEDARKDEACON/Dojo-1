@@ -1,2 +1,10 @@
-setuptools
-opencv-python
+camera_info_manager_py>=0.2.0
+cv_bridge_py>=3.0.0
+image_transport>=3.0.0
+libcamera>=0.0.1
+numpy>=1.19.5
+opencv-python>=4.5.0
+pyserial>=3.5
+rclpy>=3.0.0
+sensor_msgs>=3.0.0
+setuptools>=58.2.0
