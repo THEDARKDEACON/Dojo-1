@@ -1,8 +1,0 @@
-setup.py
-robot_perception/__init__.py
-robot_perception/camera_processor.py
-robot_perception/object_detector.py
-robot_perception.egg-info/PKG-INFO
-robot_perception.egg-info/SOURCES.txt
-robot_perception.egg-info/dependency_links.txt
-robot_perception.egg-info/top_level.txt

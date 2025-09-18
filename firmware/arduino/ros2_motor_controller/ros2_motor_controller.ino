@@ -30,9 +30,9 @@
 
 // ===== Robot Geometry & Encoders =====
 const int   ENCODER_TICKS_PER_REV = 20;            // Must match ROS param arduino_driver.encoder_ticks_per_rev
-const float WHEEL_RADIUS           = 0.033f;       // meters; must match arduino_driver.wheel_radius
+const float WHEEL_RADIUS           = 0.030f;       // meters; must match arduino_driver.wheel_radius
 const float WHEEL_CIRCUMFERENCE    = 2.0f * PI * WHEEL_RADIUS; // meters; must match arduino_driver.wheel_circumference
-const float WHEEL_SEPARATION       = 0.20f;        // meters; must match arduino_driver.wheel_base
+const float WHEEL_SEPARATION       = 0.26f;        // meters; must match arduino_driver.wheel_base
 
 // ===== Motor/Controller Limits =====
 const int   MAX_PWM             = 255;  // 8-bit PWM

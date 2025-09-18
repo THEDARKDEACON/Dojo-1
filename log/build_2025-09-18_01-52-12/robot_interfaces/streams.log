@@ -1,0 +1,371 @@
+[0.984s] Invoking command in '/root/Dojo/build/robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake /root/Dojo/src/robot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_interfaces
+[1.036s] -- The C compiler identification is GNU 11.4.0
+[1.095s] -- The CXX compiler identification is GNU 11.4.0
+[1.103s] -- Detecting C compiler ABI info
+[1.174s] -- Detecting C compiler ABI info - done
+[1.181s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.181s] -- Detecting C compile features
+[1.182s] -- Detecting C compile features - done
+[1.185s] -- Detecting CXX compiler ABI info
+[1.268s] -- Detecting CXX compiler ABI info - done
+[1.275s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.275s] -- Detecting CXX compile features
+[1.276s] -- Detecting CXX compile features - done
+[1.281s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.019s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.094s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.147s] -- Found builtin_interfaces: 1.2.2 (/opt/ros/humble/share/builtin_interfaces/cmake)
+[2.201s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.213s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.227s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.244s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.269s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.292s] -- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+[2.308s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[2.325s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.346s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[2.818s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[3.393s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.759s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.807s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[3.815s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[3.868s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[3.868s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[3.869s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[3.869s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[3.912s] -- Found PythonExtra: .so  
+[4.110s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[4.129s] -- Configuring done
+[4.260s] -- Generating done
+[4.279s] -- Build files have been written to: /root/Dojo/build/robot_interfaces
+[4.297s] Invoked command in '/root/Dojo/build/robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake /root/Dojo/src/robot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_interfaces
+[4.300s] Invoking command in '/root/Dojo/build/robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_interfaces -- -j16 -l16
+[4.361s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[4.377s] [  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[4.389s] [  2%] Built target ament_cmake_python_symlink_robot_interfaces
+[5.005s] running egg_info
+[5.007s] creating robot_interfaces.egg-info
+[5.024s] writing robot_interfaces.egg-info/PKG-INFO
+[5.025s] writing dependency_links to robot_interfaces.egg-info/dependency_links.txt
+[5.025s] writing top-level names to robot_interfaces.egg-info/top_level.txt
+[5.025s] writing manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[5.076s] reading manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[5.077s] writing manifest file 'robot_interfaces.egg-info/SOURCES.txt'
+[5.152s] [  2%] Built target ament_cmake_python_build_robot_interfaces_egg
+[5.767s] [  7%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/srv/detail/calibration__functions.c.o[0m
+[5.768s] [  7%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/robot_state__functions.c.o[0m
+[5.768s] [  7%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/sensor_data__functions.c.o[0m
+[5.769s] [  8%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/srv/detail/set_mode__functions.c.o[0m
+[5.769s] [ 10%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/action/detail/navigation__functions.c.o[0m
+[5.770s] [ 10%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/hardware_status__functions.c.o[0m
+[5.770s] [ 11%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/robot_interfaces/msg/detail/motor_command__functions.c.o[0m
+[5.862s] [ 11%] Built target robot_interfaces__cpp
+[5.876s] [ 13%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[5.876s] [ 15%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[5.877s] [ 15%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[5.945s] [ 16%] [32m[1mLinking C shared library librobot_interfaces__rosidl_generator_c.so[0m
+[5.999s] [ 16%] Built target robot_interfaces__rosidl_generator_c
+[6.016s] [ 17%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[6.017s] [ 18%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[6.019s] [ 20%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[6.877s] [ 24%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/srv/calibration__type_support.cpp.o[0m
+[6.877s] [ 24%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/motor_command__type_support.cpp.o[0m
+[6.877s] [ 24%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/hardware_status__type_support.cpp.o[0m
+[6.878s] [ 25%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/sensor_data__type_support.cpp.o[0m
+[6.878s] [ 26%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/action/navigation__type_support.cpp.o[0m
+[6.878s] [ 27%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/srv/set_mode__type_support.cpp.o[0m
+[6.880s] [ 29%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_interfaces/msg/robot_state__type_support.cpp.o[0m
+[7.098s] [ 30%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/sensor_data__type_support.cpp.o[0m
+[7.104s] [ 31%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/hardware_status__type_support.cpp.o[0m
+[7.140s] [ 34%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/motor_command__type_support.cpp.o[0m
+[7.143s] [ 34%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/srv/detail/calibration__type_support.cpp.o[0m
+[7.145s] [ 35%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/msg/detail/robot_state__type_support.cpp.o[0m
+[7.191s] [ 36%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/hardware_status__type_support.cpp.o[0m
+[7.265s] [ 37%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/sensor_data__type_support.cpp.o[0m
+[7.361s] [ 39%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/srv/calibration__type_support.cpp.o[0m
+[7.368s] [ 40%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/robot_state__type_support.cpp.o[0m
+[7.368s] [ 41%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/msg/motor_command__type_support.cpp.o[0m
+[7.375s] [ 43%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/srv/detail/set_mode__type_support.cpp.o[0m
+[7.412s] [ 44%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_interfaces/action/detail/navigation__type_support.cpp.o[0m
+[7.434s] [ 45%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/srv/set_mode__type_support.cpp.o[0m
+[7.435s] [ 46%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_interfaces/action/navigation__type_support.cpp.o[0m
+[7.482s] [ 48%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/hardware_status__type_support.cpp.o[0m
+[7.494s] [ 50%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/motor_command__type_support.cpp.o[0m
+[7.496s] [ 50%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/sensor_data__type_support.cpp.o[0m
+[7.522s] [ 51%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/msg/detail/dds_fastrtps/robot_state__type_support.cpp.o[0m
+[7.553s] [ 53%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/srv/detail/dds_fastrtps/calibration__type_support.cpp.o[0m
+[7.568s] [ 54%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/hardware_status__type_support.c.o[0m
+[7.581s] [ 55%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_c.so[0m
+[7.608s] [ 56%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/hardware_status__type_support_c.cpp.o[0m
+[7.723s] [ 58%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/sensor_data__type_support.c.o[0m
+[7.744s] [ 58%] Built target robot_interfaces__rosidl_typesupport_c
+[7.762s] [ 59%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/motor_command__type_support.c.o[0m
+[7.795s] [ 60%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_cpp.so[0m
+[7.844s] [ 62%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/sensor_data__type_support_c.cpp.o[0m
+[7.894s] [ 63%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/msg/detail/robot_state__type_support.c.o[0m
+[7.920s] [ 64%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/srv/detail/calibration__type_support.c.o[0m
+[7.958s] [ 65%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/srv/detail/dds_fastrtps/set_mode__type_support.cpp.o[0m
+[7.959s] [ 67%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/srv/detail/set_mode__type_support.c.o[0m
+[7.982s] [ 67%] Built target robot_interfaces__rosidl_typesupport_cpp
+[8.005s] [ 68%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_interfaces/action/detail/dds_fastrtps/navigation__type_support.cpp.o[0m
+[8.026s] [ 69%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/motor_command__type_support_c.cpp.o[0m
+[8.043s] [ 70%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_interfaces/action/detail/navigation__type_support.c.o[0m
+[8.067s] [ 73%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/srv/detail/calibration__type_support_c.cpp.o[0m
+[8.068s] [ 73%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/msg/detail/robot_state__type_support_c.cpp.o[0m
+[8.118s] [ 74%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/srv/detail/set_mode__type_support_c.cpp.o[0m
+[8.166s] [ 75%] [32m[1mLinking C shared library librobot_interfaces__rosidl_typesupport_introspection_c.so[0m
+[8.236s] [ 77%] [32mBuilding CXX object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_interfaces/action/detail/navigation__type_support_c.cpp.o[0m
+[8.270s] [ 77%] Built target robot_interfaces__rosidl_typesupport_introspection_c
+[8.645s] [ 78%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[8.747s] [ 78%] Built target robot_interfaces__rosidl_typesupport_introspection_cpp
+[8.827s] [ 79%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[8.859s] [ 81%] [32m[1mLinking CXX shared library librobot_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[8.921s] [ 81%] Built target robot_interfaces__rosidl_typesupport_fastrtps_c
+[8.951s] [ 81%] Built target robot_interfaces__rosidl_typesupport_fastrtps_cpp
+[8.974s] [ 81%] Built target robot_interfaces
+[8.996s] [ 82%] [34m[1mGenerating Python code for ROS interfaces[0m
+[10.824s] [ 82%] Built target robot_interfaces__py
+[10.846s] [ 86%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/action/_navigation_s.c.o[0m
+[10.846s] [ 86%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_sensor_data_s.c.o[0m
+[10.847s] [ 88%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_hardware_status_s.c.o[0m
+[10.847s] [ 86%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_motor_command_s.c.o[0m
+[10.847s] [ 91%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/msg/_robot_state_s.c.o[0m
+[10.847s] [ 91%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/srv/_calibration_s.c.o[0m
+[10.847s] [ 91%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/robot_interfaces/srv/_set_mode_s.c.o[0m
+[10.992s] [ 92%] [32m[1mLinking C shared library rosidl_generator_py/robot_interfaces/librobot_interfaces__rosidl_generator_py.so[0m
+[11.044s] [ 92%] Built target robot_interfaces__rosidl_generator_py
+[11.070s] [ 96%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[11.070s] [ 96%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[11.070s] [ 96%] [32mBuilding C object CMakeFiles/robot_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[11.213s] [100%] [32m[1mLinking C shared library rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[11.213s] [100%] [32m[1mLinking C shared library rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[11.213s] [100%] [32m[1mLinking C shared library rosidl_generator_py/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[11.261s] [100%] Built target robot_interfaces__rosidl_typesupport_c__pyext
+[11.262s] [100%] Built target robot_interfaces__rosidl_typesupport_introspection_c__pyext
+[11.262s] [100%] Built target robot_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[11.278s] Invoked command in '/root/Dojo/build/robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_interfaces -- -j16 -l16
+[11.280s] Invoking command in '/root/Dojo/build/robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_interfaces
+[11.288s] -- Install configuration: ""
+[11.288s] -- Execute custom install script
+[11.288s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/ament_index/resource_index/rosidl_interfaces/robot_interfaces
+[11.300s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__functions.h
+[11.309s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__struct.h
+[11.319s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__type_support.h
+[11.328s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/navigation.h
+[11.338s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__functions.h
+[11.348s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__struct.h
+[11.358s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__type_support.h
+[11.368s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__functions.h
+[11.378s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__struct.h
+[11.388s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__type_support.h
+[11.397s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__functions.h
+[11.407s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__struct.h
+[11.418s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__type_support.h
+[11.428s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__functions.h
+[11.438s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__struct.h
+[11.449s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__type_support.h
+[11.460s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/hardware_status.h
+[11.472s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/motor_command.h
+[11.486s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/robot_state.h
+[11.501s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_generator_c__visibility_control.h
+[11.513s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/sensor_data.h
+[11.525s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/calibration.h
+[11.536s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__functions.h
+[11.547s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__struct.h
+[11.558s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__type_support.h
+[11.569s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__functions.h
+[11.579s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__struct.h
+[11.591s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__type_support.h
+[11.604s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/set_mode.h
+[11.615s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/environment/library_path.sh
+[11.626s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/environment/library_path.dsv
+[11.637s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__rosidl_typesupport_fastrtps_c.h
+[11.647s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__rosidl_typesupport_fastrtps_c.h
+[11.658s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__rosidl_typesupport_fastrtps_c.h
+[11.668s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__rosidl_typesupport_fastrtps_c.h
+[11.679s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__rosidl_typesupport_fastrtps_c.h
+[11.689s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[11.699s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__rosidl_typesupport_fastrtps_c.h
+[11.709s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__rosidl_typesupport_fastrtps_c.h
+[11.719s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__builder.hpp
+[11.728s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__struct.hpp
+[11.739s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__traits.hpp
+[11.750s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__type_support.hpp
+[11.760s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/navigation.hpp
+[11.770s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__builder.hpp
+[11.780s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__struct.hpp
+[11.790s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__traits.hpp
+[11.800s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__type_support.hpp
+[11.810s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__builder.hpp
+[11.821s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__struct.hpp
+[11.830s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__traits.hpp
+[11.840s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__type_support.hpp
+[11.851s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__builder.hpp
+[11.861s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__struct.hpp
+[11.872s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__traits.hpp
+[11.882s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__type_support.hpp
+[11.892s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__builder.hpp
+[11.903s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__struct.hpp
+[11.912s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__traits.hpp
+[11.923s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__type_support.hpp
+[11.933s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/hardware_status.hpp
+[11.942s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/motor_command.hpp
+[11.952s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/robot_state.hpp
+[11.962s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[11.972s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/sensor_data.hpp
+[11.982s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/calibration.hpp
+[11.992s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__builder.hpp
+[12.002s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__struct.hpp
+[12.012s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__traits.hpp
+[12.023s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__type_support.hpp
+[12.033s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__builder.hpp
+[12.043s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__struct.hpp
+[12.054s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__traits.hpp
+[12.063s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__type_support.hpp
+[12.073s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/set_mode.hpp
+[12.083s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__rosidl_typesupport_fastrtps_cpp.hpp
+[12.092s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__rosidl_typesupport_fastrtps_cpp.hpp
+[12.102s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__rosidl_typesupport_fastrtps_cpp.hpp
+[12.111s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__rosidl_typesupport_fastrtps_cpp.hpp
+[12.121s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__rosidl_typesupport_fastrtps_cpp.hpp
+[12.130s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[12.139s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__rosidl_typesupport_fastrtps_cpp.hpp
+[12.148s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__rosidl_typesupport_fastrtps_cpp.hpp
+[12.158s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__rosidl_typesupport_introspection_c.h
+[12.168s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__rosidl_typesupport_introspection_c.h
+[12.177s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_c.h
+[12.187s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__rosidl_typesupport_introspection_c.h
+[12.196s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__rosidl_typesupport_introspection_c.h
+[12.205s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[12.215s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__rosidl_typesupport_introspection_c.h
+[12.224s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__rosidl_typesupport_introspection_c.h
+[12.234s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/action/detail/navigation__rosidl_typesupport_introspection_cpp.hpp
+[12.244s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/hardware_status__rosidl_typesupport_introspection_cpp.hpp
+[12.254s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_cpp.hpp
+[12.263s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/robot_state__rosidl_typesupport_introspection_cpp.hpp
+[12.273s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/msg/detail/sensor_data__rosidl_typesupport_introspection_cpp.hpp
+[12.283s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/calibration__rosidl_typesupport_introspection_cpp.hpp
+[12.292s] -- Symlinking: /root/Dojo/install/robot_interfaces/include/robot_interfaces/robot_interfaces/srv/detail/set_mode__rosidl_typesupport_introspection_cpp.hpp
+[12.301s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/environment/pythonpath.sh
+[12.310s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/environment/pythonpath.dsv
+[12.320s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces-1.0.0-py3.10.egg-info/PKG-INFO
+[12.329s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces-1.0.0-py3.10.egg-info/SOURCES.txt
+[12.338s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces-1.0.0-py3.10.egg-info/dependency_links.txt
+[12.347s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces-1.0.0-py3.10.egg-info/top_level.txt
+[12.357s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/__init__.py
+[12.366s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_c.c
+[12.376s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[12.386s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[12.394s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/action/__init__.py
+[12.404s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/action/_navigation.py
+[12.413s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/action/_navigation_s.c
+[12.423s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/librobot_interfaces__rosidl_generator_py.so
+[12.431s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/__init__.py
+[12.440s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_hardware_status.py
+[12.450s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_hardware_status_s.c
+[12.459s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_motor_command.py
+[12.470s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_motor_command_s.c
+[12.479s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_robot_state.py
+[12.488s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_robot_state_s.c
+[12.498s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_sensor_data.py
+[12.507s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_sensor_data_s.c
+[12.516s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[12.525s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[12.535s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[12.544s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/srv/__init__.py
+[12.553s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/srv/_calibration.py
+[12.563s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/srv/_calibration_s.c
+[12.572s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/srv/_set_mode.py
+[12.581s] -- Symlinking: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/srv/_set_mode_s.c
+[12.590s] -- Up-to-date symlink: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[12.591s] -- Up-to-date symlink: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[12.591s] -- Up-to-date symlink: /root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[12.591s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/msg/HardwareStatus.idl
+[12.600s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/msg/SensorData.idl
+[12.610s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/msg/MotorCommand.idl
+[12.619s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/msg/RobotState.idl
+[12.628s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/srv/Calibration.idl
+[12.638s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/srv/SetMode.idl
+[12.647s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/action/Navigation.idl
+[12.656s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/msg/HardwareStatus.msg
+[12.665s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/msg/SensorData.msg
+[12.674s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/msg/MotorCommand.msg
+[12.684s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/msg/RobotState.msg
+[12.693s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/srv/Calibration.srv
+[12.703s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/srv/Calibration_Request.msg
+[12.711s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/srv/Calibration_Response.msg
+[12.721s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/srv/SetMode.srv
+[12.730s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/srv/SetMode_Request.msg
+[12.740s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/srv/SetMode_Response.msg
+[12.749s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/action/Navigation.action
+[12.759s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/ament_index/resource_index/package_run_dependencies/robot_interfaces
+[12.769s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/ament_index/resource_index/parent_prefix_path/robot_interfaces
+[12.777s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/environment/ament_prefix_path.sh
+[12.787s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/environment/ament_prefix_path.dsv
+[12.795s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/environment/path.sh
+[12.806s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/environment/path.dsv
+[12.815s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/local_setup.bash
+[12.824s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/local_setup.sh
+[12.834s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/local_setup.zsh
+[12.843s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/local_setup.dsv
+[12.853s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/package.dsv
+[12.862s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/ament_index/resource_index/packages/robot_interfaces
+[12.872s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake-extras.cmake
+[12.881s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[12.891s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[12.900s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[12.909s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[12.920s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[12.928s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[12.938s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfacesConfig.cmake
+[12.947s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfacesConfig-version.cmake
+[12.957s] -- Symlinking: /root/Dojo/install/robot_interfaces/share/robot_interfaces/package.xml
+[12.967s] -- Installing: /root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_c.so
+[12.967s] -- Set runtime path of "/root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_c.so" to ""
+[12.967s] -- Installing: /root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_c.so
+[12.968s] -- Set runtime path of "/root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[12.968s] -- Installing: /root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[12.968s] -- Set runtime path of "/root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[12.969s] -- Installing: /root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_c.so
+[12.969s] -- Set runtime path of "/root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[12.969s] -- Installing: /root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_c.so
+[12.970s] -- Set runtime path of "/root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_c.so" to ""
+[12.970s] -- Installing: /root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_cpp.so
+[12.970s] -- Set runtime path of "/root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[12.970s] -- Installing: /root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_cpp.so
+[12.971s] -- Set runtime path of "/root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_typesupport_cpp.so" to ""
+[13.022s] Listing '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces'...
+[13.022s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/__init__.py'...
+[13.022s] Listing '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/action'...
+[13.022s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/action/__init__.py'...
+[13.022s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/action/_navigation.py'...
+[13.022s] Listing '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg'...
+[13.022s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/__init__.py'...
+[13.023s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_hardware_status.py'...
+[13.023s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_motor_command.py'...
+[13.023s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_robot_state.py'...
+[13.023s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/msg/_sensor_data.py'...
+[13.023s] Listing '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/srv'...
+[13.023s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/srv/__init__.py'...
+[13.023s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/srv/_calibration.py'...
+[13.023s] Compiling '/root/Dojo/install/robot_interfaces/local/lib/python3.10/dist-packages/robot_interfaces/srv/_set_mode.py'...
+[13.027s] -- Installing: /root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_py.so
+[13.027s] -- Set runtime path of "/root/Dojo/install/robot_interfaces/lib/librobot_interfaces__rosidl_generator_py.so" to ""
+[13.028s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_cExport.cmake
+[13.028s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_cExport-noconfig.cmake
+[13.028s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[13.028s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[13.028s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_cppExport.cmake
+[13.028s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[13.028s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[13.029s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[13.029s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[13.029s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cExport.cmake
+[13.029s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[13.029s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[13.029s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[13.030s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cppExport.cmake
+[13.030s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/robot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[13.030s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_pyExport.cmake
+[13.030s] -- Installing: /root/Dojo/install/robot_interfaces/share/robot_interfaces/cmake/export_robot_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[13.034s] Invoked command in '/root/Dojo/build/robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_interfaces
