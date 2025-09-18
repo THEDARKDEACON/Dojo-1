@@ -111,7 +111,8 @@ get_build_order() {
         for excluded in "${excluded_packages[@]}"; do
             if [ "$pkg" = "$excluded" ]; then
                 exclude=true
-                log_warning "Excluding legacy/redundant package: $pkg"
+                # Log to stderr to avoid interfering with package list
+                echo "⚠️  Excluding legacy/redundant package: $pkg" >&2
                 break
             fi
         done
@@ -146,7 +147,8 @@ get_build_order() {
     for pkg in "${filtered_packages[@]}"; do
         if [[ ! " ${ordered_packages[*]} " =~ " $pkg " ]]; then
             ordered_packages+=("$pkg")
-            log_info "Adding package not in predefined order: $pkg"
+            # Log to stderr to avoid interfering with package list
+            echo "ℹ️  Adding package not in predefined order: $pkg" >&2
         fi
     done
     

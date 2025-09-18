@@ -20,12 +20,7 @@ setup(
     install_requires=[
         'setuptools', 
         'numpy>=1.19.0', 
-        'opencv-python>=4.5.0',
-        'rclpy',
-        'sensor-msgs',
-        'std-msgs',
-        'geometry-msgs',
-        'cv-bridge'
+        'opencv-python>=4.5.0'
     ],
     zip_safe=False,
     maintainer='robosync',

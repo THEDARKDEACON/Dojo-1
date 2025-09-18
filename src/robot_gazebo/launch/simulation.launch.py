@@ -103,8 +103,8 @@ def generate_launch_description():
                 'use_sim_time': use_sim_time,
                 'enable_vision': 'true',
                 'enable_detector': 'true',
-                'camera_topic': '/camera/image_raw',
-                'camera_info_topic': '/camera/camera_info'
+                'camera_topic': 'image_raw',
+                'camera_info_topic': 'camera_info'
             }.items()
         )
     ], condition=IfCondition(use_perception))
