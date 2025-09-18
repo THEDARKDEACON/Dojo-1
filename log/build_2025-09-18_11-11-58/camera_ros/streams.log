@@ -1,0 +1,103 @@
+[1.025s] Invoking command in '/root/Dojo/build/camera_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake /root/Dojo/backup_packages/camera_ws/src/camera_ros -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/camera_ros
+[1.085s] -- The C compiler identification is GNU 11.4.0
+[1.148s] -- The CXX compiler identification is GNU 11.4.0
+[1.157s] -- Detecting C compiler ABI info
+[1.236s] -- Detecting C compiler ABI info - done
+[1.244s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.245s] -- Detecting C compile features
+[1.245s] -- Detecting C compile features - done
+[1.249s] -- Detecting CXX compiler ABI info
+[1.340s] -- Detecting CXX compiler ABI info - done
+[1.348s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.348s] -- Detecting CXX compile features
+[1.349s] -- Detecting CXX compile features - done
+[1.353s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.162s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.243s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.317s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[2.322s] -- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)
+[2.399s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.408s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.421s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.439s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.465s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.537s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.542s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.682s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.726s] -- Found FastRTPS: /opt/ros/humble/include  
+[2.787s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.802s] -- Looking for pthread.h
+[2.885s] -- Looking for pthread.h - found
+[2.885s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.967s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.968s] -- Found Threads: TRUE  
+[3.027s] -- Found rclcpp_components: 16.0.14 (/opt/ros/humble/share/rclcpp_components/cmake)
+[3.066s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[3.103s] -- Found camera_info_manager: 3.1.12 (/opt/ros/humble/share/camera_info_manager/cmake)
+[3.124s] -- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+[3.136s] -- Checking for module 'libcamera>=0.1'
+[3.154s] --   Found libcamera, version 0.1.0
+[3.209s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.337s] -- Added test 'clang_format' to check C / C++ code style
+[3.342s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.342s] -- Configured cppcheck include dirs: 
+[3.343s] -- Configured cppcheck exclude dirs and/or files: 
+[3.344s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.345s] -- Added test 'lint_cmake' to check CMake code style
+[3.347s] -- Added test 'mypy' to statically type check Python code.
+[3.348s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.349s] -- Added test 'pyflakes' to perform static code analysis on Python code
+[3.350s] -- Added test 'xmllint' to check XML markup files
+[3.353s] -- Configuring done
+[3.375s] -- Generating done
+[3.383s] -- Build files have been written to: /root/Dojo/build/camera_ros
+[3.395s] Invoked command in '/root/Dojo/build/camera_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake /root/Dojo/backup_packages/camera_ws/src/camera_ros -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/camera_ros
+[3.397s] Invoking command in '/root/Dojo/build/camera_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/camera_ros -- -j16 -l16
+[3.455s] [  7%] [32mBuilding CXX object CMakeFiles/param.dir/src/ParameterHandler.cpp.o[0m
+[3.456s] [ 30%] [32mBuilding CXX object CMakeFiles/utils.dir/src/format_mapping.cpp.o[0m
+[3.456s] [ 30%] [32mBuilding CXX object CMakeFiles/param.dir/src/clamp.cpp.o[0m
+[3.456s] [ 30%] [32mBuilding CXX object CMakeFiles/camera_node.dir/rclcpp_components/node_main_camera_node.cpp.o[0m
+[3.456s] [ 46%] [32mBuilding CXX object CMakeFiles/utils.dir/src/pretty_print.cpp.o[0m
+[3.456s] [ 46%] [32mBuilding CXX object CMakeFiles/param.dir/src/cv_to_pv.cpp.o[0m
+[3.457s] [ 53%] [32mBuilding CXX object CMakeFiles/param.dir/src/pv_to_cv.cpp.o[0m
+[3.457s] [ 61%] [32mBuilding CXX object CMakeFiles/param.dir/src/types.cpp.o[0m
+[3.457s] [ 69%] [32mBuilding CXX object CMakeFiles/param.dir/src/type_extent.cpp.o[0m
+[3.457s] [ 76%] [32mBuilding CXX object CMakeFiles/param.dir/src/ParameterConflictHandler.cpp.o[0m
+[5.133s] [ 76%] Built target utils
+[8.605s] [ 76%] Built target param
+[8.684s] [ 84%] [32mBuilding CXX object CMakeFiles/camera_component.dir/src/CameraNode.cpp.o[0m
+[9.428s] [ 92%] [32m[1mLinking CXX executable camera_node[0m
+[9.800s] [ 92%] Built target camera_node
+[16.675s] [100%] [32m[1mLinking CXX shared library libcamera_component.so[0m
+[17.056s] [100%] Built target camera_component
+[17.067s] Invoked command in '/root/Dojo/build/camera_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/camera_ros -- -j16 -l16
+[17.069s] Invoking command in '/root/Dojo/build/camera_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/camera_ros
+[17.076s] -- Install configuration: ""
+[17.076s] -- Execute custom install script
+[17.076s] -- Symlinking: /root/Dojo/install/camera_ros/lib/camera_ros/camera_node
+[17.086s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/environment/library_path.sh
+[17.095s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/environment/library_path.dsv
+[17.107s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros//launch/camera.launch.py
+[17.118s] -- Symlinking: /root/Dojo/install/camera_ros/share/ament_index/resource_index/package_run_dependencies/camera_ros
+[17.127s] -- Symlinking: /root/Dojo/install/camera_ros/share/ament_index/resource_index/parent_prefix_path/camera_ros
+[17.137s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/environment/ament_prefix_path.sh
+[17.149s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/environment/ament_prefix_path.dsv
+[17.160s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/environment/path.sh
+[17.172s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/environment/path.dsv
+[17.181s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/local_setup.bash
+[17.190s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/local_setup.sh
+[17.200s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/local_setup.zsh
+[17.209s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/local_setup.dsv
+[17.219s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/package.dsv
+[17.228s] -- Symlinking: /root/Dojo/install/camera_ros/share/ament_index/resource_index/packages/camera_ros
+[17.238s] -- Symlinking: /root/Dojo/install/camera_ros/share/ament_index/resource_index/rclcpp_components/camera_ros
+[17.248s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/cmake/ament_cmake_export_targets-extras.cmake
+[17.258s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/cmake/ament_cmake_export_dependencies-extras.cmake
+[17.268s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/cmake/camera_rosConfig.cmake
+[17.278s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/cmake/camera_rosConfig-version.cmake
+[17.287s] -- Symlinking: /root/Dojo/install/camera_ros/share/camera_ros/package.xml
+[17.297s] -- Installing: /root/Dojo/install/camera_ros/lib/libcamera_component.so
+[17.304s] -- Set runtime path of "/root/Dojo/install/camera_ros/lib/libcamera_component.so" to ""
+[17.304s] -- Installing: /root/Dojo/install/camera_ros/share/camera_ros/cmake/camera_componentTargetsExport.cmake
+[17.304s] -- Installing: /root/Dojo/install/camera_ros/share/camera_ros/cmake/camera_componentTargetsExport-noconfig.cmake
+[17.307s] Invoked command in '/root/Dojo/build/camera_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/camera_ros

@@ -24,10 +24,17 @@ class CameraProcessor(Node):
         super().__init__('camera_processor')
         
         # Parameters
-        self.declare_parameter('camera_topic', 'camera/image_raw')
-        self.declare_parameter('camera_info_topic', 'camera/camera_info')
+        self.declare_parameter('camera_topic', 'image_raw')
+        self.declare_parameter('camera_info_topic', 'camera_info')
         self.declare_parameter('publish_processed', True)
         self.declare_parameter('debug', False)
+        self.declare_parameter('min_object_size', 100)
+        self.declare_parameter('max_objects', 10)
+        # Color detection parameters
+        self.declare_parameter('red_lower_1', [0, 100, 100])
+        self.declare_parameter('red_upper_1', [10, 255, 255])
+        self.declare_parameter('red_lower_2', [160, 100, 100])
+        self.declare_parameter('red_upper_2', [180, 255, 255])
         
         self.camera_topic = self.get_parameter('camera_topic').value
         self.camera_info_topic = self.get_parameter('camera_info_topic').value
@@ -129,11 +136,11 @@ class CameraProcessor(Node):
         # Convert to HSV color space
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
         
-        # Define range for red color
-        lower_red1 = np.array([0, 100, 100])
-        upper_red1 = np.array([10, 255, 255])
-        lower_red2 = np.array([160, 100, 100])
-        upper_red2 = np.array([180, 255, 255])
+        # Define range for red color from parameters
+        lower_red1 = np.array(self.get_parameter('red_lower_1').value)
+        upper_red1 = np.array(self.get_parameter('red_upper_1').value)
+        lower_red2 = np.array(self.get_parameter('red_lower_2').value)
+        upper_red2 = np.array(self.get_parameter('red_upper_2').value)
         
         # Threshold the HSV image to get only red colors
         mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
@@ -157,7 +164,8 @@ class CameraProcessor(Node):
             size = w * h
             
             # Only consider objects above a certain size
-            if size > 100:  # Minimum size threshold
+            min_size = self.get_parameter('min_object_size').value
+            if size > min_size:
                 # Draw the bounding box
                 cv2.rectangle(processed_image, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 cv2.circle(processed_image, (center_x, center_y), 5, (0, 0, 255), -1)

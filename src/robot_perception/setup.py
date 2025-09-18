@@ -17,7 +17,16 @@ setup(
         (os.path.join('share', package_name, 'config'), 
          glob('config/*.yaml')),
     ],
-    install_requires=['setuptools', 'numpy', 'opencv-python>=4.5.0'],
+    install_requires=[
+        'setuptools', 
+        'numpy>=1.19.0', 
+        'opencv-python>=4.5.0',
+        'rclpy',
+        'sensor-msgs',
+        'std-msgs',
+        'geometry-msgs',
+        'cv-bridge'
+    ],
     zip_safe=False,
     maintainer='robosync',
     maintainer_email='robosync@example.com',

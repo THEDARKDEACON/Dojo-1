@@ -1,3 +1,26 @@
 /**:
   ros__parameters:
     use_sim_time: False
+
+camera_processor:
+  ros__parameters:
+    camera_topic: "image_raw"
+    camera_info_topic: "camera_info"
+    publish_processed: true
+    debug: false
+    # Object detection parameters
+    min_object_size: 100
+    max_objects: 10
+    # Color detection ranges (HSV)
+    red_lower_1: [0, 100, 100]
+    red_upper_1: [10, 255, 255]
+    red_lower_2: [160, 100, 100]
+    red_upper_2: [180, 255, 255]
+
+object_detector:
+  ros__parameters:
+    model_path: "yolov8n.pt"
+    confidence_threshold: 0.5
+    nms_threshold: 0.4
+    max_detections: 100
+    class_names: ["person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck"]

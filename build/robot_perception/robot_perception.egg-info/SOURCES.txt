@@ -2,6 +2,7 @@ package.xml
 setup.py
 config/robot_perception_params.yaml
 launch/perception.launch.py
+launch/robot_perception.launch.py
 resource/robot_perception
 robot_perception/__init__.py
 robot_perception/camera_processor.py
@@ -10,6 +11,6 @@ robot_perception.egg-info/PKG-INFO
 robot_perception.egg-info/SOURCES.txt
 robot_perception.egg-info/dependency_links.txt
 robot_perception.egg-info/entry_points.txt
+robot_perception.egg-info/not-zip-safe
 robot_perception.egg-info/requires.txt
 robot_perception.egg-info/top_level.txt
-robot_perception.egg-info/zip-safe

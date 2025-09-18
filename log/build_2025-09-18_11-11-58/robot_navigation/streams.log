@@ -1,0 +1,77 @@
+[0.686s] Invoking command in '/root/Dojo/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake /root/Dojo/src/robot_navigation -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_navigation
+[1.041s] -- The C compiler identification is GNU 11.4.0
+[1.041s] -- The CXX compiler identification is GNU 11.4.0
+[1.042s] -- Detecting C compiler ABI info
+[1.043s] -- Detecting C compiler ABI info - done
+[1.043s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.043s] -- Detecting C compile features
+[1.043s] -- Detecting C compile features - done
+[1.044s] -- Detecting CXX compiler ABI info
+[1.044s] -- Detecting CXX compiler ABI info - done
+[1.044s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.044s] -- Detecting CXX compile features
+[1.045s] -- Detecting CXX compile features - done
+[1.045s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.767s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.846s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.979s] -- Configuring done
+[1.982s] -- Generating done
+[1.984s] -- Build files have been written to: /root/Dojo/build/robot_navigation
+[1.989s] Invoked command in '/root/Dojo/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake /root/Dojo/src/robot_navigation -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/Dojo/install/robot_navigation
+[1.991s] Invoking command in '/root/Dojo/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_navigation -- -j16 -l16
+[2.037s] Invoked command in '/root/Dojo/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_navigation -- -j16 -l16
+[2.049s] Invoking command in '/root/Dojo/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_navigation
+[2.056s] -- Install configuration: ""
+[2.057s] -- Execute custom install script
+[2.057s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/navigation.launch.py
+[2.068s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/localization.launch.py
+[2.079s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/map_server.launch.py
+[2.091s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/nav2_params.yaml
+[2.102s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/localization_params.yaml
+[2.113s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/map_server_params.yaml
+[2.125s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/bt_navigator_params.yaml
+[2.135s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/planner_params.yaml
+[2.146s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/controller_params.yaml
+[2.158s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/costmap_common_params.yaml
+[2.169s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/global_costmap_params.yaml
+[2.180s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/local_costmap_params.yaml
+[2.191s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/localization.launch.py
+[2.201s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/map_server.launch.py
+[2.213s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/navigation.launch.py
+[2.226s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/bt_navigator_params.yaml
+[2.237s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/controller_params.yaml
+[2.249s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/costmap_common_params.yaml
+[2.260s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/global_costmap_params.yaml
+[2.270s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/local_costmap_params.yaml
+[2.281s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/localization_params.yaml
+[2.292s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/map_server_params.yaml
+[2.304s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml
+[2.315s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/config/planner_params.yaml
+[2.328s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/bt_navigator_params.yaml
+[2.328s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/controller_params.yaml
+[2.328s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/costmap_common_params.yaml
+[2.328s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/global_costmap_params.yaml
+[2.329s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/local_costmap_params.yaml
+[2.329s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/localization_params.yaml
+[2.329s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/map_server_params.yaml
+[2.329s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/nav2_params.yaml
+[2.329s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/config/planner_params.yaml
+[2.329s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/localization.launch.py
+[2.330s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/map_server.launch.py
+[2.330s] -- Up-to-date symlink: /root/Dojo/install/robot_navigation/share/robot_navigation/launch/navigation.launch.py
+[2.330s] -- Symlinking: /root/Dojo/install/robot_navigation/share/ament_index/resource_index/package_run_dependencies/robot_navigation
+[2.341s] -- Symlinking: /root/Dojo/install/robot_navigation/share/ament_index/resource_index/parent_prefix_path/robot_navigation
+[2.352s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.sh
+[2.364s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/ament_prefix_path.dsv
+[2.376s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/path.sh
+[2.386s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/environment/path.dsv
+[2.397s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.bash
+[2.408s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.sh
+[2.418s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.zsh
+[2.429s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/local_setup.dsv
+[2.440s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/package.dsv
+[2.450s] -- Symlinking: /root/Dojo/install/robot_navigation/share/ament_index/resource_index/packages/robot_navigation
+[2.461s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig.cmake
+[2.472s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/cmake/robot_navigationConfig-version.cmake
+[2.482s] -- Symlinking: /root/Dojo/install/robot_navigation/share/robot_navigation/package.xml
+[2.497s] Invoked command in '/root/Dojo/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_navigation

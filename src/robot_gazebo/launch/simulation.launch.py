@@ -22,6 +22,7 @@ def generate_launch_description():
     rviz = LaunchConfiguration('rviz', default='true')
     use_control = LaunchConfiguration('use_control', default='true')
     use_teleop = LaunchConfiguration('use_teleop', default='true')
+    use_perception = LaunchConfiguration('use_perception', default='true')
     
     # Gazebo simulation
     gazebo_launch = IncludeLaunchDescription(

@@ -82,7 +82,11 @@ def generate_launch_description():
             os.path.join(get_package_share_directory('robot_perception'), 'launch', 'perception.launch.py')
         ),
         launch_arguments={
-            'use_sim_time': use_sim_time
+            'use_sim_time': use_sim_time,
+            'camera_topic': 'image_raw',
+            'camera_info_topic': 'camera_info',
+            'enable_vision': 'true',
+            'enable_detector': 'true'
         }.items(),
         condition=IfCondition(use_perception)
     )
