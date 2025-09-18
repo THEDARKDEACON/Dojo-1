@@ -23,7 +23,7 @@ class LidarDriver(Node):
         self._declare_parameters()
         
         # Setup ROS interfaces
-        self._setup_publishers()
+        self._setup_interfaces()
         
         # Start LiDAR monitoring
         self._start_monitoring()
@@ -39,15 +39,27 @@ class LidarDriver(Node):
         self.declare_parameter('inverted', False)
         self.declare_parameter('angle_min', -3.14159)
         self.declare_parameter('angle_max', 3.14159)
+        # Topic configuration
+        self.declare_parameter('input_scan_topic', 'scan')
+        # If empty, do not republish (avoids loops when input is also 'scan')
+        self.declare_parameter('publish_topic', '')
         
-    def _setup_publishers(self):
-        """Setup ROS publishers"""
-        self.scan_pub = self.create_publisher(LaserScan, 'scan', 10)
+    def _setup_interfaces(self):
+        """Setup ROS interfaces (pub/sub)"""
         self.status_pub = self.create_publisher(String, 'lidar_status', 10)
-        
-        # Subscribe to scan data (if using external sllidar node)
+
+        input_topic = self.get_parameter('input_scan_topic').value
+        publish_topic = self.get_parameter('publish_topic').value
+
+        # Optional publisher (only if publish_topic is provided)
+        self.scan_pub = None
+        self.publish_topic = publish_topic
+        if isinstance(publish_topic, str) and len(publish_topic) > 0:
+            self.scan_pub = self.create_publisher(LaserScan, publish_topic, 10)
+
+        # Subscribe to upstream scan topic (simulation or hardware driver)
         self.scan_sub = self.create_subscription(
-            LaserScan, '/scan_raw', self._scan_callback, 10)
+            LaserScan, input_topic, self._scan_callback, 10)
     
     def _start_monitoring(self):
         """Start LiDAR monitoring"""
@@ -68,7 +80,9 @@ class LidarDriver(Node):
         """Process and republish scan data"""
         # Apply any filtering or processing here
         processed_scan = self._process_scan(msg)
-        self.scan_pub.publish(processed_scan)
+        # Republish only if an output publisher is configured
+        if self.scan_pub is not None:
+            self.scan_pub.publish(processed_scan)
     
     def _process_scan(self, scan_msg):
         """Process raw scan data"""

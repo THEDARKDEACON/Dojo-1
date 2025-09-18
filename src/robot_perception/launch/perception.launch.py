@@ -8,6 +8,7 @@ from launch.conditions import IfCondition
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
     enable_vision = LaunchConfiguration('enable_vision', default='true')
+    enable_detector = LaunchConfiguration('enable_detector', default='true')
     
     # Camera processing node
     camera_processor = Node(
@@ -32,10 +33,10 @@ def generate_launch_description():
         output='screen',
         parameters=[
             {'use_sim_time': use_sim_time},
-            {'model_path': ''},  # Path to your model
+            {'model_path': '../robot_perception/yolov8n.pt'},  # Path to your model
             {'confidence_threshold': 0.5}
         ],
-        condition=IfCondition(enable_vision)
+        condition=IfCondition(enable_detector)
     )
     
     return LaunchDescription([
@@ -49,6 +50,11 @@ def generate_launch_description():
             default_value='true',
             description='Enable vision processing nodes'),
         
+        DeclareLaunchArgument(
+            'enable_detector',
+            default_value='true',
+            description='Enable object detector node'),
+        
         camera_processor,
-        # object_detector,  # Uncomment when you have a model
+        object_detector,
     ])

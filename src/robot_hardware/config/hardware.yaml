@@ -19,12 +19,12 @@ arduino_driver:
     # Motor parameters
     motor_max: 255
     motor_min: 0
-    wheel_base: 0.2
+    wheel_base: 0.26
     wheel_radius: 0.030
     
     # Encoder parameters
     encoder_ticks_per_rev: 20
-    wheel_circumference: 0.060
+    wheel_circumference: 0.1885
     
     # Safety limits
     max_speed: 0.5
