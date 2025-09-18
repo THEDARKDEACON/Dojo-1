@@ -9,6 +9,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
     enable_vision = LaunchConfiguration('enable_vision', default='true')
     enable_detector = LaunchConfiguration('enable_detector', default='true')
+    use_perception = LaunchConfiguration('use_perception', default='true')
     
     # Camera processing node
     camera_processor = Node(

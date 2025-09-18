@@ -31,7 +31,10 @@ fix_issues() {
         python3-colcon-common-extensions \
         python3-vcstool \
         python3-setuptools \
-        python3-wheel
+        python3-wheel \
+        ros-${ROS_DISTRO:-humble}-cv-bridge \
+        ros-${ROS_DISTRO:-humble}-image-transport \
+        python3-opencv
         
     # Install specific Python packages
     echo "📦 Installing Python packages..."
@@ -88,25 +91,38 @@ build_package() {
     
     # All packages use standard colcon build now
     
-    # Build other packages with standard settings
-    if colcon build \
-        --packages-select "$pkg" \
-        --symlink-install \
-        --cmake-args \
-            -DCMAKE_INSTALL_PREFIX=install \
-            -DCMAKE_INSTALL_LIBDIR=lib \
-            -DCMAKE_INSTALL_BINDIR=lib/$pkg \
-            -DCMAKE_INSTALL_INCLUDEDIR=include; then
-        echo "✅ Successfully built $pkg"
-        # Source the workspace to make the package available
-        if [ -f "$WORKSPACE/install/setup.bash" ]; then
-            source "$WORKSPACE/install/setup.bash"
+    # Detect ament_python packages (presence of setup.py) and build without CMake args
+    if [ -f "src/$pkg/setup.py" ]; then
+        # Python package: let ament_python/setuptools install console scripts to lib/$pkg
+        if colcon build \
+            --packages-select "$pkg" \
+            --symlink-install; then
+            echo "✅ Successfully built $pkg (ament_python)"
+        else
+            echo "❌ Failed to build $pkg (ament_python)"
+            return 1
         fi
-        return 0
     else
-        echo "❌ Failed to build $pkg"
-        return 1
+        # CMake/ament_cmake packages with explicit install dirs
+        if colcon build \
+            --packages-select "$pkg" \
+            --symlink-install \
+            --cmake-args \
+                -DCMAKE_INSTALL_PREFIX=install \
+                -DCMAKE_INSTALL_LIBDIR=lib \
+                -DCMAKE_INSTALL_BINDIR=lib/$pkg \
+                -DCMAKE_INSTALL_INCLUDEDIR=include; then
+            echo "✅ Successfully built $pkg"
+        else
+            echo "❌ Failed to build $pkg"
+            return 1
+        fi
     fi
+    # Source the workspace to make the package available
+    if [ -f "$WORKSPACE/install/setup.bash" ]; then
+        source "$WORKSPACE/install/setup.bash"
+    fi
+    return 0
 }
 
 # Main build function
@@ -137,7 +153,7 @@ build_workspace() {
     local all_packages=($(colcon list -n))
     
     # Validate that core new architecture packages exist
-    local required_packages=("robot_hardware" "robot_interfaces" "robot_control" "robot_bringup")
+    local required_packages=("robot_hardware" "robot_interfaces" "robot_control" "robot_bringup" "robot_perception")
     for req_pkg in "${required_packages[@]}"; do
         if [[ ! " ${all_packages[@]} " =~ " ${req_pkg} " ]]; then
             echo "⚠️  Warning: Required package '$req_pkg' not found. Make sure you have the latest repository."

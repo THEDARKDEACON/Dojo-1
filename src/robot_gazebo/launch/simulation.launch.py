@@ -11,6 +11,8 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
+from launch.actions import GroupAction
+from launch_ros.parameters_type import SomeParameters
 
 def generate_launch_description():
     # Launch arguments
@@ -86,6 +88,26 @@ def generate_launch_description():
         condition=IfCondition(rviz)
     )
     
+    # Perception stack (camera + object detection)
+    perception_group = GroupAction([
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource([
+                PathJoinSubstitution([
+                    FindPackageShare('robot_perception'),
+                    'launch',
+                    'perception.launch.py'
+                ])
+            ]),
+            launch_arguments={
+                'use_sim_time': use_sim_time,
+                'enable_vision': 'true',
+                'enable_detector': 'true',
+                'camera_topic': '/camera/image_raw',
+                'camera_info_topic': '/camera/camera_info'
+            }.items()
+        )
+    ], condition=IfCondition(use_perception))
+    
     # Robot diagnostics
     diagnostics_node = Node(
         package='robot_state_publisher',
@@ -108,7 +130,8 @@ def generate_launch_description():
         control_launch,
         teleop_node,
         rviz_node,
-        diagnostics_node
+        diagnostics_node,
+        perception_group
     ])
     
     return LaunchDescription([
@@ -127,6 +150,11 @@ def generate_launch_description():
                             description='Start keyboard teleop'),
         DeclareLaunchArgument('diagnostics', default_value='false',
                             description='Start diagnostics'),
+        DeclareLaunchArgument(
+    'use_perception',
+    default_value='true',
+    description='Enable perception stack (camera + object detection)'
+),
         
         # Launch simulation
         simulation_group

@@ -8,6 +8,7 @@ import rclpy
 from rclpy.node import Node
 from rclpy.parameter import Parameter
 from rclpy.qos import qos_profile_sensor_data
+from rclpy.exceptions import RCLError
 import serial
 import serial.tools.list_ports
 import time
@@ -383,7 +384,10 @@ def main(args=None):
     finally:
         if 'arduino_driver' in locals():
             arduino_driver.cleanup()
-        rclpy.shutdown()
+        try:
+            rclpy.shutdown()
+        except RCLError:
+            pass
 
 if __name__ == '__main__':
     main()
