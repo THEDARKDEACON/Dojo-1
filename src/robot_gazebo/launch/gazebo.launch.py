@@ -34,7 +34,8 @@ def generate_launch_description():
             FindPackageShare('robot_description'),
             'urdf',
             'dojo_robot.urdf.xacro'
-        ])
+        ]),
+        ' use_gazebo:=true'
     ])
     
     robot_description = {'robot_description': robot_description_content}

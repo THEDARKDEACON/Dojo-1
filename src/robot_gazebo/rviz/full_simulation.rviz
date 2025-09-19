@@ -139,6 +139,20 @@ Visualization Manager:
       Unreliable: false
       Value: true
       
+    # Object Detection Results
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Image Topic: /perception/detections
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Object Detections
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+      
     # Odometry
     - Angle Tolerance: 0.10000000149011612
       Class: rviz_default_plugins/Odometry

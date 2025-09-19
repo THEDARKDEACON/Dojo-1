@@ -54,7 +54,11 @@ class ObjectDetector(Node):
         
         # Initialize cascade classifiers for face detection (example)
         try:
-            self.face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+            cascade_path = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+            self.face_cascade = cv2.CascadeClassifier(cascade_path)
+            # Verify the cascade loaded correctly
+            if self.face_cascade.empty():
+                raise Exception(f"Failed to load cascade from {cascade_path}")
             self.get_logger().info('Face detection cascade loaded successfully')
         except Exception as e:
             self.get_logger().warn(f'Could not load face cascade: {e}')
@@ -138,31 +142,96 @@ class ObjectDetector(Node):
                     'center': [int(x + w/2), int(y + h/2)]
                 })
         
-        # Method 2: Simple contour-based detection (for colored objects)
-        hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        # Method 2: Edge-based object detection
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         
-        # Detect blue objects (example)
-        lower_blue = np.array([100, 50, 50])
-        upper_blue = np.array([130, 255, 255])
-        mask_blue = cv2.inRange(hsv, lower_blue, upper_blue)
+        # Apply Gaussian blur to reduce noise
+        blurred = cv2.GaussianBlur(gray, (5, 5), 0)
         
-        contours, _ = cv2.findContours(mask_blue, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        # Edge detection using Canny
+        edges = cv2.Canny(blurred, 50, 150)
+        
+        # Find contours from edges
+        contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         
         for contour in contours:
             area = cv2.contourArea(contour)
-            if area > 500:  # Minimum area threshold
+            if area > 1000:  # Minimum area threshold
+                # Get bounding rectangle
                 x, y, w, h = cv2.boundingRect(contour)
-                cv2.rectangle(annotated_image, (x, y), (x + w, y + h), (0, 255, 0), 2)
-                cv2.putText(annotated_image, 'Blue Object', (x, y - 10), 
-                           cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+                
+                # Calculate aspect ratio to classify object shape
+                aspect_ratio = float(w) / h
+                
+                # Classify based on shape characteristics
+                if 0.8 <= aspect_ratio <= 1.2:
+                    object_type = "Square/Circle"
+                    color = (0, 255, 0)  # Green
+                elif aspect_ratio > 2.0:
+                    object_type = "Horizontal Rectangle"
+                    color = (255, 0, 0)  # Blue
+                elif aspect_ratio < 0.5:
+                    object_type = "Vertical Rectangle"
+                    color = (0, 0, 255)  # Red
+                else:
+                    object_type = "Rectangle"
+                    color = (255, 255, 0)  # Cyan
+                
+                # Draw bounding box and label
+                cv2.rectangle(annotated_image, (x, y), (x + w, y + h), color, 2)
+                cv2.putText(annotated_image, object_type, (x, y - 10), 
+                           cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
                 
                 detections.append({
-                    'class': 'blue_object',
-                    'confidence': 0.7,
+                    'class': object_type.lower().replace('/', '_'),
+                    'confidence': 0.8,
                     'bbox': [int(x), int(y), int(w), int(h)],
                     'center': [int(x + w/2), int(y + h/2)],
-                    'area': int(area)
+                    'area': int(area),
+                    'aspect_ratio': round(aspect_ratio, 2)
                 })
+        
+        # Method 3: Blob detection for circular objects
+        # Set up SimpleBlobDetector parameters
+        params = cv2.SimpleBlobDetector_Params()
+        
+        # Filter by Area
+        params.filterByArea = True
+        params.minArea = 500
+        params.maxArea = 50000
+        
+        # Filter by Circularity
+        params.filterByCircularity = True
+        params.minCircularity = 0.3
+        
+        # Filter by Convexity
+        params.filterByConvexity = True
+        params.minConvexity = 0.5
+        
+        # Create detector
+        detector = cv2.SimpleBlobDetector_create(params)
+        
+        # Detect blobs
+        keypoints = detector.detect(blurred)
+        
+        # Draw detected blobs
+        for keypoint in keypoints:
+            x, y = int(keypoint.pt[0]), int(keypoint.pt[1])
+            radius = int(keypoint.size / 2)
+            
+            # Draw circle around blob
+            cv2.circle(annotated_image, (x, y), radius, (255, 0, 255), 2)  # Magenta
+            cv2.putText(annotated_image, 'Blob', (x - 20, y - radius - 10), 
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)
+            
+            detections.append({
+                'class': 'blob',
+                'confidence': 0.9,
+                'bbox': [int(x - radius), int(y - radius), int(2 * radius), int(2 * radius)],
+                'center': [x, y],
+                'radius': radius,
+                'area': int(3.14159 * radius * radius)
+            })
         
         return annotated_image, detections
 

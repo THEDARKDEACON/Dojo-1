@@ -30,7 +30,7 @@ class CameraProcessor(Node):
         self.declare_parameter('debug', False)
         self.declare_parameter('min_object_size', 100)
         self.declare_parameter('max_objects', 10)
-        # Color detection parameters
+        # Color detection parameters (HSV ranges for red detection)
         self.declare_parameter('red_lower_1', [0, 100, 100])
         self.declare_parameter('red_upper_1', [10, 255, 255])
         self.declare_parameter('red_lower_2', [160, 100, 100])

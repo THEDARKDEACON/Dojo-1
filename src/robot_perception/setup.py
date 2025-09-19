@@ -18,11 +18,11 @@ setup(
          glob('config/*.yaml')),
     ],
     install_requires=[
-        'setuptools', 
-        'numpy>=1.19.0', 
-        'opencv-python>=4.5.0'
+        'setuptools',
+        'opencv-python',
+        'numpy',
     ],
-    zip_safe=False,
+    zip_safe=True,
     maintainer='robosync',
     maintainer_email='robosync@example.com',
     description='Robot perception package for handling camera and vision processing',
