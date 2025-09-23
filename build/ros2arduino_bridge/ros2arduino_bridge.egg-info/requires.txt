@@ -1,0 +1,5 @@
+setuptools
+pyserial
+
+[test]
+pytest
