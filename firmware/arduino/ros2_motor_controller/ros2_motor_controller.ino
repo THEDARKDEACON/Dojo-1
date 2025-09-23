@@ -10,8 +10,18 @@
 //   ?\n                          Help
 // 
 // Telemetry to ROS 2 (20 Hz):
-//   E<left_ticks>,<right_ticks>,<left_rad>,<right_rad>,<left_pos>,<right_pos>\n
+//   E<left_ticks>,<right_ticks>,<left_rad>,<right_rad>,<left_pos>,<right_pos>\n// 
+// Error Responses:
+//   E:Buffer overflow\n
 // ================================
+// Safety Features:
+// - Watchdog timer (500ms)
+// - Command validation
+// - Buffer overflow protection
+// - Motor limits
+// ================================
+
+#include <avr/wdt.h>  // Watchdog timer
 
 // ===== Pin Definitions (Arduino Mega) =====
 // Left Motor (A)
@@ -53,6 +63,7 @@ volatile long leftEncoderTicks  = 0;
 volatile long rightEncoderTicks = 0;
 long lastLeftTicks  = 0;
 long lastRightTicks = 0;
+bool systemError = false;
 
 float leftTargetRad  = 0.0f;
 float rightTargetRad = 0.0f;
@@ -133,39 +144,74 @@ void stopMotors() {
 
 // ===== Control (PID on wheel angular velocity) =====
 void updatePID() {
+  static unsigned long lastUpdate = 0;
   unsigned long now = millis();
+  
+  // Skip if in error state
+  if (systemError) {
+    stopMotors();
+    return;
+  }
+  
+  // Limit update rate
+  if (now - lastUpdate < MOTOR_UPDATE_MS) return;
+  lastUpdate = now;
+  
+  // Check for command timeout
+  if (now - lastCmdMs > CMD_TIMEOUT) {
+    stopMotors();
+    motorsStopped = true;
+    return;
+  }
+  
+  // Skip if no target speed
+  if (leftTargetRad == 0 && rightTargetRad == 0) {
+    leftInt = 0;
+    rightInt = 0;
+    return;
+  }
+  
+  // Calculate time delta (in seconds)
   float dt = (now - lastPidMs) / 1000.0f;
-  if (dt < (MOTOR_UPDATE_MS / 1000.0f)) return;
   lastPidMs = now;
-
-  // Compute current wheel speeds from encoder deltas
-  long dL = leftEncoderTicks - lastLeftTicks;
-  long dR = rightEncoderTicks - lastRightTicks;
-  lastLeftTicks  = leftEncoderTicks;
-  lastRightTicks = rightEncoderTicks;
-
-  // ticks -> rad: 2π / ticksPerRev
-  const float RAD_PER_TICK = (2.0f * PI) / ENCODER_TICKS_PER_REV;
-  leftRad  = (dL * RAD_PER_TICK) / dt;
-  rightRad = (dR * RAD_PER_TICK) / dt;
-
-  // PID for left
-  float eL = leftTargetRad - leftRad;
-  leftInt  += eL * dt;  leftInt = constrain(leftInt, -100.0f, 100.0f);
-  float dEL = (eL - leftPrev) / dt;  leftPrev = eL;
-  float uL = KP_LEFT * eL + KI_LEFT * leftInt + KD_LEFT * dEL;
-
-  // PID for right
-  float eR = rightTargetRad - rightRad;
-  rightInt += eR * dt; rightInt = constrain(rightInt, -100.0f, 100.0f);
-  float dER = (eR - rightPrev) / dt; rightPrev = eR;
-  float uR = KP_RIGHT * eR + KI_RIGHT * rightInt + KD_RIGHT * dER;
-
-  // Convert controller output to PWM
-  int leftPWM  = clampPWM((int)uL);
-  int rightPWM = clampPWM((int)uR);
-
-  setMotorPWM(leftPWM, rightPWM);
+  
+  // Calculate errors
+  float leftError = leftTargetRad - leftRad;
+  float rightError = rightTargetRad - rightRad;
+  
+  // Update integrals with anti-windup
+  leftInt += leftError * dt;
+  rightInt += rightError * dt;
+  
+  // Limit integral terms to prevent windup
+  leftInt = constrain(leftInt, -MAX_PWM/KI_LEFT, MAX_PWM/KI_LEFT);
+  rightInt = constrain(rightInt, -MAX_PWM/KI_RIGHT, MAX_PWM/KI_RIGHT);
+  
+  // Calculate derivatives
+  float leftDeriv = (leftRad - leftPrev) / dt;
+  float rightDeriv = (rightRad - rightPrev) / dt;
+  
+  // Store current values for next iteration
+  leftPrev = leftRad;
+  rightPrev = rightRad;
+  
+  // Calculate PID outputs
+  float leftOutput = KP_LEFT * leftError + KI_LEFT * leftInt - KD_LEFT * leftDeriv;
+  float rightOutput = KP_RIGHT * rightError + KI_RIGHT * rightInt - KD_RIGHT * rightDeriv;
+  
+  // Safety checks
+  if (isnan(leftOutput) || isnan(rightOutput) || 
+      isinf(leftOutput) || isinf(rightOutput)) {
+    systemError = true;
+    Serial.println("E:PID output error");
+    return;
+  }
+  
+  // Apply motor outputs with safety limits
+  setMotorPWM(
+    constrain((int)leftOutput, -MAX_PWM, MAX_PWM),
+    constrain((int)rightOutput, -MAX_PWM, MAX_PWM)
+  );
 }
 
 // ===== Telemetry =====
@@ -242,71 +288,150 @@ void handleCommand(const String &command) {
 }
 
 void readSerial() {
+  static String inputBuffer = "";
+  
   while (Serial.available() > 0) {
-    char ch = (char)Serial.read();
-    if (ch == '\n' || ch == '\r') {
-      if (cmdBuffer.length() > 0) {
-        handleCommand(cmdBuffer);
-        cmdBuffer = "";
+    char c = Serial.read();
+    
+    if (c == '\n' || c == '\r') {
+      if (inputBuffer.length() > 0) {
+        if (validateCommand(inputBuffer)) {
+          handleCommand(inputBuffer);
+        } else {
+          Serial.println("E:Invalid command");
+        }
+        inputBuffer = "";
       }
-    } else if (ch >= 32 && ch <= 126) {
-      cmdBuffer += ch;
-      if (cmdBuffer.length() > 64) { // avoid runaway
-        cmdBuffer = "";
-        Serial.println(F("DError: Command too long"));
+    } 
+    // Add character to buffer if it won't cause overflow
+    else if (inputBuffer.length() < 64) {  // Max command length
+      inputBuffer += c;
+    }
+    // Handle buffer overflow
+    else {
+      // Clear buffer and send error
+      inputBuffer = "";
+      Serial.println("E:Buffer overflow");
+      // Skip until end of line
+      while (Serial.available() > 0 && Serial.peek() != '\n' && Serial.peek() != '\r') {
+        Serial.read();
       }
     }
   }
 }
 
+// Helper function to check if string is a valid number
+bool isNumber(const String &s) {
+  if (s.length() == 0) return false;
+  bool hasDecimal = false;
+  
+  for (unsigned int i = 0; i < s.length(); i++) {
+    if (s[i] == '-' && i == 0) continue;  // Allow negative sign at start
+    if (s[i] == '.') {
+      if (hasDecimal) return false;  // Only one decimal allowed
+      hasDecimal = true;
+      continue;
+    }
+    if (!isDigit(s[i])) return false;
+  }
+  return true;
+}
+
+// Validate command format
+bool validateCommand(const String &cmd) {
+  if (cmd.length() < 1) return false;
+  char cmdType = cmd[0];
+  
+  switch (cmdType) {
+    case 'M':  // Motor command: M<float>,<float>
+      {
+        int commaPos = cmd.indexOf(',');
+        if (commaPos == -1) return false;
+        
+        String leftStr = cmd.substring(1, commaPos);
+        String rightStr = cmd.substring(commaPos + 1);
+        
+        return isNumber(leftStr) && isNumber(rightStr);
+      }
+      
+    case 'S':  // Stop
+    case 'Z':  // Zero encoders
+    case '?':  // Help
+      return cmd.length() == 1;
+      
+    default:
+      return false;
+  }
+}
+
 // ===== Setup & Loop =====
 void setup() {
-  // IO
+  // Disable watchdog during setup
+  wdt_disable();
+  
+  // Initialize motor control pins
   pinMode(LEFT_MOTOR_IN1, OUTPUT);
   pinMode(LEFT_MOTOR_IN2, OUTPUT);
   pinMode(LEFT_MOTOR_ENABLE, OUTPUT);
   pinMode(RIGHT_MOTOR_IN1, OUTPUT);
   pinMode(RIGHT_MOTOR_IN2, OUTPUT);
   pinMode(RIGHT_MOTOR_ENABLE, OUTPUT);
-
+  
+  // Initialize encoder pins
   pinMode(LEFT_ENCODER_A1, INPUT_PULLUP);
   pinMode(LEFT_ENCODER_A2, INPUT_PULLUP);
   pinMode(RIGHT_ENCODER_A1, INPUT_PULLUP);
   pinMode(RIGHT_ENCODER_A2, INPUT_PULLUP);
-
+  
+  // Attach encoder interrupts
   attachInterrupt(digitalPinToInterrupt(LEFT_ENCODER_A1), isrLeft, CHANGE);
   attachInterrupt(digitalPinToInterrupt(RIGHT_ENCODER_A1), isrRight, CHANGE);
-
-  stopMotors();
-
+  
+  // Initialize serial
   Serial.begin(115200);
-  while (!Serial) { ; }
-  Serial.println(F("DDojo ROS2 Motor Controller Ready"));
-
-  unsigned long now = millis();
-  lastPidMs = now;
-  lastTxMs = now;
-  lastCmdMs = now;
+  while (!Serial) { ; }  // Wait for serial port to connect
+  
+  // Initial stop
+  stopMotors();
+  
+  // Initialize watchdog (500ms timeout)
+  wdt_enable(WDTO_500MS);
+  
+  // Print help
+  Serial.println("Dojo ROS 2 Motor Controller Ready");
+  Serial.println("Commands:");
+  Serial.println("M<left_rad>,<right_rad> - Set speeds (rad/s)");
+  Serial.println("S - Stop motors");
+  Serial.println("Z - Zero encoders");
+  Serial.println("? - This help");
+  
+  systemError = false;
 }
 
 void loop() {
+  // Reset watchdog timer
+  wdt_reset();
+  
+  // Skip processing if in error state
+  if (systemError) {
+    stopMotors();
+    delay(100);
+    return;
+  }
+  
+  // Read serial commands
   readSerial();
-
-  // Update control at fixed rate
-  if (millis() - lastPidMs >= MOTOR_UPDATE_MS) {
-    updatePID();
-  }
-
-  // Telemetry @20Hz
-  if (millis() - lastTxMs >= TX_PERIOD_MS) {
+  
+  // Update PID control
+  updatePID();
+  
+  // Send telemetry periodically
+  unsigned long currentTime = millis();
+  if (currentTime - lastTxMs > TX_PERIOD_MS) {
     sendTelemetry();
-    lastTxMs = millis();
+    lastTxMs = currentTime;
   }
-
-  // Safety timeout
-  if (millis() - lastCmdMs > CMD_TIMEOUT) {
-    if (!motorsStopped) {
-      stopMotors();
-    }
-  }
+  
+  // Small delay to prevent busy-waiting
+  delay(1);
 }
