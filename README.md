@@ -424,6 +424,7 @@ CMD ["ros2", "launch", "robot_bringup", "bringup.launch.py"]
 | `/image_raw` | `sensor_msgs/Image` | Camera images |
 | `/system_status` | `std_msgs/String` | Overall system health |
 | `/emergency_stop` | `std_msgs/Bool` | Emergency stop state |
+| `/servo_cmd` | `std_msgs/Bool` | Servo control(open 5s on true) |
 
 ### Key Services
 
@@ -440,6 +441,7 @@ CMD ["ros2", "launch", "robot_bringup", "bringup.launch.py"]
 | `max_angular_velocity` | 1.0 | Maximum rotation speed (rad/s) |
 | `safety_stop_distance` | 0.3 | Emergency stop distance (m) |
 | `cmd_vel_timeout` | 1.0 | Command timeout (seconds) |
+| `servo_open_time` | 5.0 | Auto-close delay | 
 
 ## 🤝 Contributing
 
