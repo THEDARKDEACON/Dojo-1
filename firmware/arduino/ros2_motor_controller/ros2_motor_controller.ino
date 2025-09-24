@@ -21,9 +21,17 @@
 // - Motor limits
 // ================================
 
-#include <avr/wdt.h>  // Watchdog timer
+#include <avr/wdt.h> // Watchdog timer
+#include <Servo.h>
+#include <std_msgs/Bool.h>   // for /servo_cmd topic
 
 // ===== Pin Definitions (Arduino Mega) =====
+// ===== Servo config =====
+const int SERVO_PIN = 9;   // set to your servo signal pin
+Servo dropServo;
+bool servoActive = false;
+unsigned long servoOpenTime = 0;
+
 // Left Motor (A)
 #define LEFT_MOTOR_IN1 8      // L298N IN1
 #define LEFT_MOTOR_IN2 9      // L298N IN2
@@ -79,6 +87,16 @@ bool motorsStopped = true;
 
 // ===== Serial Command Buffer =====
 String cmdBuffer;
+
+// Callback for servo command
+void servoCmdCallback(const std_msgs::Bool& msg) {
+  if (msg.data && !servoActive) {
+    dropServo.write(90);                // open (adjust angle if needed)
+    Serial.println("Servo opened via /servo_cmd");
+    servoActive = true;
+    servoOpenTime = millis();           // record when it opened
+  }
+}
 
 // ===== Interrupts =====
 void isrLeft() {
@@ -366,6 +384,14 @@ bool validateCommand(const String &cmd) {
 
 // ===== Setup & Loop =====
 void setup() {
+
+  // --- Servo setup ---
+  dropServo.attach(SERVO_PIN);
+  dropServo.write(0);   // start closed
+
+  // --- ROS2 subscriber ---
+  nh.subscribe<std_msgs::Bool>("servo_cmd", servoCmdCallback);
+  
   // Disable watchdog during setup
   wdt_disable();
   
@@ -409,6 +435,17 @@ void setup() {
 }
 
 void loop() {
+  // --- Servo auto-close after 5s ---
+  if (servoActive && (millis() - servoOpenTime > 5000UL)) {
+    dropServo.write(0);   // close
+    Serial.println("Servo auto-closed after 5s");
+    servoActive = false;
+  }
+  // ---------------------------------
+
+  nh.spinOnce();   // process ROS messages
+
+  
   // Reset watchdog timer
   wdt_reset();
   
