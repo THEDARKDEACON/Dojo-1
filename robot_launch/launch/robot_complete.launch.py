@@ -50,6 +50,17 @@ def generate_launch_description():
     components = []
     
     # Add ros2arduino_bridge as a Node since it's a Python package
+    twist_mux = Node(
+    package="twist_mux",
+    executable="twist_mux",
+    parameters=[os.path.join(
+        get_package_share_directory('robot_control'),
+        'config',
+        'twist_mux.yaml'
+    )],
+    remappings=[('/cmd_vel_out','/cmd_vel')],
+    output='screen'
+)
     try:
         bridge_node = Node(
             package='ros2arduino_bridge',

@@ -54,11 +54,16 @@ class CmdVelToMotors(Node):
         # Subscriber
         self.cmd_vel_sub = self.create_subscription(
             Twist,
-            'cmd_vel',
+            'cmd_vel_teleop',
             self.cmd_vel_callback,
             10
         )
-        
+        self.safety_sub = self.create_subscription(
+            Twist,
+            'cmd_vel_safety',
+            self.safety_callback,
+            10
+        )
         self.get_logger().info('cmd_vel_to_motors node started')
     
     def cmd_vel_callback(self, msg):

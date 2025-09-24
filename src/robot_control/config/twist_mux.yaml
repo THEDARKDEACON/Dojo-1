@@ -1,0 +1,14 @@
+# src/robot_control/config/twist_mux.yaml
+topics:
+  navigation:
+    topic: cmd_vel_nav
+    timeout: 1.0
+    priority: 10
+  teleop:
+    topic: cmd_vel_teleop
+    timeout: 1.0
+    priority: 100
+  safety:
+    topic: cmd_vel_safety
+    timeout: 0.5
+    priority: 200
