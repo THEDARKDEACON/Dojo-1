@@ -8,7 +8,10 @@ import rclpy
 from rclpy.node import Node
 from rclpy.parameter import Parameter
 from rclpy.qos import qos_profile_sensor_data
-from rclpy.impl.rcutils_logger import RcutilsLoggingError as RCLError
+try:
+    from rclpy.impl.rcutils_logger import RcutilsLoggingError as RCLError
+except ImportError:
+    from rclpy.impl.rcutils_logger import RCLError
 import serial
 import serial.tools.list_ports
 import time
