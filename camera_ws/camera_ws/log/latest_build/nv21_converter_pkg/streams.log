@@ -1,0 +1,20 @@
+[5.890s] Invoking command in '/home/robosync/Robot/camera_ws/build/nv21_converter_pkg': PYTHONPATH=/home/robosync/Robot/camera_ws/build/nv21_converter_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robosync/Robot/camera_ws/install/nv21_converter_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robosync/Robot/camera_ws/build/nv21_converter_pkg/build --no-deps symlink_data --force
+[8.259s] running develop
+[9.987s] running egg_info
+[9.989s] writing nv21_converter_pkg.egg-info/PKG-INFO
+[9.997s] writing dependency_links to nv21_converter_pkg.egg-info/dependency_links.txt
+[9.999s] writing entry points to nv21_converter_pkg.egg-info/entry_points.txt
+[10.002s] writing requirements to nv21_converter_pkg.egg-info/requires.txt
+[10.005s] writing top-level names to nv21_converter_pkg.egg-info/top_level.txt
+[10.248s] listing git files failed - pretending there aren't any
+[12.022s] reading manifest file 'nv21_converter_pkg.egg-info/SOURCES.txt'
+[12.027s] writing manifest file 'nv21_converter_pkg.egg-info/SOURCES.txt'
+[12.033s] running build_ext
+[12.034s] Creating /home/robosync/Robot/camera_ws/install/nv21_converter_pkg/lib/python3.10/site-packages/nv21-converter-pkg.egg-link (link to .)
+[12.038s] Installing nv21_converter script to /home/robosync/Robot/camera_ws/install/nv21_converter_pkg/lib/nv21_converter_pkg
+[12.039s] 
+[12.040s] Installed /home/robosync/Robot/camera_ws/build/nv21_converter_pkg
+[12.040s] running symlink_data
+[12.041s] symbolically linking /home/robosync/Robot/camera_ws/build/nv21_converter_pkg/resource/nv21_converter_pkg -> /home/robosync/Robot/camera_ws/install/nv21_converter_pkg/share/ament_index/resource_index/packages
+[12.041s] symbolically linking /home/robosync/Robot/camera_ws/build/nv21_converter_pkg/package.xml -> /home/robosync/Robot/camera_ws/install/nv21_converter_pkg/share/nv21_converter_pkg
+[12.203s] Invoked command in '/home/robosync/Robot/camera_ws/build/nv21_converter_pkg' returned '0': PYTHONPATH=/home/robosync/Robot/camera_ws/build/nv21_converter_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robosync/Robot/camera_ws/install/nv21_converter_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robosync/Robot/camera_ws/build/nv21_converter_pkg/build --no-deps symlink_data --force

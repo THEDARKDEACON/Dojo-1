@@ -1,0 +1,145 @@
+[0.118s] Invoking command in '/home/robosync/Robot/camera_ws/build/libcamera': /home/robosync/.local/bin/meson compile
+[1.591s] [1;32mINFO:[0m autodetecting backend as ninja
+[1.610s] [1;32mINFO:[0m calculating backend command to run: /home/robosync/.local/bin/ninja
+[1.849s] 
+[3.763s] [0/24] Generating src/libcamera/version.cpp with a custom command[K
+[3.764s] [1/24] Generating src/libcamera/version.cpp with a custom command[K
+[4.050s] Invoked command in '/home/robosync/Robot/camera_ws/build/libcamera' returned '0': /home/robosync/.local/bin/meson compile
+[4.067s] Invoking command in '/home/robosync/Robot/camera_ws/build/libcamera': /home/robosync/.local/bin/meson install
+[5.516s] ninja: Entering directory `/home/robosync/Robot/camera_ws/build/libcamera'
+[5.637s] 
+[6.425s] [0/24] Generating src/libcamera/version.cpp with a custom command[K
+[6.426s] [1/24] Generating src/libcamera/version.cpp with a custom command[K
+[6.435s] Installing include/libcamera/ipa/core_ipa_interface.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/ipa
+[6.437s] Installing include/libcamera/ipa/mali-c55_ipa_interface.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/ipa
+[6.439s] Installing include/libcamera/ipa/rkisp1_ipa_interface.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/ipa
+[6.441s] Installing include/libcamera/ipa/raspberrypi_ipa_interface.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/ipa
+[6.443s] Installing include/libcamera/ipa/soft_ipa_interface.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/ipa
+[6.445s] Installing include/libcamera/control_ids.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.448s] Installing include/libcamera/property_ids.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.449s] Installing include/libcamera/formats.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.452s] Installing include/libcamera/libcamera.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.454s] Installing src/libcamera/base/libcamera-base.so.0.5.2 to /home/robosync/Robot/camera_ws/install/libcamera/lib
+[6.464s] Installing src/libcamera/libcamera.so.0.5.2 to /home/robosync/Robot/camera_ws/install/libcamera/lib
+[6.536s] Installing src/libcamera/proxy/worker/mali-c55_ipa_proxy to /home/robosync/Robot/camera_ws/install/libcamera/libexec/libcamera
+[6.543s] Installing src/libcamera/proxy/worker/rkisp1_ipa_proxy to /home/robosync/Robot/camera_ws/install/libcamera/libexec/libcamera
+[6.549s] Installing src/libcamera/proxy/worker/raspberrypi_ipa_proxy to /home/robosync/Robot/camera_ws/install/libcamera/libexec/libcamera
+[6.558s] Installing src/libcamera/proxy/worker/soft_ipa_proxy to /home/robosync/Robot/camera_ws/install/libcamera/libexec/libcamera
+[6.565s] Installing src/ipa/mali-c55/ipa_mali_c55.so to /home/robosync/Robot/camera_ws/install/libcamera/lib/libcamera/ipa
+[6.578s] Installing src/ipa/rkisp1/ipa_rkisp1.so to /home/robosync/Robot/camera_ws/install/libcamera/lib/libcamera/ipa
+[6.596s] Installing src/ipa/rpi/pisp/ipa_rpi_pisp.so to /home/robosync/Robot/camera_ws/install/libcamera/lib/libcamera/ipa
+[6.619s] Installing src/ipa/rpi/vc4/ipa_rpi_vc4.so to /home/robosync/Robot/camera_ws/install/libcamera/lib/libcamera/ipa
+[6.643s] Installing src/ipa/simple/ipa_soft_simple.so to /home/robosync/Robot/camera_ws/install/libcamera/lib/libcamera/ipa
+[6.655s] Installing src/apps/lc-compliance/lc-compliance to /home/robosync/Robot/camera_ws/install/libcamera/bin
+[6.677s] Installing src/apps/cam/cam to /home/robosync/Robot/camera_ws/install/libcamera/bin
+[6.692s] Installing src/gstreamer/libgstlibcamera.so to /home/robosync/Robot/camera_ws/install/libcamera/lib/gstreamer-1.0
+[6.703s] Installing src/py/libcamera/_libcamera.cpython-310-aarch64-linux-gnu.so to /home/robosync/Robot/camera_ws/install/libcamera/lib/python3/dist-packages/libcamera
+[6.746s] Installing src/v4l2/v4l2-compat.so to /home/robosync/Robot/camera_ws/install/libcamera/libexec/libcamera
+[6.753s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/base/bound_method.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/base
+[6.755s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/base/class.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/base
+[6.756s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/base/flags.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/base
+[6.758s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/base/object.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/base
+[6.759s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/base/shared_fd.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/base
+[6.761s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/base/signal.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/base
+[6.763s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/base/span.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/base
+[6.764s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/base/unique_fd.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/base
+[6.766s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/ipa/ipa_controls.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/ipa
+[6.767s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/ipa/ipa_interface.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/ipa
+[6.768s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/ipa/ipa_module_info.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera/ipa
+[6.770s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/camera.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.771s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/camera_manager.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.772s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/color_space.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.774s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/controls.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.775s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/fence.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.776s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/framebuffer.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.778s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/framebuffer_allocator.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.779s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/geometry.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.781s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/logging.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.782s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/orientation.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.783s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/pixel_format.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.784s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/request.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.786s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/stream.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.787s] Installing /home/robosync/Robot/camera_ws/src/libcamera/include/libcamera/transform.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.788s] Installing /home/robosync/Robot/camera_ws/build/libcamera/include/libcamera/version.h to /home/robosync/Robot/camera_ws/install/libcamera/include/libcamera/libcamera
+[6.791s] Installing /home/robosync/Robot/camera_ws/build/libcamera/meson-private/libcamera-base.pc to /home/robosync/Robot/camera_ws/install/libcamera/lib/pkgconfig
+[6.794s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/libcamera/pipeline/rpi/pisp/data/example.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/pipeline/rpi/pisp
+[6.796s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/libcamera/pipeline/rpi/vc4/data/example.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/pipeline/rpi/vc4
+[6.797s] Installing /home/robosync/Robot/camera_ws/build/libcamera/meson-private/libcamera.pc to /home/robosync/Robot/camera_ws/install/libcamera/lib/pkgconfig
+[6.800s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/mali-c55/data/imx415.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/mali-c55
+[6.802s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/mali-c55/data/uncalibrated.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/mali-c55
+[6.803s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rkisp1/data/imx219.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rkisp1
+[6.805s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rkisp1/data/imx258.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rkisp1
+[6.806s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rkisp1/data/ov2685.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rkisp1
+[6.808s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rkisp1/data/ov4689.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rkisp1
+[6.809s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rkisp1/data/ov5640.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rkisp1
+[6.811s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rkisp1/data/ov5695.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rkisp1
+[6.812s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rkisp1/data/ov8858.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rkisp1
+[6.814s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rkisp1/data/uncalibrated.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rkisp1
+[6.816s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx219.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.818s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx219_noir.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.821s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx283.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.824s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx290.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.826s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx296.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.828s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx296_mono.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.829s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx335.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.831s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx378.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.844s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx415.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.855s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx415_b0569.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.861s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx462.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.867s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx477.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.874s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx477_noir.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.877s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx477_scientific.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.879s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx519.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.879s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx708.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.881s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx708_noir.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.884s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx708_wide.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.887s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/imx708_wide_noir.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.891s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/ov5647.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.893s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/ov5647_noir.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.898s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/ov64a40.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.903s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/ov9281_mono.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.906s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/se327m12.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.907s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/uncalibrated.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.909s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/vd56g3.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.915s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/pisp/data/vd56g3_mono.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/pisp
+[6.916s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx219.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.919s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx219_noir.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.949s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx283.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.951s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx290.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.952s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx296.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.955s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx296_mono.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.957s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx327.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.961s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx335.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.961s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx378.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.978s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx415.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.979s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx415_b0569.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.979s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx462.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.980s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx477.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.980s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx477_noir.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.982s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx477_scientific.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.989s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx519.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.990s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx708.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.990s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx708_noir.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.992s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx708_wide.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.993s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/imx708_wide_noir.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[6.997s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/ov5647.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[7.035s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/ov5647_noir.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[7.045s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/ov64a40.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[7.047s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/ov7251_mono.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[7.049s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/ov9281_mono.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[7.052s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/se327m12.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[7.053s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/uncalibrated.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[7.055s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/vd56g3.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[7.057s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/rpi/vc4/data/vd56g3_mono.json to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/rpi/vc4
+[7.127s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/ipa/simple/data/uncalibrated.yaml to /home/robosync/Robot/camera_ws/install/libcamera/share/libcamera/ipa/simple
+[7.128s] Installing /home/robosync/Robot/camera_ws/src/libcamera/src/py/libcamera/__init__.py to /home/robosync/Robot/camera_ws/install/libcamera/lib/python3/dist-packages/libcamera
+[7.130s] Installing /home/robosync/Robot/camera_ws/build/libcamera/src/v4l2/libcamerify to /home/robosync/Robot/camera_ws/install/libcamera/bin
+[7.133s] Installing symlink pointing to libcamera-base.so.0.5.2 to /home/robosync/Robot/camera_ws/install/libcamera/lib/libcamera-base.so.0.5
+[7.133s] Installing symlink pointing to libcamera-base.so.0.5 to /home/robosync/Robot/camera_ws/install/libcamera/lib/libcamera-base.so
+[7.134s] Installing symlink pointing to libcamera.so.0.5.2 to /home/robosync/Robot/camera_ws/install/libcamera/lib/libcamera.so.0.5
+[7.136s] Installing symlink pointing to libcamera.so.0.5 to /home/robosync/Robot/camera_ws/install/libcamera/lib/libcamera.so
+[7.171s] Running custom install script '/home/robosync/Robot/camera_ws/src/libcamera/src/ipa/ipa-sign-install.sh /home/robosync/Robot/camera_ws/build/libcamera/src/ipa-priv-key.pem lib/libcamera/ipa/ipa_mali_c55.so lib/libcamera/ipa/ipa_rkisp1.so lib/libcamera/ipa/ipa_rpi_pisp.so lib/libcamera/ipa/ipa_rpi_vc4.so lib/libcamera/ipa/ipa_soft_simple.so'
+[7.191s] Regenerating IPA modules signatures
+[7.416s] Running custom install script '/usr/bin/python3 /home/robosync/Robot/camera_ws/build/libcamera/meson-private/pycompile.py python-3.10-installed.json 0'
+[7.571s] Compiling '/home/robosync/Robot/camera_ws/install/libcamera/lib/python3/dist-packages/libcamera/__init__.py'...
+[7.780s] Invoked command in '/home/robosync/Robot/camera_ws/build/libcamera' returned '0': /home/robosync/.local/bin/meson install
