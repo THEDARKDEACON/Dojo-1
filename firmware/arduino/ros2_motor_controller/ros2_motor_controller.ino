@@ -27,7 +27,7 @@
 
 // ===== Pin Definitions (Arduino Mega) =====
 // ===== Servo config =====
-const int SERVO_PIN = 9;   // set to your servo signal pin
+const int SERVO_PIN = 12;   // set to your servo signal pin
 Servo dropServo;
 bool servoActive = false;
 unsigned long servoOpenTime = 0;
