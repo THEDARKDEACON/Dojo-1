@@ -44,6 +44,21 @@ def generate_launch_description():
     # Robot description
     robot_description = {'robot_description': f'$(cat {urdf_path})' if os.path.exists(urdf_path) else f'$(xacro {urdf_path})'}
     
+    # Add twist_mux for command velocity multiplexing
+    twist_mux = Node(
+        package="twist_mux",
+        executable="twist_mux",
+        parameters=[os.path.join(
+            get_package_share_directory('robot_control'),
+            'config',
+            'twist_mux.yaml'
+        )],
+        remappings=[
+            ('/cmd_vel_out', '/diff_drive_controller/cmd_vel_unstamped')
+        ],
+        output='screen'
+    )
+
     # Robot state publisher
     robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -135,7 +150,18 @@ def generate_launch_description():
     )
     
     # Define launch description
-    ld = LaunchDescription()
+    ld = LaunchDescription([
+        # Nodes
+        twist_mux,
+        robot_state_publisher,
+        set_use_sim_time,
+        gazebo,
+        spawn_entity,
+        controller_manager,
+        spawn_joint_state_broadcaster,
+        spawn_diff_drive_controller,
+        rviz
+    ])
     
     # Add debug info
     for info in debug_info:
