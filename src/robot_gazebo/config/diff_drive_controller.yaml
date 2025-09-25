@@ -26,6 +26,7 @@ controller_manager:
       publish_rate: 50.0
       velocity_rolling_window_size: 10
       use_stamped_vel: false
+      cmd_vel_topic: cmd_vel  # Topic that the controller will subscribe to for velocity commands
       
       # Velocity and acceleration limits
       linear.x.max_velocity: 0.5  # m/s

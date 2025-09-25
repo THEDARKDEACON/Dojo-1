@@ -1,4 +1,0 @@
-Invoking command in '/home/robosync/Robot/camera_ws/build/libcamera': /home/robosync/.local/bin/meson compile
-Invoked command in '/home/robosync/Robot/camera_ws/build/libcamera' returned '0': /home/robosync/.local/bin/meson compile
-Invoking command in '/home/robosync/Robot/camera_ws/build/libcamera': /home/robosync/.local/bin/meson install
-Invoked command in '/home/robosync/Robot/camera_ws/build/libcamera' returned '0': /home/robosync/.local/bin/meson install

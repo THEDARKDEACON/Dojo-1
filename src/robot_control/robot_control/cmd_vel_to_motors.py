@@ -113,6 +113,15 @@ class CmdVelToMotors(Node):
             f'Left: {left_motor}, Right: {right_motor}'
         )
     
+    def safety_callback(self, msg):
+        """Handle safety stop commands."""
+        # When a safety message is received, immediately stop the robot
+        stop_msg = Int16()
+        stop_msg.data = 0
+        self.left_motor_pub.publish(stop_msg)
+        self.right_motor_pub.publish(stop_msg)
+        self.get_logger().warn('SAFETY STOP ACTIVATED')
+
     def apply_deadband(self, motor_speed):
         """Apply deadband to motor speed to overcome friction."""
         if abs(motor_speed) < self.min_motor_speed:
