@@ -1,96 +1,35 @@
 # Dojo Robot - ROS2 Robotics Platform
 
-A modular, safety-focused ROS2 robotics platform for autonomous navigation and manipulation, featuring advanced command multiplexing with `twist_mux` and seamless simulation integration.
+A modular, safety-focused ROS2 robotics platform for autonomous navigation and manipulation.
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- ROS 2 Humble (or newer)
-- Python 3.8+
-- Arduino IDE (for firmware uploads)
-- Gazebo Fortress (for simulation)
-  ```bash
-  sudo apt install ros-${ROS_DISTRO}-gazebo-ros-pkgs
-  ```
-
-### Prerequisites
-- ROS 2 Humble (or newer)
-- Python 3.8+
-- Arduino IDE (for firmware uploads)
-- Gazebo Fortress (for simulation)
-
-### Building the Workspace
 ```bash
-# Build all packages
-colcon build --symlink-install
+# Build the workspace (recommended)
+colcon build --packages-up-to robot_bringup
 source install/setup.bash
 
-# Build specific package
-# colcon build --packages-select <package_name>
+# Alternative (Docker-oriented consolidated script)
+# ./build_and_fix.sh
 
-# Build with warnings as errors (recommended)
-# colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-Wall -Wextra -Wpedantic"
+# Real hardware (no Gazebo): Arduino only
+ros2 launch robot_bringup bringup.launch.py \
+  use_gazebo:=false use_arduino:=true use_camera:=false use_lidar:=false
+
+# Real hardware: full stack (adjust sensors as needed)
+ros2 launch robot_bringup bringup.launch.py use_gazebo:=false
+
+# Simulation (Gazebo): requires building robot_gazebo
+ros2 launch robot_bringup bringup.launch.py use_gazebo:=true use_sim_time:=true
+
+# Or launch individual components
+ros2 launch robot_hardware hardware.launch.py    # Hardware only (supports use_arduino/use_camera/use_lidar)
+ros2 launch robot_control control.launch.py      # Control only
 ```
 
-### Launching the Robot
+## 🏗️ Architecture Overview
 
-#### Real Robot (Hardware)
-```bash
-# Minimal setup (Arduino only)
-ros2 launch robot_launch robot_complete.launch.py use_sim_time:=false
-
-# With all sensors
-ros2 launch robot_launch robot_complete.launch.py use_sim_time:=false \
-  use_camera:=true use_lidar:=true
-```
-
-#### Simulation (Gazebo)
-```bash
-# Start Gazebo simulation
-ros2 launch robot_gazebo robot_simulation.launch.py
-
-# With RViz
-ros2 launch robot_gazebo robot_simulation.launch.py use_rviz:=true
-```
-
-#### Teleoperation
-```bash
-# Keyboard teleop
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=cmd_vel_teleop
-
-# Joystick (if configured)
-ros2 launch teleop_twist_joy teleop-launch.py
-```
-
-## 🛠️ Recent Updates
-
-### Latest Improvements
-
-1. **twist_mux Integration**
-   - Added priority-based command arbitration
-   - Configurable timeouts and priorities
-   - Seamless switching between control modes
-
-2. **Simulation Enhancements**
-   - Gazebo integration with twist_mux
-   - RViz visualization tools
-   - Parameterized launch configurations
-
-3. **Safety Features**
-   - Emergency stop handling
-   - Command validation
-   - Hardware health monitoring
-
-### Getting the Latest Version
-```bash
-git pull origin main
-colcon build --symlink-install
-source install/setup.bash
-```
-
-## 🏗️ System Architecture
-
-The Dojo robot features a robust, safety-focused architecture with command multiplexing and hardware abstraction:
+The Dojo robot uses a **layered architecture** for maximum reliability and modularity:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -101,46 +40,14 @@ The Dojo robot features a robust, safety-focused architecture with command multi
 │            (Computer Vision, Object Detection)              │
 ├─────────────────────────────────────────────────────────────┤
 │                     CONTROL LAYER                           │
-│  (twist_mux, Safety Systems, Command Filtering, Modes)      │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │                  twist_mux (200)                    │   │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌───────────┐  │   │
-│  │  │  Safety      │  │  Teleop      │  │ Navigation│  │   │
-│  │  │  (Highest)   │  │  (Medium)    │  │ (Lowest)  │  │   │
-│  └──┴──────┬───────┴──┴──────┬───────┴──┴────┬──────┘  │
-└────────────┼─────────────────┼────────────────┼─────────┘
-             │                 │                │
-┌────────────▼─────────────────▼────────────────▼────────────┐
-│                    HARDWARE ABSTRACTION                    │
-│  ┌──────────────┐  ┌──────────────┐  ┌─────────────────┐  │
-│  │ Motor Driver │  │ Camera       │  │ LiDAR          │  │
-│  │ (Arduino)    │  │ (ROS2 Driver)│  │ (RPLIDAR)      │  │
-│  └──────────────┘  └──────────────┘  └─────────────────┘  │
-└────────────────────────────────────────────────────────────┘
+│         (Safety Systems, Command Filtering, Modes)          │
+├─────────────────────────────────────────────────────────────┤
+│                    HARDWARE LAYER                           │
+│           (Arduino, Camera, LiDAR Drivers + Manager)        │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-### Key Features
-
-- **Command Velocity Multiplexing**: Priority-based command arbitration via `twist_mux`
-  - Safety commands (highest priority, 200)
-  - Teleoperation commands (medium priority, 100)
-  - Autonomous navigation (lowest priority, 10)
-
-- **Simulation Support**:
-  - Full Gazebo integration with hardware-in-the-loop testing
-  - RViz visualization tools
-  - Parameterized launch files for easy switching between sim/hardware
-
-- **Hardware Abstraction**:
-  - Clean separation between hardware and control logic
-  - Support for multiple sensor configurations
-  - Easy hardware interface expansion
-
-- **Safety Features**:
-  - Emergency stop handling
-  - Command validation and filtering
-  - Hardware health monitoring
-  - Graceful degradation
+### Why This Architecture?
 
 **🛡️ Safety First**: Multiple safety layers prevent accidents
 - Emergency stops at hardware and control levels
@@ -210,57 +117,11 @@ Raspberry Pi 4
 All hardware settings are centralized in `src/robot_hardware/config/hardware.yaml`:
 
 ```yaml
-## 🛠️ Configuration
-
-### Hardware Interface
-
-#### Arduino Driver (`arduino_driver`)
-```yaml
 arduino_driver:
   ros__parameters:
     port: "/dev/ttyACM0"
     baud_rate: 115200
     wheel_base: 0.2
-    wheel_radius: 0.05
-    max_rpm: 60
-    publish_rate: 50  # Hz
-```
-
-#### twist_mux Configuration
-```yaml
-twist_mux:
-  ros__parameters:
-    # Safety (highest priority)
-    - name: safety
-      topic: cmd_vel_safety
-      timeout: 0.5
-      priority: 200
-    
-    # Teleoperation (medium priority)
-    - name: teleop
-      topic: cmd_vel_teleop
-      timeout: 1.0
-      priority: 100
-    
-    # Navigation (lowest priority)
-    - name: nav
-      topic: cmd_vel_nav
-      timeout: 1.0
-      priority: 10
-```
-
-#### PID Controller
-```yaml
-diff_drive_controller:
-  ros__parameters:
-    left_wheel_names: ["left_wheel_joint"]
-    right_wheel_names: ["right_wheel_joint"]
-    wheel_separation: 0.3
-    wheel_radius: 0.05
-    cmd_vel_topic: cmd_vel
-    odom_frame_id: odom
-    base_frame_id: base_footprint
-```
     wheel_radius: 0.033
     max_speed: 0.5
 
@@ -379,59 +240,7 @@ def _estop_callback(self, msg):
         self.stop_all_operations()
 ```
 
-## 🐛 Common Issues & Solutions
-
-### twist_mux Not Working
-```bash
-# Check if twist_mux is running
-ros2 node list | grep twist_mux
-
-# Check active topics
-ros2 topic list | grep cmd_vel
-
-# View twist_mux status
-ros2 topic echo /twist_mux/status
-```
-
-### Simulation Issues
-```bash
-# Check Gazebo model paths
-echo $GAZEBO_MODEL_PATH
-
-# Run Gazebo in verbose mode
-ros2 launch robot_gazebo robot_simulation.launch.py verbose:=true
-```
-
-### Hardware Connection Problems
-```bash
-# Check USB devices
-lsusb
-
-# Check device permissions
-ls -l /dev/tty*
-
-# Set correct permissions
-sudo usermod -a -G dialout $USER
-```
-
-## 📚 Additional Resources
-
-- [ROS 2 Documentation](https://docs.ros.org/)
-- [Gazebo Tutorials](http://gazebosim.org/tutorials)
-- [twist_mux Documentation](https://github.com/ros2/teleop_twist_joy)
-- [Arduino-ROS2 Integration](https://github.com/ROBOTIS-GIT/ros2arduino_bridge)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🐛 Troubleshooting
 
 ### Common Issues
 
@@ -540,6 +349,7 @@ rm -rf build/ install/ log/
 - For simulation, ensure `robot_gazebo` is built when launching with `use_gazebo:=true`:
   - `colcon build --packages-select robot_gazebo`
   - `source install/setup.bash`
+
 
 ## 📊 System Monitoring
 
