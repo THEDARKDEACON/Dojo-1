@@ -1,0 +1,17 @@
+[4.883s] Invoking command in '/root/Dojo/build/nv21_converter_pkg': PYTHONPATH=/root/Dojo/build/nv21_converter_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/nv21_converter_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/nv21_converter_pkg/build --no-deps symlink_data
+[5.809s] running develop
+[6.466s] running egg_info
+[6.510s] writing nv21_converter_pkg.egg-info/PKG-INFO
+[6.510s] writing dependency_links to nv21_converter_pkg.egg-info/dependency_links.txt
+[6.510s] writing entry points to nv21_converter_pkg.egg-info/entry_points.txt
+[6.510s] writing requirements to nv21_converter_pkg.egg-info/requires.txt
+[6.511s] writing top-level names to nv21_converter_pkg.egg-info/top_level.txt
+[6.583s] reading manifest file 'nv21_converter_pkg.egg-info/SOURCES.txt'
+[6.594s] writing manifest file 'nv21_converter_pkg.egg-info/SOURCES.txt'
+[6.647s] running build_ext
+[6.647s] Creating /root/Dojo/install/nv21_converter_pkg/lib/python3.10/site-packages/nv21-converter-pkg.egg-link (link to .)
+[6.647s] Installing nv21_converter script to /root/Dojo/install/nv21_converter_pkg/lib/nv21_converter_pkg
+[6.655s] 
+[6.655s] Installed /root/Dojo/build/nv21_converter_pkg
+[6.656s] running symlink_data
+[6.993s] Invoked command in '/root/Dojo/build/nv21_converter_pkg' returned '0': PYTHONPATH=/root/Dojo/build/nv21_converter_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/nv21_converter_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/nv21_converter_pkg/build --no-deps symlink_data

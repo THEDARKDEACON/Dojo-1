@@ -1,0 +1,19 @@
+[4.966s] Invoking command in '/root/Dojo/build/robot_control': PYTHONPATH=/root/Dojo/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_control/build --no-deps symlink_data
+[5.799s] running develop
+[6.619s] running egg_info
+[6.643s] writing robot_control.egg-info/PKG-INFO
+[6.643s] writing dependency_links to robot_control.egg-info/dependency_links.txt
+[6.643s] writing entry points to robot_control.egg-info/entry_points.txt
+[6.646s] writing requirements to robot_control.egg-info/requires.txt
+[6.646s] writing top-level names to robot_control.egg-info/top_level.txt
+[6.698s] reading manifest file 'robot_control.egg-info/SOURCES.txt'
+[6.704s] writing manifest file 'robot_control.egg-info/SOURCES.txt'
+[6.732s] running build_ext
+[6.736s] Creating /root/Dojo/install/robot_control/lib/python3.10/site-packages/robot-control.egg-link (link to .)
+[6.769s] Installing arduino_bridge script to /root/Dojo/install/robot_control/lib/robot_control
+[6.769s] Installing cmd_vel_to_motors script to /root/Dojo/install/robot_control/lib/robot_control
+[6.782s] Installing control_manager script to /root/Dojo/install/robot_control/lib/robot_control
+[6.782s] 
+[6.782s] Installed /root/Dojo/build/robot_control
+[6.783s] running symlink_data
+[6.937s] Invoked command in '/root/Dojo/build/robot_control' returned '0': PYTHONPATH=/root/Dojo/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_control/build --no-deps symlink_data

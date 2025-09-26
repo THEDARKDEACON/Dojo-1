@@ -1,1 +1,1 @@
-geometry_msgs:nav2_bt_navigator:nav2_controller:nav2_lifecycle_manager:nav2_msgs:nav2_planner:nav2_waypoint_follower:rclcpp:sensor_msgs:tf2_ros
+dwb_core:geometry_msgs:nav2_amcl:nav2_bringup:nav2_bt_navigator:nav2_controller:nav2_costmap_2d:nav2_lifecycle_manager:nav2_map_server:nav2_msgs:nav2_navfn_planner:nav2_planner:nav2_waypoint_follower:nav_msgs:rclcpp:sensor_msgs:tf2_geometry_msgs:tf2_ros

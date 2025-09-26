@@ -1,7 +1,6 @@
-#!/usr/bin/env python3
 """
 Improved Robot Bringup Launch File
-Uses new modular hardware architecture
+Uses new modular hardware architecture with unified simulation support
 """
 
 from launch import LaunchDescription
@@ -51,7 +50,23 @@ def generate_launch_description():
         condition=IfCondition(use_robot_description)
     )
     
-    # Hardware layer - new unified hardware interface
+    # Unified simulation launch (when use_gazebo=true)
+    unified_simulation = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(get_package_share_directory('robot_gazebo'), 'launch', 'unified_simulation.launch.py')
+        ),
+        launch_arguments={
+            'use_sim_time': use_sim_time,
+            'use_slam': 'true',
+            'use_nav2': use_navigation,
+            'use_perception': use_perception,
+            'use_rviz': 'true',
+            'use_teleop': 'true'
+        }.items(),
+        condition=IfCondition(use_gazebo)
+    )
+    
+    # Hardware layer - new unified hardware interface (when use_gazebo=false)
     hardware_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('robot_hardware'), 'launch', 'hardware.launch.py')
@@ -65,7 +80,7 @@ def generate_launch_description():
         condition=IfCondition(use_hardware)
     )
     
-    # Control layer - high-level control coordination
+    # Control layer - high-level control coordination (when use_gazebo=false)
     control_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('robot_control'), 'launch', 'control.launch.py')
@@ -76,7 +91,7 @@ def generate_launch_description():
         condition=IfCondition(use_control)
     )
     
-    # Perception layer - optional computer vision and AI
+    # Perception layer - optional computer vision and AI (when use_gazebo=false)
     perception_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('robot_perception'), 'launch', 'perception.launch.py')
@@ -91,7 +106,7 @@ def generate_launch_description():
         condition=IfCondition(use_perception)
     )
     
-    # Navigation layer - optional autonomous navigation
+    # Navigation layer - optional autonomous navigation (when use_gazebo=false)
     navigation_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('robot_navigation'), 'launch', 'nav2.launch.py')
@@ -105,10 +120,11 @@ def generate_launch_description():
     # Group all launches for better organization
     robot_group = GroupAction([
         robot_state_publisher_node,
-        hardware_launch,
-        control_launch,
-        perception_launch,
-        navigation_launch
+        unified_simulation,  # This will be ignored if use_gazebo=false
+        hardware_launch,     # This will be ignored if use_gazebo=true
+        control_launch,      # This will be ignored if use_gazebo=true
+        perception_launch,   # This will be ignored if use_gazebo=true
+        navigation_launch,   # This will be ignored if use_gazebo=true
     ])
     
     # Launch argument declarations

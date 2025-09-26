@@ -1,0 +1,17 @@
+[4.897s] Invoking command in '/root/Dojo/build/robot_sensors': PYTHONPATH=/root/Dojo/build/robot_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_sensors/build --no-deps symlink_data
+[5.721s] running develop
+[6.366s] running egg_info
+[6.403s] writing robot_sensors.egg-info/PKG-INFO
+[6.404s] writing dependency_links to robot_sensors.egg-info/dependency_links.txt
+[6.404s] writing entry points to robot_sensors.egg-info/entry_points.txt
+[6.404s] writing requirements to robot_sensors.egg-info/requires.txt
+[6.404s] writing top-level names to robot_sensors.egg-info/top_level.txt
+[6.516s] reading manifest file 'robot_sensors.egg-info/SOURCES.txt'
+[6.516s] writing manifest file 'robot_sensors.egg-info/SOURCES.txt'
+[6.540s] running build_ext
+[6.540s] Creating /root/Dojo/install/robot_sensors/lib/python3.10/site-packages/robot-sensors.egg-link (link to .)
+[6.540s] Installing camera_node script to /root/Dojo/install/robot_sensors/lib/robot_sensors
+[6.541s] 
+[6.541s] Installed /root/Dojo/build/robot_sensors
+[6.541s] running symlink_data
+[7.041s] Invoked command in '/root/Dojo/build/robot_sensors' returned '0': PYTHONPATH=/root/Dojo/build/robot_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_sensors/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_sensors/build --no-deps symlink_data

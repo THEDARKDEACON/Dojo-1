@@ -1,0 +1,100 @@
+[0.017s] Invoking command in '/root/Dojo/build/robot_gazebo': /usr/bin/cmake --build /root/Dojo/build/robot_gazebo -- -j16 -l16
+[0.069s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.205s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.217s] -- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)
+[0.268s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.271s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.279s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.290s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.306s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.345s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.347s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.496s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.549s] -- Found gazebo_ros: 3.9.0 (/opt/ros/humble/share/gazebo_ros/cmake)
+[0.589s] -- Found DART: /usr/include (Required is at least version "6.6") found components: dart 
+[0.624s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[0.628s] -- Looking for ignition-math6 -- found version 6.15.1
+[0.634s] -- Searching for dependencies of ignition-math6
+[0.637s] -- Looking for OGRE...
+[0.644s] -- Found Ogre Ghadamon (1.9.0)
+[0.644s] -- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+[0.654s] -- Looking for OGRE_Paging...
+[0.654s] -- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+[0.654s] -- Looking for OGRE_Terrain...
+[0.654s] -- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+[0.654s] -- Looking for OGRE_Property...
+[0.654s] -- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+[0.654s] -- Looking for OGRE_RTShaderSystem...
+[0.654s] -- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+[0.654s] -- Looking for OGRE_Volume...
+[0.654s] -- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+[0.655s] -- Looking for OGRE_Overlay...
+[0.655s] -- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+[0.734s] -- Looking for ignition-math6 -- found version 6.15.1
+[0.734s] -- Looking for ignition-transport8 -- found version 8.2.1
+[0.735s] -- Searching for dependencies of ignition-transport8
+[0.761s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+[0.781s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[0.786s] -- Checking for module 'libzmq >= 4'
+[0.803s] --   Found libzmq , version 4.3.4
+[0.854s] -- Checking for module 'uuid'
+[0.869s] --   Found uuid, version 2.37.2
+[0.911s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[0.912s] -- Searching for dependencies of ignition-msgs5
+[0.939s] -- Looking for ignition-math6 -- found version 6.15.1
+[0.946s] -- Checking for module 'tinyxml2'
+[0.963s] --   Found tinyxml2, version 9.0.0
+[1.003s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[1.004s] -- Looking for ignition-common3 -- found version 3.14.0
+[1.004s] -- Searching for dependencies of ignition-common3
+[1.005s] -- Looking for dlfcn.h - found
+[1.005s] -- Looking for libdl - found
+[1.017s] -- Searching for <ignition-common3> component [graphics]
+[1.018s] -- Looking for ignition-common3-graphics -- found version 3.14.0
+[1.018s] -- Searching for dependencies of ignition-common3-graphics
+[1.019s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.020s] -- Looking for ignition-fuel_tools4 -- found version 4.4.0
+[1.020s] -- Searching for dependencies of ignition-fuel_tools4
+[1.072s] -- Checking for module 'jsoncpp'
+[1.090s] --   Found jsoncpp, version 1.9.5
+[1.144s] -- Checking for module 'libzip'
+[1.164s] --   Found libzip, version 1.7.3
+[1.217s] -- Looking for ignition-common3 -- found version 3.14.0
+[1.217s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.217s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[1.220s] -- Gazebo version: 11.10
+[1.221s] -- Found ros2_control: 2.51.0 (/opt/ros/humble/share/ros2_control/cmake)
+[1.222s] -- Found controller_manager: 2.51.0 (/opt/ros/humble/share/controller_manager/cmake)
+[1.420s] -- Found robot_state_publisher: 3.0.3 (/opt/ros/humble/share/robot_state_publisher/cmake)
+[1.425s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.427s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.552s] Error parsing '/root/Dojo/src/robot_gazebo/package.xml':
+[1.552s] Traceback (most recent call last):
+[1.552s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>
+[1.552s]     main()
+[1.552s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main
+[1.552s]     raise e
+[1.552s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main
+[1.552s]     package = parse_package_string(
+[1.552s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 719, in parse_package_string
+[1.552s]     export_node = _get_optional_node(root, 'export', filename)
+[1.552s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 807, in _get_optional_node
+[1.552s]     raise InvalidPackage('The manifest must not contain more than one "%s" tags' % tagname, filename)
+[1.553s] catkin_pkg.package.InvalidPackage: Error(s) in package '/root/Dojo/src/robot_gazebo/package.xml':
+[1.553s] The manifest must not contain more than one "export" tags
+[1.561s] [31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+[1.561s]   execute_process(/usr/bin/python3
+[1.562s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+[1.562s]   /root/Dojo/src/robot_gazebo/package.xml
+[1.562s]   /root/Dojo/build/robot_gazebo/ament_cmake_core/package.cmake) returned
+[1.562s]   error code 1
+[1.562s] Call Stack (most recent call first):
+[1.562s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+[1.562s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package.cmake:63 (ament_package_xml)
+[1.562s]   CMakeLists.txt:52 (ament_package)
+[1.562s] 
+[1.562s] [0m
+[1.562s] -- Configuring incomplete, errors occurred!
+[1.563s] See also "/root/Dojo/build/robot_gazebo/CMakeFiles/CMakeOutput.log".
+[1.579s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[1.582s] Invoked command in '/root/Dojo/build/robot_gazebo' returned '2': /usr/bin/cmake --build /root/Dojo/build/robot_gazebo -- -j16 -l16

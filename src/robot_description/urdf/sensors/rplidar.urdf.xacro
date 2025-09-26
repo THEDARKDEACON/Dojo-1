@@ -5,7 +5,7 @@
   <xacro:property name="lidar_height" value="0.045" />   <!-- Approximate height of the LiDAR -->
 
   <!-- RPLIDAR A1M8 Link -->
-  <link name="laser">
+  <link name="rplidar_link">
     <visual>
       <origin xyz="0 0 ${lidar_height/2}" rpy="0 0 0"/>
       <geometry>

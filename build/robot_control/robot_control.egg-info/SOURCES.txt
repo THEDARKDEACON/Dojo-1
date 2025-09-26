@@ -2,6 +2,7 @@ package.xml
 setup.cfg
 setup.py
 config/arduino.yaml
+config/twist_mux.yaml
 launch/control.launch.py
 resource/robot_control
 robot_control/__init__.py

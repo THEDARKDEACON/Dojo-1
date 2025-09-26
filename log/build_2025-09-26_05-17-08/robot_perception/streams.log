@@ -1,0 +1,18 @@
+[4.565s] Invoking command in '/root/Dojo/build/robot_perception': PYTHONPATH=/root/Dojo/build/robot_perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_perception/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_perception/build --no-deps symlink_data
+[5.328s] running develop
+[5.809s] running egg_info
+[5.834s] writing robot_perception.egg-info/PKG-INFO
+[5.834s] writing dependency_links to robot_perception.egg-info/dependency_links.txt
+[5.834s] writing entry points to robot_perception.egg-info/entry_points.txt
+[5.835s] writing requirements to robot_perception.egg-info/requires.txt
+[5.835s] writing top-level names to robot_perception.egg-info/top_level.txt
+[5.883s] reading manifest file 'robot_perception.egg-info/SOURCES.txt'
+[5.884s] writing manifest file 'robot_perception.egg-info/SOURCES.txt'
+[5.906s] running build_ext
+[5.907s] Creating /root/Dojo/install/robot_perception/lib/python3.10/site-packages/robot-perception.egg-link (link to .)
+[5.908s] Installing camera_processor script to /root/Dojo/install/robot_perception/bin
+[5.909s] Installing object_detector script to /root/Dojo/install/robot_perception/bin
+[5.909s] 
+[5.909s] Installed /root/Dojo/build/robot_perception
+[5.909s] running symlink_data
+[6.437s] Invoked command in '/root/Dojo/build/robot_perception' returned '0': PYTHONPATH=/root/Dojo/build/robot_perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_perception/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_perception/build --no-deps symlink_data

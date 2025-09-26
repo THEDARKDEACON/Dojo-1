@@ -1,0 +1,2 @@
+Invoking command in '/root/Dojo/build/robot_gazebo': /usr/bin/cmake --build /root/Dojo/build/robot_gazebo -- -j16 -l16
+Invoked command in '/root/Dojo/build/robot_gazebo' returned '2': /usr/bin/cmake --build /root/Dojo/build/robot_gazebo -- -j16 -l16

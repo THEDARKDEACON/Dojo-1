@@ -1,0 +1,20 @@
+[3.758s] Invoking command in '/root/Dojo/build/robot_hardware': PYTHONPATH=/root/Dojo/build/robot_hardware/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_hardware/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_hardware/build --no-deps symlink_data
+[4.196s] running develop
+[4.509s] running egg_info
+[4.535s] writing robot_hardware.egg-info/PKG-INFO
+[4.536s] writing dependency_links to robot_hardware.egg-info/dependency_links.txt
+[4.536s] writing entry points to robot_hardware.egg-info/entry_points.txt
+[4.536s] writing requirements to robot_hardware.egg-info/requires.txt
+[4.537s] writing top-level names to robot_hardware.egg-info/top_level.txt
+[4.589s] reading manifest file 'robot_hardware.egg-info/SOURCES.txt'
+[4.590s] writing manifest file 'robot_hardware.egg-info/SOURCES.txt'
+[4.610s] running build_ext
+[4.610s] Creating /root/Dojo/install/robot_hardware/lib/python3.10/site-packages/robot-hardware.egg-link (link to .)
+[4.611s] Installing arduino_driver script to /root/Dojo/install/robot_hardware/lib/robot_hardware
+[4.611s] Installing camera_driver script to /root/Dojo/install/robot_hardware/lib/robot_hardware
+[4.611s] Installing hardware_manager script to /root/Dojo/install/robot_hardware/lib/robot_hardware
+[4.611s] Installing lidar_driver script to /root/Dojo/install/robot_hardware/lib/robot_hardware
+[4.612s] 
+[4.612s] Installed /root/Dojo/build/robot_hardware
+[4.613s] running symlink_data
+[4.749s] Invoked command in '/root/Dojo/build/robot_hardware' returned '0': PYTHONPATH=/root/Dojo/build/robot_hardware/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/robot_hardware/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/robot_hardware/build --no-deps symlink_data

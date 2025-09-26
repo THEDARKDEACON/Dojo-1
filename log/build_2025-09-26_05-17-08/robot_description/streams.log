@@ -1,0 +1,74 @@
+[0.570s] Invoking command in '/root/Dojo/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/vision_system:/root/Dojo/install/robot_launch:/root/Dojo/install/ros2arduino_bridge:/root/Dojo/install/robot_sensors:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/root/Dojo/install/nv21_converter_pkg:/root/Dojo/install/arduino_bridge:/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_description -- -j16 -l16
+[2.880s] Built target ament_cmake_python_symlink_robot_description
+[2.880s] running egg_info
+[2.881s] writing robot_description.egg-info/PKG-INFO
+[2.882s] writing dependency_links to robot_description.egg-info/dependency_links.txt
+[2.882s] writing top-level names to robot_description.egg-info/top_level.txt
+[2.882s] reading manifest file 'robot_description.egg-info/SOURCES.txt'
+[2.883s] writing manifest file 'robot_description.egg-info/SOURCES.txt'
+[2.883s] Built target ament_cmake_python_build_robot_description_egg
+[3.337s] Invoked command in '/root/Dojo/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/vision_system:/root/Dojo/install/robot_launch:/root/Dojo/install/ros2arduino_bridge:/root/Dojo/install/robot_sensors:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/root/Dojo/install/nv21_converter_pkg:/root/Dojo/install/arduino_bridge:/opt/ros/humble /usr/bin/cmake --build /root/Dojo/build/robot_description -- -j16 -l16
+[3.348s] Invoking command in '/root/Dojo/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/vision_system:/root/Dojo/install/robot_launch:/root/Dojo/install/ros2arduino_bridge:/root/Dojo/install/robot_sensors:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/root/Dojo/install/nv21_converter_pkg:/root/Dojo/install/arduino_bridge:/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_description
+[3.357s] -- Install configuration: ""
+[3.358s] -- Execute custom install script
+[3.358s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/launch/display.launch.py
+[3.360s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/launch/robot_state_publisher.launch.py
+[3.361s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/urdf/common_properties.xacro
+[3.366s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/urdf/dojo_robot.gazebo
+[3.367s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/urdf/dojo_robot.urdf.xacro
+[3.367s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf
+[3.368s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/urdf/robot.urdf.xacro
+[3.368s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/urdf/sensors/rplidar.urdf.xacro
+[3.369s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/rviz/display.rviz
+[3.369s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/rviz/robot.rviz
+[3.371s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/pythonpath.sh
+[3.371s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/pythonpath.dsv
+[3.371s] -- Up-to-date symlink: /root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/PKG-INFO
+[3.371s] -- Up-to-date symlink: /root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/SOURCES.txt
+[3.373s] -- Up-to-date symlink: /root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/dependency_links.txt
+[3.376s] -- Up-to-date symlink: /root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description-0.0.1-py3.10.egg-info/top_level.txt
+[3.376s] -- Up-to-date symlink: /root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description/__init__.py
+[3.376s] -- Up-to-date symlink: /root/Dojo/install/robot_description/lib/robot_description/display_robot.py
+[3.377s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description
+[3.378s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description
+[3.385s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/ament_prefix_path.sh
+[3.385s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv
+[3.390s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/path.sh
+[3.391s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/environment/path.dsv
+[3.392s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/local_setup.bash
+[3.392s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/local_setup.sh
+[3.398s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/local_setup.zsh
+[3.398s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/local_setup.dsv
+[3.399s] -- Symlinking: /root/Dojo/install/robot_description/share/robot_description/package.dsv
+[3.408s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/ament_index/resource_index/packages/robot_description
+[3.408s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake
+[3.409s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake
+[3.409s] -- Up-to-date symlink: /root/Dojo/install/robot_description/share/robot_description/package.xml
+[3.409s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description
+[3.410s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/urdf
+[3.410s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/urdf/sensors
+[3.410s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/rviz
+[3.413s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/src
+[3.413s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/src/robot_description
+[3.413s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/robot_description
+[3.413s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/robot_description/robot_description
+[3.413s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/scripts
+[3.414s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/resource
+[3.414s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/launch
+[3.414s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/config
+[3.414s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description
+[3.414s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/urdf
+[3.415s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/urdf/sensors
+[3.415s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/rviz
+[3.415s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/src
+[3.415s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/src/robot_description
+[3.416s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/robot_description
+[3.416s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/robot_description/robot_description
+[3.416s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/scripts
+[3.417s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/resource
+[3.417s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/launch
+[3.418s] -- Up-to-date: /root/Dojo/install/robot_description/share/robot_description/config
+[3.418s] -- Up-to-date: /root/Dojo/install/robot_description/lib/robot_description/robot_description
+[3.418s] -- Up-to-date: /root/Dojo/install/robot_description/lib/robot_description/robot_description/__init__.py
+[3.455s] Listing '/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages/robot_description'...
+[3.508s] Invoked command in '/root/Dojo/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/Dojo/install/vision_system:/root/Dojo/install/robot_launch:/root/Dojo/install/ros2arduino_bridge:/root/Dojo/install/robot_sensors:/root/Dojo/install/robot_perception:/root/Dojo/install/robot_hardware:/root/Dojo/install/robot_control:/root/Dojo/install/nv21_converter_pkg:/root/Dojo/install/arduino_bridge:/opt/ros/humble /usr/bin/cmake --install /root/Dojo/build/robot_description

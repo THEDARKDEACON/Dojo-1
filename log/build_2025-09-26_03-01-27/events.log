@@ -1,0 +1,115 @@
+[0.000000] (-) TimerEvent: {}
+[0.001169] (-) JobUnselected: {'identifier': 'arduino_bridge'}
+[0.001246] (-) JobUnselected: {'identifier': 'camera_ros'}
+[0.001282] (-) JobUnselected: {'identifier': 'nv21_converter_pkg'}
+[0.001314] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.001341] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.001370] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.001399] (-) JobUnselected: {'identifier': 'robot_hardware'}
+[0.001427] (-) JobUnselected: {'identifier': 'robot_interfaces'}
+[0.001453] (-) JobUnselected: {'identifier': 'robot_launch'}
+[0.001928] (-) JobUnselected: {'identifier': 'robot_navigation'}
+[0.002003] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.002024] (-) JobUnselected: {'identifier': 'robot_sensors'}
+[0.002041] (-) JobUnselected: {'identifier': 'ros2arduino_bridge'}
+[0.002059] (-) JobUnselected: {'identifier': 'vision_system'}
+[0.002085] (robot_gazebo) JobQueued: {'identifier': 'robot_gazebo', 'dependencies': OrderedDict([('robot_control', '/root/Dojo/install/robot_control'), ('robot_description', '/root/Dojo/install/robot_description')])}
+[0.002115] (robot_gazebo) JobStarted: {'identifier': 'robot_gazebo'}
+[0.018490] (robot_gazebo) JobProgress: {'identifier': 'robot_gazebo', 'progress': 'cmake'}
+[0.019758] (robot_gazebo) JobProgress: {'identifier': 'robot_gazebo', 'progress': 'build'}
+[0.020570] (robot_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/Dojo/build/robot_gazebo', '--', '-j16', '-l16'], 'cwd': '/root/Dojo/build/robot_gazebo', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/root/Dojo/install/robot_description:/root/Dojo/install/robot_control:/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_gazebo'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/root/Dojo/build/robot_control:/root/Dojo/install/robot_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/Dojo/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[0.083475] (robot_gazebo) CommandEnded: {'returncode': 0}
+[0.084399] (robot_gazebo) JobProgress: {'identifier': 'robot_gazebo', 'progress': 'install'}
+[0.096264] (robot_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/Dojo/build/robot_gazebo'], 'cwd': '/root/Dojo/build/robot_gazebo', 'env': OrderedDict([('HOSTNAME', 'gareth-joel-HP-Pavilion-Gaming-Laptop-15-ec2xxx'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/root/Dojo/install/robot_description:/root/Dojo/install/robot_control:/opt/ros/humble'), ('PWD', '/root/Dojo/build/robot_gazebo'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/Dojo/install/robot_description/local/lib/python3.10/dist-packages:/root/Dojo/build/robot_control:/root/Dojo/install/robot_control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/Dojo/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[0.099579] (-) TimerEvent: {}
+[0.107332] (robot_gazebo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.107861] (robot_gazebo) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[0.108222] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/complete_simulation.launch.py\n'}
+[0.108368] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/docker_simulation.launch.py\n'}
+[0.108527] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/full_simulation.launch.py\n'}
+[0.108691] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/gazebo.launch.py\n'}
+[0.108796] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/perception_wrapper.launch.py\n'}
+[0.108897] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/robot_simulation.launch.py\n'}
+[0.108992] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/simple_simulation.launch.py\n'}
+[0.109067] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/launch/simulation.launch.py\n'}
+[0.109221] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/config/diff_drive_controller.yaml\n'}
+[0.109319] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/config/ekf_config.yaml\n'}
+[0.109417] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/config/ros2_control.yaml\n'}
+[0.109518] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/config/slam_config.yaml\n'}
+[0.109778] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/complete_simulation.rviz\n'}
+[0.109879] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/full_simulation.rviz\n'}
+[0.109975] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/robot_simulation.rviz\n'}
+[0.110071] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/rviz/simulation.rviz\n'}
+[0.110785] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/agriculture.world\n'}
+[0.110885] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/azcar.world\n'}
+[0.110983] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/barrels.world\n'}
+[0.111080] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/canyonview_field.world\n'}
+[0.111361] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/city_osm_roundabout.world\n'}
+[0.111457] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/city_osm_roundabout_combined.world\n'}
+[0.111549] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/cyberzoo.world\n'}
+[0.111656] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/cyberzoo2019_orange_poles.world\n'}
+[0.111754] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/cyberzoo2019_orange_poles_panels.world\n'}
+[0.111857] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/cyberzoo2019_orange_poles_panels_mats.world\n'}
+[0.111953] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/cyberzoo2019_ralphthesis2020.world\n'}
+[0.112051] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/cyberzoo_4_panels.world\n'}
+[0.112187] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/cyberzoo_orange_poles.world\n'}
+[0.112283] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/cyberzoo_panel.world\n'}
+[0.112380] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/demo_world.world\n'}
+[0.112480] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/dojo_world.world\n'}
+[0.112575] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/drone_race_track_2018_actual.world\n'}
+[0.112672] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/drone_race_track_2018_actual_with_gatepapers.world\n'}
+[0.112768] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/empty.world\n'}
+[0.112860] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/empty_aerial_manipulation.world\n'}
+[0.112962] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/fetchit_challenge_arena_montreal2019.world\n'}
+[0.113065] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/fetchit_challenge_arena_montreal2019_highlights.world\n'}
+[0.113196] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/fetchit_challenge_arena_montreal2019_onlylights.world\n'}
+[0.113298] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/fetchit_challenge_assembly.world\n'}
+[0.113396] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/fetchit_challenge_atrezzo.world\n'}
+[0.113495] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/fetchit_challenge_simple.world\n'}
+[0.113616] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/fetchit_challenge_simple_highlights.world\n'}
+[0.113732] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/fetchit_challenge_tests.world\n'}
+[0.113887] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/fetchit_challenge_tests_lowlights.world\n'}
+[0.114012] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/hemicyl.world\n'}
+[0.114108] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/house.world\n'}
+[0.114219] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/inspection.world\n'}
+[0.114330] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/neighborhood.world\n'}
+[0.114430] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/office_cpr.world\n'}
+[0.114536] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/office_cpr_construction.world\n'}
+[0.114651] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/office_earthquake.world\n'}
+[0.114776] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/office_env_large.world\n'}
+[0.114882] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/office_small.world\n'}
+[0.114983] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/outdoor.world\n'}
+[0.115083] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/powerplant.world\n'}
+[0.115200] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/rubble.world\n'}
+[0.115303] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/simple_env_1.world\n'}
+[0.115413] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/simple_env_2.world\n'}
+[0.115517] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/simple_env_3.world\n'}
+[0.115620] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/skidpan.world\n'}
+[0.115719] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/small_city.world\n'}
+[0.115824] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/test_city.world\n'}
+[0.115915] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/test_zone.world\n'}
+[0.116015] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/wall_aerial_manipulation.world\n'}
+[0.116120] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/warehouse.world\n'}
+[0.116313] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/waypoint.world\n'}
+[0.116439] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/workshop_example.world\n'}
+[0.116544] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/worlds/yosemite.world\n'}
+[0.116736] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/package_run_dependencies/robot_gazebo\n'}
+[0.116918] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/parent_prefix_path/robot_gazebo\n'}
+[0.117090] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.sh\n'}
+[0.117274] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/ament_prefix_path.dsv\n'}
+[0.117485] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/path.sh\n'}
+[0.117632] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/environment/path.dsv\n'}
+[0.117779] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.bash\n'}
+[0.117921] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.sh\n'}
+[0.118059] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.zsh\n'}
+[0.118211] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/local_setup.dsv\n'}
+[0.118328] (robot_gazebo) StdoutLine: {'line': b'-- Symlinking: /root/Dojo/install/robot_gazebo/share/robot_gazebo/package.dsv\n'}
+[0.131698] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/ament_index/resource_index/packages/robot_gazebo\n'}
+[0.132045] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig.cmake\n'}
+[0.132270] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/cmake/robot_gazeboConfig-version.cmake\n'}
+[0.132397] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date symlink: /root/Dojo/install/robot_gazebo/share/robot_gazebo/package.xml\n'}
+[0.132518] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_gazebo/lib/robot_gazebo\n'}
+[0.132583] (robot_gazebo) StdoutLine: {'line': b'-- Up-to-date: /root/Dojo/install/robot_gazebo/lib/robot_gazebo/spawn_robot.py\n'}
+[0.135424] (robot_gazebo) CommandEnded: {'returncode': 0}
+[0.159215] (robot_gazebo) JobEnded: {'identifier': 'robot_gazebo', 'rc': 0}
+[0.159902] (-) EventReactorShutdown: {}

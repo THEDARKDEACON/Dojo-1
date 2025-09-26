@@ -1,0 +1,19 @@
+[4.013s] Invoking command in '/root/Dojo/build/ros2arduino_bridge': PYTHONPATH=/root/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/ros2arduino_bridge/build --no-deps symlink_data
+[4.379s] /usr/local/lib/python3.10/dist-packages/setuptools/dist.py:770: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[4.379s]   warnings.warn(
+[4.518s] running develop
+[4.834s] running egg_info
+[4.854s] writing ros2arduino_bridge.egg-info/PKG-INFO
+[4.854s] writing dependency_links to ros2arduino_bridge.egg-info/dependency_links.txt
+[4.854s] writing entry points to ros2arduino_bridge.egg-info/entry_points.txt
+[4.855s] writing requirements to ros2arduino_bridge.egg-info/requires.txt
+[4.855s] writing top-level names to ros2arduino_bridge.egg-info/top_level.txt
+[4.898s] reading manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'
+[4.899s] writing manifest file 'ros2arduino_bridge.egg-info/SOURCES.txt'
+[4.920s] running build_ext
+[4.920s] Creating /root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages/ros2arduino-bridge.egg-link (link to .)
+[4.921s] Installing arduino_bridge script to /lib/ros2arduino_bridge
+[4.922s] 
+[4.922s] Installed /root/Dojo/build/ros2arduino_bridge
+[4.922s] running symlink_data
+[5.055s] Invoked command in '/root/Dojo/build/ros2arduino_bridge' returned '0': PYTHONPATH=/root/Dojo/build/ros2arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/ros2arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/ros2arduino_bridge/build --no-deps symlink_data

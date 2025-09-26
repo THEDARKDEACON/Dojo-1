@@ -48,18 +48,18 @@ Toolbars:
 Visualization Manager:
   Class: ""
   Displays:
-    # Grid
+    # Grid (simplified to reduce GPU load)
     - Class: rviz_default_plugins/Grid
-      Color: 160; 160; 164
+      Color: 100; 100; 100
       Enabled: true
       Line Style:
-        Line Width: 0.03
+        Line Width: 0.02
         Value: Lines
       Name: Grid
       Normal Cell Count: 0
       Plane: 0
-      Plane Cell Count: 10
-      Reference Frame: <Fixed Frame>
+      Plane Cell Count: 5  # Reduced from 10 to 5
+      Reference Frame: base_footprint
       Value: true
     
     # Robot Model
@@ -77,35 +77,18 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
       
-    # TF
+    # TF (simplified to reduce GPU load)
     - Class: rviz_default_plugins/TF
       Enabled: true
-      Frame Timeout: 15
+      Frame Timeout: 30  # Increased from 15
       Frames:
-        All Enabled: true
-      Marker Scale: 0.5
+        All Enabled: false  # Disabled all frames by default
+      Marker Scale: 0.3  # Reduced from 0.5
       Name: TF
       Show Arrows: true
-      Show Axes: true
-      Show Names: true
-      Update Interval: 0
-      Value: true
-      Cell Size: 1
-      Class: rviz_default_plugins/Grid
-      Color: 160; 160; 164
-      Enabled: true
-      Line Style:
-        Line Width: 0.029999999329447746
-        Value: Lines
-      Name: Grid
-      Normal Cell Count: 0
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
-      Plane: XY
-      Plane Cell Count: 20
-      Reference Frame: <Fixed Frame>
+      Show Axes: false  # Disabled axes to reduce load
+      Show Names: false  # Disabled names to reduce load
+      Update Interval: 0.1  # Reduced update rate
       Value: true
       
     # Robot Model
@@ -127,31 +110,16 @@ Visualization Manager:
       
     # LiDAR Scan
     - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 15
-        Min Value: -15
-        Value: true
-      Axis: Z
-      Channel Name: intensity
       Class: rviz_default_plugins/LaserScan
       Color: 0; 255; 0
-      Color Transformer: Intensity
       Decay Time: 0
       Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Min Color: 0; 0; 0
       Name: LaserScan
-      Position Transformer: XYZ
       Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
       Size (m): 0.05
       Topic: /scan
       Unreliable: false
       Use Fixed Frame: true
-      Use rainbow: true
       Value: true
       
     # Camera Image
@@ -349,8 +317,8 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map
-    Frame Rate: 30
+    Fixed Frame: base_footprint
+    Frame Rate: 10  # Reduced from 30 to 10 to lower GPU load
   Name: root
   Tools:
     - Class: rviz_default_plugins/Interact

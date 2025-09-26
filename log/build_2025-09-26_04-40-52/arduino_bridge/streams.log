@@ -1,0 +1,18 @@
+[4.010s] Invoking command in '/root/Dojo/build/arduino_bridge': PYTHONPATH=/root/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/arduino_bridge/build --no-deps symlink_data
+[5.066s] running develop
+[5.624s] running egg_info
+[5.651s] writing arduino_bridge.egg-info/PKG-INFO
+[5.651s] writing dependency_links to arduino_bridge.egg-info/dependency_links.txt
+[5.651s] writing entry points to arduino_bridge.egg-info/entry_points.txt
+[5.651s] writing requirements to arduino_bridge.egg-info/requires.txt
+[5.651s] writing top-level names to arduino_bridge.egg-info/top_level.txt
+[5.715s] reading manifest file 'arduino_bridge.egg-info/SOURCES.txt'
+[5.716s] writing manifest file 'arduino_bridge.egg-info/SOURCES.txt'
+[5.754s] running build_ext
+[5.755s] Creating /root/Dojo/install/arduino_bridge/lib/python3.10/site-packages/arduino-bridge.egg-link (link to .)
+[5.756s] Installing arduino_bridge_node script to /root/Dojo/install/arduino_bridge/lib/arduino_bridge
+[5.757s] Installing test_arduino_bridge script to /root/Dojo/install/arduino_bridge/lib/arduino_bridge
+[5.757s] 
+[5.758s] Installed /root/Dojo/build/arduino_bridge
+[5.759s] running symlink_data
+[5.945s] Invoked command in '/root/Dojo/build/arduino_bridge' returned '0': PYTHONPATH=/root/Dojo/build/arduino_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Dojo/install/arduino_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/Dojo/build/arduino_bridge/build --no-deps symlink_data

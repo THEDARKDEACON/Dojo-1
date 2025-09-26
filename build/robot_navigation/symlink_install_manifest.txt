@@ -12,6 +12,7 @@
 /root/Dojo/install/robot_navigation/share/robot_navigation/local_costmap_params.yaml
 /root/Dojo/install/robot_navigation/share/robot_navigation/launch/localization.launch.py
 /root/Dojo/install/robot_navigation/share/robot_navigation/launch/map_server.launch.py
+/root/Dojo/install/robot_navigation/share/robot_navigation/launch/nav2.launch.py
 /root/Dojo/install/robot_navigation/share/robot_navigation/launch/navigation.launch.py
 /root/Dojo/install/robot_navigation/share/robot_navigation/config/bt_navigator_params.yaml
 /root/Dojo/install/robot_navigation/share/robot_navigation/config/controller_params.yaml
@@ -33,6 +34,7 @@
 /root/Dojo/install/robot_navigation/share/robot_navigation/config/planner_params.yaml
 /root/Dojo/install/robot_navigation/share/robot_navigation/launch/localization.launch.py
 /root/Dojo/install/robot_navigation/share/robot_navigation/launch/map_server.launch.py
+/root/Dojo/install/robot_navigation/share/robot_navigation/launch/nav2.launch.py
 /root/Dojo/install/robot_navigation/share/robot_navigation/launch/navigation.launch.py
 /root/Dojo/install/robot_navigation/share/ament_index/resource_index/package_run_dependencies/robot_navigation
 /root/Dojo/install/robot_navigation/share/ament_index/resource_index/parent_prefix_path/robot_navigation

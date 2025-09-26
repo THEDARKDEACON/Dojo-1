@@ -32,8 +32,19 @@ foreach(dir ${DIRS_TO_INSTALL})
     install(
         DIRECTORY ${dir}/
         DESTINATION share/${PROJECT_NAME}/${dir}
+        PATTERN "*"
     )
 endforeach()
+
+# Install all .xacro and .gazebo files
+install(
+  DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/
+  DESTINATION share/${PROJECT_NAME}
+  FILES_MATCHING
+  PATTERN "*.xacro"
+  PATTERN "*.gazebo"
+  PATTERN "*.urdf"
+)
 
 # Install config files
 install(
