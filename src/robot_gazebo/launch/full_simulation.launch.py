@@ -1,195 +1,272 @@
 #!/usr/bin/env python3
 """
-Complete Dojo Robot Simulation with Full Sensor Suite
-Includes: Robot Motion + LiDAR Mapping + Camera Feed + RViz Visualization
+Consolidated Dojo Robot Simulation Launch File
+Handles everything from simulation to visualization in one place
 """
 
+import os
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, GroupAction, TimerAction
-from launch.conditions import IfCondition
+from launch.actions import (
+    DeclareLaunchArgument,
+    ExecuteProcess,
+    IncludeLaunchDescription,
+    RegisterEventHandler,
+    TimerAction,
+)
+from launch.conditions import IfCondition, UnlessCondition
+from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
-from launch_ros.actions import Node
+from launch.substitutions import (
+    Command,
+    FindExecutable,
+    LaunchConfiguration,
+    PathJoinSubstitution,
+    PythonExpression,
+)
+from launch_ros.actions import Node, SetParameter
 from launch_ros.substitutions import FindPackageShare
 
+
 def generate_launch_description():
-    # Launch arguments
-    world_name = LaunchConfiguration('world', default='dojo_world.world')
+    # ===== Launch Arguments =====
+    world_name = LaunchConfiguration('world', default='empty.world')
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    gui = LaunchConfiguration('gui', default='true')
-    rviz = LaunchConfiguration('rviz', default='true')
+    use_rviz = LaunchConfiguration('use_rviz', default='true')
     use_teleop = LaunchConfiguration('use_teleop', default='true')
-    slam = LaunchConfiguration('slam', default='true')
+    use_slam = LaunchConfiguration('use_slam', default='true')
+    use_nav2 = LaunchConfiguration('use_nav2', default='true')
+
+    # ===== Path Definitions =====
+    pkg_robot_gazebo = FindPackageShare('robot_gazebo')
+    pkg_robot_description = FindPackageShare('robot_description')
+    pkg_robot_control = FindPackageShare('robot_control')
+
+    # ===== Robot State Publisher =====
+    robot_description_content = Command([
+        'xacro ',
+        PathJoinSubstitution([pkg_robot_description, 'urdf', 'dojo_robot.urdf.xacro']),
+        ' use_gazebo:=true'
+    ])
     
-    # === GAZEBO SIMULATION ===
-    gazebo_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            PathJoinSubstitution([
-                FindPackageShare('robot_gazebo'),
-                'launch',
-                'gazebo.launch.py'
-            ])
-        ]),
-        launch_arguments={
-            'world': world_name,
-            'gui': gui,
-            'use_sim_time': use_sim_time,
-            'rviz': 'false'  # We'll launch RViz separately with full config
-        }.items()
+    robot_description = {'robot_description': robot_description_content}
+
+    robot_state_publisher_node = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        parameters=[
+            {'use_sim_time': use_sim_time},
+            robot_description
+        ],
+        output='screen'
     )
-    
-    # === ROBOT CONTROL SYSTEM ===
-    control_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            PathJoinSubstitution([
-                FindPackageShare('robot_control'),
-                'launch',
-                'control.launch.py'
-            ])
-        ]),
+
+    # ===== Gazebo Launch =====
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [PathJoinSubstitution([pkg_robot_gazebo, 'launch', 'gazebo.launch.py'])]
+        ),
         launch_arguments={
+            'world': PathJoinSubstitution([pkg_robot_gazebo, 'worlds', world_name]),
             'use_sim_time': use_sim_time,
-            'use_legacy_nodes': 'false',
-            'use_control_manager': 'true'
-        }.items()
+            'gui': 'true',
+            'verbose': 'false',
+            'paused': 'false',
+        }.items(),
     )
+
+    # Spawn Robot
+    spawn_entity = Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        arguments=['-topic', 'robot_description', '-entity', 'dojo_robot'],
+        output='screen',
+    )
+
+    # ===== Control System =====
+    # Controller Manager
+    controller_manager = Node(
+        package='controller_manager',
+        executable='ros2_control_node',
+        parameters=[
+            robot_description,
+            PathJoinSubstitution([pkg_robot_gazebo, 'config', 'ros2_control.yaml'])
+        ],
+        output='screen',
+    )
+
+    # Joint State Broadcaster
+    joint_state_broadcaster = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster', '--controller-manager', '/controller_manager'],
+        output='screen',
+    )
+
+    # Diff Drive Controller
+    diff_drive_controller = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['diff_drive_controller', '--controller-manager', '/controller_manager'],
+        output='screen',
+    )
+
+    # twist_mux for command multiplexing
+    twist_mux_params = PathJoinSubstitution([pkg_robot_control, 'config', 'twist_mux.yaml'])
+    twist_mux = Node(
+        package='twist_mux',
+        executable='twist_mux',
+        name='twist_mux',
+        parameters=[
+            twist_mux_params,
+            {'use_sim_time': use_sim_time},
+        ],
+        remappings=[
+            ('/cmd_vel_out', '/diff_drive_controller/cmd_vel_unstamped')
+        ],
+        output='screen',
+        arguments=['--ros-args', '--log-level', 'info'],
+    )
+
+    # ===== SLAM Toolbox =====
+    slam_params_file = PathJoinSubstitution([pkg_robot_gazebo, 'config', 'slam_config.yaml'])
     
-    # === SLAM TOOLBOX (for mapping) ===
-    slam_toolbox_node = Node(
+    start_async_slam_toolbox_node = Node(
+        parameters=[
+            slam_params_file,
+            {'use_sim_time': use_sim_time},
+            {'map_frame': 'map'},
+            {'base_frame': 'base_footprint'},
+            {'odom_frame': 'odom'},
+            {'map_start_pose_required': False},
+            {'scan_topic': '/scan'},
+            {'queue_size': 10},
+            {'publish_tf': True},
+            {'publish_odom': True},
+        ],
         package='slam_toolbox',
         executable='async_slam_toolbox_node',
         name='slam_toolbox',
         output='screen',
-        parameters=[
-            PathJoinSubstitution([
-                FindPackageShare('robot_gazebo'),
-                'config',
-                'slam_config.yaml'
-            ]),
-            {'use_sim_time': use_sim_time}
-        ],
-        condition=IfCondition(slam)
+        condition=IfCondition(use_slam),
     )
-    
-    # === TELEOP KEYBOARD CONTROL ===
-    teleop_node = Node(
-        package='teleop_twist_keyboard',
-        executable='teleop_twist_keyboard',
-        name='teleop_keyboard',
-        output='screen',
-        parameters=[{'use_sim_time': use_sim_time}],
-        remappings=[
-            ('cmd_vel', 'cmd_vel_manual')  # Connect to control manager
-        ],
-        condition=IfCondition(use_teleop),
-        prefix='xterm -e'  # Run in separate terminal
-    )
-    
-    # === IMAGE PROCESSING (for camera visualization) ===
-    image_view_node = Node(
-        package='rqt_image_view',
-        executable='rqt_image_view',
-        name='camera_viewer',
-        arguments=['/image_raw'],
-        parameters=[{'use_sim_time': use_sim_time}],
-        condition=IfCondition(LaunchConfiguration('camera_view', default='false'))
-    )
-    
-    # === RVIZ WITH FULL SIMULATION CONFIG ===
-    rviz_config_file = PathJoinSubstitution([
-        FindPackageShare('robot_gazebo'),
-        'rviz',
-        'full_simulation.rviz'
-    ])
-    
+
+    # ===== RViz =====
+    rviz_config = PathJoinSubstitution([pkg_robot_gazebo, 'rviz', 'full_simulation.rviz'])
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
         name='rviz2',
-        arguments=['-d', rviz_config_file],
+        arguments=['-d', rviz_config],
+        parameters=[
+            {'use_sim_time': use_sim_time},
+            # Add any additional parameters needed for visualization
+        ],
+        condition=IfCondition(use_rviz),
+        remappings=[
+            ('/initialpose', 'initialpose'),
+            ('/goal_pose', 'goal_pose'),
+        ],
+    )
+    
+    # Camera image processing
+    image_proc_node = Node(
+        package='image_proc',
+        executable='image_proc',
+        name='image_proc',
+        namespace='camera',
         parameters=[{'use_sim_time': use_sim_time}],
         output='screen',
-        condition=IfCondition(rviz)
     )
-    
-    # === ROBOT LOCALIZATION (for better odometry) ===
-    robot_localization_node = Node(
-        package='robot_localization',
-        executable='ekf_node',
-        name='ekf_filter_node',
+
+    # ===== Teleop =====
+    teleop_twist_keyboard = Node(
+        package='teleop_twist_keyboard',
+        executable='teleop_twist_keyboard',
+        name='teleop_twist_keyboard',
         output='screen',
-        parameters=[
-            PathJoinSubstitution([
-                FindPackageShare('robot_gazebo'),
-                'config',
-                'ekf_config.yaml'
-            ]),
-            {'use_sim_time': use_sim_time}
+        prefix='xterm -e',
+        remappings=[
+            ('/cmd_vel', '/cmd_vel_teleop')
         ],
-        condition=IfCondition(LaunchConfiguration('use_ekf', default='true'))
+        condition=IfCondition(use_teleop)
     )
-    
-    # === MAP SERVER (optional - for pre-made maps) ===
-    map_server_node = Node(
-        package='nav2_map_server',
-        executable='map_server',
-        name='map_server',
-        output='screen',
-        parameters=[
-            {'yaml_filename': PathJoinSubstitution([
-                FindPackageShare('robot_gazebo'),
-                'maps',
-                'dojo_map.yaml'
-            ])},
-            {'use_sim_time': use_sim_time}
-        ],
-        condition=IfCondition(LaunchConfiguration('use_map_server', default='false'))
+
+    # ===== Event Handlers =====
+    # Delay controller manager start after robot spawn
+    delay_controller_manager = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=spawn_entity,
+            on_exit=[controller_manager],
+        )
     )
-    
-    # === DELAYED NODES (start after Gazebo is ready) ===
-    delayed_slam = TimerAction(
-        period=3.0,  # Wait 3 seconds for Gazebo to start
-        actions=[slam_toolbox_node]
+
+    # Delay joint state broadcaster after controller manager
+    delay_joint_state_broadcaster = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=controller_manager,
+            on_exit=[joint_state_broadcaster],
+        )
     )
-    
-    delayed_rviz = TimerAction(
-        period=2.0,  # Wait 2 seconds
-        actions=[rviz_node]
+
+    # Delay diff drive controller start after joint state broadcaster
+    delay_diff_drive_controller = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=joint_state_broadcaster,
+            on_exit=[diff_drive_controller],
+        )
     )
-    
-    # === GROUP ALL SIMULATION COMPONENTS ===
-    simulation_group = GroupAction([
-        gazebo_launch,
-        control_launch,
-        delayed_slam,
-        delayed_rviz,
-        teleop_node,
-        robot_localization_node,
-        map_server_node,
-        image_view_node
-    ])
-    
+
+    # ===== Return Launch Description =====
     return LaunchDescription([
-        # === LAUNCH ARGUMENTS ===
-        DeclareLaunchArgument('world', default_value='dojo_world.world',
-                            description='Gazebo world file (empty.world, dojo_world.world)'),
-        DeclareLaunchArgument('gui', default_value='true',
-                            description='Start Gazebo GUI'),
-        DeclareLaunchArgument('rviz', default_value='true',
-                            description='Start RViz with full simulation config'),
-        DeclareLaunchArgument('use_sim_time', default_value='true',
-                            description='Use simulation clock'),
-        DeclareLaunchArgument('use_teleop', default_value='true',
-                            description='Start keyboard teleop control'),
-        DeclareLaunchArgument('slam', default_value='true',
-                            description='Start SLAM for mapping'),
-        DeclareLaunchArgument('use_ekf', default_value='true',
-                            description='Use Extended Kalman Filter for localization'),
-        DeclareLaunchArgument('use_map_server', default_value='false',
-                            description='Start map server with pre-made map'),
-        DeclareLaunchArgument('camera_view', default_value='false',
-                            description='Open separate camera viewer window'),
+        # Set use_sim_time for all nodes
+        SetParameter(name='use_sim_time', value=use_sim_time),
         
-        # === LAUNCH SIMULATION ===
-        simulation_group
+        # Launch arguments
+        DeclareLaunchArgument('world', default_value='empty.world',
+                            description='Gazebo world file'),
+        DeclareLaunchArgument('use_sim_time', default_value='true',
+                            description='Use simulation (Gazebo) clock if true'),
+        DeclareLaunchArgument('use_rviz', default_value='true',
+                            description='Launch RViz if true'),
+        DeclareLaunchArgument('use_teleop', default_value='true',
+                            description='Enable teleop keyboard control if true'),
+        DeclareLaunchArgument('use_slam', default_value='true',
+                            description='Launch SLAM Toolbox if true'),
+        DeclareLaunchArgument('use_nav2', default_value='true',
+                            description='Launch Navigation2 if true'),
+
+        # Nodes
+        robot_state_publisher_node,
+        gazebo,
+        spawn_entity,
+        
+        # Event handlers for controller startup
+        delay_controller_manager,
+        delay_joint_state_broadcaster,
+        delay_diff_drive_controller,
+        
+        # Delayed RViz start
+        TimerAction(
+            period=2.0,
+            actions=[rviz_node]
+        ),
+        
+        teleop_twist_keyboard,
+
+        # Delayed start of SLAM and image processing
+        RegisterEventHandler(
+            event_handler=OnProcessExit(
+                target_action=diff_drive_controller,
+                on_exit=[
+                    TimerAction(
+                        period=3.0,
+                        actions=[
+                            start_async_slam_toolbox_node,
+                            image_proc_node,
+                        ]
+                    )
+                ],
+            )
+        ),
     ])

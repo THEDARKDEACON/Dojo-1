@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="dojo_robot">
 
-  <!-- Include common properties -->
+  <!-- Include common properties and sensors -->
   <xacro:include filename="$(find robot_description)/urdf/common_properties.xacro"/>
+  <xacro:include filename="$(find robot_description)/urdf/sensors/rplidar.urdf.xacro"/>
   
   <!-- Simulation toggle (set by xacro arg) -->
   <xacro:arg name="use_gazebo" default="false"/>
@@ -15,6 +16,16 @@
   <xacro:property name="wheel_width" value="0.03"/>
   <xacro:property name="wheel_separation" value="0.26"/>
   <xacro:property name="wheel_base" value="0.215"/>
+
+  <!-- Camera parameters -->
+  <xacro:property name="camera_width" value="0.05" />
+  <xacro:property name="camera_height" value="0.03" />
+  <xacro:property name="camera_depth" value="0.05" />
+  <xacro:property name="camera_x" value="0.1" />  <!-- Position in front of the robot -->
+  <xacro:property name="camera_y" value="0.0" />
+  <xacro:property name="camera_z" value="0.05" />
+  <xacro:property name="camera_fps" value="30" />
+  <xacro:property name="camera_hfov" value="1.0472" />  <!-- 60 degrees in radians -->
 
   <!-- Materials -->
   <material name="dojo_green">
