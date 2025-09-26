@@ -1,1 +1,0 @@
-/root/Dojo/src/robot_bringup/launch/sim_control.launch.py
